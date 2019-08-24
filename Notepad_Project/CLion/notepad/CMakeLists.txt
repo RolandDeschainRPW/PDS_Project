@@ -31,12 +31,14 @@ set(SOURCE_FILES
         src/main.cpp
         src/Notepad.cpp
         src/Symbol.cpp
-        src/Message.cpp)
+        src/Message.cpp
+        src/Request.cpp)
 
 set(INCLUDE_FILES
         include/Notepad.h
         include/Symbol.h
-        include/Message.h)
+        include/Message.h
+        include/Request.h)
 
 set(RESOURCE_FILES
         notepad.qrc)

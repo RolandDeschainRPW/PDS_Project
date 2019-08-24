@@ -51,12 +51,16 @@
 #ifndef NOTEPAD_H
 #define NOTEPAD_H
 
+#include <optional>
+
 #include <QMainWindow>
 #include <QTextEdit>
 #include <QTextCursor>
 #include <QVector>
+#include <QtNetwork>
 
-#include "Symbol.h"
+#include "../include/Symbol.h"
+#include "../include/Message.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -75,6 +79,14 @@ public:
 
     explicit Notepad(QWidget *parent = 0);
     ~Notepad();
+
+    qint32 getSiteId();
+    qint32 getCounter();
+    std::optional<Symbol> getSymbol(qint32 index);
+    void localInsert(qint32 index, QChar value);
+    void localErase(qint32 index);
+    void processSymbol(const Message &m);
+    QString symbols_to_string();
 
 private slots:
     void newDocument();
@@ -98,6 +110,11 @@ private slots:
     void onCursorPositionChanged();
     void change(int pos, int del, int add);
 
+    void connectToServer();
+    void displayError(QAbstractSocket::SocketError socketError);
+    void enableConnectToServerButton();
+    void sessionOpened();
+
 private:
     Ui::Notepad *ui;
     QString currentFile;
@@ -106,7 +123,7 @@ private:
     QTextCursor cursor;
     QString pos_cursor;
 
-    // Client variables.
+    // Vars for symbols managing.
     qint32 _siteId = SITE_ID_UNASSIGNED;
     qint32 _counter = 0;
     qint32 boundary;
@@ -114,6 +131,25 @@ private:
     qint32 strategy;
     QVector<qint32> strategyCache;
     QVector<Symbol> _symbols;
+
+    // Vars for networking.
+    QTcpSocket* tcpSocket = nullptr;
+    QDataStream in;
+    QNetworkSession* networkSession = nullptr;
+
+    Symbol generateSymbol(QChar value, qint32 index);
+    QVector<qint32> generatePosBetween(qint32 siteId1,
+                                       qint32 siteId2,
+                                       QVector<qint32> before,
+                                       std::optional<QVector<qint32>> after_opt,
+                                       std::optional<QVector<qint32>> newPos_opt,
+                                       qint32 level = 0);
+    qint32 generateIdBetween(qint32 min, qint32 max, qint32 myStrategy);
+    qint32 retrieveStrategy(qint32 level);
+    bool comparePositions(std::optional<QVector<qint32>> pos1_opt, std::optional<QVector<qint32>> pos2_opt);
+    void readMessage();
+    void readDataFromSocket();
+    void closeEvent(QCloseEvent* event);
 };
 
 #endif // NOTEPAD_H

@@ -11,7 +11,7 @@
 #include <vector>
 #include <QDataStream>
 
-#include "Symbol.h"
+#include "../include/Symbol.h"
 
 class Message {
 private:

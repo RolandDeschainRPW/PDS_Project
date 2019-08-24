@@ -243,6 +243,33 @@ src/Notepad.cpp.s:
 	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Notepad.cpp.s
 .PHONY : src/Notepad.cpp.s
 
+src/Request.obj: src/Request.cpp.obj
+
+.PHONY : src/Request.obj
+
+# target to build an object file
+src/Request.cpp.obj:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Request.cpp.obj
+.PHONY : src/Request.cpp.obj
+
+src/Request.i: src/Request.cpp.i
+
+.PHONY : src/Request.i
+
+# target to preprocess a source file
+src/Request.cpp.i:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Request.cpp.i
+.PHONY : src/Request.cpp.i
+
+src/Request.s: src/Request.cpp.s
+
+.PHONY : src/Request.s
+
+# target to generate assembly for a file
+src/Request.cpp.s:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Request.cpp.s
+.PHONY : src/Request.cpp.s
+
 src/Symbol.obj: src/Symbol.cpp.obj
 
 .PHONY : src/Symbol.obj
@@ -319,6 +346,9 @@ help:
 	@echo ... src/Notepad.obj
 	@echo ... src/Notepad.i
 	@echo ... src/Notepad.s
+	@echo ... src/Request.obj
+	@echo ... src/Request.i
+	@echo ... src/Request.s
 	@echo ... src/Symbol.obj
 	@echo ... src/Symbol.i
 	@echo ... src/Symbol.s

@@ -7,6 +7,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/notepad.dir/src/Notepad.cpp.obj"
   "CMakeFiles/notepad.dir/src/Symbol.cpp.obj"
   "CMakeFiles/notepad.dir/src/Message.cpp.obj"
+  "CMakeFiles/notepad.dir/src/Request.cpp.obj"
   "CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj"
   "notepad.pdb"
   "notepad.exe"

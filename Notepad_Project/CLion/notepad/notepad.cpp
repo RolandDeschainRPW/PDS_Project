@@ -90,8 +90,8 @@ Notepad::Notepad(QWidget *parent) : QMainWindow(parent), ui(new Ui::Notepad) {
     connect(ui->actionItalic, &QAction::triggered, this, &Notepad::setFontItalic);
 
     // Listen on text changed signals.
-    connect(ui->textEdit, SIGNAL(textChanged()), this, SLOT(onTextChanged()));
-    connect(ui->textEdit, SIGNAL(cursorPositionChanged()), this, SLOT(onCursorPositionChanged()));
+    connect(ui->textEdit, &QTextEdit::textChanged, this, &Notepad::onTextChanged);
+    connect(ui->textEdit, &QTextEdit::cursorPositionChanged, this, &Notepad::onCursorPositionChanged);
 
     // Disable menu actions for unavailable features
     #if !QT_CONFIG(printer)

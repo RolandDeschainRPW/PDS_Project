@@ -1,0 +1,4 @@
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad_autogen.dir

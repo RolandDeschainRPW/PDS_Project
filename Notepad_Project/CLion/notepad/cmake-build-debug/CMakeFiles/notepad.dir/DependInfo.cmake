@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Message.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/Message.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Symbol.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/Symbol.cpp.obj"
   "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/main.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/main.cpp.obj"
   "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/notepad.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/notepad.cpp.obj"
   "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj"

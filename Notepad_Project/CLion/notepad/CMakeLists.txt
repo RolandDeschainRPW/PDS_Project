@@ -28,10 +28,14 @@ list(REMOVE_DUPLICATES LIBRARIES)
 
 set(SOURCE_FILES
         main.cpp
-        notepad.cpp)
+        notepad.cpp
+        Symbol.cpp
+        Message.cpp)
 
 set(INCLUDE_FILES
-        notepad.h)
+        notepad.h
+        Symbol.h
+        Message.h)
 
 set(RESOURCE_FILES
         notepad.qrc)

@@ -6,6 +6,10 @@
 
 #IncludeRegexTransform: 
 
+C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
+qdatastream.h
+C:/Qt/5.13.0/mingw73_64/include/QtCore/qdatastream.h
+
 C:/Qt/5.13.0/mingw73_64/include/QtCore/QDebug
 qdebug.h
 C:/Qt/5.13.0/mingw73_64/include/QtCore/qdebug.h
@@ -1518,7 +1522,43 @@ QtGui/qkeysequence.h
 QtGui/qevent.h
 -
 
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Message.cpp
+Message.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Message.h
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Message.h
+iostream
+-
+queue
+-
+memory
+-
+vector
+-
+QDataStream
+-
+Symbol.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Symbol.h
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Symbol.cpp
+Symbol.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Symbol.h
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Symbol.h
+iostream
+-
+queue
+-
+memory
+-
+vector
+-
+QDataStream
+-
+
 D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/notepad.cpp
+iostream
+-
 QFile
 -
 QFileDialog

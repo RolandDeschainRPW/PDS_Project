@@ -120,6 +120,18 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Message.cpp">
+			<Option target="notepad"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Message.h">
+			<Option target="notepad"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Symbol.cpp">
+			<Option target="notepad"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Symbol.h">
+			<Option target="notepad"/>
+		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp">
 			<Option target="notepad"/>
 		</Unit>

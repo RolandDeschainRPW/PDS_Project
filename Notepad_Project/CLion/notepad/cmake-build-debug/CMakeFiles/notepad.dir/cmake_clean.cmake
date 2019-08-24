@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj"
   "CMakeFiles/notepad.dir/main.cpp.obj"
   "CMakeFiles/notepad.dir/notepad.cpp.obj"
+  "CMakeFiles/notepad.dir/Symbol.cpp.obj"
+  "CMakeFiles/notepad.dir/Message.cpp.obj"
   "CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj"
   "notepad.pdb"
   "notepad.exe"

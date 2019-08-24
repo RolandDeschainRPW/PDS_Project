@@ -11,8 +11,8 @@ set(AM_CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE "")
 set(AM_BUILD_DIR "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen")
 set(AM_INCLUDE_DIR "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/include")
 # Files
-set(AM_SOURCES "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/main.cpp;D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/notepad.cpp")
-set(AM_HEADERS "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/notepad.h")
+set(AM_SOURCES "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Message.cpp;D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Symbol.cpp;D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/main.cpp;D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/notepad.cpp")
+set(AM_HEADERS "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Message.h;D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Symbol.h;D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/notepad.h")
 set(AM_SETTINGS_FILE "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad_autogen.dir/AutogenOldSettings.txt")
 # Qt
 set(AM_QT_VERSION_MAJOR 5)

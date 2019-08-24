@@ -135,6 +135,60 @@ notepad_autogen/fast:
 	$(MAKE) -f CMakeFiles\notepad_autogen.dir\build.make CMakeFiles/notepad_autogen.dir/build
 .PHONY : notepad_autogen/fast
 
+Message.obj: Message.cpp.obj
+
+.PHONY : Message.obj
+
+# target to build an object file
+Message.cpp.obj:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/Message.cpp.obj
+.PHONY : Message.cpp.obj
+
+Message.i: Message.cpp.i
+
+.PHONY : Message.i
+
+# target to preprocess a source file
+Message.cpp.i:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/Message.cpp.i
+.PHONY : Message.cpp.i
+
+Message.s: Message.cpp.s
+
+.PHONY : Message.s
+
+# target to generate assembly for a file
+Message.cpp.s:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/Message.cpp.s
+.PHONY : Message.cpp.s
+
+Symbol.obj: Symbol.cpp.obj
+
+.PHONY : Symbol.obj
+
+# target to build an object file
+Symbol.cpp.obj:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/Symbol.cpp.obj
+.PHONY : Symbol.cpp.obj
+
+Symbol.i: Symbol.cpp.i
+
+.PHONY : Symbol.i
+
+# target to preprocess a source file
+Symbol.cpp.i:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/Symbol.cpp.i
+.PHONY : Symbol.cpp.i
+
+Symbol.s: Symbol.cpp.s
+
+.PHONY : Symbol.s
+
+# target to generate assembly for a file
+Symbol.cpp.s:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/Symbol.cpp.s
+.PHONY : Symbol.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -253,6 +307,12 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... notepad_autogen
+	@echo ... Message.obj
+	@echo ... Message.i
+	@echo ... Message.s
+	@echo ... Symbol.obj
+	@echo ... Symbol.i
+	@echo ... Symbol.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

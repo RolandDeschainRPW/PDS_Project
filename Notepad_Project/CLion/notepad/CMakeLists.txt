@@ -11,6 +11,7 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
 
 include_directories(${PROJECT_SOURCE_DIR}/cmake-build-debug/notepad_autogen/include)
+include_directories(${PROJECT_SOURCE_DIR}/include)
 
 find_package(Qt5Core REQUIRED)
 find_package(Qt5Gui REQUIRED)
@@ -27,21 +28,21 @@ list(APPEND LIBRARIES
 list(REMOVE_DUPLICATES LIBRARIES)
 
 set(SOURCE_FILES
-        main.cpp
-        notepad.cpp
-        Symbol.cpp
-        Message.cpp)
+        src/main.cpp
+        src/Notepad.cpp
+        src/Symbol.cpp
+        src/Message.cpp)
 
 set(INCLUDE_FILES
-        notepad.h
-        Symbol.h
-        Message.h)
+        include/Notepad.h
+        include/Symbol.h
+        include/Message.h)
 
 set(RESOURCE_FILES
         notepad.qrc)
 
 set(UI_FILES
-        notepad.ui)
+        src/notepad.ui)
 
 add_executable(notepad
         ${UI_FILES}

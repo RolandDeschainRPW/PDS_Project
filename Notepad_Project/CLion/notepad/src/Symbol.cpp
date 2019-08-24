@@ -2,7 +2,7 @@
 // Created by raffa on 24/08/2019.
 //
 
-#include "Symbol.h"
+#include "../include/Symbol.h"
 
 Symbol::Symbol() { /* empty */ }
 

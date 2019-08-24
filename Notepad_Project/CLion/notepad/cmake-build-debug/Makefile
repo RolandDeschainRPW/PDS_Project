@@ -135,114 +135,6 @@ notepad_autogen/fast:
 	$(MAKE) -f CMakeFiles\notepad_autogen.dir\build.make CMakeFiles/notepad_autogen.dir/build
 .PHONY : notepad_autogen/fast
 
-Message.obj: Message.cpp.obj
-
-.PHONY : Message.obj
-
-# target to build an object file
-Message.cpp.obj:
-	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/Message.cpp.obj
-.PHONY : Message.cpp.obj
-
-Message.i: Message.cpp.i
-
-.PHONY : Message.i
-
-# target to preprocess a source file
-Message.cpp.i:
-	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/Message.cpp.i
-.PHONY : Message.cpp.i
-
-Message.s: Message.cpp.s
-
-.PHONY : Message.s
-
-# target to generate assembly for a file
-Message.cpp.s:
-	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/Message.cpp.s
-.PHONY : Message.cpp.s
-
-Symbol.obj: Symbol.cpp.obj
-
-.PHONY : Symbol.obj
-
-# target to build an object file
-Symbol.cpp.obj:
-	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/Symbol.cpp.obj
-.PHONY : Symbol.cpp.obj
-
-Symbol.i: Symbol.cpp.i
-
-.PHONY : Symbol.i
-
-# target to preprocess a source file
-Symbol.cpp.i:
-	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/Symbol.cpp.i
-.PHONY : Symbol.cpp.i
-
-Symbol.s: Symbol.cpp.s
-
-.PHONY : Symbol.s
-
-# target to generate assembly for a file
-Symbol.cpp.s:
-	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/Symbol.cpp.s
-.PHONY : Symbol.cpp.s
-
-main.obj: main.cpp.obj
-
-.PHONY : main.obj
-
-# target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/main.cpp.obj
-.PHONY : main.cpp.obj
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-notepad.obj: notepad.cpp.obj
-
-.PHONY : notepad.obj
-
-# target to build an object file
-notepad.cpp.obj:
-	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/notepad.cpp.obj
-.PHONY : notepad.cpp.obj
-
-notepad.i: notepad.cpp.i
-
-.PHONY : notepad.i
-
-# target to preprocess a source file
-notepad.cpp.i:
-	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/notepad.cpp.i
-.PHONY : notepad.cpp.i
-
-notepad.s: notepad.cpp.s
-
-.PHONY : notepad.s
-
-# target to generate assembly for a file
-notepad.cpp.s:
-	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/notepad.cpp.s
-.PHONY : notepad.cpp.s
-
 notepad_autogen/EWIEGA46WW/qrc_notepad.obj: notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj
 
 .PHONY : notepad_autogen/EWIEGA46WW/qrc_notepad.obj
@@ -297,6 +189,114 @@ notepad_autogen/mocs_compilation.cpp.s:
 	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.s
 .PHONY : notepad_autogen/mocs_compilation.cpp.s
 
+src/Message.obj: src/Message.cpp.obj
+
+.PHONY : src/Message.obj
+
+# target to build an object file
+src/Message.cpp.obj:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Message.cpp.obj
+.PHONY : src/Message.cpp.obj
+
+src/Message.i: src/Message.cpp.i
+
+.PHONY : src/Message.i
+
+# target to preprocess a source file
+src/Message.cpp.i:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Message.cpp.i
+.PHONY : src/Message.cpp.i
+
+src/Message.s: src/Message.cpp.s
+
+.PHONY : src/Message.s
+
+# target to generate assembly for a file
+src/Message.cpp.s:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Message.cpp.s
+.PHONY : src/Message.cpp.s
+
+src/Notepad.obj: src/Notepad.cpp.obj
+
+.PHONY : src/Notepad.obj
+
+# target to build an object file
+src/Notepad.cpp.obj:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Notepad.cpp.obj
+.PHONY : src/Notepad.cpp.obj
+
+src/Notepad.i: src/Notepad.cpp.i
+
+.PHONY : src/Notepad.i
+
+# target to preprocess a source file
+src/Notepad.cpp.i:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Notepad.cpp.i
+.PHONY : src/Notepad.cpp.i
+
+src/Notepad.s: src/Notepad.cpp.s
+
+.PHONY : src/Notepad.s
+
+# target to generate assembly for a file
+src/Notepad.cpp.s:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Notepad.cpp.s
+.PHONY : src/Notepad.cpp.s
+
+src/Symbol.obj: src/Symbol.cpp.obj
+
+.PHONY : src/Symbol.obj
+
+# target to build an object file
+src/Symbol.cpp.obj:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Symbol.cpp.obj
+.PHONY : src/Symbol.cpp.obj
+
+src/Symbol.i: src/Symbol.cpp.i
+
+.PHONY : src/Symbol.i
+
+# target to preprocess a source file
+src/Symbol.cpp.i:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Symbol.cpp.i
+.PHONY : src/Symbol.cpp.i
+
+src/Symbol.s: src/Symbol.cpp.s
+
+.PHONY : src/Symbol.s
+
+# target to generate assembly for a file
+src/Symbol.cpp.s:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Symbol.cpp.s
+.PHONY : src/Symbol.cpp.s
+
+src/main.obj: src/main.cpp.obj
+
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -307,24 +307,24 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... notepad_autogen
-	@echo ... Message.obj
-	@echo ... Message.i
-	@echo ... Message.s
-	@echo ... Symbol.obj
-	@echo ... Symbol.i
-	@echo ... Symbol.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
-	@echo ... notepad.obj
-	@echo ... notepad.i
-	@echo ... notepad.s
 	@echo ... notepad_autogen/EWIEGA46WW/qrc_notepad.obj
 	@echo ... notepad_autogen/EWIEGA46WW/qrc_notepad.i
 	@echo ... notepad_autogen/EWIEGA46WW/qrc_notepad.s
 	@echo ... notepad_autogen/mocs_compilation.obj
 	@echo ... notepad_autogen/mocs_compilation.i
 	@echo ... notepad_autogen/mocs_compilation.s
+	@echo ... src/Message.obj
+	@echo ... src/Message.i
+	@echo ... src/Message.s
+	@echo ... src/Notepad.obj
+	@echo ... src/Notepad.i
+	@echo ... src/Notepad.s
+	@echo ... src/Symbol.obj
+	@echo ... src/Symbol.i
+	@echo ... src/Symbol.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
 .PHONY : help
 
 

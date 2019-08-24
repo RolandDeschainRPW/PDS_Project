@@ -30,6 +30,7 @@
 					<Add option="-DQT_NETWORK_LIB"/>
 					<Add option="-DQT_PRINTSUPPORT_LIB"/>
 					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/include"/>
+					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtCore"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/./mkspecs/win32-g++"/>
@@ -66,6 +67,7 @@
 					<Add option="-DQT_NETWORK_LIB"/>
 					<Add option="-DQT_PRINTSUPPORT_LIB"/>
 					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/include"/>
+					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtCore"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/./mkspecs/win32-g++"/>
@@ -120,18 +122,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Message.cpp">
-			<Option target="notepad"/>
-		</Unit>
-		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Message.h">
-			<Option target="notepad"/>
-		</Unit>
-		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Symbol.cpp">
-			<Option target="notepad"/>
-		</Unit>
-		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/Symbol.h">
-			<Option target="notepad"/>
-		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp">
 			<Option target="notepad"/>
 		</Unit>
@@ -141,19 +131,31 @@
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/mocs_compilation.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/main.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Message.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/notepad.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Notepad.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/notepad.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Symbol.h">
 			<Option target="notepad"/>
 		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/notepad.qrc">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/notepad.ui">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Message.cpp">
+			<Option target="notepad"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Notepad.cpp">
+			<Option target="notepad"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Symbol.cpp">
+			<Option target="notepad"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/main.cpp">
+			<Option target="notepad"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/notepad.ui">
 			<Option target="notepad"/>
 		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/CMakeLists.txt">

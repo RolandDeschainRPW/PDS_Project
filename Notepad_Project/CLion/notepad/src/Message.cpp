@@ -2,7 +2,7 @@
 // Created by raffa on 24/08/2019.
 //
 
-#include "Message.h"
+#include "../include/Message.h"
 
 Message::Message() { /* empty */ }
 

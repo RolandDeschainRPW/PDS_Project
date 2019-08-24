@@ -94,61 +94,61 @@ CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\cmake-build-debug\notepad_autogen\mocs_compilation.cpp -o CMakeFiles\notepad.dir\notepad_autogen\mocs_compilation.cpp.s
 
-CMakeFiles/notepad.dir/main.cpp.obj: CMakeFiles/notepad.dir/flags.make
-CMakeFiles/notepad.dir/main.cpp.obj: CMakeFiles/notepad.dir/includes_CXX.rsp
-CMakeFiles/notepad.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/notepad.dir/main.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\notepad.dir\main.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\main.cpp
+CMakeFiles/notepad.dir/src/main.cpp.obj: CMakeFiles/notepad.dir/flags.make
+CMakeFiles/notepad.dir/src/main.cpp.obj: CMakeFiles/notepad.dir/includes_CXX.rsp
+CMakeFiles/notepad.dir/src/main.cpp.obj: ../src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/notepad.dir/src/main.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\notepad.dir\src\main.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\src\main.cpp
 
-CMakeFiles/notepad.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/notepad.dir/main.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\main.cpp > CMakeFiles\notepad.dir\main.cpp.i
+CMakeFiles/notepad.dir/src/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/notepad.dir/src/main.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\src\main.cpp > CMakeFiles\notepad.dir\src\main.cpp.i
 
-CMakeFiles/notepad.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/notepad.dir/main.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\main.cpp -o CMakeFiles\notepad.dir\main.cpp.s
+CMakeFiles/notepad.dir/src/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/notepad.dir/src/main.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\src\main.cpp -o CMakeFiles\notepad.dir\src\main.cpp.s
 
-CMakeFiles/notepad.dir/notepad.cpp.obj: CMakeFiles/notepad.dir/flags.make
-CMakeFiles/notepad.dir/notepad.cpp.obj: CMakeFiles/notepad.dir/includes_CXX.rsp
-CMakeFiles/notepad.dir/notepad.cpp.obj: ../notepad.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/notepad.dir/notepad.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\notepad.dir\notepad.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\notepad.cpp
+CMakeFiles/notepad.dir/src/Notepad.cpp.obj: CMakeFiles/notepad.dir/flags.make
+CMakeFiles/notepad.dir/src/Notepad.cpp.obj: CMakeFiles/notepad.dir/includes_CXX.rsp
+CMakeFiles/notepad.dir/src/Notepad.cpp.obj: ../src/Notepad.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/notepad.dir/src/Notepad.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\notepad.dir\src\Notepad.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\src\Notepad.cpp
 
-CMakeFiles/notepad.dir/notepad.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/notepad.dir/notepad.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\notepad.cpp > CMakeFiles\notepad.dir\notepad.cpp.i
+CMakeFiles/notepad.dir/src/Notepad.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/notepad.dir/src/Notepad.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\src\Notepad.cpp > CMakeFiles\notepad.dir\src\Notepad.cpp.i
 
-CMakeFiles/notepad.dir/notepad.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/notepad.dir/notepad.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\notepad.cpp -o CMakeFiles\notepad.dir\notepad.cpp.s
+CMakeFiles/notepad.dir/src/Notepad.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/notepad.dir/src/Notepad.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\src\Notepad.cpp -o CMakeFiles\notepad.dir\src\Notepad.cpp.s
 
-CMakeFiles/notepad.dir/Symbol.cpp.obj: CMakeFiles/notepad.dir/flags.make
-CMakeFiles/notepad.dir/Symbol.cpp.obj: CMakeFiles/notepad.dir/includes_CXX.rsp
-CMakeFiles/notepad.dir/Symbol.cpp.obj: ../Symbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/notepad.dir/Symbol.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\notepad.dir\Symbol.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\Symbol.cpp
+CMakeFiles/notepad.dir/src/Symbol.cpp.obj: CMakeFiles/notepad.dir/flags.make
+CMakeFiles/notepad.dir/src/Symbol.cpp.obj: CMakeFiles/notepad.dir/includes_CXX.rsp
+CMakeFiles/notepad.dir/src/Symbol.cpp.obj: ../src/Symbol.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/notepad.dir/src/Symbol.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\notepad.dir\src\Symbol.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\src\Symbol.cpp
 
-CMakeFiles/notepad.dir/Symbol.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/notepad.dir/Symbol.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\Symbol.cpp > CMakeFiles\notepad.dir\Symbol.cpp.i
+CMakeFiles/notepad.dir/src/Symbol.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/notepad.dir/src/Symbol.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\src\Symbol.cpp > CMakeFiles\notepad.dir\src\Symbol.cpp.i
 
-CMakeFiles/notepad.dir/Symbol.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/notepad.dir/Symbol.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\Symbol.cpp -o CMakeFiles\notepad.dir\Symbol.cpp.s
+CMakeFiles/notepad.dir/src/Symbol.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/notepad.dir/src/Symbol.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\src\Symbol.cpp -o CMakeFiles\notepad.dir\src\Symbol.cpp.s
 
-CMakeFiles/notepad.dir/Message.cpp.obj: CMakeFiles/notepad.dir/flags.make
-CMakeFiles/notepad.dir/Message.cpp.obj: CMakeFiles/notepad.dir/includes_CXX.rsp
-CMakeFiles/notepad.dir/Message.cpp.obj: ../Message.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/notepad.dir/Message.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\notepad.dir\Message.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\Message.cpp
+CMakeFiles/notepad.dir/src/Message.cpp.obj: CMakeFiles/notepad.dir/flags.make
+CMakeFiles/notepad.dir/src/Message.cpp.obj: CMakeFiles/notepad.dir/includes_CXX.rsp
+CMakeFiles/notepad.dir/src/Message.cpp.obj: ../src/Message.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/notepad.dir/src/Message.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\notepad.dir\src\Message.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\src\Message.cpp
 
-CMakeFiles/notepad.dir/Message.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/notepad.dir/Message.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\Message.cpp > CMakeFiles\notepad.dir\Message.cpp.i
+CMakeFiles/notepad.dir/src/Message.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/notepad.dir/src/Message.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\src\Message.cpp > CMakeFiles\notepad.dir\src\Message.cpp.i
 
-CMakeFiles/notepad.dir/Message.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/notepad.dir/Message.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\Message.cpp -o CMakeFiles\notepad.dir\Message.cpp.s
+CMakeFiles/notepad.dir/src/Message.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/notepad.dir/src/Message.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\Notepad_Project\CLion\notepad\src\Message.cpp -o CMakeFiles\notepad.dir\src\Message.cpp.s
 
 CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj: CMakeFiles/notepad.dir/flags.make
 CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj: CMakeFiles/notepad.dir/includes_CXX.rsp
@@ -167,20 +167,20 @@ CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.s: cmake_force
 # Object files for target notepad
 notepad_OBJECTS = \
 "CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj" \
-"CMakeFiles/notepad.dir/main.cpp.obj" \
-"CMakeFiles/notepad.dir/notepad.cpp.obj" \
-"CMakeFiles/notepad.dir/Symbol.cpp.obj" \
-"CMakeFiles/notepad.dir/Message.cpp.obj" \
+"CMakeFiles/notepad.dir/src/main.cpp.obj" \
+"CMakeFiles/notepad.dir/src/Notepad.cpp.obj" \
+"CMakeFiles/notepad.dir/src/Symbol.cpp.obj" \
+"CMakeFiles/notepad.dir/src/Message.cpp.obj" \
 "CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj"
 
 # External object files for target notepad
 notepad_EXTERNAL_OBJECTS =
 
 notepad.exe: CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj
-notepad.exe: CMakeFiles/notepad.dir/main.cpp.obj
-notepad.exe: CMakeFiles/notepad.dir/notepad.cpp.obj
-notepad.exe: CMakeFiles/notepad.dir/Symbol.cpp.obj
-notepad.exe: CMakeFiles/notepad.dir/Message.cpp.obj
+notepad.exe: CMakeFiles/notepad.dir/src/main.cpp.obj
+notepad.exe: CMakeFiles/notepad.dir/src/Notepad.cpp.obj
+notepad.exe: CMakeFiles/notepad.dir/src/Symbol.cpp.obj
+notepad.exe: CMakeFiles/notepad.dir/src/Message.cpp.obj
 notepad.exe: CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj
 notepad.exe: CMakeFiles/notepad.dir/build.make
 notepad.exe: C:/Qt/5.13.0/mingw73_64/lib/libQt5Networkd.a

@@ -1,6 +1,6 @@
 /****************************************************************************
 **
-** Copyright (C) 2017 The Qt Company Ltd.
+** Copyright (C) 2018 The Qt Company Ltd.
 ** Contact: https://www.qt.io/licensing/
 **
 ** This file is part of the documentation of the Qt Toolkit.
@@ -48,13 +48,72 @@
 **
 ****************************************************************************/
 
-#include "notepad.h"
-#include <QApplication>
+#ifndef NOTEPAD_H
+#define NOTEPAD_H
 
-int main(int argc, char *argv[]) {
-    QApplication EditorApp(argc, argv);
-    Notepad Editor;
-    Editor.show();
+#include <QMainWindow>
+#include <QTextEdit>
+#include <QTextCursor>
+#include <QVector>
 
-    return EditorApp.exec();
+#include "Symbol.h"
+
+QT_BEGIN_NAMESPACE
+namespace Ui {
+    class Notepad;
 }
+QT_END_NAMESPACE
+
+class Notepad : public QMainWindow {
+    Q_OBJECT
+
+public:
+    static const qint32 SITE_ID_UNASSIGNED = -1;
+    static const qint32 BOUNDARY_PLUS = 0;
+    static const qint32 BOUNDARY_MINUS = 1;
+    static const qint32 RANDOM = 2;
+
+    explicit Notepad(QWidget *parent = 0);
+    ~Notepad();
+
+private slots:
+    void newDocument();
+    void open();
+    void save();
+    void saveAs();
+    void print();
+    void exit();
+    void copy();
+    void cut();
+    void paste();
+    void undo();
+    void redo();
+    void selectFont();
+    void setFontBold(bool bold);
+    void setFontUnderline(bool underline);
+    void setFontItalic(bool italic);
+
+    // Slots for text changes.
+    void onTextChanged();
+    void onCursorPositionChanged();
+    void change(int pos, int del, int add);
+
+private:
+    Ui::Notepad *ui;
+    QString currentFile;
+
+    // Vars for text changes.
+    QTextCursor cursor;
+    QString pos_cursor;
+
+    // Client variables.
+    qint32 _siteId = SITE_ID_UNASSIGNED;
+    qint32 _counter = 0;
+    qint32 boundary;
+    qint32 base;
+    qint32 strategy;
+    QVector<qint32> strategyCache;
+    QVector<Symbol> _symbols;
+};
+
+#endif // NOTEPAD_H

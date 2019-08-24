@@ -68,8 +68,10 @@
 #include <QFontDialog>
 #include <QDebug>
 
-#include "notepad.h"
+#include "../include/Notepad.h"
 #include "ui_notepad.h"
+#include "../include/Symbol.h"
+#include "../include/Message.h"
 
 Notepad::Notepad(QWidget *parent) : QMainWindow(parent), ui(new Ui::Notepad) {
     ui->setupUi(this);
@@ -266,5 +268,10 @@ void Notepad::change(int pos, int del, int add) {
         qDebug() << "Position in block: " << c.positionInBlock();
         qDebug() << "Absolute position: " << c.position();
         qDebug() << "Added: " << add << " (" << c.selectedText() << ")";
+        for (int i = 0; i < c.selectedText().size(); i++) {
+            // Incomplete!
+            Symbol s = Symbol(c.selectedText()[i], this->_siteId, this->_counter, QVector<qint32>());
+            Message msg = Message(this->_siteId, Message::INSERT_TYPE, s);
+        }
     }
 }

@@ -88,6 +88,7 @@ private slots:
     // Slots for text changes.
     void onTextChanged();
     void onCursorPositionChanged();
+    void change(int pos, int del, int add);
 
 private:
     Ui::Notepad *ui;

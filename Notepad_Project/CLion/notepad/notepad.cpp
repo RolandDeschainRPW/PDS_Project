@@ -48,6 +48,8 @@
 **
 ****************************************************************************/
 
+#include <iostream>
+
 #include <QFile>
 #include <QFileDialog>
 #include <QTextStream>
@@ -92,6 +94,7 @@ Notepad::Notepad(QWidget *parent) : QMainWindow(parent), ui(new Ui::Notepad) {
     // Listen on text changed signals.
     connect(ui->textEdit, &QTextEdit::textChanged, this, &Notepad::onTextChanged);
     connect(ui->textEdit, &QTextEdit::cursorPositionChanged, this, &Notepad::onCursorPositionChanged);
+    connect(ui->textEdit->document(), &QTextDocument::contentsChange, this, &Notepad::change);
 
     // Disable menu actions for unavailable features
     #if !QT_CONFIG(printer)
@@ -228,12 +231,40 @@ void Notepad::setFontBold(bool bold) {
 }
 
 void Notepad::onTextChanged() {
-    //qDebug() << "onTextChanged WORKS! :O";
-    Notepad::save();
+    qDebug() << "onTextChanged WORKS! :O";
+    //Notepad::save();
 }
 
 void Notepad::onCursorPositionChanged() {
     // qui salvo posiz cursore: modo per differenziare cursori per utenti diversi?
     cursor = ui->textEdit->textCursor();
     pos_cursor = QString("Position: %1").arg(cursor.positionInBlock());
+}
+
+void Notepad::change(int pos, int del, int add) {
+    /*
+    QString added = ui->textEdit->toPlainText().mid(pos, add);
+    //qDebug() << added;
+    std::cout << added.toStdString() << std::endl;
+     */
+
+    if(del > 0) {
+        undo();
+        QTextCursor c = QTextCursor(ui->textEdit->textCursor());
+        c.setPosition(pos);
+        c.setPosition(pos + del, QTextCursor::KeepAnchor);
+        qDebug() << "Position in block: " << c.positionInBlock();
+        qDebug() << "Absolute position: " << c.position();
+        qDebug() << "Removed: " << del << " (" << c.selectedText() << ")";
+        redo();
+    }
+
+    if(add > 0) {
+        QTextCursor c = QTextCursor(ui->textEdit->textCursor());
+        c.setPosition(pos);
+        c.setPosition(pos + add, QTextCursor::KeepAnchor);
+        qDebug() << "Position in block: " << c.positionInBlock();
+        qDebug() << "Absolute position: " << c.position();
+        qDebug() << "Added: " << add << " (" << c.selectedText() << ")";
+    }
 }

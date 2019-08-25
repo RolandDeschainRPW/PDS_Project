@@ -24,7 +24,14 @@
 #include "../include/Request.h"
 #include "ui_notepad.h"
 
-Notepad::Notepad(QWidget *parent) : QMainWindow(parent), ui(new Ui::Notepad) {
+Notepad::Notepad(QWidget *parent,
+        qint32 base,
+        qint32 boundary,
+        qint32 strategy) : QMainWindow(parent),
+                        ui(new Ui::Notepad),
+                        base(base),
+                        boundary(boundary),
+                        strategy(strategy) {
     ui->setupUi(this);
     this->setCentralWidget(ui->textEdit);
 
@@ -63,7 +70,7 @@ Notepad::Notepad(QWidget *parent) : QMainWindow(parent), ui(new Ui::Notepad) {
 
 Notepad::~Notepad() {
     delete ui;
-}    
+}
 
 void Notepad::newDocument() {
     currentFile.clear();
@@ -220,56 +227,6 @@ void Notepad::interceptUserInput(int pos, int del, int add) {
     }
 }
 
-void Notepad::sessionOpened() {
-    // Save the used configuration
-    QNetworkConfiguration config = networkSession->configuration();
-    QString id;
-    if (config.type() == QNetworkConfiguration::UserChoice)
-        id = networkSession->sessionProperty(QLatin1String("UserChoiceConfiguration")).toString();
-    else
-        id = config.identifier();
-
-    QSettings settings(QSettings::UserScope, QLatin1String("QtProject"));
-    settings.beginGroup(QLatin1String("QtNetwork"));
-    settings.setValue(QLatin1String("DefaultNetworkConfiguration"), id);
-    settings.endGroup();
-
-    enableConnectToServerButton();
-}
-
-void Notepad::enableConnectToServerButton() {
-    //connectToServerButton->setEnabled((!networkSession || networkSession->isOpen()) && !hostCombo->currentText().isEmpty() && !portLineEdit->text().isEmpty());
-}
-
-void Notepad::displayError(QAbstractSocket::SocketError socketError) {
-    switch (socketError) {
-        case QAbstractSocket::RemoteHostClosedError:
-            break;
-        case QAbstractSocket::HostNotFoundError:
-            QMessageBox::information(this, tr("SharedEditor"),
-                                     tr("The host was not found. Please check the "
-                                        "host name and port settings."));
-            break;
-        case QAbstractSocket::ConnectionRefusedError:
-            QMessageBox::information(this, tr("SharedEditor"),
-                                     tr("The connection was refused by the peer. "
-                                        "Make sure the fortune server is running, "
-                                        "and check that the host name and port "
-                                        "settings are correct."));
-            break;
-        default:
-            QMessageBox::information(this, tr("SharedEditor"),
-                                     tr("The following error occurred: %1.").arg(tcpSocket->errorString()));
-    }
-    //connectToServerButton->setEnabled(true);
-}
-
-void Notepad::connectToServer() {
-    //connectToServerButton->setEnabled(false);
-    tcpSocket->abort();
-    //tcpSocket->connectToHost(hostCombo->currentText(), portLineEdit->text().toInt());
-}
-
 void Notepad::readDataFromSocket() {
     if (_siteId != SITE_ID_UNASSIGNED) {
         std::cout << "There is a message to read!" << std::endl;
@@ -328,11 +285,6 @@ void Notepad::readMessage() {
     // Showing the current symbols on standard output.
     std::string str = this->symbols_to_string().toStdString();
     std::cout << "Current symbols on this Client with Site Id " << std::to_string(this->_siteId) << ": " << str << std::endl;
-
-    // Showing the current symbols on GUI.
-    //this->statusLabel->setText(tr(this->symbols_to_string().toLocal8Bit().data()));
-
-    //connectToServerButton->setEnabled(true);
 }
 
 qint32 Notepad::getSiteId() {

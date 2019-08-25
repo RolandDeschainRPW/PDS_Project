@@ -11,8 +11,6 @@
 
 #include "../include/Symbol.h"
 #include "../include/Message.h"
-#include "../include/StartDialog.h"
-#include "ui_startdialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -29,7 +27,7 @@ public:
     static const qint32 BOUNDARY_MINUS = 1;
     static const qint32 RANDOM = 2;
 
-    explicit Notepad(QWidget *parent = 0);
+    explicit Notepad(QWidget *parent = 0, qint32 base = 32, qint32 boundary = 10, qint32 strategy = RANDOM);
     ~Notepad();
 
     qint32 getSiteId();
@@ -62,14 +60,8 @@ private slots:
     void onCursorPositionChanged();
     void interceptUserInput(int pos, int del, int add);
 
-    void connectToServer();
-    void displayError(QAbstractSocket::SocketError socketError);
-    void enableConnectToServerButton();
-    void sessionOpened();
-
 private:
     Ui::Notepad* ui;
-    Ui::StartDialog* startDialog;
     QString currentFile;
 
     // Vars for text changes.

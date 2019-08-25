@@ -134,6 +134,9 @@
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Message.h">
 			<Option target="notepad"/>
 		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/NetworkingData.h">
+			<Option target="notepad"/>
+		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Notepad.h">
 			<Option target="notepad"/>
 		</Unit>
@@ -150,6 +153,9 @@
 			<Option target="notepad"/>
 		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Message.cpp">
+			<Option target="notepad"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/NetworkingData.cpp">
 			<Option target="notepad"/>
 		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Notepad.cpp">

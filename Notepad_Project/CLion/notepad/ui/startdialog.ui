@@ -38,6 +38,9 @@
    <property name="text">
     <string>Connect to Server</string>
    </property>
+   <property name="default">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QPushButton" name="quitButton">
    <property name="geometry">

@@ -6,6 +6,9 @@
 #define NOTEPAD_STARTDIALOG_H
 
 #include <QDialog>
+#include <QtNetwork>
+#include "../include/Notepad.h"
+#include "ui_notepad.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -17,11 +20,25 @@ class StartDialog : public QDialog {
     Q_OBJECT
 
 public:
-    explicit StartDialog(QWidget* parent = nullptr);
+    explicit StartDialog(QWidget* parent = 0);
     ~StartDialog();
 
+private slots:
+    void connectToServer();
+    void enableConnectToServerButton();
+    void sessionOpened();
+    void displayError(QAbstractSocket::SocketError socketError);
+    void readSiteId();
+    void showEditor();
+
 private:
-    Ui::StartDialog* ui;
+    Ui::StartDialog* ui = nullptr;
+    Notepad* notepad = nullptr;
+
+    // Vars for networking.
+    QTcpSocket* tcpSocket = nullptr;
+    QNetworkSession* networkSession = nullptr;
+    QDataStream in;
 };
 
 

@@ -34,14 +34,16 @@ set(SOURCE_FILES
         src/Symbol.cpp
         src/Message.cpp
         src/Request.cpp
-        src/StartDialog.cpp)
+        src/StartDialog.cpp
+        src/NetworkingData.cpp)
 
 set(INCLUDE_FILES
         include/Notepad.h
         include/Symbol.h
         include/Message.h
         include/Request.h
-        include/StartDialog.h)
+        include/StartDialog.h
+        include/NetworkingData.h)
 
 set(RESOURCE_FILES
         notepad.qrc)

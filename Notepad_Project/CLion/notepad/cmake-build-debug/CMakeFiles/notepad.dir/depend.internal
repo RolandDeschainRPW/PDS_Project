@@ -244,7 +244,6 @@ CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtguiglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtransform.h
- C:/Qt/5.13.0/mingw73_64/include/QtGui/qvalidator.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qvector2d.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h
@@ -298,36 +297,36 @@ CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qtnetworkglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qtnetworkversion.h
  C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qudpsocket.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QAction
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QComboBox
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QDialog
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLabel
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLineEdit
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMainWindow
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QPushButton
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMenu
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMenuBar
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QStatusBar
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QTextEdit
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractbutton.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractitemdelegate.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QToolBar
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QVBoxLayout
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QWidget
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractscrollarea.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractslider.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractspinbox.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qaction.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qactiongroup.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qapplication.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qcombobox.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qboxlayout.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qdesktopwidget.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qdialog.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qframe.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlabel.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlineedit.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qgridlayout.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlayout.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlayoutitem.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmainwindow.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qpushbutton.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qrubberband.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmenu.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmenubar.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qsizepolicy.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qslider.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qstyle.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qstyleoption.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtabbar.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qstatusbar.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtabwidget.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtextedit.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtoolbar.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgets-config.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgetsglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidget.h
@@ -338,7 +337,7 @@ CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj
  D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Notepad.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/StartDialog.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Symbol.h
- notepad_autogen/include/ui_startdialog.h
+ notepad_autogen/include/ui_notepad.h
 CMakeFiles/notepad.dir/src/Message.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qalgorithms.h
@@ -645,7 +644,6 @@ CMakeFiles/notepad.dir/src/Notepad.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtguiglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtransform.h
- C:/Qt/5.13.0/mingw73_64/include/QtGui/qvalidator.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qvector2d.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h
@@ -708,54 +706,36 @@ CMakeFiles/notepad.dir/src/Notepad.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtPrintSupport/qtprintsupportglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QAction
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QComboBox
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QDialog
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QFileDialog
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QFontDialog
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLabel
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLineEdit
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMainWindow
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMenu
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMenuBar
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMessageBox
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QPushButton
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QStatusBar
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QTextEdit
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QToolBar
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QVBoxLayout
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QWidget
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractbutton.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractitemdelegate.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractscrollarea.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractslider.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractspinbox.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qaction.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qactiongroup.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qapplication.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qboxlayout.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qcombobox.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qdesktopwidget.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qdialog.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qfiledialog.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qfontdialog.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qframe.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qgridlayout.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlabel.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlayout.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlayoutitem.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlineedit.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmainwindow.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmenu.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmenubar.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmessagebox.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qpushbutton.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qrubberband.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qsizepolicy.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qslider.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qstatusbar.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qstyle.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qstyleoption.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtabbar.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtabwidget.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtextedit.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtoolbar.h
@@ -765,11 +745,9 @@ CMakeFiles/notepad.dir/src/Notepad.cpp.obj
  D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Message.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Notepad.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Request.h
- D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/StartDialog.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Symbol.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Notepad.cpp
  notepad_autogen/include/ui_notepad.h
- notepad_autogen/include/ui_startdialog.h
 CMakeFiles/notepad.dir/src/Request.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QObject
@@ -979,6 +957,7 @@ CMakeFiles/notepad.dir/src/StartDialog.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtANGLE/KHR/khrplatform.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QByteArray
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QCryptographicHash
+ C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QEvent
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QFlags
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QHash
@@ -1199,6 +1178,7 @@ CMakeFiles/notepad.dir/src/StartDialog.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtGui/QPaintDevice
  C:/Qt/5.13.0/mingw73_64/include/QtGui/QPaintDeviceWindow
  C:/Qt/5.13.0/mingw73_64/include/QtGui/QSurfaceFormat
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/QTextCursor
  C:/Qt/5.13.0/mingw73_64/include/QtGui/QTransform
  C:/Qt/5.13.0/mingw73_64/include/QtGui/QVector3D
  C:/Qt/5.13.0/mingw73_64/include/QtGui/QWindow
@@ -1361,6 +1341,7 @@ CMakeFiles/notepad.dir/src/StartDialog.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qtnetworkglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qtnetworkversion.h
  C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qudpsocket.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QAction
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QComboBox
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QCommonStyle
@@ -1368,8 +1349,15 @@ CMakeFiles/notepad.dir/src/StartDialog.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLabel
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLayout
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLineEdit
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMainWindow
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMenu
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMenuBar
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QPushButton
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QScrollerProperties
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QStatusBar
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QTextEdit
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QToolBar
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QVBoxLayout
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QWidget
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QtWidgets
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QtWidgetsDepends
@@ -1502,8 +1490,12 @@ CMakeFiles/notepad.dir/src/StartDialog.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidget.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidgetaction.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwizard.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Message.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Notepad.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/StartDialog.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Symbol.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/StartDialog.cpp
+ notepad_autogen/include/ui_notepad.h
  notepad_autogen/include/ui_startdialog.h
 CMakeFiles/notepad.dir/src/Symbol.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
@@ -1803,7 +1795,6 @@ CMakeFiles/notepad.dir/src/main.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtguiglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtransform.h
- C:/Qt/5.13.0/mingw73_64/include/QtGui/qvalidator.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qvector2d.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h
@@ -1857,36 +1848,36 @@ CMakeFiles/notepad.dir/src/main.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qtnetworkglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qtnetworkversion.h
  C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qudpsocket.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QAction
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QComboBox
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QDialog
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLabel
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLineEdit
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMainWindow
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QPushButton
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMenu
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMenuBar
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QStatusBar
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QTextEdit
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractbutton.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractitemdelegate.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QToolBar
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QVBoxLayout
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QWidget
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractscrollarea.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractslider.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractspinbox.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qaction.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qactiongroup.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qapplication.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qcombobox.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qboxlayout.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qdesktopwidget.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qdialog.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qframe.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlabel.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlineedit.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qgridlayout.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlayout.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlayoutitem.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmainwindow.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qpushbutton.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qrubberband.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmenu.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmenubar.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qsizepolicy.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qslider.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qstyle.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qstyleoption.h
- C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtabbar.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qstatusbar.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtabwidget.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtextedit.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtoolbar.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgets-config.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgetsglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidget.h
@@ -1895,4 +1886,4 @@ CMakeFiles/notepad.dir/src/main.cpp.obj
  D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/StartDialog.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Symbol.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/main.cpp
- notepad_autogen/include/ui_startdialog.h
+ notepad_autogen/include/ui_notepad.h

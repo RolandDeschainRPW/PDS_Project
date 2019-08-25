@@ -152,7 +152,7 @@ public:
         Notepad->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(Notepad);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 800, 26));
+        menuBar->setGeometry(QRect(0, 0, 800, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuEdit = new QMenu(menuBar);

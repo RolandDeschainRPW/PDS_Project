@@ -216,6 +216,33 @@ src/Message.cpp.s:
 	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Message.cpp.s
 .PHONY : src/Message.cpp.s
 
+src/NetworkingData.obj: src/NetworkingData.cpp.obj
+
+.PHONY : src/NetworkingData.obj
+
+# target to build an object file
+src/NetworkingData.cpp.obj:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/NetworkingData.cpp.obj
+.PHONY : src/NetworkingData.cpp.obj
+
+src/NetworkingData.i: src/NetworkingData.cpp.i
+
+.PHONY : src/NetworkingData.i
+
+# target to preprocess a source file
+src/NetworkingData.cpp.i:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/NetworkingData.cpp.i
+.PHONY : src/NetworkingData.cpp.i
+
+src/NetworkingData.s: src/NetworkingData.cpp.s
+
+.PHONY : src/NetworkingData.s
+
+# target to generate assembly for a file
+src/NetworkingData.cpp.s:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/NetworkingData.cpp.s
+.PHONY : src/NetworkingData.cpp.s
+
 src/Notepad.obj: src/Notepad.cpp.obj
 
 .PHONY : src/Notepad.obj
@@ -370,6 +397,9 @@ help:
 	@echo ... src/Message.obj
 	@echo ... src/Message.i
 	@echo ... src/Message.s
+	@echo ... src/NetworkingData.obj
+	@echo ... src/NetworkingData.i
+	@echo ... src/NetworkingData.s
 	@echo ... src/Notepad.obj
 	@echo ... src/Notepad.i
 	@echo ... src/Notepad.s

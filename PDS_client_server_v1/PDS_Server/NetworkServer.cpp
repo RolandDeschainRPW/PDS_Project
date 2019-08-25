@@ -122,7 +122,7 @@ void NetworkServer::connectClient() {
 
     foreach (bool free, this->free_site_ids) {
         if (free) {
-            SharedEditor* new_se = new SharedEditor(clientConnection, cnt);
+            SharedEditor* new_se = new SharedEditor(clientConnection, cnt, this);
             sharedEditors.insert(sharedEditors.begin() + cnt, new_se);
             out << cnt << this->_symbols;
             clientConnection->write(block);

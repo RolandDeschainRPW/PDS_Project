@@ -170,9 +170,11 @@ void NetworkServer::disconnectClient(qint32 siteId) {
     qint32 cnt = 0;
     foreach (SharedEditor* se, sharedEditors) {
         if (se->getSiteId() == siteId) {
+            SharedEditor* tmp = this->sharedEditors[cnt];
             this->sharedEditors[cnt]->getClientConnection()->disconnectFromHost();
             this->sharedEditors.erase(sharedEditors.begin() + cnt);
             this->free_site_ids[siteId] = true;
+            delete tmp; // To prevent Memory Leakage!
             return;
         }
         cnt++;

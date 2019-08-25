@@ -132,7 +132,7 @@ void StartDialog::readStartDataFromServer() {
         return;
     }
     std::cout << "I received the following Site Id: " << siteId << std::endl;
-    NetworkingData* startData = new NetworkingData(siteId, symbols, tcpSocket, networkSession, this);
+    NetworkingData* startData = new NetworkingData(siteId, std::move(symbols), tcpSocket, networkSession, this);
     showEditor(startData);
 }
 

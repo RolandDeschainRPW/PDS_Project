@@ -6,14 +6,11 @@
 
 SharedEditor::SharedEditor(QObject* parent) : QObject(parent) { /* empty */ }
 
-SharedEditor::SharedEditor(SharedEditor& se, QObject* parent) : QObject(parent) {
-    this->clientConnection = se.clientConnection;
-    this->_siteId = se._siteId;
-}
-
 SharedEditor::SharedEditor(QTcpSocket* clientConnection, qint32 _siteId, QObject* parent) : QObject(parent) {
     this->clientConnection = clientConnection;
     this->_siteId = _siteId;
+
+    this->clientConnection->setParent(this); // To avoid Memory Leakage!
 }
 
 QTcpSocket* SharedEditor::getClientConnection() {

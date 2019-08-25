@@ -42,10 +42,10 @@ RM = "D:\Programmi\JetBrains\CLion 2019.1.3\bin\cmake\win\bin\cmake.exe" -E remo
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Raffaele\Documenti\CLion\PDS_Client
+CMAKE_SOURCE_DIR = D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug
+CMAKE_BINARY_DIR = D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/PDS_Client.dir/depend.make
@@ -59,86 +59,86 @@ include CMakeFiles/PDS_Client.dir/flags.make
 CMakeFiles/PDS_Client.dir/PDS_Client_autogen/mocs_compilation.cpp.obj: CMakeFiles/PDS_Client.dir/flags.make
 CMakeFiles/PDS_Client.dir/PDS_Client_autogen/mocs_compilation.cpp.obj: CMakeFiles/PDS_Client.dir/includes_CXX.rsp
 CMakeFiles/PDS_Client.dir/PDS_Client_autogen/mocs_compilation.cpp.obj: PDS_Client_autogen/mocs_compilation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PDS_Client.dir/PDS_Client_autogen/mocs_compilation.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PDS_Client.dir\PDS_Client_autogen\mocs_compilation.cpp.obj -c D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug\PDS_Client_autogen\mocs_compilation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/PDS_Client.dir/PDS_Client_autogen/mocs_compilation.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PDS_Client.dir\PDS_Client_autogen\mocs_compilation.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug\PDS_Client_autogen\mocs_compilation.cpp
 
 CMakeFiles/PDS_Client.dir/PDS_Client_autogen/mocs_compilation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PDS_Client.dir/PDS_Client_autogen/mocs_compilation.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug\PDS_Client_autogen\mocs_compilation.cpp > CMakeFiles\PDS_Client.dir\PDS_Client_autogen\mocs_compilation.cpp.i
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug\PDS_Client_autogen\mocs_compilation.cpp > CMakeFiles\PDS_Client.dir\PDS_Client_autogen\mocs_compilation.cpp.i
 
 CMakeFiles/PDS_Client.dir/PDS_Client_autogen/mocs_compilation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PDS_Client.dir/PDS_Client_autogen/mocs_compilation.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug\PDS_Client_autogen\mocs_compilation.cpp -o CMakeFiles\PDS_Client.dir\PDS_Client_autogen\mocs_compilation.cpp.s
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug\PDS_Client_autogen\mocs_compilation.cpp -o CMakeFiles\PDS_Client.dir\PDS_Client_autogen\mocs_compilation.cpp.s
 
 CMakeFiles/PDS_Client.dir/main.cpp.obj: CMakeFiles/PDS_Client.dir/flags.make
 CMakeFiles/PDS_Client.dir/main.cpp.obj: CMakeFiles/PDS_Client.dir/includes_CXX.rsp
 CMakeFiles/PDS_Client.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PDS_Client.dir/main.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PDS_Client.dir\main.cpp.obj -c D:\Raffaele\Documenti\CLion\PDS_Client\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/PDS_Client.dir/main.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PDS_Client.dir\main.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\main.cpp
 
 CMakeFiles/PDS_Client.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PDS_Client.dir/main.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\CLion\PDS_Client\main.cpp > CMakeFiles\PDS_Client.dir\main.cpp.i
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\main.cpp > CMakeFiles\PDS_Client.dir\main.cpp.i
 
 CMakeFiles/PDS_Client.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PDS_Client.dir/main.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\CLion\PDS_Client\main.cpp -o CMakeFiles\PDS_Client.dir\main.cpp.s
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\main.cpp -o CMakeFiles\PDS_Client.dir\main.cpp.s
 
 CMakeFiles/PDS_Client.dir/SharedEditor.cpp.obj: CMakeFiles/PDS_Client.dir/flags.make
 CMakeFiles/PDS_Client.dir/SharedEditor.cpp.obj: CMakeFiles/PDS_Client.dir/includes_CXX.rsp
 CMakeFiles/PDS_Client.dir/SharedEditor.cpp.obj: ../SharedEditor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PDS_Client.dir/SharedEditor.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PDS_Client.dir\SharedEditor.cpp.obj -c D:\Raffaele\Documenti\CLion\PDS_Client\SharedEditor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/PDS_Client.dir/SharedEditor.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PDS_Client.dir\SharedEditor.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\SharedEditor.cpp
 
 CMakeFiles/PDS_Client.dir/SharedEditor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PDS_Client.dir/SharedEditor.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\CLion\PDS_Client\SharedEditor.cpp > CMakeFiles\PDS_Client.dir\SharedEditor.cpp.i
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\SharedEditor.cpp > CMakeFiles\PDS_Client.dir\SharedEditor.cpp.i
 
 CMakeFiles/PDS_Client.dir/SharedEditor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PDS_Client.dir/SharedEditor.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\CLion\PDS_Client\SharedEditor.cpp -o CMakeFiles\PDS_Client.dir\SharedEditor.cpp.s
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\SharedEditor.cpp -o CMakeFiles\PDS_Client.dir\SharedEditor.cpp.s
 
 CMakeFiles/PDS_Client.dir/Symbol.cpp.obj: CMakeFiles/PDS_Client.dir/flags.make
 CMakeFiles/PDS_Client.dir/Symbol.cpp.obj: CMakeFiles/PDS_Client.dir/includes_CXX.rsp
 CMakeFiles/PDS_Client.dir/Symbol.cpp.obj: ../Symbol.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PDS_Client.dir/Symbol.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PDS_Client.dir\Symbol.cpp.obj -c D:\Raffaele\Documenti\CLion\PDS_Client\Symbol.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/PDS_Client.dir/Symbol.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PDS_Client.dir\Symbol.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\Symbol.cpp
 
 CMakeFiles/PDS_Client.dir/Symbol.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PDS_Client.dir/Symbol.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\CLion\PDS_Client\Symbol.cpp > CMakeFiles\PDS_Client.dir\Symbol.cpp.i
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\Symbol.cpp > CMakeFiles\PDS_Client.dir\Symbol.cpp.i
 
 CMakeFiles/PDS_Client.dir/Symbol.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PDS_Client.dir/Symbol.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\CLion\PDS_Client\Symbol.cpp -o CMakeFiles\PDS_Client.dir\Symbol.cpp.s
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\Symbol.cpp -o CMakeFiles\PDS_Client.dir\Symbol.cpp.s
 
 CMakeFiles/PDS_Client.dir/Message.cpp.obj: CMakeFiles/PDS_Client.dir/flags.make
 CMakeFiles/PDS_Client.dir/Message.cpp.obj: CMakeFiles/PDS_Client.dir/includes_CXX.rsp
 CMakeFiles/PDS_Client.dir/Message.cpp.obj: ../Message.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PDS_Client.dir/Message.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PDS_Client.dir\Message.cpp.obj -c D:\Raffaele\Documenti\CLion\PDS_Client\Message.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/PDS_Client.dir/Message.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PDS_Client.dir\Message.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\Message.cpp
 
 CMakeFiles/PDS_Client.dir/Message.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PDS_Client.dir/Message.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\CLion\PDS_Client\Message.cpp > CMakeFiles\PDS_Client.dir\Message.cpp.i
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\Message.cpp > CMakeFiles\PDS_Client.dir\Message.cpp.i
 
 CMakeFiles/PDS_Client.dir/Message.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PDS_Client.dir/Message.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\CLion\PDS_Client\Message.cpp -o CMakeFiles\PDS_Client.dir\Message.cpp.s
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\Message.cpp -o CMakeFiles\PDS_Client.dir\Message.cpp.s
 
 CMakeFiles/PDS_Client.dir/Request.cpp.obj: CMakeFiles/PDS_Client.dir/flags.make
 CMakeFiles/PDS_Client.dir/Request.cpp.obj: CMakeFiles/PDS_Client.dir/includes_CXX.rsp
 CMakeFiles/PDS_Client.dir/Request.cpp.obj: ../Request.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PDS_Client.dir/Request.cpp.obj"
-	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PDS_Client.dir\Request.cpp.obj -c D:\Raffaele\Documenti\CLion\PDS_Client\Request.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/PDS_Client.dir/Request.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\PDS_Client.dir\Request.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\Request.cpp
 
 CMakeFiles/PDS_Client.dir/Request.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/PDS_Client.dir/Request.cpp.i"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\CLion\PDS_Client\Request.cpp > CMakeFiles\PDS_Client.dir\Request.cpp.i
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\Request.cpp > CMakeFiles\PDS_Client.dir\Request.cpp.i
 
 CMakeFiles/PDS_Client.dir/Request.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/PDS_Client.dir/Request.cpp.s"
-	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\CLion\PDS_Client\Request.cpp -o CMakeFiles\PDS_Client.dir\Request.cpp.s
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\Request.cpp -o CMakeFiles\PDS_Client.dir\Request.cpp.s
 
 # Object files for target PDS_Client
 PDS_Client_OBJECTS = \
@@ -166,7 +166,7 @@ PDS_Client.exe: C:/Qt/5.13.0/mingw73_64/lib/libQt5Cored.a
 PDS_Client.exe: CMakeFiles/PDS_Client.dir/linklibs.rsp
 PDS_Client.exe: CMakeFiles/PDS_Client.dir/objects1.rsp
 PDS_Client.exe: CMakeFiles/PDS_Client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable PDS_Client.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable PDS_Client.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\PDS_Client.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -179,6 +179,6 @@ CMakeFiles/PDS_Client.dir/clean:
 .PHONY : CMakeFiles/PDS_Client.dir/clean
 
 CMakeFiles/PDS_Client.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Raffaele\Documenti\CLion\PDS_Client D:\Raffaele\Documenti\CLion\PDS_Client D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug\CMakeFiles\PDS_Client.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug\CMakeFiles\PDS_Client.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PDS_Client.dir/depend
 

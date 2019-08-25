@@ -56,9 +56,9 @@ CMakeFiles/PDS_Client.dir/Message.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qvarlengtharray.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qvector.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qversiontagging.h
- D:/Raffaele/Documenti/CLion/PDS_Client/Message.cpp
- D:/Raffaele/Documenti/CLion/PDS_Client/Message.h
- D:/Raffaele/Documenti/CLion/PDS_Client/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Message.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Message.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Symbol.h
 CMakeFiles/PDS_Client.dir/PDS_Client_autogen/mocs_compilation.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qalgorithms.h
@@ -171,11 +171,11 @@ CMakeFiles/PDS_Client.dir/PDS_Client_autogen/mocs_compilation.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgets-config.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgetsglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidget.h
- D:/Raffaele/Documenti/CLion/PDS_Client/Message.h
- D:/Raffaele/Documenti/CLion/PDS_Client/SharedEditor.h
- D:/Raffaele/Documenti/CLion/PDS_Client/Symbol.h
- D:/Raffaele/Documenti/CLion/PDS_Client/cmake-build-debug/PDS_Client_autogen/EWIEGA46WW/moc_SharedEditor.cpp
- D:/Raffaele/Documenti/CLion/PDS_Client/cmake-build-debug/PDS_Client_autogen/mocs_compilation.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Message.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/SharedEditor.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/cmake-build-debug/PDS_Client_autogen/EWIEGA46WW/moc_SharedEditor.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/cmake-build-debug/PDS_Client_autogen/mocs_compilation.cpp
 CMakeFiles/PDS_Client.dir/Request.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QObject
@@ -373,10 +373,10 @@ CMakeFiles/PDS_Client.dir/Request.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
- D:/Raffaele/Documenti/CLion/PDS_Client/Message.h
- D:/Raffaele/Documenti/CLion/PDS_Client/Request.cpp
- D:/Raffaele/Documenti/CLion/PDS_Client/Request.h
- D:/Raffaele/Documenti/CLion/PDS_Client/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Message.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Request.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Request.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Symbol.h
 CMakeFiles/PDS_Client.dir/SharedEditor.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtANGLE/GLES2/gl2.h
  C:/Qt/5.13.0/mingw73_64/include/QtANGLE/GLES2/gl2platform.h
@@ -907,11 +907,11 @@ CMakeFiles/PDS_Client.dir/SharedEditor.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidget.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidgetaction.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwizard.h
- D:/Raffaele/Documenti/CLion/PDS_Client/Message.h
- D:/Raffaele/Documenti/CLion/PDS_Client/Request.h
- D:/Raffaele/Documenti/CLion/PDS_Client/SharedEditor.cpp
- D:/Raffaele/Documenti/CLion/PDS_Client/SharedEditor.h
- D:/Raffaele/Documenti/CLion/PDS_Client/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Message.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Request.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/SharedEditor.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/SharedEditor.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Symbol.h
 CMakeFiles/PDS_Client.dir/Symbol.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qalgorithms.h
@@ -967,8 +967,8 @@ CMakeFiles/PDS_Client.dir/Symbol.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qvarlengtharray.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qvector.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qversiontagging.h
- D:/Raffaele/Documenti/CLion/PDS_Client/Symbol.cpp
- D:/Raffaele/Documenti/CLion/PDS_Client/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Symbol.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Symbol.h
 CMakeFiles/PDS_Client.dir/main.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qalgorithms.h
@@ -1088,7 +1088,7 @@ CMakeFiles/PDS_Client.dir/main.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgets-config.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgetsglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidget.h
- D:/Raffaele/Documenti/CLion/PDS_Client/Message.h
- D:/Raffaele/Documenti/CLion/PDS_Client/SharedEditor.h
- D:/Raffaele/Documenti/CLion/PDS_Client/Symbol.h
- D:/Raffaele/Documenti/CLion/PDS_Client/main.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Message.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/SharedEditor.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/main.cpp

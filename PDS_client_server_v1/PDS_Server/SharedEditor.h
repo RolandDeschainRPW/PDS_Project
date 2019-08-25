@@ -13,7 +13,6 @@ class SharedEditor : public QObject {
 
 public:
     SharedEditor(QObject* parent = 0);
-    SharedEditor(SharedEditor& se, QObject* parent = 0);
     SharedEditor(QTcpSocket* clientConnection, qint32 _siteId, QObject* parent = 0);
 
     QTcpSocket* getClientConnection();

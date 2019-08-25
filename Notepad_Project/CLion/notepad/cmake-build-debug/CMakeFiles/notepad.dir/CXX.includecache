@@ -48,17 +48,9 @@ C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
 qdatastream.h
 C:/Qt/5.13.0/mingw73_64/include/QtCore/qdatastream.h
 
-C:/Qt/5.13.0/mingw73_64/include/QtCore/QDebug
-qdebug.h
-C:/Qt/5.13.0/mingw73_64/include/QtCore/qdebug.h
-
 C:/Qt/5.13.0/mingw73_64/include/QtCore/QEvent
 qcoreevent.h
 C:/Qt/5.13.0/mingw73_64/include/QtCore/qcoreevent.h
-
-C:/Qt/5.13.0/mingw73_64/include/QtCore/QFile
-qfile.h
-C:/Qt/5.13.0/mingw73_64/include/QtCore/qfile.h
 
 C:/Qt/5.13.0/mingw73_64/include/QtCore/QFlags
 qflags.h
@@ -119,10 +111,6 @@ C:/Qt/5.13.0/mingw73_64/include/QtCore/qstring.h
 C:/Qt/5.13.0/mingw73_64/include/QtCore/QStringList
 qstringlist.h
 C:/Qt/5.13.0/mingw73_64/include/QtCore/qstringlist.h
-
-C:/Qt/5.13.0/mingw73_64/include/QtCore/QTextStream
-qtextstream.h
-C:/Qt/5.13.0/mingw73_64/include/QtCore/qtextstream.h
 
 C:/Qt/5.13.0/mingw73_64/include/QtCore/QUrl
 qurl.h
@@ -2017,10 +2005,6 @@ QtCore/qvector.h
 -
 QtCore/qscopedpointer.h
 -
-
-C:/Qt/5.13.0/mingw73_64/include/QtGui/QFont
-qfont.h
-C:/Qt/5.13.0/mingw73_64/include/QtGui/qfont.h
 
 C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
 qimage.h
@@ -4034,46 +4018,6 @@ QtNetwork/qabstractsocket.h
 QtNetwork/qhostaddress.h
 -
 
-C:/Qt/5.13.0/mingw73_64/include/QtPrintSupport/QPrintDialog
-qprintdialog.h
-C:/Qt/5.13.0/mingw73_64/include/QtPrintSupport/qprintdialog.h
-
-C:/Qt/5.13.0/mingw73_64/include/QtPrintSupport/QPrinter
-qprinter.h
-C:/Qt/5.13.0/mingw73_64/include/QtPrintSupport/qprinter.h
-
-C:/Qt/5.13.0/mingw73_64/include/QtPrintSupport/qabstractprintdialog.h
-QtPrintSupport/qtprintsupportglobal.h
--
-QtWidgets/qdialog.h
--
-
-C:/Qt/5.13.0/mingw73_64/include/QtPrintSupport/qprintdialog.h
-QtPrintSupport/qtprintsupportglobal.h
--
-QtPrintSupport/qabstractprintdialog.h
--
-
-C:/Qt/5.13.0/mingw73_64/include/QtPrintSupport/qprinter.h
-QtPrintSupport/qtprintsupportglobal.h
--
-QtCore/qstring.h
--
-QtCore/qscopedpointer.h
--
-QtGui/qpagedpaintdevice.h
--
-QtGui/qpagelayout.h
--
-
-C:/Qt/5.13.0/mingw73_64/include/QtPrintSupport/qtprintsupport-config.h
-
-C:/Qt/5.13.0/mingw73_64/include/QtPrintSupport/qtprintsupportglobal.h
-QtWidgets/qtwidgetsglobal.h
--
-QtPrintSupport/qtprintsupport-config.h
--
-
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QAction
 qaction.h
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qaction.h
@@ -4093,14 +4037,6 @@ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qcommonstyle.h
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QDialog
 qdialog.h
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qdialog.h
-
-C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QFileDialog
-qfiledialog.h
-C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qfiledialog.h
-
-C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QFontDialog
-qfontdialog.h
-C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qfontdialog.h
 
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLabel
 qlabel.h
@@ -4125,10 +4061,6 @@ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmenu.h
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMenuBar
 qmenubar.h
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmenubar.h
-
-C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMessageBox
-qmessagebox.h
-C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmessagebox.h
 
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QPushButton
 qpushbutton.h
@@ -5580,32 +5512,6 @@ QtWidgets/qtwidgetsglobal.h
 QtWidgets/qdialog.h
 -
 
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_Notepad.cpp
-memory
--
-../../../include/Notepad.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Notepad.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_StartDialog.cpp
-memory
--
-../../../include/StartDialog.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/StartDialog.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/mocs_compilation.cpp
-6YEA5652QU/moc_Notepad.cpp
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_Notepad.cpp
-6YEA5652QU/moc_StartDialog.cpp
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_StartDialog.cpp
-
 D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Message.h
 iostream
 -
@@ -5616,6 +5522,14 @@ memory
 vector
 -
 QDataStream
+-
+../include/Symbol.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Symbol.h
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/NetworkingData.h
+QObject
+-
+QtNetwork
 -
 ../include/Symbol.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Symbol.h
@@ -5637,14 +5551,8 @@ QtNetwork
 D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Symbol.h
 ../include/Message.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Message.h
-
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Request.h
-optional
--
-QtCore
--
-../include/Message.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Message.h
+../include/NetworkingData.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/NetworkingData.h
 
 D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/StartDialog.h
 QDialog
@@ -5653,6 +5561,8 @@ QtNetwork
 -
 ../include/Notepad.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Notepad.h
+../include/NetworkingData.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/NetworkingData.h
 ui_notepad.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/ui_notepad.h
 
@@ -5668,40 +5578,6 @@ vector
 QDataStream
 -
 
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Notepad.cpp
-iostream
--
-QFile
--
-QFileDialog
--
-QTextStream
--
-QMessageBox
--
-QtPrintSupport/qtprintsupportglobal.h
--
-QPrintDialog
--
-QPrinter
--
-QFont
--
-QFontDialog
--
-QDebug
--
-../include/Notepad.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Notepad.h
-../include/Symbol.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Symbol.h
-../include/Message.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Message.h
-../include/Request.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Request.h
-ui_notepad.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/ui_notepad.h
-
 D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/StartDialog.cpp
 QtWidgets
 -
@@ -5709,16 +5585,10 @@ QtNetwork
 -
 ../include/StartDialog.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/StartDialog.h
+../include/NetworkingData.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/NetworkingData.h
 ui_startdialog.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/ui_startdialog.h
-
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/main.cpp
-../include/Notepad.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Notepad.h
-../include/StartDialog.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/StartDialog.h
-QApplication
--
 
 notepad_autogen/include/ui_notepad.h
 QtCore/QVariant

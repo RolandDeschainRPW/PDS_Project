@@ -42,10 +42,10 @@ RM = "D:\Programmi\JetBrains\CLion 2019.1.3\bin\cmake\win\bin\cmake.exe" -E remo
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Raffaele\Documenti\CLion\PDS_Client
+CMAKE_SOURCE_DIR = D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug
+CMAKE_BINARY_DIR = D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug
 
 # Utility rule file for PDS_Client_autogen.
 
@@ -53,8 +53,8 @@ CMAKE_BINARY_DIR = D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug
 include CMakeFiles/PDS_Client_autogen.dir/progress.make
 
 CMakeFiles/PDS_Client_autogen:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target PDS_Client"
-	"D:\Programmi\JetBrains\CLion 2019.1.3\bin\cmake\win\bin\cmake.exe" -E cmake_autogen D:/Raffaele/Documenti/CLion/PDS_Client/cmake-build-debug/CMakeFiles/PDS_Client_autogen.dir/AutogenInfo.cmake Debug
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic MOC and UIC for target PDS_Client"
+	"D:\Programmi\JetBrains\CLion 2019.1.3\bin\cmake\win\bin\cmake.exe" -E cmake_autogen D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/cmake-build-debug/CMakeFiles/PDS_Client_autogen.dir/AutogenInfo.cmake Debug
 
 PDS_Client_autogen: CMakeFiles/PDS_Client_autogen
 PDS_Client_autogen: CMakeFiles/PDS_Client_autogen.dir/build.make
@@ -71,6 +71,6 @@ CMakeFiles/PDS_Client_autogen.dir/clean:
 .PHONY : CMakeFiles/PDS_Client_autogen.dir/clean
 
 CMakeFiles/PDS_Client_autogen.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Raffaele\Documenti\CLion\PDS_Client D:\Raffaele\Documenti\CLion\PDS_Client D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug D:\Raffaele\Documenti\CLion\PDS_Client\cmake-build-debug\CMakeFiles\PDS_Client_autogen.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Client\cmake-build-debug\CMakeFiles\PDS_Client_autogen.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/PDS_Client_autogen.dir/depend
 

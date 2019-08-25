@@ -4026,6 +4026,10 @@ QtNetwork/qabstractsocket.h
 QtNetwork/qhostaddress.h
 -
 
+C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
+qapplication.h
+C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qapplication.h
+
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QCommonStyle
 qcommonstyle.h
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qcommonstyle.h
@@ -5468,7 +5472,11 @@ QtWidgets/qtwidgetsglobal.h
 QtWidgets/qdialog.h
 -
 
-D:/Raffaele/Documenti/CLion/PDS_Client/Message.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Message.cpp
+Message.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Message.h
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Message.h
 iostream
 -
 queue
@@ -5480,17 +5488,21 @@ vector
 QDataStream
 -
 Symbol.h
-D:/Raffaele/Documenti/CLion/PDS_Client/Symbol.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Symbol.h
 
-D:/Raffaele/Documenti/CLion/PDS_Client/Request.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Request.cpp
+Request.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Request.h
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Request.h
 optional
 -
 QtCore
 -
 Message.h
-D:/Raffaele/Documenti/CLion/PDS_Client/Message.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Message.h
 
-D:/Raffaele/Documenti/CLion/PDS_Client/SharedEditor.cpp
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/SharedEditor.cpp
 QtWidgets
 -
 QtNetwork
@@ -5502,11 +5514,11 @@ QVector
 QByteArray
 -
 SharedEditor.h
-D:/Raffaele/Documenti/CLion/PDS_Client/SharedEditor.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/SharedEditor.h
 Request.h
-D:/Raffaele/Documenti/CLion/PDS_Client/Request.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Request.h
 
-D:/Raffaele/Documenti/CLion/PDS_Client/SharedEditor.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/SharedEditor.h
 QDataStream
 -
 QDialog
@@ -5532,11 +5544,15 @@ random
 optional
 -
 Symbol.h
-D:/Raffaele/Documenti/CLion/PDS_Client/Symbol.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Symbol.h
 Message.h
-D:/Raffaele/Documenti/CLion/PDS_Client/Message.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Message.h
 
-D:/Raffaele/Documenti/CLion/PDS_Client/Symbol.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Symbol.cpp
+Symbol.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Symbol.h
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/Symbol.h
 iostream
 -
 queue
@@ -5547,4 +5563,24 @@ vector
 -
 QDataStream
 -
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/cmake-build-debug/PDS_Client_autogen/EWIEGA46WW/moc_SharedEditor.cpp
+memory
+-
+../../../SharedEditor.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/SharedEditor.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/cmake-build-debug/PDS_Client_autogen/mocs_compilation.cpp
+EWIEGA46WW/moc_SharedEditor.cpp
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/cmake-build-debug/PDS_Client_autogen/EWIEGA46WW/moc_SharedEditor.cpp
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/main.cpp
+QApplication
+-
+SharedEditor.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/SharedEditor.h
 

@@ -1,4 +1,4 @@
-D:/Raffaele/Documenti/CLion/PDS_Client/cmake-build-debug/CMakeFiles/PDS_Client.dir
-D:/Raffaele/Documenti/CLion/PDS_Client/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Raffaele/Documenti/CLion/PDS_Client/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-D:/Raffaele/Documenti/CLion/PDS_Client/cmake-build-debug/CMakeFiles/PDS_Client_autogen.dir
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/cmake-build-debug/CMakeFiles/PDS_Client.dir
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Client/cmake-build-debug/CMakeFiles/PDS_Client_autogen.dir

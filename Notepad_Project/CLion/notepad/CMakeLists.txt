@@ -9,6 +9,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTORCC ON)
+set(CMAKE_AUTOUIC_SEARCH_PATHS ui)
 
 include_directories(${PROJECT_SOURCE_DIR}/cmake-build-debug/notepad_autogen/include)
 include_directories(${PROJECT_SOURCE_DIR}/include)
@@ -32,19 +33,22 @@ set(SOURCE_FILES
         src/Notepad.cpp
         src/Symbol.cpp
         src/Message.cpp
-        src/Request.cpp)
+        src/Request.cpp
+        src/StartDialog.cpp)
 
 set(INCLUDE_FILES
         include/Notepad.h
         include/Symbol.h
         include/Message.h
-        include/Request.h)
+        include/Request.h
+        include/StartDialog.h)
 
 set(RESOURCE_FILES
         notepad.qrc)
 
 set(UI_FILES
-        src/notepad.ui)
+        ui/notepad.ui
+        ui/startdialog.ui)
 
 add_executable(notepad
         ${UI_FILES}

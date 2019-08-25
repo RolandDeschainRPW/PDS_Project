@@ -270,6 +270,33 @@ src/Request.cpp.s:
 	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Request.cpp.s
 .PHONY : src/Request.cpp.s
 
+src/StartDialog.obj: src/StartDialog.cpp.obj
+
+.PHONY : src/StartDialog.obj
+
+# target to build an object file
+src/StartDialog.cpp.obj:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/StartDialog.cpp.obj
+.PHONY : src/StartDialog.cpp.obj
+
+src/StartDialog.i: src/StartDialog.cpp.i
+
+.PHONY : src/StartDialog.i
+
+# target to preprocess a source file
+src/StartDialog.cpp.i:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/StartDialog.cpp.i
+.PHONY : src/StartDialog.cpp.i
+
+src/StartDialog.s: src/StartDialog.cpp.s
+
+.PHONY : src/StartDialog.s
+
+# target to generate assembly for a file
+src/StartDialog.cpp.s:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/StartDialog.cpp.s
+.PHONY : src/StartDialog.cpp.s
+
 src/Symbol.obj: src/Symbol.cpp.obj
 
 .PHONY : src/Symbol.obj
@@ -349,6 +376,9 @@ help:
 	@echo ... src/Request.obj
 	@echo ... src/Request.i
 	@echo ... src/Request.s
+	@echo ... src/StartDialog.obj
+	@echo ... src/StartDialog.i
+	@echo ... src/StartDialog.s
 	@echo ... src/Symbol.obj
 	@echo ... src/Symbol.i
 	@echo ... src/Symbol.s

@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Message.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/src/Message.cpp.obj"
   "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Notepad.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/src/Notepad.cpp.obj"
   "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Request.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/src/Request.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/StartDialog.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/src/StartDialog.cpp.obj"
   "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Symbol.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/src/Symbol.cpp.obj"
   "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/main.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/src/main.cpp.obj"
   )

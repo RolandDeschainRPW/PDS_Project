@@ -24,7 +24,8 @@
 #include "../include/Request.h"
 #include "ui_notepad.h"
 
-Notepad::Notepad(QWidget *parent,
+Notepad::Notepad(NetworkingData* net_data,
+        QWidget *parent,
         qint32 base,
         qint32 boundary,
         qint32 strategy) : QMainWindow(parent),
@@ -32,6 +33,8 @@ Notepad::Notepad(QWidget *parent,
                         base(base),
                         boundary(boundary),
                         strategy(strategy) {
+    net_data->setParent(this); // To avoid Memory Leakage!
+
     ui->setupUi(this);
     this->setCentralWidget(ui->textEdit);
 
@@ -55,6 +58,12 @@ Notepad::Notepad(QWidget *parent,
     connect(ui->textEdit, &QTextEdit::textChanged, this, &Notepad::onTextChanged);
     connect(ui->textEdit, &QTextEdit::cursorPositionChanged, this, &Notepad::onCursorPositionChanged);
     connect(ui->textEdit->document(), &QTextDocument::contentsChange, this, &Notepad::interceptUserInput);
+
+    // Connecting signals for networking.
+    connect(net_data->getTcpSocket(), &QIODevice::readyRead, this, [this, net_data] {
+        while (net_data->getTcpSocket()->bytesAvailable()) this->readMessage();
+    });
+    connect(net_data->getTcpSocket(), QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), this, &Notepad::displayError);
 
     // Disable menu actions for unavailable features
     #if !QT_CONFIG(printer)
@@ -227,32 +236,33 @@ void Notepad::interceptUserInput(int pos, int del, int add) {
     }
 }
 
-void Notepad::readDataFromSocket() {
-    if (_siteId != SITE_ID_UNASSIGNED) {
-        std::cout << "There is a message to read!" << std::endl;
-        this->readMessage();
-    }
-    else { // Here the client receives the Site Id from the Server!
-        in.startTransaction();
-        in >> this->_siteId >> this->_symbols;
-        if (!in.commitTransaction()) {
-            std::cout << "Something went wrong!\n\t-> I could not have Site Id and Symbols from Server!" << std::endl;
-            return;
-        }
-        std::cout << "I received the following Site Id: " << this->_siteId << std::endl;
-        // Showing the Site Id in the GUI.
-        std::string site_id_str = "Site Id: " + std::to_string(this->_siteId);
-        //this->statusLabel->setText(tr(site_id_str.c_str()));
-        //this->statusLabel->setText(tr(this->symbols_to_string().toLocal8Bit().data()));
-
+void Notepad::displayError(QAbstractSocket::SocketError socketError) {
+    switch (socketError) {
+        case QAbstractSocket::RemoteHostClosedError:
+            break;
+        case QAbstractSocket::HostNotFoundError:
+            QMessageBox::information(this, tr("SharedEditor"),
+                                     tr("The host was not found. Please check the "
+                                        "host name and port settings."));
+            break;
+        case QAbstractSocket::ConnectionRefusedError:
+            QMessageBox::information(this, tr("SharedEditor"),
+                                     tr("The connection was refused by the peer. "
+                                        "Make sure the fortune server is running, "
+                                        "and check that the host name and port "
+                                        "settings are correct."));
+            break;
+        default:
+            QMessageBox::information(this, tr("SharedEditor"),
+                                     tr("The following error occurred: %1.").arg(net_data->getTcpSocket()->errorString()));
     }
 }
 
 // Overriding the closeEvent() function to correctly disconnect from the Server.
 void Notepad::closeEvent(QCloseEvent* event) {
     // Knowing how to handle the disconnection from Server.
-    connect(tcpSocket, &QAbstractSocket::disconnected, tcpSocket, [this, event] {
-        tcpSocket->abort();
+    connect(net_data->getTcpSocket(), &QAbstractSocket::disconnected, net_data->getTcpSocket(), [this, event] {
+        net_data->getTcpSocket()->abort();
         std::cout << "DISCONNECTED!" << std::endl;
         //QDialog::closeEvent(event);
     });
@@ -264,11 +274,12 @@ void Notepad::closeEvent(QCloseEvent* event) {
 
     Request req_to_send = Request(this->_siteId, Request::DISCONNECT_TYPE, std::nullopt);
     out << req_to_send;
-    tcpSocket->write(block);
+    net_data->getTcpSocket()->write(block);
     std::cout << "I am going to DISCONNECT!" << std::endl;
 }
 
 void Notepad::readMessage() {
+    std::cout << "There is a message to read!" << std::endl;
     in.startTransaction();
 
     Message next_msg;
@@ -310,7 +321,7 @@ void Notepad::localInsert(qint32 index, QChar value) {
     out.setVersion(QDataStream::Qt_5_13);
     Request req_to_send = Request(this->_siteId, Request::MESSAGE_TYPE, Message(this->_siteId, Message::INSERT_TYPE, s));
     out << req_to_send;
-    tcpSocket->write(block);
+    net_data->getTcpSocket()->write(block);
     std::cout << "I have sent an INSERT MESSAGE!" << std::endl;
 }
 
@@ -326,7 +337,7 @@ void Notepad::localErase(qint32 index) {
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
     out << Request(this->_siteId, Request::MESSAGE_TYPE, Message(this->_siteId, Message::ERASE_TYPE, tmp));
-    tcpSocket->write(block);
+    net_data->getTcpSocket()->write(block);
     std::cout << "I have sent an ERASE MESSAGE!" << std::endl;
 }
 

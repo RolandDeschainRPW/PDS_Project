@@ -14,7 +14,9 @@ class NetworkingData : public QObject {
     Q_OBJECT
 
 public:
-    NetworkingData(QObject* parent = 0);
+    NetworkingData(qint32 _siteId, QVector<Symbol> _symbols, QTcpSocket* tcpSocket, QNetworkSession* networkSession, QObject* parent = 0);
+
+    QTcpSocket* getTcpSocket();
 
 private:
     qint32 _siteId;

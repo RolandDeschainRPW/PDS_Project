@@ -6,12 +6,16 @@
 #include <QtNetwork>
 
 #include "../include/StartDialog.h"
+#include "../include/NetworkingData.h"
 #include "ui_startdialog.h"
 
 StartDialog::StartDialog(QWidget* parent) : QDialog(parent),
                                         ui(new Ui::StartDialog),
                                         tcpSocket(new QTcpSocket(this)) {
     ui->setupUi(this);
+
+    // Setting this attribute to delete this widget on closing.
+    this->setAttribute(Qt::WA_DeleteOnClose);
 
     // find out name of this machine
     QString name = QHostInfo::localHostName();
@@ -45,8 +49,9 @@ StartDialog::StartDialog(QWidget* parent) : QDialog(parent),
     connect(ui->hostCombo, &QComboBox::editTextChanged, this, &StartDialog::enableConnectToServerButton);
     connect(ui->portLineEdit, &QLineEdit::textChanged, this, &StartDialog::enableConnectToServerButton);
     connect(ui->connectToServerButton, &QAbstractButton::clicked, this, &StartDialog::connectToServer);
+    connect(ui->quitButton, &QAbstractButton::clicked, this, &QWidget::close);
     connect(tcpSocket, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), this, &StartDialog::displayError);
-    connect(tcpSocket, &QIODevice::readyRead, this, &StartDialog::readSiteId);
+    connect(tcpSocket, &QIODevice::readyRead, this, &StartDialog::readStartDataFromServer);
 
     QNetworkConfigurationManager manager;
     if (manager.capabilities() & QNetworkConfigurationManager::NetworkSessionRequired) {
@@ -70,6 +75,10 @@ StartDialog::StartDialog(QWidget* parent) : QDialog(parent),
         ui->statusLabel->setText(tr("Opening network session."));
         networkSession->open();
     }
+}
+
+StartDialog::~StartDialog() {
+    delete ui;
 }
 
 void StartDialog::sessionOpened() {
@@ -109,28 +118,28 @@ void StartDialog::displayError(QAbstractSocket::SocketError socketError) {
             QMessageBox::information(this, tr("SharedEditor"),
                                      tr("The following error occurred: %1.").arg(tcpSocket->errorString()));
     }
-    //connectToServerButton->setEnabled(true);
+    ui->connectToServerButton->setEnabled(true);
 }
 
-void StartDialog::readSiteId() {
+void StartDialog::readStartDataFromServer() {
     in.startTransaction();
-    in >> this->_siteId >> this->_symbols;
+    qint32 siteId;
+    QVector<Symbol> symbols;
+    in >> siteId >> symbols;
     if (!in.commitTransaction()) {
         std::cout << "Something went wrong!\n\t-> I could not have Site Id and Symbols from Server!" << std::endl;
         this->ui->statusLabel->setText(tr("Something went wrong! I could not have Site Id and Symbols from Server!"));
         return;
     }
-    std::cout << "I received the following Site Id: " << this->_siteId << std::endl;
+    std::cout << "I received the following Site Id: " << siteId << std::endl;
+    NetworkingData* startData = new NetworkingData(siteId, symbols, tcpSocket, networkSession, this);
+    showEditor(startData);
 }
 
-StartDialog::~StartDialog() {
-    delete ui;
-}
-
-void StartDialog::showEditor() {
-    this->close();
-    notepad = new Notepad(this);
+void StartDialog::showEditor(NetworkingData* startData) {
+    notepad = new Notepad(startData, this);
     notepad->show();
+    this->close(); // This widget is deleted on closing.
 }
 
 void StartDialog::connectToServer() {

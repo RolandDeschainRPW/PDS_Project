@@ -11,6 +11,7 @@
 
 #include "../include/Symbol.h"
 #include "../include/Message.h"
+#include "../include/NetworkingData.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,7 +28,7 @@ public:
     static const qint32 BOUNDARY_MINUS = 1;
     static const qint32 RANDOM = 2;
 
-    explicit Notepad(QWidget *parent = 0, qint32 base = 32, qint32 boundary = 10, qint32 strategy = RANDOM);
+    explicit Notepad(NetworkingData* net_data, QWidget *parent = 0, qint32 base = 32, qint32 boundary = 10, qint32 strategy = RANDOM);
     ~Notepad();
 
     qint32 getSiteId();
@@ -60,6 +61,9 @@ private slots:
     void onCursorPositionChanged();
     void interceptUserInput(int pos, int del, int add);
 
+    // Slots for networking.
+    void displayError(QAbstractSocket::SocketError socketError);
+
 private:
     Ui::Notepad* ui;
     QString currentFile;
@@ -78,9 +82,8 @@ private:
     QVector<Symbol> _symbols;
 
     // Vars for networking.
-    QTcpSocket* tcpSocket = nullptr;
+    NetworkingData* net_data = nullptr;
     QDataStream in;
-    QNetworkSession* networkSession = nullptr;
 
     Symbol generateSymbol(QChar value, qint32 index);
     QVector<qint32> generatePosBetween(qint32 siteId1,
@@ -93,7 +96,6 @@ private:
     qint32 retrieveStrategy(qint32 level);
     bool comparePositions(std::optional<QVector<qint32>> pos1_opt, std::optional<QVector<qint32>> pos2_opt);
     void readMessage();
-    void readDataFromSocket();
     void closeEvent(QCloseEvent* event);
 };
 

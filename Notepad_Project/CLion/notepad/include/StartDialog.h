@@ -8,6 +8,7 @@
 #include <QDialog>
 #include <QtNetwork>
 #include "../include/Notepad.h"
+#include "../include/NetworkingData.h"
 #include "ui_notepad.h"
 
 QT_BEGIN_NAMESPACE
@@ -28,8 +29,7 @@ private slots:
     void enableConnectToServerButton();
     void sessionOpened();
     void displayError(QAbstractSocket::SocketError socketError);
-    void readSiteId();
-    void showEditor();
+    void readStartDataFromServer();
 
 private:
     Ui::StartDialog* ui = nullptr;
@@ -39,6 +39,8 @@ private:
     QTcpSocket* tcpSocket = nullptr;
     QNetworkSession* networkSession = nullptr;
     QDataStream in;
+
+    void showEditor(NetworkingData* startData);
 };
 
 

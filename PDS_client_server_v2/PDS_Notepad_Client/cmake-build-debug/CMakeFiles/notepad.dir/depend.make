@@ -672,6 +672,7 @@ CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCo
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QMetaType
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QObject
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QSharedDataPointer
+CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QSignalBlocker
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QString
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QStringList
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QTextStream

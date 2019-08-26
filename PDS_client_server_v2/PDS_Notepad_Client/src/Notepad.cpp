@@ -4,6 +4,7 @@
 #include <QFileDialog>
 #include <QTextStream>
 #include <QMessageBox>
+#include <QSignalBlocker>
 #if defined(QT_PRINTSUPPORT_LIB)
 #include <QtPrintSupport/qtprintsupportglobal.h>
 #if QT_CONFIG(printer)
@@ -39,6 +40,9 @@ Notepad::Notepad(NetworkingData* net_data,
     ui->setupUi(this);
     this->setCentralWidget(ui->textEdit);
 
+    in.setDevice(net_data->getTcpSocket());
+    in.setVersion(QDataStream::Qt_5_13);
+
     connect(ui->actionNew, &QAction::triggered, this, &Notepad::newDocument);
     connect(ui->actionOpen, &QAction::triggered, this, &Notepad::open);
     connect(ui->actionSave, &QAction::triggered, this, &Notepad::save);
@@ -65,6 +69,9 @@ Notepad::Notepad(NetworkingData* net_data,
         while (net_data->getTcpSocket()->bytesAvailable()) this->readMessage();
     });
     connect(net_data->getTcpSocket(), QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), this, &Notepad::displayError);
+
+    // Updating the document with symbols received from Server.
+    ui->textEdit->document()->setPlainText(this->symbols_to_string());
 
     // Disable menu actions for unavailable features
     #if !QT_CONFIG(printer)
@@ -340,21 +347,28 @@ void Notepad::localErase(qint32 index) {
 void Notepad::processSymbol(const Message &m) {
     qint32 index = 0;
     if (m.getType() == Message::INSERT_TYPE) {
-        if (net_data->getSymbols().empty()) net_data->getSymbols().push_back(m.getSymbol());
-        else {
+        if (net_data->getSymbols().empty()) {
+            qint32 index = net_data->getSymbols().size();
+            net_data->getSymbols().push_back(m.getSymbol());
+            updateDocument(index, Message::INSERT_TYPE, m.getSymbol().getChar());
+        } else {
             foreach (Symbol s, net_data->getSymbols()) {
                 if (this->comparePositions(s.getPos(), m.getSymbol().getPos())) {
                     net_data->getSymbols().insert(net_data->getSymbols().begin() + index, m.getSymbol());
+                    updateDocument(index, Message::INSERT_TYPE, m.getSymbol().getChar());
                     return;
                 }
                 index++;
             }
+            qint32 index = net_data->getSymbols().size();
             net_data->getSymbols().push_back(m.getSymbol());
+            updateDocument(index, Message::INSERT_TYPE, m.getSymbol().getChar());
         }
     } else /* Message::ERASE_TYPE */ {
         foreach (Symbol s, net_data->getSymbols()){
             if (s.getChar() == m.getSymbol().getChar() && s.getId() == m.getSymbol().getId()) {
                 net_data->getSymbols().erase(net_data->getSymbols().begin() + index);
+                updateDocument(index, Message::ERASE_TYPE, "");
                 return;
             }
             index++;
@@ -363,7 +377,7 @@ void Notepad::processSymbol(const Message &m) {
 }
 
 QString Notepad::symbols_to_string() {
-    QString str;
+    QString str = "";
     foreach (Symbol s, net_data->getSymbols()) {
         str += s.getChar();
     }
@@ -491,4 +505,17 @@ qint32 Notepad::retrieveStrategy(qint32 level) {
 
     strategyCache.push_back(myStrategy);
     return myStrategy;
+}
+
+void Notepad::updateDocument(qint32 index, qint32 updateType, QString text) {
+    // Temporarily blocking signals from QTextDocument
+    // to avoid cyclic bug between the Server and the Clients!
+    const QSignalBlocker blocker(ui->textEdit->document());
+    QTextCursor tmp_cur = QTextCursor(ui->textEdit->document());
+    tmp_cur.setPosition(index);
+    if (updateType == Message::INSERT_TYPE) {
+        tmp_cur.insertText(text);
+    } else /* Message::ERASE_TYPE */ {
+        tmp_cur.deleteChar();
+    }
 }

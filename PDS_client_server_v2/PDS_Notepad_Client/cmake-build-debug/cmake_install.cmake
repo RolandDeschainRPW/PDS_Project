@@ -1,4 +1,4 @@
-# Install script for directory: D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad
+# Install script for directory: D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

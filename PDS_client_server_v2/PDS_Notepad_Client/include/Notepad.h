@@ -90,6 +90,7 @@ private:
     bool comparePositions(std::optional<QVector<qint32>> pos1_opt, std::optional<QVector<qint32>> pos2_opt);
     void readMessage();
     void closeEvent(QCloseEvent* event);
+    void updateDocument(qint32 index, qint32 updateType, QString text);
 };
 
 #endif // NOTEPAD_H

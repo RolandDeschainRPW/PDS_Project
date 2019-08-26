@@ -4,15 +4,15 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/mocs_compilation.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Message.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/src/Message.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/NetworkingData.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/src/NetworkingData.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Notepad.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/src/Notepad.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Request.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/src/Request.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/StartDialog.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/src/StartDialog.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/Symbol.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/src/Symbol.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/src/main.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/src/main.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/cmake-build-debug/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/cmake-build-debug/notepad_autogen/mocs_compilation.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/src/Message.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/src/Message.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/src/NetworkingData.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/src/NetworkingData.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/src/Notepad.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/src/Notepad.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/src/Request.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/src/Request.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/src/StartDialog.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/src/StartDialog.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/src/Symbol.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/src/Symbol.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/src/main.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/src/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

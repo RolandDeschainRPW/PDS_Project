@@ -258,6 +258,7 @@ void Notepad::displayError(QAbstractSocket::SocketError socketError) {
     }
 }
 
+// DA RIVEDERE!
 // Overriding the closeEvent() function to correctly disconnect from the Server.
 void Notepad::closeEvent(QCloseEvent* event) {
     // Knowing how to handle the disconnection from Server.

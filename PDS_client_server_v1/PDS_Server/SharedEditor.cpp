@@ -10,7 +10,7 @@ SharedEditor::SharedEditor(QTcpSocket* clientConnection, qint32 _siteId, QObject
     this->clientConnection = clientConnection;
     this->_siteId = _siteId;
 
-    this->clientConnection->setParent(this); // To avoid Memory Leakage!
+    if (this->clientConnection != nullptr) this->clientConnection->setParent(this); // To avoid Memory Leakage!
 }
 
 QTcpSocket* SharedEditor::getClientConnection() {

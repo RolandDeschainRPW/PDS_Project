@@ -15,8 +15,8 @@ NetworkingData::NetworkingData(qint32 _siteId,
                         networkSession(networkSession) {
     // I am going to change the parents of the following raw pointers
     // to avoid Memory Leakage!
-    tcpSocket->setParent(this);
-    networkSession->setParent(this);
+    if (networkSession != nullptr) tcpSocket->setParent(this);
+    if (networkSession != nullptr) networkSession->setParent(this);
 }
 
 QTcpSocket* NetworkingData::getTcpSocket() {

@@ -2,6 +2,8 @@
 // Created by raffa on 25/08/2019.
 //
 
+#include <iostream>
+
 #include <QtWidgets>
 #include <QtNetwork>
 
@@ -14,8 +16,10 @@ StartDialog::StartDialog(QWidget* parent) : QDialog(parent),
                                         tcpSocket(new QTcpSocket(this)) {
     ui->setupUi(this);
 
-    // Setting this attribute to delete this widget on closing.
-    this->setAttribute(Qt::WA_DeleteOnClose);
+    // Testing the Qt::WA_DeleteOnClose attribute.
+    std::string test_attribute = "Qt::WA_DeleteOnClose -> ";
+    test_attribute.append(this->testAttribute(Qt::WA_DeleteOnClose) ? "ON" : "OFF");
+    std::cout << test_attribute << std::endl;
 
     // find out name of this machine
     QString name = QHostInfo::localHostName();
@@ -132,14 +136,15 @@ void StartDialog::readStartDataFromServer() {
         return;
     }
     std::cout << "I received the following Site Id: " << siteId << std::endl;
-    NetworkingData* startData = new NetworkingData(siteId, std::move(symbols), tcpSocket, networkSession, this);
+    disconnect(tcpSocket, &QIODevice::readyRead, this, &StartDialog::readStartDataFromServer);
+    NetworkingData* startData = new NetworkingData(siteId, symbols, tcpSocket, networkSession, this);
     showEditor(startData);
 }
 
 void StartDialog::showEditor(NetworkingData* startData) {
+    this->close();
     notepad = new Notepad(startData, this);
     notepad->show();
-    this->close(); // This widget is deleted on closing.
 }
 
 void StartDialog::connectToServer() {

@@ -13,53 +13,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d62560f-bc6f-4e3e-ab49-702bbe945c2b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/notepad.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/notepad.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/mocs_compilation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/notepad_autogen/mocs_compilation.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/StartDialog.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/StartDialog.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_C.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdC/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdC/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdCXX/a.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/3.14.3/CompilerIdCXX/a.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/Message.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/Message.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/PDS_Client_autogen/mocs_compilation.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/PDS_Client_autogen/mocs_compilation.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/Request.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/Request.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/SharedEditor.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/SharedEditor.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/Symbol.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/Symbol.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/includes_CXX.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/includes_CXX.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/main.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/main.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client_autogen.dir/AutogenInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client_autogen.dir/AutogenInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client_autogen.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Client_autogen.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/PDS_Client.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/PDS_Client.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/PDS_Client.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/PDS_Client.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/cmake_install.cmake" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDS_Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/SharedEditor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/SharedEditor.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/SharedEditor.h" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/SharedEditor.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/PDS_Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/PDS_Server.exe" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -83,11 +42,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SharedEditor.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="303">
-              <caret line="154" column="4" selection-start-line="154" selection-start-column="4" selection-end-line="154" selection-end-column="4" />
+            <state relative-caret-position="192">
+              <caret line="129" selection-start-line="129" selection-end-line="129" />
             </state>
           </provider>
         </entry>
@@ -101,11 +60,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
+            <state relative-caret-position="842">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
               <folding>
                 <element signature="e#2455#2478#0" expanded="true" />
               </folding>
@@ -228,6 +187,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -239,7 +199,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -295,17 +254,17 @@
       <workItem from="1566504445593" duration="6859000" />
       <workItem from="1566547138063" duration="16483000" />
       <workItem from="1566768017021" duration="142000" />
+      <workItem from="1566809497535" duration="113000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71048000" />
+    <option name="totallyTimeSpent" value="71161000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26599148" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26865673" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -329,6 +288,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/SharedEditor.cpp</url>
+          <line>104</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -395,16 +365,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/main.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="4" selection-start-line="59" selection-start-column="4" selection-end-line="59" selection-end-column="4" />
-          <folding>
-            <element signature="e#2455#2478#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Request.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -438,10 +398,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/SharedEditor.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="303">
-          <caret line="154" column="4" selection-start-line="154" selection-start-column="4" selection-end-line="154" selection-end-column="4" />
+        <state relative-caret-position="192">
+          <caret line="129" selection-start-line="129" selection-end-line="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="842">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
           <folding>
-            <element signature="e#42#62#0" expanded="true" />
+            <element signature="e#2455#2478#0" expanded="true" />
           </folding>
         </state>
       </provider>

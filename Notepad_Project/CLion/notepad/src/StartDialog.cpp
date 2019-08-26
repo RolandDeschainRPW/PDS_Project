@@ -17,9 +17,7 @@ StartDialog::StartDialog(QWidget* parent) : QDialog(parent),
     ui->setupUi(this);
 
     // Testing the Qt::WA_DeleteOnClose attribute.
-    std::string test_attribute = "Qt::WA_DeleteOnClose -> ";
-    test_attribute.append(this->testAttribute(Qt::WA_DeleteOnClose) ? "ON" : "OFF");
-    std::cout << test_attribute << std::endl;
+    qDebug() << "Qt::WA_DeleteOnClose -> " << (this->testAttribute(Qt::WA_DeleteOnClose) ? "ON" : "OFF");
 
     // find out name of this machine
     QString name = QHostInfo::localHostName();
@@ -131,11 +129,11 @@ void StartDialog::readStartDataFromServer() {
     QVector<Symbol> symbols;
     in >> siteId >> symbols;
     if (!in.commitTransaction()) {
-        std::cout << "Something went wrong!\n\t-> I could not have Site Id and Symbols from Server!" << std::endl;
+        qDebug() << "Something went wrong!\n\t-> I could not have Site Id and Symbols from Server!";
         this->ui->statusLabel->setText(tr("Something went wrong! I could not have Site Id and Symbols from Server!"));
         return;
     }
-    std::cout << "I received the following Site Id: " << siteId << std::endl;
+    qDebug() << "I received the following Site Id: " << siteId;
     disconnect(tcpSocket, &QIODevice::readyRead, this, &StartDialog::readStartDataFromServer);
     NetworkingData* startData = new NetworkingData(siteId, symbols, tcpSocket, networkSession, this);
     showEditor(startData);

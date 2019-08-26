@@ -23,7 +23,6 @@ class Notepad : public QMainWindow {
     Q_OBJECT
 
 public:
-    static const qint32 SITE_ID_UNASSIGNED = -1;
     static const qint32 BOUNDARY_PLUS = 0;
     static const qint32 BOUNDARY_MINUS = 1;
     static const qint32 RANDOM = 2;
@@ -68,18 +67,12 @@ private:
     Ui::Notepad* ui;
     QString currentFile;
 
-    // Vars for text changes.
-    QTextCursor cursor;
-    QString pos_cursor;
-
     // Vars for symbols managing.
-    qint32 _siteId = SITE_ID_UNASSIGNED;
     qint32 _counter = 0;
     qint32 boundary;
     qint32 base;
     qint32 strategy;
     QVector<qint32> strategyCache;
-    QVector<Symbol> _symbols;
 
     // Vars for networking.
     NetworkingData* net_data = nullptr;

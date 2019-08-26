@@ -15,14 +15,16 @@
     <list default="true" id="6bbfedcb-bf77-40d8-bf1c-e8b40ffcfd59" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/notepad.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/notepad.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/include/NetworkingData.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/include/NetworkingData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/include/Notepad.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/include/Notepad.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/NetworkingData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/NetworkingData.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/Notepad.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/Notepad.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/StartDialog.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/StartDialog.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Client/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SharedEditor.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/SharedEditor.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/NetworkServer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/NetworkServer.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,8 +51,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NetworkServer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
+            <state relative-caret-position="2091">
+              <caret line="126" column="41" lean-forward="true" selection-start-line="126" selection-start-column="41" selection-end-line="126" selection-end-column="41" />
               <folding>
                 <element signature="e#42#62#0" expanded="true" />
               </folding>
@@ -104,9 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.size()</find>
-      <find>quint8</find>
-      <find>tr(</find>
       <find>disconn</find>
       <find>newcon</find>
       <find>connectCl</find>
@@ -134,12 +133,17 @@
       <find>disconnect</find>
       <find>SharedEditor</find>
       <find>readre</find>
+      <find>std::cout</find>
+      <find>&lt;&lt; std::endl;</find>
+      <find>qDebug()</find>
     </findStrings>
     <replaceStrings>
       <replace>QVector</replace>
       <replace>qint32</replace>
       <replace>qt_5_13</replace>
       <replace />
+      <replace>qDebug()</replace>
+      <replace>;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -157,15 +161,15 @@
         <option value="$PROJECT_DIR$/Message.h" />
         <option value="$PROJECT_DIR$/Request.cpp" />
         <option value="$PROJECT_DIR$/NetworkServer.h" />
-        <option value="$PROJECT_DIR$/NetworkServer.cpp" />
         <option value="$PROJECT_DIR$/SharedEditor.h" />
         <option value="$PROJECT_DIR$/SharedEditor.cpp" />
+        <option value="$PROJECT_DIR$/NetworkServer.cpp" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
+    <option name="x" value="34" />
+    <option name="y" value="88" />
     <option name="width" value="1031" />
     <option name="height" value="770" />
   </component>
@@ -248,7 +252,7 @@
       <workItem from="1566751918034" duration="683000" />
       <workItem from="1566752797902" duration="496000" />
       <workItem from="1566766921528" duration="1410000" />
-      <workItem from="1566812060253" duration="788000" />
+      <workItem from="1566812060253" duration="5360000" />
     </task>
     <task id="LOCAL-00001" summary="Memory Leakage fixed on PDS_client_server_v1 Project + NetworkingData class added on CLion/Notepad Project">
       <created>1566752548845</created>
@@ -275,7 +279,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88321000" />
+    <option name="totallyTimeSpent" value="92893000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -422,13 +426,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Request.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SharedEditor.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -456,10 +453,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Request.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NetworkServer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
+        <state relative-caret-position="2091">
+          <caret line="126" column="41" lean-forward="true" selection-start-line="126" selection-start-column="41" selection-end-line="126" selection-end-column="41" />
           <folding>
             <element signature="e#42#62#0" expanded="true" />
           </folding>

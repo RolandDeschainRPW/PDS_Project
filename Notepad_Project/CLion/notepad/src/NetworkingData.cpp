@@ -22,3 +22,15 @@ NetworkingData::NetworkingData(qint32 _siteId,
 QTcpSocket* NetworkingData::getTcpSocket() {
     return tcpSocket;
 }
+
+QVector<Symbol>& NetworkingData::getSymbols() {
+    return _symbols;
+}
+
+QNetworkSession* NetworkingData::getNetworkSession() {
+    return networkSession;
+}
+
+qint32 NetworkingData::getSiteId() {
+    return _siteId;
+}

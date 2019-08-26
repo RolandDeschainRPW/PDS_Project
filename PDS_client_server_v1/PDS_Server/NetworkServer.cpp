@@ -128,12 +128,12 @@ void NetworkServer::connectClient() {
             clientConnection->write(block);
             connect(clientConnection, &QIODevice::readyRead, this, [this, clientConnection] {
                 while (clientConnection->bytesAvailable()) {
-                    std::cout << "There is a request to read!" << std::endl;
+                    qDebug() << "There is a request to read!";
                     this->readRequest(clientConnection);
                 }
             });
             this->free_site_ids[cnt] = false;
-            std::cout << "I assigned the following Site Id to the incoming client: " << cnt << std::endl;
+            qDebug() << "I assigned the following Site Id to the incoming client: " << cnt;
             //connect(clientConnection, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), this, &Client::displayError);
             return;
         }
@@ -141,7 +141,7 @@ void NetworkServer::connectClient() {
     }
 
     // No Site Ids available.
-    std::cout << "I cannot host the incoming client!\n\t-> No more Site Ids available!" << std::endl;
+    qDebug() << "I cannot host the incoming client!\n\t-> No more Site Ids available!";
     clientConnection->abort();
 }
 
@@ -153,13 +153,13 @@ void NetworkServer::readRequest(QTcpSocket* clientConnection) {
     Request next_req;
     in >> next_req;
     if (!in.commitTransaction()) {
-        std::cout << "Something went wrong!\n\t-> I could not read the incoming request!" << std::endl;
+        qDebug() << "Something went wrong!\n\t-> I could not read the incoming request!";
         return;
     }
-    std::cout << "I am going to process the request!" << std::endl;
+    qDebug() << "I am going to process the request!";
     if (next_req.getRequestType() == Request::MESSAGE_TYPE) {
         Message msg = next_req.getMessage();
-        std::cout << "I am going to process the message!" << std::endl;
+        qDebug() << "I am going to process the message!";
         this->readMessage(msg);
     } else /* Request::DISCONNECT_TYPE */ {
         this->disconnectClient(next_req.getSiteId());
@@ -194,7 +194,7 @@ void NetworkServer::dispatchMessages() {
                 out.setVersion(QDataStream::Qt_5_13);
                 out << tmp_msg;
                 se->getClientConnection()->write(block);
-                std::cout << "Message sent!" << std::endl;
+                qDebug() << "Message sent!";
             }
         }
     }
@@ -214,30 +214,27 @@ void NetworkServer::processSymbol(const Message& msg) {
             for (Symbol s : _symbols) {
                 if (this->comparePositions(s.getPos(), msg.getSymbol().getPos())) {
                     _symbols.insert(_symbols.begin() + index, msg.getSymbol());
-                    std::string str = this->symbols_to_string().toStdString();
-                    std::cout << "Current symbols on Server: " << str << std::endl;
+                    qDebug() << "Current symbols on Server: " << this->symbols_to_string();
                     return;
                 }
                 index++;
             }
             _symbols.push_back(msg.getSymbol());
         }
-        std::cout << "I have INSERTED a symbol!" << std::endl;
+        qDebug() << "I have INSERTED a symbol!";
     } else /* Message::ERASE_TYPE */ {
         for (Symbol s : _symbols){
             if (s.getChar() == msg.getSymbol().getChar() && s.getId() == msg.getSymbol().getId()) {
                 _symbols.erase(_symbols.begin() + index);
-                std::cout << "I have ERASED a symbol!" << std::endl;
-                std::string str = this->symbols_to_string().toStdString();
-                std::cout << "Current symbols on Server: " << str << std::endl;
+                qDebug() << "I have ERASED a symbol!";
+                qDebug() << "Current symbols on Server: " << this->symbols_to_string();
                 return;
             }
             index++;
         }
-        std::cout << "ERASING already done!" << std::endl;
+        qDebug() << "ERASING already done!";
     }
-    std::string str = this->symbols_to_string().toStdString();
-    std::cout << "Current symbols on Server: " << str << std::endl;
+    qDebug() << "Current symbols on Server: " << this->symbols_to_string();
 }
 
 // Returns true if pos1 > pos2

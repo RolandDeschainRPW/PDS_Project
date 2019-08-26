@@ -32,8 +32,9 @@ Notepad::Notepad(NetworkingData* net_data,
                         ui(new Ui::Notepad),
                         base(base),
                         boundary(boundary),
-                        strategy(strategy) {
-    net_data->setParent(this); // To avoid Memory Leakage!
+                        strategy(strategy),
+                        net_data(net_data) {
+    this->net_data->setParent(this); // To avoid Memory Leakage!
 
     ui->setupUi(this);
     this->setCentralWidget(ui->textEdit);
@@ -200,14 +201,14 @@ void Notepad::setFontBold(bool bold) {
 }
 
 void Notepad::onTextChanged() {
-    qDebug() << "onTextChanged WORKS! :O";
+    qDebug() << "onTextChanged() WORKS! :O";
     //Notepad::save();
 }
 
 void Notepad::onCursorPositionChanged() {
-    // qui salvo posiz cursore: modo per differenziare cursori per utenti diversi?
-    cursor = ui->textEdit->textCursor();
-    pos_cursor = QString("Position: %1").arg(cursor.positionInBlock());
+    qDebug() << "onCursorPositionChanged() WORKS! :O";
+    qDebug() << "Position in block: " << ui->textEdit->textCursor().positionInBlock();
+    qDebug() << "Absolute position: " << ui->textEdit->textCursor().position();
 }
 
 void Notepad::interceptUserInput(int pos, int del, int add) {
@@ -216,8 +217,6 @@ void Notepad::interceptUserInput(int pos, int del, int add) {
         QTextCursor c = QTextCursor(ui->textEdit->textCursor());
         c.setPosition(pos);
         c.setPosition(pos + del, QTextCursor::KeepAnchor);
-        qDebug() << "Position in block: " << c.positionInBlock();
-        qDebug() << "Absolute position: " << c.position();
         qDebug() << "Removed: " << del << " (" << c.selectedText() << ")";
         for (int i = 0; i < c.selectedText().size(); i++)
             this->localErase(c.position());
@@ -228,11 +227,9 @@ void Notepad::interceptUserInput(int pos, int del, int add) {
         QTextCursor c = QTextCursor(ui->textEdit->textCursor());
         c.setPosition(pos);
         c.setPosition(pos + add, QTextCursor::KeepAnchor);
-        qDebug() << "Position in block: " << c.positionInBlock();
-        qDebug() << "Absolute position: " << c.position();
         qDebug() << "Added: " << add << " (" << c.selectedText() << ")";
-        for (int i = 0; i < c.selectedText().size(); i++)
-            this->localInsert(c.position(), c.selectedText()[i]);
+        for (int i = c.selectedText().size() - 1; i >= 0; i--)
+            this->localInsert(pos, c.selectedText()[i]);
     }
 }
 
@@ -264,7 +261,7 @@ void Notepad::closeEvent(QCloseEvent* event) {
     // Knowing how to handle the disconnection from Server.
     connect(net_data->getTcpSocket(), &QAbstractSocket::disconnected, net_data->getTcpSocket(), [this, event] {
         net_data->getTcpSocket()->abort();
-        std::cout << "DISCONNECTED!" << std::endl;
+        qDebug() << "DISCONNECTED!";
         //QDialog::closeEvent(event);
     });
 
@@ -273,34 +270,33 @@ void Notepad::closeEvent(QCloseEvent* event) {
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
 
-    Request req_to_send = Request(this->_siteId, Request::DISCONNECT_TYPE, std::nullopt);
+    Request req_to_send = Request(this->net_data->getSiteId(), Request::DISCONNECT_TYPE, std::nullopt);
     out << req_to_send;
     net_data->getTcpSocket()->write(block);
-    std::cout << "I am going to DISCONNECT!" << std::endl;
+    qDebug() << "I am going to DISCONNECT!";
 }
 
 void Notepad::readMessage() {
-    std::cout << "There is a message to read!" << std::endl;
+    qDebug() << "There is a message to read!";
     in.startTransaction();
 
     Message next_msg;
     in >> next_msg;
 
     if (!in.commitTransaction()) {
-        std::cout << "Something went wrong!\n\t-> I couldn't read the incoming message!" << std::endl;
+        qDebug() << "Something went wrong!\n\t-> I couldn't read the incoming message!";
         return;
     }
 
-    std::cout << "I am going to process the message!" << std::endl;
+    qDebug() << "I am going to process the message!";
     this->processSymbol(next_msg);
 
     // Showing the current symbols on standard output.
-    std::string str = this->symbols_to_string().toStdString();
-    std::cout << "Current symbols on this Client with Site Id " << std::to_string(this->_siteId) << ": " << str << std::endl;
+    qDebug() << "Current symbols on this Client with Site Id " << this->net_data->getSiteId() << ": " << this->symbols_to_string();
 }
 
 qint32 Notepad::getSiteId() {
-    return _siteId;
+    return net_data->getSiteId();
 }
 
 qint32 Notepad::getCounter() {
@@ -310,56 +306,56 @@ qint32 Notepad::getCounter() {
 void Notepad::localInsert(qint32 index, QChar value) {
     Symbol s = this->generateSymbol(value, index);
 
-    if (_symbols.empty())  _symbols.push_back(s);
-    else if (index > static_cast<qint32>(_symbols.size() - 1)) _symbols.push_back(s);
-    else if (index == 0) _symbols.insert(_symbols.begin(), s);
-    else _symbols.insert(_symbols.begin() + index, s);
+    if (net_data->getSymbols().empty())  net_data->getSymbols().push_back(s);
+    else if (index > static_cast<qint32>(net_data->getSymbols().size() - 1)) net_data->getSymbols().push_back(s);
+    else if (index == 0) net_data->getSymbols().insert(net_data->getSymbols().begin(), s);
+    else net_data->getSymbols().insert(net_data->getSymbols().begin() + index, s);
 
     _counter++;
 
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
-    Request req_to_send = Request(this->_siteId, Request::MESSAGE_TYPE, Message(this->_siteId, Message::INSERT_TYPE, s));
+    Request req_to_send = Request(this->net_data->getSiteId(), Request::MESSAGE_TYPE, Message(this->net_data->getSiteId(), Message::INSERT_TYPE, s));
     out << req_to_send;
     net_data->getTcpSocket()->write(block);
-    std::cout << "I have sent an INSERT MESSAGE!" << std::endl;
+    qDebug() << "I have sent an INSERT MESSAGE!";
 }
 
 void Notepad::localErase(qint32 index) {
-    if (index >= static_cast<qint32>(_symbols.size())) return;
+    if (index >= static_cast<qint32>(net_data->getSymbols().size())) return;
 
-    Symbol tmp = _symbols.at(index);
-    _symbols.erase(_symbols.begin() + index);
+    Symbol tmp = net_data->getSymbols().at(index);
+    net_data->getSymbols().erase(net_data->getSymbols().begin() + index);
 
     _counter++;
 
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
-    out << Request(this->_siteId, Request::MESSAGE_TYPE, Message(this->_siteId, Message::ERASE_TYPE, tmp));
+    out << Request(this->net_data->getSiteId(), Request::MESSAGE_TYPE, Message(this->net_data->getSiteId(), Message::ERASE_TYPE, tmp));
     net_data->getTcpSocket()->write(block);
-    std::cout << "I have sent an ERASE MESSAGE!" << std::endl;
+    qDebug() << "I have sent an ERASE MESSAGE!";
 }
 
 void Notepad::processSymbol(const Message &m) {
     qint32 index = 0;
     if (m.getType() == Message::INSERT_TYPE) {
-        if (_symbols.empty()) _symbols.push_back(m.getSymbol());
+        if (net_data->getSymbols().empty()) net_data->getSymbols().push_back(m.getSymbol());
         else {
-            for (Symbol s : _symbols) {
+            for (Symbol s : net_data->getSymbols()) {
                 if (this->comparePositions(s.getPos(), m.getSymbol().getPos())) {
-                    _symbols.insert(_symbols.begin() + index, m.getSymbol());
+                    net_data->getSymbols().insert(net_data->getSymbols().begin() + index, m.getSymbol());
                     return;
                 }
                 index++;
             }
-            _symbols.push_back(m.getSymbol());
+            net_data->getSymbols().push_back(m.getSymbol());
         }
     } else /* Message::ERASE_TYPE */ {
-        for (Symbol s : _symbols){
+        for (Symbol s : net_data->getSymbols()){
             if (s.getChar() == m.getSymbol().getChar() && s.getId() == m.getSymbol().getId()) {
-                _symbols.erase(_symbols.begin() + index);
+                net_data->getSymbols().erase(net_data->getSymbols().begin() + index);
                 return;
             }
             index++;
@@ -369,14 +365,14 @@ void Notepad::processSymbol(const Message &m) {
 
 QString Notepad::symbols_to_string() {
     QString str;
-    for (Symbol s : _symbols) {
+    for (Symbol s : net_data->getSymbols()) {
         str += s.getChar();
     }
     return str;
 }
 
 std::optional<Symbol> Notepad::getSymbol(qint32 index) {
-    if (!_symbols.empty() && index >= 0 && index <= static_cast<qint32>(_symbols.size() - 1)) return _symbols.at(index);
+    if (!net_data->getSymbols().empty() && index >= 0 && index <= static_cast<qint32>(net_data->getSymbols().size() - 1)) return net_data->getSymbols().at(index);
     else return std::nullopt;
 }
 

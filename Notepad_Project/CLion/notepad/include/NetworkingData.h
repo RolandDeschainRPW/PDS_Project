@@ -7,6 +7,7 @@
 
 #include <QObject>
 #include <QtNetwork>
+#include <QVector>
 
 #include "../include/Symbol.h"
 
@@ -17,6 +18,9 @@ public:
     NetworkingData(qint32 _siteId, QVector<Symbol> _symbols, QTcpSocket* tcpSocket, QNetworkSession* networkSession, QObject* parent = 0);
 
     QTcpSocket* getTcpSocket();
+    QVector<Symbol>& getSymbols();
+    QNetworkSession* getNetworkSession();
+    qint32 getSiteId();
 
 private:
     qint32 _siteId;

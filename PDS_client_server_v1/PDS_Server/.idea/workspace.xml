@@ -18,9 +18,6 @@
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/CMakeFiles/notepad.dir/objects.a" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/notepad.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/cmake-build-debug/notepad.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/include/NetworkingData.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/include/NetworkingData.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/include/Notepad.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/include/Notepad.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/NetworkingData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/NetworkingData.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/Notepad.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/Notepad.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/StartDialog.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../Notepad_Project/CLion/notepad/src/StartDialog.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -51,8 +48,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/NetworkServer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2091">
-              <caret line="126" column="41" lean-forward="true" selection-start-line="126" selection-start-column="41" selection-end-line="126" selection-end-column="41" />
+            <state relative-caret-position="345">
+              <caret line="222" column="9" lean-forward="true" selection-start-line="222" selection-start-column="9" selection-end-line="222" selection-end-column="9" />
               <folding>
                 <element signature="e#42#62#0" expanded="true" />
               </folding>
@@ -106,8 +103,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>disconn</find>
-      <find>newcon</find>
       <find>connectCl</find>
       <find>readReque</find>
       <find>readmess</find>
@@ -136,14 +131,16 @@
       <find>std::cout</find>
       <find>&lt;&lt; std::endl;</find>
       <find>qDebug()</find>
+      <find>for (</find>
+      <find>fortune</find>
     </findStrings>
     <replaceStrings>
       <replace>QVector</replace>
       <replace>qint32</replace>
       <replace>qt_5_13</replace>
-      <replace />
       <replace>qDebug()</replace>
       <replace>;</replace>
+      <replace />
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -168,8 +165,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="34" />
-    <option name="y" value="88" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1031" />
     <option name="height" value="770" />
   </component>
@@ -252,7 +249,7 @@
       <workItem from="1566751918034" duration="683000" />
       <workItem from="1566752797902" duration="496000" />
       <workItem from="1566766921528" duration="1410000" />
-      <workItem from="1566812060253" duration="5360000" />
+      <workItem from="1566812060253" duration="7787000" />
     </task>
     <task id="LOCAL-00001" summary="Memory Leakage fixed on PDS_client_server_v1 Project + NetworkingData class added on CLion/Notepad Project">
       <created>1566752548845</created>
@@ -279,7 +276,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="92893000" />
+    <option name="totallyTimeSpent" value="95320000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
@@ -294,13 +291,13 @@
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32981783" />
-      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.32981783" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.32981783" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.39980826" />
       <window_info anchor="bottom" id="CMake" order="8" weight="0.32981783" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.32981783" />
+      <window_info active="true" anchor="bottom" id="Messages" order="12" visible="true" weight="0.32885906" />
       <window_info anchor="right" id="Database" order="0" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -426,10 +423,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SharedEditor.cpp">
+    <entry file="file://$PROJECT_DIR$/NetworkServer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="808">
+          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+          <folding>
+            <element signature="e#113#132#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -443,16 +443,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/NetworkServer.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="808">
-          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
-          <folding>
-            <element signature="e#113#132#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Request.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -460,10 +450,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SharedEditor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/NetworkServer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2091">
-          <caret line="126" column="41" lean-forward="true" selection-start-line="126" selection-start-column="41" selection-end-line="126" selection-end-column="41" />
+        <state relative-caret-position="345">
+          <caret line="222" column="9" lean-forward="true" selection-start-line="222" selection-start-column="9" selection-end-line="222" selection-end-column="9" />
           <folding>
             <element signature="e#42#62#0" expanded="true" />
           </folding>

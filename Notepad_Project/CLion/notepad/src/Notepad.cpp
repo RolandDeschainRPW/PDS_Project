@@ -218,8 +218,8 @@ void Notepad::interceptUserInput(int pos, int del, int add) {
         c.setPosition(pos);
         c.setPosition(pos + del, QTextCursor::KeepAnchor);
         qDebug() << "Removed: " << del << " (" << c.selectedText() << ")";
-        for (int i = 0; i < c.selectedText().size(); i++)
-            this->localErase(c.position());
+        for (int i = c.selectedText().size() - 1; i >= 0; i--)
+            this->localErase(pos);
         redo();
     }
 
@@ -245,7 +245,7 @@ void Notepad::displayError(QAbstractSocket::SocketError socketError) {
         case QAbstractSocket::ConnectionRefusedError:
             QMessageBox::information(this, tr("SharedEditor"),
                                      tr("The connection was refused by the peer. "
-                                        "Make sure the fortune server is running, "
+                                        "Make sure the server is running, "
                                         "and check that the host name and port "
                                         "settings are correct."));
             break;
@@ -343,7 +343,7 @@ void Notepad::processSymbol(const Message &m) {
     if (m.getType() == Message::INSERT_TYPE) {
         if (net_data->getSymbols().empty()) net_data->getSymbols().push_back(m.getSymbol());
         else {
-            for (Symbol s : net_data->getSymbols()) {
+            foreach (Symbol s, net_data->getSymbols()) {
                 if (this->comparePositions(s.getPos(), m.getSymbol().getPos())) {
                     net_data->getSymbols().insert(net_data->getSymbols().begin() + index, m.getSymbol());
                     return;
@@ -353,7 +353,7 @@ void Notepad::processSymbol(const Message &m) {
             net_data->getSymbols().push_back(m.getSymbol());
         }
     } else /* Message::ERASE_TYPE */ {
-        for (Symbol s : net_data->getSymbols()){
+        foreach (Symbol s, net_data->getSymbols()){
             if (s.getChar() == m.getSymbol().getChar() && s.getId() == m.getSymbol().getId()) {
                 net_data->getSymbols().erase(net_data->getSymbols().begin() + index);
                 return;
@@ -365,7 +365,7 @@ void Notepad::processSymbol(const Message &m) {
 
 QString Notepad::symbols_to_string() {
     QString str;
-    for (Symbol s : net_data->getSymbols()) {
+    foreach (Symbol s, net_data->getSymbols()) {
         str += s.getChar();
     }
     return str;

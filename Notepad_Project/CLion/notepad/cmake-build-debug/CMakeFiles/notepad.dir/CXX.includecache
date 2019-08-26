@@ -3291,6 +3291,8 @@ QObject
 -
 QtNetwork
 -
+QVector
+-
 ../include/Symbol.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/Notepad_Project/CLion/notepad/include/Symbol.h
 

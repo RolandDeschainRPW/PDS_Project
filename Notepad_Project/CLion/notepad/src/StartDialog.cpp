@@ -112,7 +112,7 @@ void StartDialog::displayError(QAbstractSocket::SocketError socketError) {
         case QAbstractSocket::ConnectionRefusedError:
             QMessageBox::information(this, tr("SharedEditor"),
                                      tr("The connection was refused by the peer. "
-                                        "Make sure the fortune server is running, "
+                                        "Make sure the server is running, "
                                         "and check that the host name and port "
                                         "settings are correct."));
             break;

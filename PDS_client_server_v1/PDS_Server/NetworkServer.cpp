@@ -211,7 +211,7 @@ void NetworkServer::processSymbol(const Message& msg) {
     if (msg.getType() == Message::INSERT_TYPE) {
         if (_symbols.empty()) _symbols.push_back(msg.getSymbol());
         else {
-            for (Symbol s : _symbols) {
+            foreach (Symbol s, _symbols) {
                 if (this->comparePositions(s.getPos(), msg.getSymbol().getPos())) {
                     _symbols.insert(_symbols.begin() + index, msg.getSymbol());
                     qDebug() << "Current symbols on Server: " << this->symbols_to_string();
@@ -223,7 +223,7 @@ void NetworkServer::processSymbol(const Message& msg) {
         }
         qDebug() << "I have INSERTED a symbol!";
     } else /* Message::ERASE_TYPE */ {
-        for (Symbol s : _symbols){
+        foreach (Symbol s, _symbols){
             if (s.getChar() == msg.getSymbol().getChar() && s.getId() == msg.getSymbol().getId()) {
                 _symbols.erase(_symbols.begin() + index);
                 qDebug() << "I have ERASED a symbol!";
@@ -258,7 +258,7 @@ bool NetworkServer::comparePositions(std::optional<QVector<qint32>> pos1_opt,
 
 QString NetworkServer::symbols_to_string() {
     QString str;
-    for (Symbol s : _symbols) {
+    foreach (Symbol s, _symbols) {
         str += s.getChar();
     }
     return str;

@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/Message.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/Message.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/NetworkServer.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/NetworkServer.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/cmake-build-debug/PDS_Server_autogen/mocs_compilation.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/PDS_Server_autogen/mocs_compilation.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/Request.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/Request.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/SharedEditor.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/SharedEditor.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/Symbol.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/Symbol.cpp.obj"
-  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/main.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v1/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/main.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/cmake-build-debug/PDS_Server_autogen/mocs_compilation.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/PDS_Server_autogen/mocs_compilation.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/src/Message.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/src/Message.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/src/NetworkServer.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/src/Request.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/src/Request.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/src/SharedEditor.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/src/SharedEditor.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/src/Symbol.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/src/Symbol.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/src/main.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v2/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/src/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -25,6 +25,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "PDS_Server_autogen/include"
+  "../include"
   "C:/Qt/5.13.0/mingw73_64/include"
   "C:/Qt/5.13.0/mingw73_64/include/QtCore"
   "C:/Qt/5.13.0/mingw73_64/./mkspecs/win32-g++"

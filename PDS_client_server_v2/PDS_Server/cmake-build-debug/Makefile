@@ -47,10 +47,10 @@ RM = "D:\Programmi\JetBrains\CLion 2019.1.3\bin\cmake\win\bin\cmake.exe" -E remo
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Server
+CMAKE_SOURCE_DIR = D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v2\PDS_Server
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Server\cmake-build-debug
+CMAKE_BINARY_DIR = D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v2\PDS_Server\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Server\cmake-build-debug\CMakeFiles D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Server\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v2\PDS_Server\cmake-build-debug\CMakeFiles D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v2\PDS_Server\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v1\PDS_Server\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v2\PDS_Server\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -135,60 +135,6 @@ PDS_Server_autogen/fast:
 	$(MAKE) -f CMakeFiles\PDS_Server_autogen.dir\build.make CMakeFiles/PDS_Server_autogen.dir/build
 .PHONY : PDS_Server_autogen/fast
 
-Message.obj: Message.cpp.obj
-
-.PHONY : Message.obj
-
-# target to build an object file
-Message.cpp.obj:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/Message.cpp.obj
-.PHONY : Message.cpp.obj
-
-Message.i: Message.cpp.i
-
-.PHONY : Message.i
-
-# target to preprocess a source file
-Message.cpp.i:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/Message.cpp.i
-.PHONY : Message.cpp.i
-
-Message.s: Message.cpp.s
-
-.PHONY : Message.s
-
-# target to generate assembly for a file
-Message.cpp.s:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/Message.cpp.s
-.PHONY : Message.cpp.s
-
-NetworkServer.obj: NetworkServer.cpp.obj
-
-.PHONY : NetworkServer.obj
-
-# target to build an object file
-NetworkServer.cpp.obj:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/NetworkServer.cpp.obj
-.PHONY : NetworkServer.cpp.obj
-
-NetworkServer.i: NetworkServer.cpp.i
-
-.PHONY : NetworkServer.i
-
-# target to preprocess a source file
-NetworkServer.cpp.i:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/NetworkServer.cpp.i
-.PHONY : NetworkServer.cpp.i
-
-NetworkServer.s: NetworkServer.cpp.s
-
-.PHONY : NetworkServer.s
-
-# target to generate assembly for a file
-NetworkServer.cpp.s:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/NetworkServer.cpp.s
-.PHONY : NetworkServer.cpp.s
-
 PDS_Server_autogen/mocs_compilation.obj: PDS_Server_autogen/mocs_compilation.cpp.obj
 
 .PHONY : PDS_Server_autogen/mocs_compilation.obj
@@ -216,113 +162,167 @@ PDS_Server_autogen/mocs_compilation.cpp.s:
 	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/PDS_Server_autogen/mocs_compilation.cpp.s
 .PHONY : PDS_Server_autogen/mocs_compilation.cpp.s
 
-Request.obj: Request.cpp.obj
+src/Message.obj: src/Message.cpp.obj
 
-.PHONY : Request.obj
-
-# target to build an object file
-Request.cpp.obj:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/Request.cpp.obj
-.PHONY : Request.cpp.obj
-
-Request.i: Request.cpp.i
-
-.PHONY : Request.i
-
-# target to preprocess a source file
-Request.cpp.i:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/Request.cpp.i
-.PHONY : Request.cpp.i
-
-Request.s: Request.cpp.s
-
-.PHONY : Request.s
-
-# target to generate assembly for a file
-Request.cpp.s:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/Request.cpp.s
-.PHONY : Request.cpp.s
-
-SharedEditor.obj: SharedEditor.cpp.obj
-
-.PHONY : SharedEditor.obj
+.PHONY : src/Message.obj
 
 # target to build an object file
-SharedEditor.cpp.obj:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/SharedEditor.cpp.obj
-.PHONY : SharedEditor.cpp.obj
+src/Message.cpp.obj:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/Message.cpp.obj
+.PHONY : src/Message.cpp.obj
 
-SharedEditor.i: SharedEditor.cpp.i
+src/Message.i: src/Message.cpp.i
 
-.PHONY : SharedEditor.i
+.PHONY : src/Message.i
 
 # target to preprocess a source file
-SharedEditor.cpp.i:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/SharedEditor.cpp.i
-.PHONY : SharedEditor.cpp.i
+src/Message.cpp.i:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/Message.cpp.i
+.PHONY : src/Message.cpp.i
 
-SharedEditor.s: SharedEditor.cpp.s
+src/Message.s: src/Message.cpp.s
 
-.PHONY : SharedEditor.s
+.PHONY : src/Message.s
 
 # target to generate assembly for a file
-SharedEditor.cpp.s:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/SharedEditor.cpp.s
-.PHONY : SharedEditor.cpp.s
+src/Message.cpp.s:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/Message.cpp.s
+.PHONY : src/Message.cpp.s
 
-Symbol.obj: Symbol.cpp.obj
+src/NetworkServer.obj: src/NetworkServer.cpp.obj
 
-.PHONY : Symbol.obj
+.PHONY : src/NetworkServer.obj
 
 # target to build an object file
-Symbol.cpp.obj:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/Symbol.cpp.obj
-.PHONY : Symbol.cpp.obj
+src/NetworkServer.cpp.obj:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj
+.PHONY : src/NetworkServer.cpp.obj
 
-Symbol.i: Symbol.cpp.i
+src/NetworkServer.i: src/NetworkServer.cpp.i
 
-.PHONY : Symbol.i
+.PHONY : src/NetworkServer.i
 
 # target to preprocess a source file
-Symbol.cpp.i:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/Symbol.cpp.i
-.PHONY : Symbol.cpp.i
+src/NetworkServer.cpp.i:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.i
+.PHONY : src/NetworkServer.cpp.i
 
-Symbol.s: Symbol.cpp.s
+src/NetworkServer.s: src/NetworkServer.cpp.s
 
-.PHONY : Symbol.s
+.PHONY : src/NetworkServer.s
 
 # target to generate assembly for a file
-Symbol.cpp.s:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/Symbol.cpp.s
-.PHONY : Symbol.cpp.s
+src/NetworkServer.cpp.s:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.s
+.PHONY : src/NetworkServer.cpp.s
 
-main.obj: main.cpp.obj
+src/Request.obj: src/Request.cpp.obj
 
-.PHONY : main.obj
+.PHONY : src/Request.obj
 
 # target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/main.cpp.obj
-.PHONY : main.cpp.obj
+src/Request.cpp.obj:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/Request.cpp.obj
+.PHONY : src/Request.cpp.obj
 
-main.i: main.cpp.i
+src/Request.i: src/Request.cpp.i
 
-.PHONY : main.i
+.PHONY : src/Request.i
 
 # target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/main.cpp.i
-.PHONY : main.cpp.i
+src/Request.cpp.i:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/Request.cpp.i
+.PHONY : src/Request.cpp.i
 
-main.s: main.cpp.s
+src/Request.s: src/Request.cpp.s
 
-.PHONY : main.s
+.PHONY : src/Request.s
 
 # target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/main.cpp.s
-.PHONY : main.cpp.s
+src/Request.cpp.s:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/Request.cpp.s
+.PHONY : src/Request.cpp.s
+
+src/SharedEditor.obj: src/SharedEditor.cpp.obj
+
+.PHONY : src/SharedEditor.obj
+
+# target to build an object file
+src/SharedEditor.cpp.obj:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/SharedEditor.cpp.obj
+.PHONY : src/SharedEditor.cpp.obj
+
+src/SharedEditor.i: src/SharedEditor.cpp.i
+
+.PHONY : src/SharedEditor.i
+
+# target to preprocess a source file
+src/SharedEditor.cpp.i:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/SharedEditor.cpp.i
+.PHONY : src/SharedEditor.cpp.i
+
+src/SharedEditor.s: src/SharedEditor.cpp.s
+
+.PHONY : src/SharedEditor.s
+
+# target to generate assembly for a file
+src/SharedEditor.cpp.s:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/SharedEditor.cpp.s
+.PHONY : src/SharedEditor.cpp.s
+
+src/Symbol.obj: src/Symbol.cpp.obj
+
+.PHONY : src/Symbol.obj
+
+# target to build an object file
+src/Symbol.cpp.obj:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/Symbol.cpp.obj
+.PHONY : src/Symbol.cpp.obj
+
+src/Symbol.i: src/Symbol.cpp.i
+
+.PHONY : src/Symbol.i
+
+# target to preprocess a source file
+src/Symbol.cpp.i:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/Symbol.cpp.i
+.PHONY : src/Symbol.cpp.i
+
+src/Symbol.s: src/Symbol.cpp.s
+
+.PHONY : src/Symbol.s
+
+# target to generate assembly for a file
+src/Symbol.cpp.s:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/Symbol.cpp.s
+.PHONY : src/Symbol.cpp.s
+
+src/main.obj: src/main.cpp.obj
+
+.PHONY : src/main.obj
+
+# target to build an object file
+src/main.cpp.obj:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/main.cpp.obj
+.PHONY : src/main.cpp.obj
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
 
 # Help Target
 help:
@@ -334,27 +334,27 @@ help:
 	@echo ... PDS_Server
 	@echo ... rebuild_cache
 	@echo ... PDS_Server_autogen
-	@echo ... Message.obj
-	@echo ... Message.i
-	@echo ... Message.s
-	@echo ... NetworkServer.obj
-	@echo ... NetworkServer.i
-	@echo ... NetworkServer.s
 	@echo ... PDS_Server_autogen/mocs_compilation.obj
 	@echo ... PDS_Server_autogen/mocs_compilation.i
 	@echo ... PDS_Server_autogen/mocs_compilation.s
-	@echo ... Request.obj
-	@echo ... Request.i
-	@echo ... Request.s
-	@echo ... SharedEditor.obj
-	@echo ... SharedEditor.i
-	@echo ... SharedEditor.s
-	@echo ... Symbol.obj
-	@echo ... Symbol.i
-	@echo ... Symbol.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
+	@echo ... src/Message.obj
+	@echo ... src/Message.i
+	@echo ... src/Message.s
+	@echo ... src/NetworkServer.obj
+	@echo ... src/NetworkServer.i
+	@echo ... src/NetworkServer.s
+	@echo ... src/Request.obj
+	@echo ... src/Request.i
+	@echo ... src/Request.s
+	@echo ... src/SharedEditor.obj
+	@echo ... src/SharedEditor.i
+	@echo ... src/SharedEditor.s
+	@echo ... src/Symbol.obj
+	@echo ... src/Symbol.i
+	@echo ... src/Symbol.s
+	@echo ... src/main.obj
+	@echo ... src/main.i
+	@echo ... src/main.s
 .PHONY : help
 
 

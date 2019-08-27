@@ -55,6 +55,7 @@ private:
     void readRequest(QTcpSocket* clientConnection);
     void processSymbol(const Message& msg);
     QString symbols_to_string();
+    QString positions_to_string();
 };
 
 #endif //PDS_SERVER_NETWORKSERVER_H

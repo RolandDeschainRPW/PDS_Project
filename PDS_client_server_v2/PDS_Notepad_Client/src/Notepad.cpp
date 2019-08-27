@@ -38,6 +38,7 @@ Notepad::Notepad(NetworkingData* net_data,
     this->net_data->setParent(this); // To avoid Memory Leakage!
 
     ui->setupUi(this);
+    this->setWindowTitle(tr("Notepad, Site ID -> %1").arg(net_data->getSiteId()));
     this->setCentralWidget(ui->textEdit);
 
     in.setDevice(net_data->getTcpSocket());
@@ -59,6 +60,9 @@ Notepad::Notepad(NetworkingData* net_data,
     connect(ui->actionUnderline, &QAction::triggered, this, &Notepad::setFontUnderline);
     connect(ui->actionItalic, &QAction::triggered, this, &Notepad::setFontItalic);
 
+    // Updating the document with symbols received from Server.
+    ui->textEdit->document()->setPlainText(this->symbols_to_string());
+
     // Listen on text changed signals.
     connect(ui->textEdit, &QTextEdit::textChanged, this, &Notepad::onTextChanged);
     connect(ui->textEdit, &QTextEdit::cursorPositionChanged, this, &Notepad::onCursorPositionChanged);
@@ -69,9 +73,6 @@ Notepad::Notepad(NetworkingData* net_data,
         while (net_data->getTcpSocket()->bytesAvailable()) this->readMessage();
     });
     connect(net_data->getTcpSocket(), QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), this, &Notepad::displayError);
-
-    // Updating the document with symbols received from Server.
-    ui->textEdit->document()->setPlainText(this->symbols_to_string());
 
     // Disable menu actions for unavailable features
     #if !QT_CONFIG(printer)
@@ -226,7 +227,7 @@ void Notepad::interceptUserInput(int pos, int del, int add) {
         c.setPosition(pos + del, QTextCursor::KeepAnchor);
         qDebug() << "Removed: " << del << " (" << c.selectedText() << ")";
         for (int i = c.selectedText().size() - 1; i >= 0; i--)
-            this->localErase(pos);
+            this->localErase(pos + i);
         redo();
     }
 
@@ -235,8 +236,8 @@ void Notepad::interceptUserInput(int pos, int del, int add) {
         c.setPosition(pos);
         c.setPosition(pos + add, QTextCursor::KeepAnchor);
         qDebug() << "Added: " << add << " (" << c.selectedText() << ")";
-        for (int i = c.selectedText().size() - 1; i >= 0; i--)
-            this->localInsert(pos, c.selectedText()[i]);
+        for (int i = 0; i < c.selectedText().size(); i++)
+            this->localInsert(pos + i, c.selectedText()[i]);
     }
 }
 
@@ -443,20 +444,10 @@ QVector<qint32> Notepad::generatePosBetween(qint32 siteId1,
         QVector<qint32> slice = (before.begin() + 1 < before.end()) ? before.mid(1) : QVector<qint32>();
         return this->generatePosBetween(siteId1, siteId2, slice, std::nullopt, newPos, level + 1);
     } else if (id1 == id2) {
-        if (siteId1 < siteId2) {
-            newPos.push_back(id1);
-            QVector<qint32> slice = (before.begin() + 1 < before.end()) ? before.mid(1) : QVector<qint32>();
-            return this->generatePosBetween(siteId1, siteId2, slice, std::nullopt, newPos, level + 1);
-        } else if (siteId1 == siteId2) {
-            newPos.push_back(id1);
-            QVector<qint32> slice1 = (before.begin() + 1 < before.end()) ? before.mid(1) : QVector<qint32>();
-            QVector<qint32> slice2 = (after.begin() + 1 < after.end()) ? after.mid(1) : QVector<qint32>();
-            return this->generatePosBetween(siteId1, siteId2, slice1, slice2, newPos, level + 1);
-        } else {
-            // Da rivedere!
-            // "Fix Position Sorting"
-            throw std::exception();
-        }
+        newPos.push_back(id1);
+        QVector<qint32> slice1 = (before.begin() + 1 < before.end()) ? before.mid(1) : QVector<qint32>();
+        QVector<qint32> slice2 = (after.begin() + 1 < after.end()) ? after.mid(1) : QVector<qint32>();
+        return this->generatePosBetween(siteId1, siteId2, slice1, slice2, newPos, level + 1);
     }
 }
 

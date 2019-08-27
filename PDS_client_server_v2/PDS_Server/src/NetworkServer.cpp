@@ -69,6 +69,8 @@ NetworkServer::NetworkServer(QWidget *parent) : QDialog(parent), statusLabel(new
     mainLayout->addLayout(buttonLayout);
 
     setWindowTitle(QGuiApplication::applicationDisplayName());
+	
+	qDebug() << "Server started.";
 }
 
 void NetworkServer::sessionOpened()
@@ -214,7 +216,8 @@ void NetworkServer::processSymbol(const Message& msg) {
             foreach (Symbol s, _symbols) {
                 if (this->comparePositions(s.getPos(), msg.getSymbol().getPos())) {
                     _symbols.insert(_symbols.begin() + index, msg.getSymbol());
-                    qDebug() << "Current symbols on Server: " << this->symbols_to_string();
+                    qDebug() << "Current symbols on Server: " << tr(this->symbols_to_string().toStdString().c_str());
+                    //qDebug().noquote() << "Current positions for each symbol on Server:\n" << tr(this->positions_to_string().toStdString().c_str());
                     return;
                 }
                 index++;
@@ -227,14 +230,16 @@ void NetworkServer::processSymbol(const Message& msg) {
             if (s.getChar() == msg.getSymbol().getChar() && s.getId() == msg.getSymbol().getId()) {
                 _symbols.erase(_symbols.begin() + index);
                 qDebug() << "I have ERASED a symbol!";
-                qDebug() << "Current symbols on Server: " << this->symbols_to_string();
+                qDebug() << "Current symbols on Server: " << tr(this->symbols_to_string().toStdString().c_str());
+                //qDebug().noquote() << "Current positions for each symbol on Server:\n" << tr(this->positions_to_string().toStdString().c_str());
                 return;
             }
             index++;
         }
         qDebug() << "ERASING already done!";
     }
-    qDebug() << "Current symbols on Server: " << this->symbols_to_string();
+    qDebug() << "Current symbols on Server: " << tr(this->symbols_to_string().toStdString().c_str());
+    //qDebug().noquote() << "Current positions for each symbol on Server:\n" << tr(this->positions_to_string().toStdString().c_str());
 }
 
 // Returns true if pos1 > pos2
@@ -262,4 +267,16 @@ QString NetworkServer::symbols_to_string() {
         str += s.getChar();
     }
     return str;
+}
+
+QString NetworkServer::positions_to_string() {
+    QString pos_str = "";
+    qint32 cnt = 0;
+    foreach (Symbol s, _symbols) {
+        pos_str.append(QString("[%1] ->").arg(cnt));
+        foreach (qint32 digit, s.getPos()) pos_str.append(QString(" %1 ").arg(digit));
+        pos_str.append("\n");
+        cnt++;
+    }
+    return pos_str;
 }

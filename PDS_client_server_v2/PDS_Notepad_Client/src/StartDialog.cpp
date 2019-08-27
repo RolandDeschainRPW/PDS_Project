@@ -15,6 +15,7 @@ StartDialog::StartDialog(QWidget* parent) : QDialog(parent),
                                         ui(new Ui::StartDialog),
                                         tcpSocket(new QTcpSocket(this)) {
     ui->setupUi(this);
+    qDebug() << "Client started.";
 
     // Testing the Qt::WA_DeleteOnClose attribute.
     qDebug() << "Qt::WA_DeleteOnClose -> " << (this->testAttribute(Qt::WA_DeleteOnClose) ? "ON" : "OFF");

@@ -8,6 +8,8 @@
 #include <QDialog>
 #include <QtNetwork>
 
+#include "../include/Notepad.h"
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
     class SharedDocumentsExplorer;
@@ -18,18 +20,28 @@ class SharedDocumentsExplorer : public QDialog {
     Q_OBJECT
     
 public:
-    explicit SharedDocumentsExplorer(QTcpSocket* clientConnection, QWidget* parent = 0);
+    explicit SharedDocumentsExplorer(QTcpSocket* clientConnection, QNetworkSession* networkSession, QMap<QString, QString> files_map, QString username, QWidget* parent = 0);
     ~SharedDocumentsExplorer();
 
 private slots:
     void displayError(QAbstractSocket::SocketError socketError);
+    void askNewDocumentFilename();
+    void openDocument();
+    void readStartDataFromServer();
 
 private:
     Ui::SharedDocumentsExplorer* ui = nullptr;
-    QTcpSocket* clientConnection;
+    Notepad* notepad = nullptr;
+    QTcpSocket* clientConnection = nullptr;
+    QNetworkSession* networkSession = nullptr;
+    QMap<QString, QString> files_map;
+    QString username;
     bool selected = false;
+    QDataStream in;
 
+    bool isThisFilenameAlreadyInUse(QString new_filename);
     void closeEvent(QCloseEvent* event) override;
+    void showEditor(NetworkingData* startData);
 };
 
 

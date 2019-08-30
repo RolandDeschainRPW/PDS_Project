@@ -45,12 +45,12 @@ private slots:
 
 private:
     QString usersListFileName;
-    //QVector<User> activeUsers;
+    QVector<QString> activeUsers;
     //QVector<QString> documentsFileNames;
     //QVector<SharedDocument> openDocuments;
     std::queue<Message> messages;
     QVector<SharedEditor*> sharedEditors;
-    QVector<Symbol> _symbols;
+    //QVector<Symbol> _symbols;
     QLabel* statusLabel = nullptr;
     QTcpServer* tcpServer = nullptr;
     QNetworkSession* networkSession = nullptr;
@@ -62,10 +62,12 @@ private:
     void connectClient(QTcpSocket* clientConnection, QString username, QString password);
     void disconnectClient(qint32 siteId);
     void signUpNewUser(QTcpSocket* clientConnection, QString username, QString password);
+    void createNewDocumentDirectory(QString username, QString filename);
     int searchUsername(QString username);
     int checkPassword(int lineIndex, QString password);
     void readFromExistingConnection(QTcpSocket* clientConnection);
     void processNewConnections(QTcpSocket* clientConnection);
+    void writeStartDataToClient(QTcpSocket* clientConnection);
     void processSymbol(const Message& msg);
     QString symbols_to_string();
     //void saveDocument();

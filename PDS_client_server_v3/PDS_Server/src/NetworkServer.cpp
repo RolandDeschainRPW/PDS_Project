@@ -17,7 +17,7 @@ NetworkServer::NetworkServer(QString usersListFileName,
     // Initialiting directories.
     if (!QDir("documents").exists()) QDir().mkdir("documents");
     if (!QDir("profiles").exists()) QDir().mkdir("profiles");
-    QFile("users.txt").open(QIODevice::ReadWrite); // If it doesn't exists, it will be created.
+    QFile(this->usersListFileName).open(QIODevice::ReadWrite); // If it doesn't exists, it will be created.
 
     // Initializing a map for free Site Ids.
     for (int i = 0; i < MAX_SITE_IDS; i++) free_site_ids.push_back(true);
@@ -133,23 +133,62 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
         clientConnection->abort();
         return;
     } else if (found == NetworkServer::USERNAME_NOT_FOUND) {
-        out << Response(Response::WRONG_CREDENTIALS, QUrl());
+        out << Response(Response::WRONG_CREDENTIALS, QMap<QString, QString>());
         clientConnection->write(block);
         return;
     } else /* found >= 0 */ {
         if (checkPassword(found, password) == NetworkServer::WRONG_PASSWORD) {
-            out << Response(Response::WRONG_CREDENTIALS, QUrl());
+            out << Response(Response::WRONG_CREDENTIALS, QMap<QString, QString>());
             clientConnection->write(block);
             return;
         } else if (checkPassword(found, password) == NetworkServer::SEARCH_FAILED) {
             clientConnection->abort();
             return;
         }
+
+        // Verifying if the username is already active.
+        foreach (QString usr, activeUsers) {
+            if (QString::compare(usr, username, Qt::CaseInsensitive) == 0) {
+                out << Response(Response::USERNAME_ACTIVE, QMap<QString, QString>());
+                clientConnection->write(block);
+                return;
+            }
+        }
+    }
+
+    // Listing all user's docs subfolders.
+    QMap<QString, QString> all_docs;
+    QString parent = QString(QDir::toNativeSeparators("documents/" + username));
+    QDirIterator dirs = QDirIterator(parent, QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot, QDirIterator::Subdirectories);
+    while(dirs.hasNext()) {
+        dirs.next();
+        QString filename = dirs.fileName() + ".rtf";
+        all_docs.insertMulti(filename, username);
+    }
+
+    // Listing all docs the user has access to.
+    QFile permissions = QFile(QDir::toNativeSeparators("documents/" + username + "/permissions.txt"));
+    if (!permissions.open(QIODevice::ReadOnly | QIODevice::Text)) {
+        qDebug().noquote() << "Something went wrong!\n\t-> I could not open the user's permissions file!";
+        clientConnection->abort();
+        return;
+    }
+
+    QTextStream in(&permissions);
+    QString line = in.readLine();
+    while (!line.isNull()) {
+        QString owner = QString(line);
+        QString filename = in.readLine();
+        all_docs.insertMulti(filename, owner);
+        line = in.readLine();
     }
 
     // Telling the client that Login went well.
-    out << Response(Response::SUCCESSFUL_LOGIN, QUrl(QDir::currentPath() + "/documents/" + username));
+    out << Response(Response::SUCCESSFUL_LOGIN, all_docs, username);
     clientConnection->write(block);
+
+    // Adding current user to active users.
+    activeUsers.push_back(username);
 
     // DA COMPLETARE!
 
@@ -259,7 +298,52 @@ void NetworkServer::processNewConnections(QTcpSocket* clientConnection) {
     } else if (next_req.getRequestType() == Request::SIGN_UP_TYPE) {
         qDebug() << "Starting the SignUp procedure.";
         this->signUpNewUser(clientConnection, next_req.getUsername(), next_req.getPassword());
+    } else if (next_req.getRequestType() == Request::OPEN_DOCUMENT_TYPE) {
+        // do some stuff!
+    } else if (next_req.getRequestType() == Request::NEW_DOCUMENT_TYPE) {
+        // do some stuff!
+        qDebug() << "Creating a directory for the new document.";
+        this->createNewDocumentDirectory(next_req.getUsername(), next_req.getFilename());
+        this->writeStartDataToClient(clientConnection);
     }
+}
+
+// DA RIVEDERE!!
+void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection) {
+    QByteArray block;
+    QDataStream out(&block, QIODevice::WriteOnly);
+    out.setVersion(QDataStream::Qt_5_13);
+
+    qint32 cnt = 0;
+    foreach (bool free, this->free_site_ids) {
+         if (free) {
+             SharedEditor* new_se = new SharedEditor(clientConnection, cnt, this);
+             sharedEditors.insert(sharedEditors.begin() + cnt, new_se);
+             out << cnt << this->_symbols;
+             clientConnection->write(block);
+             connect(clientConnection, &QIODevice::readyRead, this, [this, clientConnection] {
+                 while (clientConnection->bytesAvailable()) {
+                        qDebug() << "There is a request to read!";
+                        this->readFromExistingConnection(clientConnection);
+                    }
+                });
+             this->free_site_ids[cnt] = false;
+             qDebug() << "I assigned the following Site Id to the incoming client: " << cnt;
+             return;
+         }
+         cnt++;
+    }
+    // No Site Ids available.
+    qDebug().noquote() << "I cannot host the incoming client!\n\t-> No more Site Ids available!";
+    clientConnection->abort();
+}
+
+void NetworkServer::createNewDocumentDirectory(QString username, QString filename) {
+    QDir().mkdir(QDir::toNativeSeparators("documents/" + username + "/filename"));
+    QString new_file = QDir::toNativeSeparators("documents/" + username + "/filename/filename.rtf");
+    QString collaborators = QDir::toNativeSeparators("documents/" + username + "/filename/collaborators.txt");
+    QFile(new_file).open(QIODevice::ReadWrite);
+    QFile(collaborators).open(QIODevice::ReadWrite);
 }
 
 void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username, QString password) {
@@ -273,7 +357,7 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
         clientConnection->abort();
         return;
     } else if (found >= 0) {
-        out << Response(Response::USERNAME_ALREADY_IN_USE, QUrl());
+        out << Response(Response::USERNAME_ALREADY_IN_USE, QMap<QString, QString>());
         clientConnection->write(block);
         return;
     }
@@ -289,10 +373,14 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
     to_file << username << "\n" << password << "\n";
 
     // Telling the client that SignUp went well.
-    out << Response(Response::USERNAME_ACCEPTED, QUrl());
+    out << Response(Response::USERNAME_ACCEPTED, QMap<QString, QString>());
+
+    // Creating the user's documents folder.
     QString new_path = "documents/" + username;
     QDir().mkdir(QDir::toNativeSeparators(new_path));
-    QFile(new_path + "/permissions.txt").open(QIODevice::ReadWrite); // Creating the permissions file.
+
+    // Creating the user's permissions file.
+    QFile(QDir::toNativeSeparators(new_path + "/permissions.txt")).open(QIODevice::ReadWrite);
     clientConnection->write(block);
 }
 

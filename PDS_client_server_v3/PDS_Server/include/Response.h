@@ -10,21 +10,24 @@
 class Response {
 public:
     Response();
-    Response(qint32 result, QUrl user_path_url);
+    Response(qint32 result, QMap<QString, QString> docs, QString username = "");
     Response(const Response& res);
     ~Response();
 
     qint32 getResult() const;
-    QUrl getUrl() const;
+    QMap<QString, QString> getDocsList() const;
+    QString getUsername() const;
 
     static const qint32 WRONG_CREDENTIALS = -5;
     static const qint32 SUCCESSFUL_LOGIN = -6;
     static const qint32 USERNAME_ALREADY_IN_USE = -7;
     static const qint32 USERNAME_ACCEPTED = -8;
+    static const qint32 USERNAME_ACTIVE = -22;
 
 private:
     qint32 result;
-    QUrl user_path_url;
+    QMap<QString, QString> docs;
+    QString username;
 };
 
 QDataStream &operator<<(QDataStream &out, const Response& res);

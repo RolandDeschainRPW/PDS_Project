@@ -25,19 +25,19 @@ public:
     explicit StartDialog(QWidget* parent = 0);
     ~StartDialog();
 
+public slots:
+    void openSharedDocumentsExplorer();
+
 private slots:
     void connectToServer();
     void enableConnectToServerButton();
     void enableSignUpButton();
     void sessionOpened();
     void displayError(QAbstractSocket::SocketError socketError);
-    void readStartDataFromServer();
     void openSignUpDialog();
-    void openSharedDocumentsExplorer();
 
 private:
     Ui::StartDialog* ui = nullptr;
-    Notepad* notepad = nullptr;
     SignUpDialog* signUpDialog = nullptr;
     SharedDocumentsExplorer* explorer = nullptr;
 
@@ -45,8 +45,6 @@ private:
     QTcpSocket* tcpSocket = nullptr;
     QNetworkSession* networkSession = nullptr;
     QDataStream in;
-
-    void showEditor(NetworkingData* startData);
 };
 
 #endif //NOTEPAD_STARTDIALOG_H

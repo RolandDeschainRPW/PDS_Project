@@ -132,27 +132,6 @@ void StartDialog::displayError(QAbstractSocket::SocketError socketError) {
     ui->connectToServerButton->setEnabled(true);
 }
 
-void StartDialog::readStartDataFromServer() {
-    in.startTransaction();
-    qint32 siteId;
-    QVector<Symbol> symbols;
-    in >> siteId >> symbols;
-    if (!in.commitTransaction()) {
-        qDebug() << "Something went wrong!\n\t-> I could not have Site Id and Symbols from Server!";
-        return;
-    }
-    qDebug() << "I received the following Site Id: " << siteId;
-    disconnect(tcpSocket, &QIODevice::readyRead, this, &StartDialog::readStartDataFromServer);
-    NetworkingData* startData = new NetworkingData(siteId, symbols, tcpSocket, networkSession, this);
-    showEditor(startData);
-}
-
-void StartDialog::showEditor(NetworkingData* startData) {
-    this->close();
-    notepad = new Notepad(startData, this);
-    notepad->show();
-}
-
 void StartDialog::connectToServer() {
     ui->connectToServerButton->setEnabled(false);
     tcpSocket->abort();
@@ -211,9 +190,12 @@ void StartDialog::openSharedDocumentsExplorer() {
         QMessageBox::information(this, tr("Login Information"), tr("Wrong credentials!\n"
                                                                    "Please insert correct username and password."));
         tcpSocket->disconnectFromHost();
-    } else /* Request::SUCCESSFUL_LOGIN */ {
-        // other stuff here!
-        explorer = new SharedDocumentsExplorer(this);
+    } else if (res.getResult() == Response::USERNAME_ACTIVE) {
+        QMessageBox::information(this, tr("Login Information"), tr("Username already connected to Server!"));
+        tcpSocket->disconnectFromHost();
+    } else /* Response::SUCCESSFUL_LOGIN */ {
+        disconnect(tcpSocket, &QIODevice::readyRead, this, &StartDialog::openSharedDocumentsExplorer);
+        explorer = new SharedDocumentsExplorer(tcpSocket, networkSession, res.getDocsList(), res.getUsername(), this);
         explorer->open();
         ui->connectToServerButton->setEnabled(true);
     }

@@ -7,10 +7,14 @@
 Response::Response() { /* empty */ }
 
 Response::Response(const Response& res) : result(res.result),
-                                        user_path_url(res.user_path_url) { /* empty */ }
+                                          docs(res.docs),
+                                          username(res.username) { /* empty */ }
 
-Response::Response(qint32 result, QUrl user_path_url) : result(result),
-                                                    user_path_url(user_path_url) { /* empty */ }
+Response::Response(qint32 result,
+                QMap<QString, QString> docs,
+                QString username) : result(result),
+                                    docs(docs),
+                                    username(username) { /* empty */ }
 
 Response::~Response() { /* empty */ }
 
@@ -18,20 +22,25 @@ qint32 Response::getResult() const {
     return result;
 }
 
-QUrl Response::getUrl() const {
-    return user_path_url;
+QMap<QString, QString> Response::getDocsList() const {
+    return docs;
+}
+
+QString Response::getUsername() const {
+    return username;
 }
 
 QDataStream &operator<<(QDataStream &out, const Response& res) {
-    out << res.getResult() << res.getUrl();
+    out << res.getResult() << res.getDocsList() << res.getUsername();
     return out;
 }
 
 QDataStream &operator>>(QDataStream &in, Response& res) {
     qint32 result;
-    QUrl user_path_url;
+    QMap<QString, QString> docs;
+    QString username;
 
-    in >> result >> user_path_url;
-    res = Response(result, user_path_url);
+    in >> result >> docs >> username;
+    res = Response(result, docs, username);
     return in;
 }

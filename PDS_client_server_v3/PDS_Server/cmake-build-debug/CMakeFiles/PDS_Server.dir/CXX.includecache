@@ -5512,6 +5512,10 @@ QtCore
 ../include/Message.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Message.h
 
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Response.h
+QtCore
+-
+
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SharedDocument.h
 QTextDocument
 -
@@ -5551,4 +5555,8 @@ QtCore
 -
 Response.h
 -
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/Response.cpp
+../include/Response.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Response.h
 

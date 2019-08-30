@@ -35,11 +35,13 @@ Notepad::Notepad(NetworkingData* net_data,
                         boundary(boundary),
                         strategy(strategy),
                         net_data(net_data) {
-    this->net_data->setParent(this); // To avoid Memory Leakage!
-
     ui->setupUi(this);
+    this->net_data->setParent(this); // To avoid Memory Leakage!
     this->setWindowTitle(tr("Notepad, Site ID -> %1").arg(net_data->getSiteId()));
     this->setCentralWidget(ui->textEdit);
+
+    // DA RIVEDERE!!
+    //connect(this, &QDialog::finished, this, &QObject::deleteLater);
 
     in.setDevice(net_data->getTcpSocket());
     in.setVersion(QDataStream::Qt_5_13);

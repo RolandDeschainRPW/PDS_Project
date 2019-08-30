@@ -13,22 +13,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bbfedcb-bf77-40d8-bf1c-e8b40ffcfd59" name="Default Changelist" comment="Adding some folders.">
-      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/notepad.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/notepad.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/src/Notepad.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/src/Notepad.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/src/StartDialog.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/src/StartDialog.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/PDS_Server_autogen/mocs_compilation.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/PDS_Server_autogen/mocs_compilation.cpp.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/PDS_Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/PDS_Server.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/include/NetworkServer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/NetworkServer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/NetworkServer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NetworkServer.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -226,7 +211,7 @@
       <workItem from="1566827997804" duration="941000" />
       <workItem from="1566835670833" duration="270000" />
       <workItem from="1566924940531" duration="1012000" />
-      <workItem from="1566926117232" duration="3828000" />
+      <workItem from="1566926117232" duration="4184000" />
     </task>
     <task id="LOCAL-00001" summary="Memory Leakage fixed on PDS_client_server_v1 Project + NetworkingData class added on CLion/Notepad Project">
       <created>1566752548845</created>
@@ -267,7 +252,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103039000" />
+    <option name="totallyTimeSpent" value="103395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />

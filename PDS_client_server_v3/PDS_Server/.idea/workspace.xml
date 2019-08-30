@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="PDS_Server" targetName="PDS_Server_autogen" />
+      <config projectName="PDS_Server" targetName="PDS_Server" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6bbfedcb-bf77-40d8-bf1c-e8b40ffcfd59" name="Default Changelist" comment="Adding some folders.">
+      <change afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/include/DocumentsModel.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/include/Response.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/include/SharedDocumentsExplorer.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/include/SignUpDialog.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/src/DocumentsModel.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/src/Response.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/src/SharedDocumentsExplorer.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/src/SignUpDialog.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/ui/shareddocumentsexplorer.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/ui/signupdialog.ui" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/Response.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/include/SharedDocument.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Response.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SharedDocument.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PDS_client_server_v2/PDS_Notepad_Client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../PDS_client_server_v2/PDS_Notepad_Client/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../PDS_client_server_v2/PDS_Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../PDS_client_server_v2/PDS_Server/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="952">
+              <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+              <folding>
+                <element signature="e#2455#2478#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/NetworkServer.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+              <folding>
+                <element signature="e#113#132#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/NetworkServer.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="146" column="9" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="9" />
+              <folding>
+                <element signature="e#42#73#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/Response.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="527">
+              <caret line="31" selection-start-line="31" selection-end-line="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Response.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cmake-build-debug/users.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>std::cout</find>
+      <find>&lt;&lt; std::endl;</find>
+      <find>qDebug()</find>
+      <find>for (</find>
+      <find>fortune</find>
+      <find>i assi</find>
+      <find>tcpSe</find>
+      <find>tcpsocket</find>
+      <find>tcpServer</find>
+      <find>readfromnew</find>
+      <find>readfromexis</find>
+      <find>readfromn</find>
+      <find>qDebug() &lt;&lt;</find>
+      <find>deleteLa</find>
+      <find>delete</find>
+      <find>#include &quot;</find>
+      <find>abort()</find>
+      <find>in.set</find>
+      <find>readyrea</find>
+      <find>readyread</find>
+      <find>bytes</find>
+      <find>readon</find>
+      <find>connect_typ</find>
+      <find>native</find>
+      <find>welcom</find>
+      <find>signup</find>
+      <find>connectcli</find>
+      <find>deletelat</find>
+      <find>disconnectfromhost</find>
+      <find>disconnectfr</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>QVector</replace>
+      <replace>qint32</replace>
+      <replace>qt_5_13</replace>
+      <replace>qDebug()</replace>
+      <replace>;</replace>
+      <replace>#include &quot;../include/</replace>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Message.cpp" />
+        <option value="$PROJECT_DIR$/Symbol.h" />
+        <option value="$PROJECT_DIR$/main.cpp" />
+        <option value="$PROJECT_DIR$/Symbol.cpp" />
+        <option value="$PROJECT_DIR$/Request.h" />
+        <option value="$PROJECT_DIR$/Message.h" />
+        <option value="$PROJECT_DIR$/Request.cpp" />
+        <option value="$PROJECT_DIR$/NetworkServer.h" />
+        <option value="$PROJECT_DIR$/SharedEditor.h" />
+        <option value="$PROJECT_DIR$/SharedEditor.cpp" />
+        <option value="$PROJECT_DIR$/NetworkServer.cpp" />
+        <option value="$PROJECT_DIR$/src/SharedDocument.cpp" />
+        <option value="$PROJECT_DIR$/include/SharedDocument.h" />
+        <option value="$PROJECT_DIR$/src/main.cpp" />
+        <option value="$PROJECT_DIR$/src/Request.cpp" />
+        <option value="$PROJECT_DIR$/include/NetworkServer.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/include/Response.h" />
+        <option value="$PROJECT_DIR$/src/Response.cpp" />
+        <option value="$PROJECT_DIR$/include/Request.h" />
+        <option value="$PROJECT_DIR$/cmake-build-debug/users.txt" />
+        <option value="$PROJECT_DIR$/src/NetworkServer.cpp" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-29" />
+    <option name="y" value="49" />
+    <option name="width" value="1031" />
+    <option name="height" value="770" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
+              <item name="documents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Server\src" />
+      <recent name="D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Server\include" />
+      <recent name="D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v2\PDS_Server\src" />
+      <recent name="D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v2\PDS_Server\include" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="CMake Application.PDS_Server">
+    <configuration name="PDS_Server" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PDS_Server" TARGET_NAME="PDS_Server" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PDS_Server" RUN_TARGET_NAME="PDS_Server">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PDS_Server_autogen" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PDS_Server" TARGET_NAME="PDS_Server_autogen" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.PDS_Server" />
+      <item itemvalue="CMake Application.PDS_Server_autogen" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6bbfedcb-bf77-40d8-bf1c-e8b40ffcfd59" name="Default Changelist" comment="" />
+      <created>1566371289749</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1566371289749</updated>
+      <workItem from="1566371293068" duration="5423000" />
+      <workItem from="1566376757500" duration="23962000" />
+      <workItem from="1566405724517" duration="267000" />
+      <workItem from="1566407674072" duration="295000" />
+      <workItem from="1566462198362" duration="749000" />
+      <workItem from="1566463688247" duration="1188000" />
+      <workItem from="1566468247442" duration="27855000" />
+      <workItem from="1566501225130" duration="2254000" />
+      <workItem from="1566504443340" duration="6850000" />
+      <workItem from="1566547423476" duration="16101000" />
+      <workItem from="1566751918034" duration="683000" />
+      <workItem from="1566752797902" duration="496000" />
+      <workItem from="1566766921528" duration="1410000" />
+      <workItem from="1566812060253" duration="9455000" />
+      <workItem from="1566827997804" duration="941000" />
+      <workItem from="1566835670833" duration="270000" />
+      <workItem from="1566924940531" duration="1012000" />
+      <workItem from="1566926117232" duration="4184000" />
+      <workItem from="1566985360334" duration="3288000" />
+      <workItem from="1567004070473" duration="18819000" />
+      <workItem from="1567027805168" duration="59000" />
+      <workItem from="1567067162944" duration="18305000" />
+      <workItem from="1567162015571" duration="2934000" />
+    </task>
+    <task id="LOCAL-00001" summary="Memory Leakage fixed on PDS_client_server_v1 Project + NetworkingData class added on CLion/Notepad Project">
+      <created>1566752548845</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1566752548845</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Fixed Memory Leakage on PDS_client_server_v1 (x2).">
+      <created>1566753194008</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1566753194008</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Another Memory Leakage fix on PDS_Server.">
+      <created>1566768240164</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1566768240165</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Notepad correctly linked to Server!">
+      <created>1566825354445</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1566825354446</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Adding some folders.">
+      <created>1566828823845</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1566828823845</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="146800000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Favorites" order="0" side_tool="true" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.31876332" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" order="0" weight="0.32981783" />
+      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="2" />
+      <window_info anchor="bottom" id="Version Control" order="3" weight="0.32981783" />
+      <window_info anchor="bottom" id="Message" order="4" />
+      <window_info anchor="bottom" id="Find" order="5" weight="0.32981783" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" visible="true" weight="0.24832214" />
+      <window_info anchor="bottom" id="Debug" order="7" weight="0.39980826" />
+      <window_info anchor="bottom" id="CMake" order="8" weight="0.32981783" />
+      <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="11" weight="0.32981783" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3279003" />
+      <window_info anchor="right" id="Database" order="0" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Memory Leakage fixed on PDS_client_server_v1 Project + NetworkingData class added on CLion/Notepad Project" />
+    <MESSAGE value="Fixed Memory Leakage on PDS_client_server_v1 (x2)." />
+    <MESSAGE value="Another Memory Leakage fix on PDS_Server." />
+    <MESSAGE value="Notepad correctly linked to Server!" />
+    <MESSAGE value="Adding some folders." />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding some folders." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/NetworkServer.cpp</url>
+          <line>265</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/src/NetworkServer.cpp</url>
+          <line>125</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="*se" />
+        <watch expression="&amp;new_se" />
+        <watch expression="checkPassword(found, password)" />
+      </configuration>
+    </watches-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qnetworksession.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="89" column="83" selection-start-line="89" selection-start-column="83" selection-end-line="89" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qtcpserver.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="60" column="13" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Message.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="578">
+          <caret line="34" column="47" selection-start-line="34" selection-start-column="47" selection-end-line="34" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qiodevice.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Symbol.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <folding>
+            <element signature="e#99#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Symbol.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1207">
+          <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/SharedEditor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+          <folding>
+            <element signature="e#111#131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SharedEditor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Message.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+          <folding>
+            <element signature="e#101#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SharedDocument.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="67" selection-start-line="6" selection-start-column="67" selection-end-line="6" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/SharedDocument.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#115#139#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Request.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="15" selection-start-line="38" selection-start-column="15" selection-end-line="38" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="731">
+          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_NetworkServer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="e#346#363#0" expanded="true" />
+            <element signature="e#609#784#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedDocument.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1">
+          <folding>
+            <element signature="e#347#364#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedEditor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#345#362#0" expanded="true" />
+            <element signature="e#606#781#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qobjectdefs_impl.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="145" selection-start-line="145" selection-end-line="145" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Request.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="42" lean-forward="true" selection-start-line="23" selection-start-column="42" selection-end-line="23" selection-end-column="42" />
+          <folding>
+            <element signature="e#101#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="952">
+          <caret line="56" column="35" selection-start-line="56" selection-start-column="35" selection-end-line="56" selection-end-column="35" />
+          <folding>
+            <element signature="e#2455#2478#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/NetworkServer.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
+          <folding>
+            <element signature="e#113#132#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Response.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Response.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="36" column="1" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/users.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NetworkServer.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="146" column="9" selection-start-line="146" selection-start-column="9" selection-end-line="146" selection-end-column="9" />
+          <folding>
+            <element signature="e#42#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>

@@ -4,7 +4,7 @@
 # compile CXX with C:/msys64/mingw64/bin/g++.exe
 CXX_FLAGS = -g   -std=gnu++17
 
-CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_WIDGETS_LIB
+CXX_DEFINES = -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NETWORK_LIB -DQT_SQL_LIB -DQT_WIDGETS_LIB
 
 CXX_INCLUDES = @CMakeFiles/PDS_Server.dir/includes_CXX.rsp
 

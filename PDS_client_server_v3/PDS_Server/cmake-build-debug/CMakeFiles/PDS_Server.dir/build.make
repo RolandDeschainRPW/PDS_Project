@@ -209,6 +209,7 @@ PDS_Server.exe: CMakeFiles/PDS_Server.dir/src/Response.cpp.obj
 PDS_Server.exe: CMakeFiles/PDS_Server.dir/build.make
 PDS_Server.exe: C:/Qt/5.13.0/mingw73_64/lib/libQt5Widgetsd.a
 PDS_Server.exe: C:/Qt/5.13.0/mingw73_64/lib/libQt5Networkd.a
+PDS_Server.exe: C:/Qt/5.13.0/mingw73_64/lib/libQt5Sqld.a
 PDS_Server.exe: C:/Qt/5.13.0/mingw73_64/lib/libQt5Guid.a
 PDS_Server.exe: C:/Qt/5.13.0/mingw73_64/lib/libQt5Cored.a
 PDS_Server.exe: CMakeFiles/PDS_Server.dir/linklibs.rsp

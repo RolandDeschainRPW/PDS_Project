@@ -54,7 +54,7 @@
 int main(int argc, char *argv[]) {
     QApplication app(argc, argv);
     QApplication::setApplicationDisplayName(NetworkServer::tr("NetworkServer"));
-    NetworkServer server("users.txt");
+    NetworkServer server("users.db");
     server.show();
     return app.exec();
 }

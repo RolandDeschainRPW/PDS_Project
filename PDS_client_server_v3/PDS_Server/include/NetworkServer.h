@@ -14,6 +14,7 @@
 #include <QDialog>
 #include <QString>
 #include <QVector>
+#include <QSqlDatabase>
 
 #include "../include/Symbol.h"
 #include "../include/Message.h"
@@ -32,48 +33,30 @@ class NetworkServer : public QDialog {
 Q_OBJECT
 
 public:
-    static const int MAX_SITE_IDS = 100;
-    static const int USERNAME_NOT_FOUND = -1;
-    static const int WRONG_PASSWORD = -2;
-    static const int SEARCH_FAILED = -3;
-
-    explicit NetworkServer(QString usersListFileName, QWidget *parent = nullptr);
+    explicit NetworkServer(QString usersDbFileName, QWidget *parent = nullptr);
 
 private slots:
     void sessionOpened();
     void readFromNewConnection();
 
 private:
-    QString usersListFileName;
+    QString usersDbFileName;
     QVector<QString> activeUsers;
-    //QVector<QString> documentsFileNames;
-    //QVector<SharedDocument> openDocuments;
-    std::queue<Message> messages;
-    QVector<SharedEditor*> sharedEditors;
-    //QVector<Symbol> _symbols;
+    QVector<SharedDocument*> openDocuments;
     QLabel* statusLabel = nullptr;
     QTcpServer* tcpServer = nullptr;
     QNetworkSession* networkSession = nullptr;
-    QVector<bool> free_site_ids;
+    QSqlDatabase users_db;
 
-    void readMessage(Message& msg);
-    bool comparePositions(std::optional<QVector<qint32>> pos1_opt, std::optional<QVector<qint32>> pos2_opt);
-    void dispatchMessages();
     void connectClient(QTcpSocket* clientConnection, QString username, QString password);
-    void disconnectClient(qint32 siteId);
     void signUpNewUser(QTcpSocket* clientConnection, QString username, QString password);
     void createNewDocumentDirectory(QString username, QString filename);
-    int searchUsername(QString username);
-    int checkPassword(int lineIndex, QString password);
+    bool isThisUsernameInDatabase(QString username, QString* password = nullptr);
     void readFromExistingConnection(QTcpSocket* clientConnection);
     void processNewConnections(QTcpSocket* clientConnection);
-    void writeStartDataToClient(QTcpSocket* clientConnection);
-    void processSymbol(const Message& msg);
-    QString symbols_to_string();
+    void writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename);
+    SharedDocument* getDocument(QString filename);
     //void saveDocument();
-
-    // For debugging purposes.
-    QString positions_to_string();
 };
 
 #endif //PDS_SERVER_NETWORKSERVER_H

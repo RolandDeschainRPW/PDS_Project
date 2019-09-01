@@ -18,11 +18,14 @@ public:
     QMap<QString, QString> getDocsList() const;
     QString getUsername() const;
 
+    // For Login purposes.
     static const qint32 WRONG_CREDENTIALS = -5;
     static const qint32 SUCCESSFUL_LOGIN = -6;
+    static const qint32 USERNAME_ACTIVE = -22;
+
+    // For SignUp purposes.
     static const qint32 USERNAME_ALREADY_IN_USE = -7;
     static const qint32 USERNAME_ACCEPTED = -8;
-    static const qint32 USERNAME_ACTIVE = -22;
 
 private:
     qint32 result;

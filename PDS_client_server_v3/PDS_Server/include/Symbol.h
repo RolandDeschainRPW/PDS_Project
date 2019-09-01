@@ -17,13 +17,13 @@ class Symbol {
 private:
     QChar c;
     qint32 siteId;
-    qint32 counter;
+    quint32 counter;
     qint32 id;
     QVector<qint32> pos;
 
 public:
     Symbol();
-    Symbol(QChar c, qint32 siteId, qint32 counter, QVector<qint32> pos);
+    Symbol(QChar c, qint32 siteId, quint32 counter, QVector<qint32> pos);
     Symbol(const Symbol& s);
     ~Symbol();
 

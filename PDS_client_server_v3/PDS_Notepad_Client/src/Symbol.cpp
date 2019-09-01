@@ -6,7 +6,7 @@
 
 Symbol::Symbol() { /* empty */ }
 
-Symbol::Symbol(QChar c, qint32 siteId, qint32 counter, QVector<qint32> pos) {
+Symbol::Symbol(QChar c, qint32 siteId, quint32 counter, QVector<qint32> pos) {
     this->c = c;
     this->siteId = siteId;
     this->counter = counter;
@@ -63,7 +63,7 @@ QDataStream &operator<<(QDataStream &out, const Symbol& s) {
 QDataStream &operator>>(QDataStream &in, Symbol& s) {
     QChar c;
     qint32 siteId;
-    qint32 counter;
+    quint32 counter;
     QVector<qint32> pos;
 
     in >> c >> siteId >> counter >> pos;

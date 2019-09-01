@@ -21,6 +21,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
   "QT_CORE_LIB"
   "QT_GUI_LIB"
   "QT_NETWORK_LIB"
+  "QT_SQL_LIB"
   "QT_WIDGETS_LIB"
   )
 
@@ -35,6 +36,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "C:/Qt/5.13.0/mingw73_64/include/QtANGLE"
   "C:/Qt/5.13.0/mingw73_64/include/QtWidgets"
   "C:/Qt/5.13.0/mingw73_64/include/QtNetwork"
+  "C:/Qt/5.13.0/mingw73_64/include/QtSql"
   )
 
 # Targets to which this target links.

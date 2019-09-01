@@ -5,7 +5,7 @@
 		<Option title="PDS_Server"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\Qt\;CMake Files\Qt\5.13.0\;CMake Files\Qt\5.13.0\mingw73_64\;CMake Files\Qt\5.13.0\mingw73_64\lib\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Network\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\Qt\;CMake Files\Qt\5.13.0\;CMake Files\Qt\5.13.0\mingw73_64\;CMake Files\Qt\5.13.0\mingw73_64\lib\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Network\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Sql\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug"/>
@@ -38,6 +38,7 @@
 					<Add option="-DQT_GUI_LIB"/>
 					<Add option="-DQT_WIDGETS_LIB"/>
 					<Add option="-DQT_NETWORK_LIB"/>
+					<Add option="-DQT_SQL_LIB"/>
 					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/include"/>
 					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include"/>
@@ -47,6 +48,7 @@
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtANGLE"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtWidgets"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtNetwork"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtSql"/>
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include/c++/9.1.0"/>
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include/c++/9.1.0/x86_64-w64-mingw32"/>
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include/c++/9.1.0/backward"/>
@@ -73,6 +75,7 @@
 					<Add option="-DQT_GUI_LIB"/>
 					<Add option="-DQT_WIDGETS_LIB"/>
 					<Add option="-DQT_NETWORK_LIB"/>
+					<Add option="-DQT_SQL_LIB"/>
 					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/include"/>
 					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include"/>
@@ -82,6 +85,7 @@
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtANGLE"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtWidgets"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtNetwork"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtSql"/>
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include/c++/9.1.0"/>
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include/c++/9.1.0/x86_64-w64-mingw32"/>
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include/c++/9.1.0/backward"/>
@@ -258,6 +262,21 @@
 		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Network\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Sql/Qt5SqlConfig.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Sql/Qt5Sql_QODBCDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Sql/Qt5Sql_QPSQLDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Sql/Qt5Sql_QSQLiteDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Sql\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

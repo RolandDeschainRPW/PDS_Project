@@ -8,19 +8,34 @@
 #include <QtWidgets>
 #include <QtNetwork>
 #include <QtCore>
-#include <Response.h>
+#include <QSqlRecord>
+#include <QSqlQuery>
+#include <QSqlField>
+#include <QVariant>
 
-NetworkServer::NetworkServer(QString usersListFileName,
+#include "../include/Response.h"
+
+NetworkServer::NetworkServer(QString usersDbFileName,
                         QWidget *parent) : QDialog(parent),
                                         statusLabel(new QLabel),
-                                        usersListFileName(usersListFileName) {
+                                        usersDbFileName(usersDbFileName) {
     // Initialiting directories.
     if (!QDir("documents").exists()) QDir().mkdir("documents");
     if (!QDir("profiles").exists()) QDir().mkdir("profiles");
-    QFile(this->usersListFileName).open(QIODevice::ReadWrite); // If it doesn't exists, it will be created.
 
-    // Initializing a map for free Site Ids.
-    for (int i = 0; i < MAX_SITE_IDS; i++) free_site_ids.push_back(true);
+    // Connecting to users database
+    bool newly_created = !QFile(this->usersDbFileName).exists();
+    QString users_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/" + usersDbFileName);
+    users_db = QSqlDatabase::addDatabase("QSQLITE");
+    users_db.setDatabaseName(users_db_path);
+    users_db.open(); // If it doesn't exists, it will be created.
+    if (newly_created) {
+        QSqlQuery query(users_db);
+        query.exec("CREATE TABLE USERS("
+                   "USERNAME VARCHAR(30) PRIMARY KEY,"
+                   "PASSWORD VARCHAR(30) NOT NULL"
+                   ")");
+    }
 
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     statusLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
@@ -128,31 +143,20 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
     out.setVersion(QDataStream::Qt_5_13);
 
     // Verifying if credentials are correct.
-    int found = searchUsername(username);
-    if (found == NetworkServer::SEARCH_FAILED) {
-        clientConnection->abort();
-        return;
-    } else if (found == NetworkServer::USERNAME_NOT_FOUND) {
+    QString real_password;
+    bool found = isThisUsernameInDatabase(username, &real_password);
+    if (!found || QString::compare(password, real_password, Qt::CaseSensitive) == 0) {
         out << Response(Response::WRONG_CREDENTIALS, QMap<QString, QString>());
         clientConnection->write(block);
         return;
-    } else /* found >= 0 */ {
-        if (checkPassword(found, password) == NetworkServer::WRONG_PASSWORD) {
-            out << Response(Response::WRONG_CREDENTIALS, QMap<QString, QString>());
+    }
+
+    // Verifying if the username is already active.
+    foreach (QString usr, activeUsers) {
+        if (QString::compare(usr, username, Qt::CaseInsensitive) == 0) {
+            out << Response(Response::USERNAME_ACTIVE, QMap<QString, QString>());
             clientConnection->write(block);
             return;
-        } else if (checkPassword(found, password) == NetworkServer::SEARCH_FAILED) {
-            clientConnection->abort();
-            return;
-        }
-
-        // Verifying if the username is already active.
-        foreach (QString usr, activeUsers) {
-            if (QString::compare(usr, username, Qt::CaseInsensitive) == 0) {
-                out << Response(Response::USERNAME_ACTIVE, QMap<QString, QString>());
-                clientConnection->write(block);
-                return;
-            }
         }
     }
 
@@ -162,25 +166,24 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
     QDirIterator dirs = QDirIterator(parent, QDir::Dirs | QDir::NoSymLinks | QDir::NoDotAndDotDot, QDirIterator::Subdirectories);
     while(dirs.hasNext()) {
         dirs.next();
-        QString filename = dirs.fileName() + ".rtf";
+        QString filename = dirs.fileName() + ".html";
         all_docs.insertMulti(filename, username);
     }
 
     // Listing all docs the user has access to.
-    QFile permissions = QFile(QDir::toNativeSeparators("documents/" + username + "/permissions.txt"));
-    if (!permissions.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qDebug().noquote() << "Something went wrong!\n\t-> I could not open the user's permissions file!";
-        clientConnection->abort();
-        return;
-    }
+    QString permissions_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/permissions.db");
+    QSqlDatabase permissions_db = QSqlDatabase::addDatabase("QSQLITE");
+    permissions_db.setDatabaseName(permissions_db_path);
+    permissions_db.open();
 
-    QTextStream in(&permissions);
-    QString line = in.readLine();
-    while (!line.isNull()) {
-        QString owner = QString(line);
-        QString filename = in.readLine();
-        all_docs.insertMulti(filename, owner);
-        line = in.readLine();
+    QSqlQuery query(permissions_db);
+    query.exec("SELECT * FROM PERMISSIONS");
+    QSqlRecord record = query.record();
+
+    while(query.next()) {
+        QString owner =  query.value(record.indexOf("OWNER")).toString();
+        QString document =  query.value(record.indexOf("DOCUMENT")).toString();
+        all_docs.insertMulti(document, owner);
     }
 
     // Telling the client that Login went well.
@@ -189,59 +192,9 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
 
     // Adding current user to active users.
     activeUsers.push_back(username);
-
-    // DA COMPLETARE!
-
-    // DO NOT DELETE THE FOLLOWING CODE!!!
-    // IT WILL BE USEFUL AT A LATER STAGE OF DEVELOPMENT!
-    /*
-    qint32 cnt = 0;
-
-    foreach (bool free, this->free_site_ids) {
-        if (free) {
-            SharedEditor* new_se = new SharedEditor(clientConnection, cnt, this);
-            sharedEditors.insert(sharedEditors.begin() + cnt, new_se);
-            out << cnt << this->_symbols;
-            clientConnection->write(block);
-            connect(clientConnection, &QIODevice::readyRead, this, [this, clientConnection] {
-                while (clientConnection->bytesAvailable()) {
-                    qDebug() << "There is a request to read!";
-                    this->readFromExistingConnection(clientConnection);
-                }
-            });
-            this->free_site_ids[cnt] = false;
-            qDebug() << "I assigned the following Site Id to the incoming client: " << cnt;
-            return;
-        }
-        cnt++;
-    }
-
-    // No Site Ids available.
-    qDebug().noquote() << "I cannot host the incoming client!\n\t-> No more Site Ids available!";
-    clientConnection->abort();
-     */
 }
 
-int NetworkServer::checkPassword(int lineIndex, QString password) {
-    QFile file(usersListFileName);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qDebug().noquote() << "Something went wrong!\n\t-> I could not open the users data!";
-        return NetworkServer::SEARCH_FAILED;
-    }
-
-    QTextStream in(&file);
-    QString line;
-
-    for (int i = 0; i <= lineIndex; i += 2) {
-        in.readLine();
-        line = in.readLine();
-    }
-
-    if (QString::compare(password, line, Qt::CaseSensitive) == 0)
-        return lineIndex + 1; // index line of password.
-    return NetworkServer::WRONG_PASSWORD;
-}
-
+// DA RIVEDERE!!!
 void NetworkServer::readFromExistingConnection(QTcpSocket* clientConnection) {
     QDataStream in(clientConnection);
     in.setVersion(QDataStream::Qt_5_13);
@@ -249,6 +202,8 @@ void NetworkServer::readFromExistingConnection(QTcpSocket* clientConnection) {
 
     Request next_req;
     in >> next_req;
+    qint32 site_id = next_req.getSiteId();
+    QString filename = next_req.getFilename();
     if (!in.commitTransaction()) {
         qDebug().noquote() << "Something went wrong!\n\t-> I could not read the incoming request!";
         return;
@@ -257,10 +212,18 @@ void NetworkServer::readFromExistingConnection(QTcpSocket* clientConnection) {
     if (next_req.getRequestType() == Request::MESSAGE_TYPE) {
         Message msg = next_req.getMessage();
         qDebug() << "I am going to process the message!";
-        this->readMessage(msg);
+        this->getDocument(filename)->readMessage(msg);
     } else if (next_req.getRequestType() == Request::DISCONNECT_TYPE) {
-        this->disconnectClient(next_req.getSiteId());
+        this->getDocument(filename)->disconnectClient(next_req.getSiteId());
     }
+}
+
+SharedDocument* NetworkServer::getDocument(QString filename) {
+    foreach (SharedDocument* sd, openDocuments) {
+        if (QString::compare(filename, sd->getFilename(), Qt::CaseInsensitive) == 0)
+            return sd;
+    }
+    return nullptr;
 }
 
 void NetworkServer::readFromNewConnection() {
@@ -304,46 +267,85 @@ void NetworkServer::processNewConnections(QTcpSocket* clientConnection) {
         // do some stuff!
         qDebug() << "Creating a directory for the new document.";
         this->createNewDocumentDirectory(next_req.getUsername(), next_req.getFilename());
-        this->writeStartDataToClient(clientConnection);
+        this->writeStartDataToClient(clientConnection, true, next_req.getFilename());
     }
 }
 
 // DA RIVEDERE!!
-void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection) {
+void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename) {
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
 
-    qint32 cnt = 0;
-    foreach (bool free, this->free_site_ids) {
-         if (free) {
-             SharedEditor* new_se = new SharedEditor(clientConnection, cnt, this);
-             sharedEditors.insert(sharedEditors.begin() + cnt, new_se);
-             out << cnt << this->_symbols;
-             clientConnection->write(block);
-             connect(clientConnection, &QIODevice::readyRead, this, [this, clientConnection] {
-                 while (clientConnection->bytesAvailable()) {
-                        qDebug() << "There is a request to read!";
-                        this->readFromExistingConnection(clientConnection);
-                    }
-                });
-             this->free_site_ids[cnt] = false;
-             qDebug() << "I assigned the following Site Id to the incoming client: " << cnt;
-             return;
-         }
-         cnt++;
+    if (new_document) {
+        SharedDocument* doc = new SharedDocument(filename, this);
+        qint32 site_id_assigned = doc->addSharedEditor(clientConnection);
+
+        /* Useful for opening an existing document (so, to use later in development).
+        if (site_id_assigned == SharedDocument::SITE_ID_UNASSIGNED) {
+            // No Site Ids available.
+            qDebug().noquote() << "I cannot host the incoming client!\n\t-> No more Site Ids available!";
+            clientConnection->abort();
+        }
+        */
+
+        out << site_id_assigned << doc->getSymbols();
+        clientConnection->write(block);
+        connect(clientConnection, &QIODevice::readyRead, this, [this, clientConnection] {
+            while (clientConnection->bytesAvailable()) {
+                qDebug() << "There is a request to read!";
+                this->readFromExistingConnection(clientConnection);
+            }
+        });
+        openDocuments.push_back(doc);
+    } else /* Opening an existing document. */ {
+        // do some stuff!
     }
-    // No Site Ids available.
-    qDebug().noquote() << "I cannot host the incoming client!\n\t-> No more Site Ids available!";
-    clientConnection->abort();
 }
 
 void NetworkServer::createNewDocumentDirectory(QString username, QString filename) {
-    QDir().mkdir(QDir::toNativeSeparators("documents/" + username + "/filename"));
-    QString new_file = QDir::toNativeSeparators("documents/" + username + "/filename/filename.rtf");
-    QString collaborators = QDir::toNativeSeparators("documents/" + username + "/filename/collaborators.txt");
+    QDir().mkdir(QDir::toNativeSeparators("documents/" + username + "/" + filename));
+    QString new_file = QDir::toNativeSeparators("documents/" + username + "/" + filename + "/" + filename + ".html");
     QFile(new_file).open(QIODevice::ReadWrite);
-    QFile(collaborators).open(QIODevice::ReadWrite);
+
+    QString symbols_pos_data_path = QDir::toNativeSeparators("documents/" + username + "/" + filename + "/" + "symbols.txt");
+    QFile(symbols_pos_data_path).open(QIODevice::ReadWrite);
+
+    QString collaborators_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/" + filename + "/collaborators.db");
+    QSqlDatabase collaborators_db = QSqlDatabase::addDatabase("QSQLITE");
+    collaborators_db.setDatabaseName(collaborators_db_path);
+    collaborators_db.open();
+    QSqlQuery query(collaborators_db);
+    query.exec("CREATE TABLE COLLABORATORS("
+               "USERNAME VARCHAR(30) PRIMARY KEY,"
+               "SITE_ID INTEGER NOT NULL,"
+               "COUNTER INTEGER NOT NULL"
+               ")");
+
+    QString symbols_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/" + filename + "/symbols.db");
+    QSqlDatabase symbols_db = QSqlDatabase::addDatabase("QSQLITE");
+    symbols_db.setDatabaseName(symbols_db_path);
+    symbols_db.open();
+    query = QSqlQuery(symbols_db);
+    query.exec("CREATE SYMBOLS("
+               "CHARACTER VARCHAR(1) NOT NULL,"
+               "SITE_ID INTEGER NOT NULL,"
+               "COUNTER INTEGER NOT NULL,"
+               "CONSTRAINT SYMBOLS_PK PRIMARY KEY (SITE_ID, COUNTER)"
+               ")");
+
+    // Database for those who no longer have access to the document
+    // because the owner revoke the permission to access to it.
+    QString old_collaborators_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/" + filename + "/old_collaborators.db");
+    QSqlDatabase old_collaborators_db = QSqlDatabase::addDatabase("QSQLITE");
+    old_collaborators_db.setDatabaseName(symbols_db_path);
+    old_collaborators_db.open();
+    query = QSqlQuery(old_collaborators_db);
+    query.exec("CREATE TABLE OLD_COLLABORATORS("
+               "USERNAME VARCHAR(30) PRIMARY KEY,"
+               "SITE_ID INTEGER NOT NULL,"
+               "COUNTER INTEGER NOT NULL"
+               ")");
 }
 
 void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username, QString password) {
@@ -352,171 +354,52 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
     out.setVersion(QDataStream::Qt_5_13);
 
     // Verifying if the chosen username is already in use.
-    int found = searchUsername(username);
-    if (found == NetworkServer::SEARCH_FAILED) {
-        clientConnection->abort();
-        return;
-    } else if (found >= 0) {
+    bool found = isThisUsernameInDatabase(username);
+    if (found) {
         out << Response(Response::USERNAME_ALREADY_IN_USE, QMap<QString, QString>());
         clientConnection->write(block);
         return;
     }
 
     // Storing the new credentials.
-    QFile file(usersListFileName);
-    if (!file.open(QIODevice::Append | QIODevice::Text)) {
-        qDebug().noquote() << "Something went wrong!\n\t-> I could not open the users database!";
-        clientConnection->abort();
-        return;
-    }
-    QTextStream to_file(&file);
-    to_file << username << "\n" << password << "\n";
-
-    // Telling the client that SignUp went well.
-    out << Response(Response::USERNAME_ACCEPTED, QMap<QString, QString>());
+    QSqlQuery query(users_db);
+    query.exec("INSERT INTO USERS(USERNAME, PASSWORD) VALUES(" + username + ", " + password + ")");
 
     // Creating the user's documents folder.
     QString new_path = "documents/" + username;
     QDir().mkdir(QDir::toNativeSeparators(new_path));
 
     // Creating the user's permissions file.
-    QFile(QDir::toNativeSeparators(new_path + "/permissions.txt")).open(QIODevice::ReadWrite);
+    QString permissions_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/permissions.db");
+    QSqlDatabase permissions_db = QSqlDatabase::addDatabase("QSQLITE");
+    permissions_db.setDatabaseName(permissions_db_path);
+    permissions_db.open(); // If it doesn't exists, it will be created.
+    query = QSqlQuery(permissions_db);
+    query.exec("CREATE TABLE PERMISSIONS("
+               "OWNER VARCHAR(30) NOT NULL,"
+               "DOCUMENT VARCHAR(30) NOT NULL"
+               "CONSTRAINT PERMISSIONS_PK PRIMARY KEY (OWNER, DOCUMENT))");
+
+    // Telling the client that SignUp went well.
+    out << Response(Response::USERNAME_ACCEPTED, QMap<QString, QString>());
     clientConnection->write(block);
 }
 
-int NetworkServer::searchUsername(QString username) {
-    QFile file(usersListFileName);
-    if (!file.open(QIODevice::ReadOnly | QIODevice::Text)) {
-        qDebug().noquote() << "Something went wrong!\n\t-> I could not open the users data!";
-        return NetworkServer::SEARCH_FAILED;
-    }
+bool NetworkServer::isThisUsernameInDatabase(QString username, QString* password) {
+    QSqlQuery query(users_db);
+    query.exec("SELECT * FROM USERS WHERE USERNAME='" + username + "' COLLATE NOCASE");
+    QSqlRecord record = query.record();
 
-    int lineIndex = 0;
-    QTextStream in(&file);
-    QString line = in.readLine();
-    while (!line.isNull()) {
-        if (QString::compare(line, username, Qt::CaseInsensitive) == 0) {
-            return lineIndex;
+    if (query.next()) {
+        if (password != nullptr) {
+            QVariant val = query.value(record.indexOf("PASSWORD"));
+            *password = QString(val.toString());
         }
-        in.readLine(); // Ignoring the password line.
-        line = in.readLine();
-        lineIndex += 2;
-    }
-    return NetworkServer::USERNAME_NOT_FOUND;
+        return true;
+    } else return false;
 }
 
-void NetworkServer::disconnectClient(qint32 siteId) {
-    qint32 cnt = 0;
-    foreach (SharedEditor* se, sharedEditors) {
-        if (se->getSiteId() == siteId) {
-            SharedEditor* tmp = this->sharedEditors[cnt];
-            this->sharedEditors[cnt]->getClientConnection()->disconnectFromHost();
-            this->sharedEditors.erase(sharedEditors.begin() + cnt);
-            this->free_site_ids[siteId] = true;
-            delete tmp; // To prevent Memory Leakage!
-            return;
-        }
-        cnt++;
-    }
-}
 
-void NetworkServer::dispatchMessages() {
-    Message tmp_msg;
-    while (!messages.empty()) {
-        tmp_msg = messages.front();
-        messages.pop();
-
-        foreach (SharedEditor* se, sharedEditors) {
-            if (tmp_msg.getSiteId() != se->getSiteId()) {
-                QByteArray block;
-                QDataStream out(&block, QIODevice::WriteOnly);
-                out.setVersion(QDataStream::Qt_5_13);
-                out << tmp_msg;
-                se->getClientConnection()->write(block);
-                qDebug() << "Message sent!";
-            }
-        }
-    }
-}
-
-void NetworkServer::readMessage(Message& msg) {
-    this->processSymbol(msg);
-    messages.push(msg);
-    this->dispatchMessages();
-}
-
-void NetworkServer::processSymbol(const Message& msg) {
-    qint32 index = 0;
-    if (msg.getType() == Message::INSERT_TYPE) {
-        if (_symbols.empty()) _symbols.push_back(msg.getSymbol());
-        else {
-            foreach (Symbol s, _symbols) {
-                if (this->comparePositions(s.getPos(), msg.getSymbol().getPos())) {
-                    _symbols.insert(_symbols.begin() + index, msg.getSymbol());
-                    qDebug() << "Current symbols on Server: " << tr(this->symbols_to_string().toStdString().c_str());
-                    //qDebug().noquote() << "Current positions for each symbol on Server:\n" << tr(this->positions_to_string().toStdString().c_str());
-                    return;
-                }
-                index++;
-            }
-            _symbols.push_back(msg.getSymbol());
-        }
-        qDebug() << "I have INSERTED a symbol!";
-    } else /* Message::ERASE_TYPE */ {
-        foreach (Symbol s, _symbols){
-            if (s.getChar() == msg.getSymbol().getChar() && s.getId() == msg.getSymbol().getId()) {
-                _symbols.erase(_symbols.begin() + index);
-                qDebug() << "I have ERASED a symbol!";
-                qDebug() << "Current symbols on Server: " << tr(this->symbols_to_string().toStdString().c_str());
-                //qDebug().noquote() << "Current positions for each symbol on Server:\n" << tr(this->positions_to_string().toStdString().c_str());
-                return;
-            }
-            index++;
-        }
-        qDebug() << "ERASING already done!";
-    }
-    qDebug() << "Current symbols on Server: " << tr(this->symbols_to_string().toStdString().c_str());
-    //qDebug().noquote() << "Current positions for each symbol on Server:\n" << tr(this->positions_to_string().toStdString().c_str());
-}
-
-// Returns true if pos1 > pos2
-bool NetworkServer::comparePositions(std::optional<QVector<qint32>> pos1_opt,
-                                    std::optional<QVector<qint32>> pos2_opt) {
-    QVector<qint32> pos1 = (pos1_opt.has_value()) ? pos1_opt.value() : QVector<qint32>();
-    QVector<qint32> pos2 = (pos2_opt.has_value()) ? pos2_opt.value() : QVector<qint32>();
-
-    qint32 digit1 = (!pos1.empty()) ? pos1[0] : 0;
-    qint32 digit2 = (!pos2.empty()) ? pos2[0] : 0;
-
-    if (digit1 > digit2) return true;
-    else if (digit1 < digit2) return false;
-    else if (digit1 == digit2 && pos1.size() == 1 && pos2.size() == 1) return false;
-    else {
-        QVector<qint32> slice1 = (pos1.begin() + 1 < pos1.end()) ? pos1.mid(1) : QVector<qint32>();
-        QVector<qint32> slice2 = (pos2.begin() + 1 < pos2.end()) ? pos2.mid(1) : QVector<qint32>();
-        return this->comparePositions(slice1, slice2);
-    }
-}
-
-QString NetworkServer::symbols_to_string() {
-    QString str;
-    foreach (Symbol s, _symbols) {
-        str += s.getChar();
-    }
-    return str;
-}
-
-QString NetworkServer::positions_to_string() {
-    QString pos_str = "";
-    qint32 cnt = 0;
-    foreach (Symbol s, _symbols) {
-        pos_str.append(QString("[%1] ->").arg(cnt));
-        foreach (qint32 digit, s.getPos()) pos_str.append(QString(" %1 ").arg(digit));
-        pos_str.append("\n");
-        cnt++;
-    }
-    return pos_str;
-}
 /*
 void NetworkServer::saveDocument() {
     //QFile file(this->fileName);

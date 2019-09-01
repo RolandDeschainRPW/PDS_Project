@@ -68,7 +68,7 @@ private:
     QString currentFile;
 
     // Vars for symbols managing.
-    qint32 _counter = 0;
+    quint32 _counter = 0;
     qint32 boundary;
     qint32 base;
     qint32 strategy;

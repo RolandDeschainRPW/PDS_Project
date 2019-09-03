@@ -4022,6 +4022,10 @@ C:/Qt/5.13.0/mingw73_64/include/QtSql/QSqlDatabase
 qsqldatabase.h
 C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqldatabase.h
 
+C:/Qt/5.13.0/mingw73_64/include/QtSql/QSqlError
+qsqlerror.h
+C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlerror.h
+
 C:/Qt/5.13.0/mingw73_64/include/QtSql/QSqlField
 qsqlfield.h
 C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlfield.h
@@ -4035,6 +4039,12 @@ qsqlrecord.h
 C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlrecord.h
 
 C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqldatabase.h
+QtSql/qtsqlglobal.h
+-
+QtCore/qstring.h
+-
+
+C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlerror.h
 QtSql/qtsqlglobal.h
 -
 QtCore/qstring.h
@@ -4069,6 +4079,10 @@ QtCore/qglobal.h
 -
 QtSql/qtsql-config.h
 -
+
+C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
+qapplication.h
+C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qapplication.h
 
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QCommonStyle
 qcommonstyle.h
@@ -5512,6 +5526,44 @@ QtWidgets/qtwidgetsglobal.h
 QtWidgets/qdialog.h
 -
 
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_NetworkServer.cpp
+memory
+-
+../../../include/NetworkServer.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/NetworkServer.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedDocument.cpp
+memory
+-
+../../../include/SharedDocument.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SharedDocument.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedEditor.cpp
+memory
+-
+../../../include/SharedEditor.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SharedEditor.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/mocs_compilation.cpp
+6YEA5652QU/moc_NetworkServer.cpp
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_NetworkServer.cpp
+6YEA5652QU/moc_SharedDocument.cpp
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedDocument.cpp
+6YEA5652QU/moc_SharedEditor.cpp
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedEditor.cpp
+
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Message.h
 iostream
 -
@@ -5619,6 +5671,14 @@ QSqlField
 -
 QVariant
 -
+QSqlError
+-
 ../include/Response.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Response.h
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/main.cpp
+QApplication
+-
+../include/NetworkServer.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/NetworkServer.h
 

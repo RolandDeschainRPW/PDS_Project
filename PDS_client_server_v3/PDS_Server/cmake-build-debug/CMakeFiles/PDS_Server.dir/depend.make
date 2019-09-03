@@ -758,10 +758,12 @@ CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: C:/Qt/5.13.0/mingw73_64/inc
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qtnetworkversion.h
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qudpsocket.h
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/QSqlDatabase
+CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/QSqlError
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/QSqlField
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/QSqlQuery
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/QSqlRecord
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqldatabase.h
+CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlerror.h
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlfield.h
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlquery.h
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlrecord.h

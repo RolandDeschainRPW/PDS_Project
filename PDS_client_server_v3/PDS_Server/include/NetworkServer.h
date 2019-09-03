@@ -40,13 +40,12 @@ private slots:
     void readFromNewConnection();
 
 private:
-    QString usersDbFileName;
+    QString users_db_path;
     QVector<QString> activeUsers;
     QVector<SharedDocument*> openDocuments;
     QLabel* statusLabel = nullptr;
     QTcpServer* tcpServer = nullptr;
     QNetworkSession* networkSession = nullptr;
-    QSqlDatabase users_db;
 
     void connectClient(QTcpSocket* clientConnection, QString username, QString password);
     void signUpNewUser(QTcpSocket* clientConnection, QString username, QString password);
@@ -56,6 +55,7 @@ private:
     void processNewConnections(QTcpSocket* clientConnection);
     void writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename);
     SharedDocument* getDocument(QString filename);
+    void removeFromActiveUsers(QString username);
     //void saveDocument();
 };
 

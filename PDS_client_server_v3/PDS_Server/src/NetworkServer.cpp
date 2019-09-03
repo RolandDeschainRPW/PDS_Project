@@ -12,30 +12,37 @@
 #include <QSqlQuery>
 #include <QSqlField>
 #include <QVariant>
+#include <QSqlError>
 
 #include "../include/Response.h"
 
 NetworkServer::NetworkServer(QString usersDbFileName,
                         QWidget *parent) : QDialog(parent),
-                                        statusLabel(new QLabel),
-                                        usersDbFileName(usersDbFileName) {
+                                        statusLabel(new QLabel) {
     // Initialiting directories.
     if (!QDir("documents").exists()) QDir().mkdir("documents");
     if (!QDir("profiles").exists()) QDir().mkdir("profiles");
 
     // Connecting to users database
-    bool newly_created = !QFile(this->usersDbFileName).exists();
-    QString users_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/" + usersDbFileName);
-    users_db = QSqlDatabase::addDatabase("QSQLITE");
+    bool newly_created = !QFile(usersDbFileName).exists();
+    users_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/" + usersDbFileName);
+    QSqlDatabase users_db = QSqlDatabase::addDatabase("QSQLITE", "users_db_conn");
     users_db.setDatabaseName(users_db_path);
     users_db.open(); // If it doesn't exists, it will be created.
     if (newly_created) {
-        QSqlQuery query(users_db);
-        query.exec("CREATE TABLE USERS("
-                   "USERNAME VARCHAR(30) PRIMARY KEY,"
-                   "PASSWORD VARCHAR(30) NOT NULL"
-                   ")");
+        {
+            users_db.transaction();
+            QSqlQuery query(users_db);
+            bool done = query.exec("CREATE TABLE USERS("
+                       "USERNAME VARCHAR(30) PRIMARY KEY COLLATE NOCASE, "
+                       "PASSWORD VARCHAR(30) NOT NULL"
+                       ")");
+            if (!done) qDebug() << query.lastError();
+            users_db.commit();
+        }
     }
+    users_db.close();
+    QSqlDatabase::removeDatabase("users_db_conn");
 
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     statusLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
@@ -93,8 +100,8 @@ NetworkServer::NetworkServer(QString usersDbFileName,
     mainLayout->addLayout(buttonLayout);
 
     setWindowTitle(QGuiApplication::applicationDisplayName());
-	
-	qDebug() << "Server started.";
+
+    qDebug() << "Server started.";
 }
 
 void NetworkServer::sessionOpened()
@@ -145,7 +152,7 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
     // Verifying if credentials are correct.
     QString real_password;
     bool found = isThisUsernameInDatabase(username, &real_password);
-    if (!found || QString::compare(password, real_password, Qt::CaseSensitive) == 0) {
+    if (!found || QString::compare(password, real_password, Qt::CaseSensitive) != 0) {
         out << Response(Response::WRONG_CREDENTIALS, QMap<QString, QString>());
         clientConnection->write(block);
         return;
@@ -172,26 +179,36 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
 
     // Listing all docs the user has access to.
     QString permissions_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/permissions.db");
-    QSqlDatabase permissions_db = QSqlDatabase::addDatabase("QSQLITE");
+    QSqlDatabase permissions_db = QSqlDatabase::addDatabase("QSQLITE", "permissions_db_conn");
     permissions_db.setDatabaseName(permissions_db_path);
     permissions_db.open();
+    {
+        QSqlQuery query(permissions_db);
+        bool done = query.exec("SELECT * FROM PERMISSIONS");
+        if (!done) qDebug() << query.lastError();
+        QSqlRecord record = query.record();
 
-    QSqlQuery query(permissions_db);
-    query.exec("SELECT * FROM PERMISSIONS");
-    QSqlRecord record = query.record();
-
-    while(query.next()) {
-        QString owner =  query.value(record.indexOf("OWNER")).toString();
-        QString document =  query.value(record.indexOf("DOCUMENT")).toString();
-        all_docs.insertMulti(document, owner);
+        if (query.first()) {
+            do {
+                QString owner = query.value(record.indexOf("OWNER")).toString();
+                QString document = query.value(record.indexOf("DOCUMENT")).toString();
+                all_docs.insertMulti(document, owner);
+            } while (query.next());
+        }
     }
+    permissions_db.close();
+    QSqlDatabase::removeDatabase("permissions_db_conn");
+
+    // Adding current user to active users.
+    activeUsers.push_back(username);
+
+    connect(clientConnection, &QAbstractSocket::disconnected, this, [this, username] {
+        this->removeFromActiveUsers(username);
+    });
 
     // Telling the client that Login went well.
     out << Response(Response::SUCCESSFUL_LOGIN, all_docs, username);
     clientConnection->write(block);
-
-    // Adding current user to active users.
-    activeUsers.push_back(username);
 }
 
 // DA RIVEDERE!!!
@@ -215,6 +232,16 @@ void NetworkServer::readFromExistingConnection(QTcpSocket* clientConnection) {
         this->getDocument(filename)->readMessage(msg);
     } else if (next_req.getRequestType() == Request::DISCONNECT_TYPE) {
         this->getDocument(filename)->disconnectClient(next_req.getSiteId());
+        //this->removeFromActiveUsers(next_req.getUsername()); // Maybe useless.
+    }
+}
+
+void NetworkServer::removeFromActiveUsers(QString username) {
+    qint32 i = 0;
+    foreach (QString active_username, this->activeUsers) {
+        if (QString::compare(username, active_username, Qt::CaseInsensitive) == 0)
+            activeUsers.erase(activeUsers.begin() + i);
+        i++;
     }
 }
 
@@ -312,40 +339,61 @@ void NetworkServer::createNewDocumentDirectory(QString username, QString filenam
     QFile(symbols_pos_data_path).open(QIODevice::ReadWrite);
 
     QString collaborators_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/" + filename + "/collaborators.db");
-    QSqlDatabase collaborators_db = QSqlDatabase::addDatabase("QSQLITE");
+    QSqlDatabase collaborators_db = QSqlDatabase::addDatabase("QSQLITE", "collaborators_db_conn");
     collaborators_db.setDatabaseName(collaborators_db_path);
     collaborators_db.open();
-    QSqlQuery query(collaborators_db);
-    query.exec("CREATE TABLE COLLABORATORS("
-               "USERNAME VARCHAR(30) PRIMARY KEY,"
-               "SITE_ID INTEGER NOT NULL,"
-               "COUNTER INTEGER NOT NULL"
-               ")");
+    {
+        collaborators_db.transaction();
+        QSqlQuery query(collaborators_db);
+        bool done = query.exec("CREATE TABLE COLLABORATORS("
+                   "USERNAME VARCHAR(30) PRIMARY KEY COLLATE NOCASE, "
+                   "SITE_ID INTEGER NOT NULL, "
+                   "COUNTER INTEGER NOT NULL"
+                   ")");
+        if (!done) qDebug() << query.lastError();
+        collaborators_db.commit();
+    }
+    collaborators_db.close();
+    QSqlDatabase::removeDatabase("collaborators_db_conn");
 
     QString symbols_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/" + filename + "/symbols.db");
-    QSqlDatabase symbols_db = QSqlDatabase::addDatabase("QSQLITE");
+    QSqlDatabase symbols_db = QSqlDatabase::addDatabase("QSQLITE", "symbols_db_conn");
     symbols_db.setDatabaseName(symbols_db_path);
     symbols_db.open();
-    query = QSqlQuery(symbols_db);
-    query.exec("CREATE SYMBOLS("
-               "CHARACTER VARCHAR(1) NOT NULL,"
-               "SITE_ID INTEGER NOT NULL,"
-               "COUNTER INTEGER NOT NULL,"
-               "CONSTRAINT SYMBOLS_PK PRIMARY KEY (SITE_ID, COUNTER)"
-               ")");
+    {
+        symbols_db.transaction();
+        QSqlQuery query = QSqlQuery(symbols_db);
+        bool done = query.exec("CREATE TABLE SYMBOLS("
+                   "CHARACTER VARCHAR(1) NOT NULL, "
+                   "SITE_ID INTEGER NOT NULL, "
+                   "COUNTER INTEGER NOT NULL, "
+                   "CONSTRAINT SYMBOLS_PK PRIMARY KEY (SITE_ID, COUNTER)"
+                   ")");
+        if (!done) qDebug() << query.lastError();
+        symbols_db.commit();
+    }
+    symbols_db.close();
+    QSqlDatabase::removeDatabase("symbols_db_conn");
 
     // Database for those who no longer have access to the document
     // because the owner revoke the permission to access to it.
     QString old_collaborators_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/" + filename + "/old_collaborators.db");
-    QSqlDatabase old_collaborators_db = QSqlDatabase::addDatabase("QSQLITE");
+    QSqlDatabase old_collaborators_db = QSqlDatabase::addDatabase("QSQLITE", "old_collaborators_db_conn");
     old_collaborators_db.setDatabaseName(symbols_db_path);
     old_collaborators_db.open();
-    query = QSqlQuery(old_collaborators_db);
-    query.exec("CREATE TABLE OLD_COLLABORATORS("
-               "USERNAME VARCHAR(30) PRIMARY KEY,"
-               "SITE_ID INTEGER NOT NULL,"
-               "COUNTER INTEGER NOT NULL"
-               ")");
+    {
+        old_collaborators_db.transaction();
+        QSqlQuery query = QSqlQuery(old_collaborators_db);
+        bool done = query.exec("CREATE TABLE OLD_COLLABORATORS("
+                   "USERNAME VARCHAR(30) PRIMARY KEY COLLATE NOCASE, "
+                   "SITE_ID INTEGER NOT NULL, "
+                   "COUNTER INTEGER NOT NULL"
+                   ")");
+        if (!done) qDebug() << query.lastError();
+        old_collaborators_db.commit();
+    }
+    old_collaborators_db.close();
+    QSqlDatabase::removeDatabase("old_collaborators_db_conn");
 }
 
 void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username, QString password) {
@@ -362,8 +410,18 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
     }
 
     // Storing the new credentials.
-    QSqlQuery query(users_db);
-    query.exec("INSERT INTO USERS(USERNAME, PASSWORD) VALUES(" + username + ", " + password + ")");
+    QSqlDatabase users_db = QSqlDatabase::addDatabase("QSQLITE", "users_db_conn");
+    users_db.setDatabaseName(users_db_path);
+    users_db.open(); // If it doesn't exists, it will be created.
+    {
+        users_db.transaction();
+        QSqlQuery query(users_db);
+        bool done = query.exec("INSERT INTO USERS(USERNAME, PASSWORD) VALUES('" + username + "', '" + password + "')");
+        if (!done) qDebug() << query.lastError();
+        users_db.commit();
+    }
+    users_db.close();
+    QSqlDatabase::removeDatabase("users_db_conn");
 
     // Creating the user's documents folder.
     QString new_path = "documents/" + username;
@@ -371,14 +429,21 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
 
     // Creating the user's permissions file.
     QString permissions_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/permissions.db");
-    QSqlDatabase permissions_db = QSqlDatabase::addDatabase("QSQLITE");
+    QSqlDatabase permissions_db = QSqlDatabase::addDatabase("QSQLITE", "permissions_db_conn");
     permissions_db.setDatabaseName(permissions_db_path);
     permissions_db.open(); // If it doesn't exists, it will be created.
-    query = QSqlQuery(permissions_db);
-    query.exec("CREATE TABLE PERMISSIONS("
-               "OWNER VARCHAR(30) NOT NULL,"
-               "DOCUMENT VARCHAR(30) NOT NULL"
-               "CONSTRAINT PERMISSIONS_PK PRIMARY KEY (OWNER, DOCUMENT))");
+    {
+        permissions_db.transaction();
+        QSqlQuery query = QSqlQuery(permissions_db);
+        bool done = query.exec("CREATE TABLE PERMISSIONS("
+                   "OWNER VARCHAR(30) NOT NULL, "
+                   "DOCUMENT VARCHAR(30) NOT NULL, "
+                   "CONSTRAINT PERMISSIONS_PK PRIMARY KEY (OWNER, DOCUMENT))");
+        if (!done) qDebug() << query.lastError();
+        permissions_db.commit();
+    }
+    permissions_db.close();
+    QSqlDatabase::removeDatabase("permissions_db_conn");
 
     // Telling the client that SignUp went well.
     out << Response(Response::USERNAME_ACCEPTED, QMap<QString, QString>());
@@ -386,17 +451,29 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
 }
 
 bool NetworkServer::isThisUsernameInDatabase(QString username, QString* password) {
-    QSqlQuery query(users_db);
-    query.exec("SELECT * FROM USERS WHERE USERNAME='" + username + "' COLLATE NOCASE");
-    QSqlRecord record = query.record();
+    bool found;
 
-    if (query.next()) {
-        if (password != nullptr) {
-            QVariant val = query.value(record.indexOf("PASSWORD"));
-            *password = QString(val.toString());
-        }
-        return true;
-    } else return false;
+    QSqlDatabase users_db = QSqlDatabase::addDatabase("QSQLITE", "users_db_conn");
+    users_db.setDatabaseName(users_db_path);
+    users_db.open(); // If it doesn't exists, it will be created.
+    {
+        QSqlQuery query(users_db);
+        bool done = query.exec("SELECT * FROM USERS WHERE USERNAME='" + username + "'");
+        if (!done) qDebug() << query.lastError();
+        QSqlRecord record = query.record();
+
+        if (query.first()) {
+            if (password != nullptr) {
+                QVariant val = query.value(record.indexOf("PASSWORD"));
+                *password = QString(val.toString());
+            }
+            found = true;
+        } else found = false;
+    }
+    users_db.close();
+    QSqlDatabase::removeDatabase("users_db_conn");
+
+    return found;
 }
 
 

@@ -44,17 +44,17 @@ SharedEditor* SharedDocument::getSharedEditor(qint32 siteId) {
 
 void SharedDocument::disconnectClient(qint32 siteId) {
     quint32 cnt = 0;
-            foreach (SharedEditor* se, sharedEditors) {
-            if (se->getSiteId() == siteId) {
-                SharedEditor* tmp = this->sharedEditors[cnt];
-                this->sharedEditors[cnt]->getClientConnection()->disconnectFromHost();
-                this->sharedEditors.erase(sharedEditors.begin() + cnt);
-                this->free_site_ids[siteId] = true;
-                delete tmp; // To prevent Memory Leakage!
-                return;
-            }
-            cnt++;
+    foreach (SharedEditor* se, sharedEditors) {
+        if (se->getSiteId() == siteId) {
+            SharedEditor* tmp = this->sharedEditors[cnt];
+            this->sharedEditors[cnt]->getClientConnection()->disconnectFromHost();
+            this->sharedEditors.erase(sharedEditors.begin() + cnt);
+            this->free_site_ids[siteId] = true;
+            delete tmp; // To prevent Memory Leakage!
+            return;
         }
+        cnt++;
+    }
 }
 
 void SharedDocument::dispatchMessages() {
@@ -63,16 +63,16 @@ void SharedDocument::dispatchMessages() {
         tmp_msg = messages.front();
         messages.pop();
 
-                foreach (SharedEditor* se, sharedEditors) {
-                if (tmp_msg.getSiteId() != se->getSiteId()) {
-                    QByteArray block;
-                    QDataStream out(&block, QIODevice::WriteOnly);
-                    out.setVersion(QDataStream::Qt_5_13);
-                    out << tmp_msg;
-                    se->getClientConnection()->write(block);
-                    qDebug() << "Message sent!";
-                }
+        foreach (SharedEditor* se, sharedEditors) {
+            if (tmp_msg.getSiteId() != se->getSiteId()) {
+                QByteArray block;
+                QDataStream out(&block, QIODevice::WriteOnly);
+                out.setVersion(QDataStream::Qt_5_13);
+                out << tmp_msg;
+                se->getClientConnection()->write(block);
+                qDebug() << "Message sent!";
             }
+        }
     }
 }
 
@@ -87,29 +87,29 @@ void SharedDocument::processSymbol(const Message& msg) {
     if (msg.getType() == Message::INSERT_TYPE) {
         if (_symbols.empty()) _symbols.push_back(msg.getSymbol());
         else {
-                    foreach (Symbol s, _symbols) {
-                    if (this->comparePositions(s.getPos(), msg.getSymbol().getPos())) {
-                        _symbols.insert(_symbols.begin() + index, msg.getSymbol());
-                        qDebug() << "Current symbols on Server: " << tr(this->symbols_to_string().toStdString().c_str());
-                        //qDebug().noquote() << "Current positions for each symbol on Server:\n" << tr(this->positions_to_string().toStdString().c_str());
-                        return;
-                    }
-                    index++;
-                }
-            _symbols.push_back(msg.getSymbol());
-        }
-        qDebug() << "I have INSERTED a symbol!";
-    } else /* Message::ERASE_TYPE */ {
-                foreach (Symbol s, _symbols){
-                if (s.getChar() == msg.getSymbol().getChar() && s.getId() == msg.getSymbol().getId()) {
-                    _symbols.erase(_symbols.begin() + index);
-                    qDebug() << "I have ERASED a symbol!";
+            foreach (Symbol s, _symbols) {
+                if (this->comparePositions(s.getPos(), msg.getSymbol().getPos())) {
+                    _symbols.insert(_symbols.begin() + index, msg.getSymbol());
                     qDebug() << "Current symbols on Server: " << tr(this->symbols_to_string().toStdString().c_str());
                     //qDebug().noquote() << "Current positions for each symbol on Server:\n" << tr(this->positions_to_string().toStdString().c_str());
                     return;
                 }
                 index++;
             }
+            _symbols.push_back(msg.getSymbol());
+        }
+        qDebug() << "I have INSERTED a symbol!";
+    } else /* Message::ERASE_TYPE */ {
+        foreach (Symbol s, _symbols){
+            if (s.getChar() == msg.getSymbol().getChar() && s.getId() == msg.getSymbol().getId()) {
+                _symbols.erase(_symbols.begin() + index);
+                qDebug() << "I have ERASED a symbol!";
+                qDebug() << "Current symbols on Server: " << tr(this->symbols_to_string().toStdString().c_str());
+                //qDebug().noquote() << "Current positions for each symbol on Server:\n" << tr(this->positions_to_string().toStdString().c_str());
+                return;
+            }
+            index++;
+        }
         qDebug() << "ERASING already done!";
     }
     qDebug() << "Current symbols on Server: " << tr(this->symbols_to_string().toStdString().c_str());
@@ -137,20 +137,20 @@ bool SharedDocument::comparePositions(std::optional<QVector<qint32>> pos1_opt,
 
 QString SharedDocument::symbols_to_string() {
     QString str;
-            foreach (Symbol s, _symbols) {
-            str += s.getChar();
-        }
+    foreach (Symbol s, _symbols) {
+        str += s.getChar();
+    }
     return str;
 }
 
 QString SharedDocument::positions_to_string() {
     QString pos_str = "";
     quint32 cnt = 0;
-            foreach (Symbol s, _symbols) {
-            pos_str.append(QString("[%1] ->").arg(cnt));
-                    foreach (qint32 digit, s.getPos()) pos_str.append(QString(" %1 ").arg(digit));
-            pos_str.append("\n");
-            cnt++;
-        }
+    foreach (Symbol s, _symbols) {
+        pos_str.append(QString("[%1] ->").arg(cnt));
+        foreach (qint32 digit, s.getPos()) pos_str.append(QString(" %1 ").arg(digit));
+        pos_str.append("\n");
+        cnt++;
+    }
     return pos_str;
 }

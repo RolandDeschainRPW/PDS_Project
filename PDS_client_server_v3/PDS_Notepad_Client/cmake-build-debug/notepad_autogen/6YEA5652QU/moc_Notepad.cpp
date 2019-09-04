@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Notepad_t {
-    QByteArrayData data[29];
-    char stringdata0[273];
+    QByteArrayData data[28];
+    char stringdata0[259];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -52,22 +52,21 @@ QT_MOC_LITERAL(16, 102, 16), // "setFontUnderline"
 QT_MOC_LITERAL(17, 119, 9), // "underline"
 QT_MOC_LITERAL(18, 129, 13), // "setFontItalic"
 QT_MOC_LITERAL(19, 143, 6), // "italic"
-QT_MOC_LITERAL(20, 150, 13), // "onTextChanged"
-QT_MOC_LITERAL(21, 164, 23), // "onCursorPositionChanged"
-QT_MOC_LITERAL(22, 188, 18), // "interceptUserInput"
-QT_MOC_LITERAL(23, 207, 3), // "pos"
-QT_MOC_LITERAL(24, 211, 3), // "del"
-QT_MOC_LITERAL(25, 215, 3), // "add"
-QT_MOC_LITERAL(26, 219, 12), // "displayError"
-QT_MOC_LITERAL(27, 232, 28), // "QAbstractSocket::SocketError"
-QT_MOC_LITERAL(28, 261, 11) // "socketError"
+QT_MOC_LITERAL(20, 150, 23), // "onCursorPositionChanged"
+QT_MOC_LITERAL(21, 174, 18), // "interceptUserInput"
+QT_MOC_LITERAL(22, 193, 3), // "pos"
+QT_MOC_LITERAL(23, 197, 3), // "del"
+QT_MOC_LITERAL(24, 201, 3), // "add"
+QT_MOC_LITERAL(25, 205, 12), // "displayError"
+QT_MOC_LITERAL(26, 218, 28), // "QAbstractSocket::SocketError"
+QT_MOC_LITERAL(27, 247, 11) // "socketError"
 
     },
     "Notepad\0newDocument\0\0open\0save\0saveAs\0"
     "print\0exit\0copy\0cut\0paste\0undo\0redo\0"
     "selectFont\0setFontBold\0bold\0"
     "setFontUnderline\0underline\0setFontItalic\0"
-    "italic\0onTextChanged\0onCursorPositionChanged\0"
+    "italic\0onCursorPositionChanged\0"
     "interceptUserInput\0pos\0del\0add\0"
     "displayError\0QAbstractSocket::SocketError\0"
     "socketError"
@@ -80,7 +79,7 @@ static const uint qt_meta_data_Notepad[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      19,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -88,25 +87,24 @@ static const uint qt_meta_data_Notepad[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,  109,    2, 0x08 /* Private */,
-       3,    0,  110,    2, 0x08 /* Private */,
-       4,    0,  111,    2, 0x08 /* Private */,
-       5,    0,  112,    2, 0x08 /* Private */,
-       6,    0,  113,    2, 0x08 /* Private */,
-       7,    0,  114,    2, 0x08 /* Private */,
-       8,    0,  115,    2, 0x08 /* Private */,
-       9,    0,  116,    2, 0x08 /* Private */,
-      10,    0,  117,    2, 0x08 /* Private */,
-      11,    0,  118,    2, 0x08 /* Private */,
-      12,    0,  119,    2, 0x08 /* Private */,
-      13,    0,  120,    2, 0x08 /* Private */,
-      14,    1,  121,    2, 0x08 /* Private */,
-      16,    1,  124,    2, 0x08 /* Private */,
-      18,    1,  127,    2, 0x08 /* Private */,
-      20,    0,  130,    2, 0x08 /* Private */,
-      21,    0,  131,    2, 0x08 /* Private */,
-      22,    3,  132,    2, 0x08 /* Private */,
-      26,    1,  139,    2, 0x08 /* Private */,
+       1,    0,  104,    2, 0x08 /* Private */,
+       3,    0,  105,    2, 0x08 /* Private */,
+       4,    0,  106,    2, 0x08 /* Private */,
+       5,    0,  107,    2, 0x08 /* Private */,
+       6,    0,  108,    2, 0x08 /* Private */,
+       7,    0,  109,    2, 0x08 /* Private */,
+       8,    0,  110,    2, 0x08 /* Private */,
+       9,    0,  111,    2, 0x08 /* Private */,
+      10,    0,  112,    2, 0x08 /* Private */,
+      11,    0,  113,    2, 0x08 /* Private */,
+      12,    0,  114,    2, 0x08 /* Private */,
+      13,    0,  115,    2, 0x08 /* Private */,
+      14,    1,  116,    2, 0x08 /* Private */,
+      16,    1,  119,    2, 0x08 /* Private */,
+      18,    1,  122,    2, 0x08 /* Private */,
+      20,    0,  125,    2, 0x08 /* Private */,
+      21,    3,  126,    2, 0x08 /* Private */,
+      25,    1,  133,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -125,9 +123,8 @@ static const uint qt_meta_data_Notepad[] = {
     QMetaType::Void, QMetaType::Bool,   17,
     QMetaType::Void, QMetaType::Bool,   19,
     QMetaType::Void,
-    QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,   23,   24,   25,
-    QMetaType::Void, 0x80000000 | 27,   28,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,   22,   23,   24,
+    QMetaType::Void, 0x80000000 | 26,   27,
 
        0        // eod
 };
@@ -153,16 +150,15 @@ void Notepad::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 12: _t->setFontBold((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 13: _t->setFontUnderline((*reinterpret_cast< bool(*)>(_a[1]))); break;
         case 14: _t->setFontItalic((*reinterpret_cast< bool(*)>(_a[1]))); break;
-        case 15: _t->onTextChanged(); break;
-        case 16: _t->onCursorPositionChanged(); break;
-        case 17: _t->interceptUserInput((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 18: _t->displayError((*reinterpret_cast< QAbstractSocket::SocketError(*)>(_a[1]))); break;
+        case 15: _t->onCursorPositionChanged(); break;
+        case 16: _t->interceptUserInput((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 17: _t->displayError((*reinterpret_cast< QAbstractSocket::SocketError(*)>(_a[1]))); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 18:
+        case 17:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
@@ -202,13 +198,13 @@ int Notepad::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 19)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 19;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 19)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 19;
+        _id -= 18;
     }
     return _id;
 }

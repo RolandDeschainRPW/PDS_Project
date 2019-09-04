@@ -29,25 +29,24 @@
       <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/src/StartDialog.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/src/StartDialog.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/src/Symbol.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir/src/Symbol.cpp.obj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/notepad.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/notepad.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_Notepad.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_Notepad.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_SharedDocumentsExplorer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_SharedDocumentsExplorer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_StartDialog.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_StartDialog.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/include/NetworkingData.h" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/include/NetworkingData.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/include/Notepad.h" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/include/Notepad.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/include/Symbol.h" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/include/Symbol.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/src/NetworkingData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/src/NetworkingData.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/src/Notepad.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/src/Notepad.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/src/SharedDocumentsExplorer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/src/SharedDocumentsExplorer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/src/SignUpDialog.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/src/SignUpDialog.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDS_Notepad_Client/src/Symbol.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Notepad_Client/src/Symbol.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/CXX.includecache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/PDS_Server_autogen/mocs_compilation.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/depend.internal" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/depend.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/linklibs.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/linklibs.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/objects.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/PDS_Server.dir/src/main.cpp.obj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cmake-build-debug/PDS_Server.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/include/NetworkServer.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/NetworkServer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/SharedDocument.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/SharedDocument.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/Symbol.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Symbol.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/NetworkServer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NetworkServer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SharedDocument.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SharedDocument.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Symbol.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Symbol.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,8 +64,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/NetworkServer.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+            <state relative-caret-position="986">
+              <caret line="58" selection-start-line="58" selection-end-line="58" />
               <folding>
                 <element signature="e#113#132#0" expanded="true" />
               </folding>
@@ -77,8 +76,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NetworkServer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="234" column="10" selection-start-line="234" selection-start-column="10" selection-end-line="234" selection-end-column="10" />
+            <state relative-caret-position="584">
+              <caret line="374" column="52" lean-forward="true" selection-start-line="374" selection-start-column="52" selection-end-line="374" selection-end-column="52" />
               <folding>
                 <element signature="e#42#73#0" expanded="true" />
               </folding>
@@ -87,43 +86,34 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="20" selection-start-line="20" selection-end-line="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qstring.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="954" selection-start-line="954" selection-end-line="954" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/Request.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="48" selection-start-line="26" selection-start-column="48" selection-end-line="26" selection-end-column="48" />
-              <folding>
-                <element signature="e#101#120#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/Message.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
+            <state>
+              <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
               <folding>
                 <element signature="e#101#120#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/include/Symbol.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="697">
+              <caret line="41" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="e#99#118#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Symbol.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="425">
+              <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -132,7 +122,7 @@
         <entry file="file://$PROJECT_DIR$/include/SharedEditor.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="255">
-              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+              <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
               <folding>
                 <element signature="e#111#131#0" expanded="true" />
               </folding>
@@ -152,8 +142,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/SharedDocument.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
+            <state relative-caret-position="773">
+              <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
               <folding>
                 <element signature="e#115#131#0" expanded="true" />
               </folding>
@@ -164,8 +154,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SharedDocument.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="44" column="29" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="29" />
+            <state relative-caret-position="-196">
+              <caret line="200" selection-start-line="200" selection-end-line="200" />
+              <folding>
+                <element signature="e#42#65#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -174,36 +167,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>readfrom</find>
-      <find>readfromexistin</find>
-      <find>_db</find>
-      <find>signu</find>
+      <find>do</find>
+      <find>newdocu</find>
+      <find>old_colla</find>
+      <find>old_cola</find>
+      <find>indexof</find>
+      <find>qdatastre</find>
+      <find>qdatastream in</find>
+      <find>processmessage</find>
+      <find>open_d</find>
+      <find>isthis</find>
+      <find>insert</find>
+      <find>collabora</find>
+      <find>new_docu</find>
+      <find>sharedEditors</find>
+      <find>disconnect</find>
+      <find>disconnectClien</find>
+      <find>current symbo</find>
+      <find>da ri</find>
+      <find>automa</find>
       <find>_db.close()</find>
-      <find>CREATE TABLE</find>
-      <find>INSERT</find>
-      <find>INSERT INTO</find>
-      <find>addData</find>
-      <find>users_db_path</find>
-      <find>adddata</find>
-      <find>.exec()</find>
-      <find>exec(</find>
-      <find>query.lastError</find>
-      <find>isthisuse</find>
-      <find>::databa</find>
-      <find>signup</find>
-      <find>query</find>
-      <find>QSqlQuery query</find>
-      <find>isthisuserna</find>
-      <find>username varchar</find>
-      <find>ISTHISUSER</find>
-      <find>opendo</find>
-      <find>query.first</find>
-      <find>nocase</find>
-      <find>disconn</find>
-      <find>readfromexi</find>
-      <find>connectcli</find>
-      <find>disconnected</find>
-      <find>disconne</find>
+      <find>removedata</find>
+      <find>adddatabase(&quot;qsqlite&quot;, &quot;users_db</find>
+      <find>adddatabase(&quot;qsqlite&quot;</find>
+      <find>adddatabase</find>
+      <find>trans</find>
+      <find>s</find>
+      <find>symbols_db</find>
+      <find>updateDo</find>
+      <find>da</find>
+      <find>qdebug</find>
     </findStrings>
     <replaceStrings>
       <replace>QVector</replace>
@@ -242,14 +235,17 @@
         <option value="$PROJECT_DIR$/include/Request.h" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
         <option value="$PROJECT_DIR$/include/Response.h" />
-        <option value="$PROJECT_DIR$/include/SharedDocument.h" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/SharedDocument.cpp" />
+        <option value="$PROJECT_DIR$/include/Symbol.h" />
+        <option value="$PROJECT_DIR$/src/Symbol.cpp" />
         <option value="$PROJECT_DIR$/include/NetworkServer.h" />
+        <option value="$PROJECT_DIR$/include/SharedDocument.h" />
+        <option value="$PROJECT_DIR$/src/SharedDocument.cpp" />
         <option value="$PROJECT_DIR$/src/NetworkServer.cpp" />
       </list>
     </option>
   </component>
+  <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="width" value="1031" />
@@ -261,6 +257,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -276,13 +273,37 @@
             <path>
               <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
+              <item name="documents" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
+              <item name="documents" type="462c0819:PsiDirectoryNode" />
+              <item name="mike" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
+              <item name="documents" type="462c0819:PsiDirectoryNode" />
+              <item name="raf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="include" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -365,7 +386,11 @@
       <workItem from="1567241863354" duration="11574000" />
       <workItem from="1567327793008" duration="9145000" />
       <workItem from="1567338571078" duration="3215000" />
-      <workItem from="1567512163049" duration="23322000" />
+      <workItem from="1567512163049" duration="27364000" />
+      <workItem from="1567546622496" duration="1690000" />
+      <workItem from="1567602170999" duration="19051000" />
+      <workItem from="1567629320994" duration="394000" />
+      <workItem from="1567629730203" duration="5132000" />
     </task>
     <task id="LOCAL-00001" summary="Memory Leakage fixed on PDS_client_server_v1 Project + NetworkingData class added on CLion/Notepad Project">
       <created>1566752548845</created>
@@ -427,7 +452,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213413000" />
+    <option name="totallyTimeSpent" value="243722000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -440,9 +465,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20042644" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20895523" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32981783" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -517,13 +543,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Symbol.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1207">
-          <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_NetworkServer.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-272">
@@ -576,16 +595,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/Symbol.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
-          <folding>
-            <element signature="e#99#118#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/Request.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -596,33 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/Message.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-          <folding>
-            <element signature="e#101#120#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/SharedEditor.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding>
-            <element signature="e#111#131#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/SharedEditor.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="2" selection-start-column="2" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -630,13 +612,6 @@
           <folding>
             <element signature="e#2455#2478#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qstring.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="954" selection-start-line="954" selection-end-line="954" />
         </state>
       </provider>
     </entry>
@@ -661,37 +636,91 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/SharedDocument.h">
+    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qstring.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="24" column="26" selection-start-line="24" selection-start-column="26" selection-end-line="24" selection-end-column="26" />
-          <folding>
-            <element signature="e#115#131#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="17">
+          <caret line="954" selection-start-line="954" selection-end-line="954" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/NetworkServer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="57" column="49" selection-start-line="57" selection-start-column="49" selection-end-line="57" selection-end-column="49" />
+        <state relative-caret-position="986">
+          <caret line="58" selection-start-line="58" selection-end-line="58" />
           <folding>
             <element signature="e#113#132#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/include/Symbol.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="697">
+          <caret line="41" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#99#118#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Symbol.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="1" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/SharedEditor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
+          <folding>
+            <element signature="e#111#131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/SharedEditor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" selection-start-column="2" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Message.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2" lean-forward="true" selection-start-column="2" selection-end-column="2" />
+          <folding>
+            <element signature="e#101#120#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/SharedDocument.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="773">
+          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+          <folding>
+            <element signature="e#115#131#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/SharedDocument.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="44" column="29" selection-start-line="44" selection-start-column="21" selection-end-line="44" selection-end-column="29" />
+        <state relative-caret-position="-196">
+          <caret line="200" selection-start-line="200" selection-end-line="200" />
+          <folding>
+            <element signature="e#42#65#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NetworkServer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="234" column="10" selection-start-line="234" selection-start-column="10" selection-end-line="234" selection-end-column="10" />
+        <state relative-caret-position="584">
+          <caret line="374" column="52" lean-forward="true" selection-start-line="374" selection-start-column="52" selection-end-line="374" selection-end-column="52" />
           <folding>
             <element signature="e#42#73#0" expanded="true" />
           </folding>

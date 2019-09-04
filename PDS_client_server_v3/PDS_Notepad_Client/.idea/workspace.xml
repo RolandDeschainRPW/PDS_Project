@@ -14,29 +14,40 @@
   <component name="ChangeListManager">
     <list default="true" id="392f05da-f239-4b7b-bbdd-29715abf342e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/Message.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/Message.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/NetworkingData.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/NetworkingData.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/Notepad.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/Notepad.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/Request.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/Request.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/Response.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/Response.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/StartDialog.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/StartDialog.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/Symbol.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/notepad.dir/src/Symbol.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/notepad.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/notepad.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_SharedDocumentsExplorer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_SharedDocumentsExplorer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_StartDialog.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/notepad_autogen/6YEA5652QU/moc_StartDialog.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/include/NetworkingData.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/NetworkingData.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Notepad.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Notepad.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/include/Symbol.h" beforeDir="false" afterPath="$PROJECT_DIR$/include/Symbol.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/NetworkingData.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/NetworkingData.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Notepad.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Notepad.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SharedDocumentsExplorer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SharedDocumentsExplorer.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SignUpDialog.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/SignUpDialog.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Symbol.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/Symbol.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDS_Server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeCache.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeCache.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/DependInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/build.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/flags.make" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/flags.make" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/includes_CXX.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/includes_CXX.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/linklibs.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/linklibs.rsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server_autogen.dir/AutogenInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server_autogen.dir/AutogenInfo.cmake" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/PDS_Server.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/PDS_Server.cbp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/users.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/PDS_Server.exe" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/PDS_Server.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedDocument.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedDocument.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDS_Server/include/NetworkServer.h" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/include/NetworkServer.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/include/Response.h" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/include/Response.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDS_Server/include/SharedDocument.h" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/include/SharedDocument.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDS_Server/include/Symbol.h" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/include/Symbol.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDS_Server/src/NetworkServer.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/src/NetworkServer.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDS_Server/src/SharedDocument.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/src/SharedDocument.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../PDS_Server/src/Symbol.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/src/Symbol.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PDS_Server/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../PDS_Server/src/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -51,11 +62,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/Notepad.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="50" column="16" lean-forward="true" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+            <state relative-caret-position="-551">
+              <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
               <folding>
                 <element signature="e#37#56#0" expanded="true" />
               </folding>
@@ -63,37 +74,13 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Notepad.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="850">
-              <caret line="50" column="71" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
+            <state relative-caret-position="200">
+              <caret line="271" lean-forward="true" selection-start-line="271" selection-end-line="271" />
               <folding>
                 <element signature="e#402#418#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/SignUpDialog.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-              <folding>
-                <element signature="e#105#123#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/SignUpDialog.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" selection-start-line="23" selection-end-line="23" />
-              <folding>
-                <element signature="e#42#64#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,8 +101,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StartDialog.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3298">
-              <caret line="194" column="40" selection-start-line="194" selection-start-column="40" selection-end-line="194" selection-end-column="40" />
+            <state relative-caret-position="2805">
+              <caret line="165" selection-start-line="165" selection-end-line="165" />
             </state>
           </provider>
         </entry>
@@ -123,7 +110,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/include/SharedDocumentsExplorer.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
+            <state relative-caret-position="61">
               <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
               <folding>
                 <element signature="e#127#145#0" expanded="true" />
@@ -135,8 +122,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/SharedDocumentsExplorer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+            <state relative-caret-position="-500">
+              <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
               <folding>
                 <element signature="e#42#64#0" expanded="true" />
               </folding>
@@ -148,17 +135,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>intercep</find>
-      <find>intercept</find>
-      <find>generatepo</find>
-      <find>setenabl</find>
-      <find>#include &quot;</find>
-      <find>setenabled</find>
-      <find>closeE</find>
-      <find>Request(Request::SITE_ID_UNASSIGNED</find>
-      <find>openshared</find>
-      <find>qdir</find>
-      <find>SIGN_UP</find>
       <find>ready</find>
       <find>close()</find>
       <find>disconnectFrom</find>
@@ -178,6 +154,17 @@
       <find>rtf</find>
       <find>qint32 _counter</find>
       <find>qint32</find>
+      <find>newdoc</find>
+      <find>signup</find>
+      <find>close</find>
+      <find>deletelater</find>
+      <find>readstart</find>
+      <find>closeEve</find>
+      <find>static_cast</find>
+      <find>site</find>
+      <find>_counter</find>
+      <find>counter</find>
+      <find>qdebug</find>
     </findStrings>
     <replaceStrings>
       <replace>net_data-&gt;tcpSocket</replace>
@@ -220,8 +207,6 @@
         <option value="$PROJECT_DIR$/src/startdialog.ui" />
         <option value="$PROJECT_DIR$/ui/startdialog.ui" />
         <option value="$PROJECT_DIR$/src/main.cpp" />
-        <option value="$PROJECT_DIR$/include/NetworkingData.h" />
-        <option value="$PROJECT_DIR$/src/NetworkingData.cpp" />
         <option value="$PROJECT_DIR$/src/PositionSortingException.cpp" />
         <option value="$PROJECT_DIR$/include/PositionSortingException.h" />
         <option value="$PROJECT_DIR$/include/SignUpDialog.h" />
@@ -229,22 +214,25 @@
         <option value="$PROJECT_DIR$/include/DocumentsModel.h" />
         <option value="$PROJECT_DIR$/src/DocumentsModel.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
-        <option value="$PROJECT_DIR$/src/SignUpDialog.cpp" />
         <option value="$PROJECT_DIR$/include/Request.h" />
         <option value="$PROJECT_DIR$/src/Request.cpp" />
         <option value="$PROJECT_DIR$/src/Response.cpp" />
         <option value="$PROJECT_DIR$/include/StartDialog.h" />
         <option value="$PROJECT_DIR$/include/SharedDocumentsExplorer.h" />
-        <option value="$PROJECT_DIR$/src/SharedDocumentsExplorer.cpp" />
-        <option value="$PROJECT_DIR$/src/Notepad.cpp" />
         <option value="$PROJECT_DIR$/include/Response.h" />
         <option value="$PROJECT_DIR$/src/StartDialog.cpp" />
         <option value="$PROJECT_DIR$/include/Symbol.h" />
+        <option value="$PROJECT_DIR$/src/Symbol.cpp" />
         <option value="$PROJECT_DIR$/include/Notepad.h" />
+        <option value="$PROJECT_DIR$/src/NetworkingData.cpp" />
+        <option value="$PROJECT_DIR$/include/NetworkingData.h" />
+        <option value="$PROJECT_DIR$/src/SharedDocumentsExplorer.cpp" />
+        <option value="$PROJECT_DIR$/src/SignUpDialog.cpp" />
+        <option value="$PROJECT_DIR$/src/Notepad.cpp" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="width" value="1031" />
     <option name="height" value="770" />
@@ -255,6 +243,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -276,7 +265,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -355,6 +343,10 @@
       <workItem from="1567329088744" duration="342000" />
       <workItem from="1567329509871" duration="114000" />
       <workItem from="1567329964272" duration="1972000" />
+      <workItem from="1567512231636" duration="18336000" />
+      <workItem from="1567546314831" duration="905000" />
+      <workItem from="1567601931403" duration="6092000" />
+      <workItem from="1567629218283" duration="2055000" />
     </task>
     <task id="LOCAL-00001" summary="Updating Signals&amp;Slots syntax">
       <created>1566661073138</created>
@@ -433,28 +425,35 @@
       <option name="project" value="LOCAL" />
       <updated>1566941757663</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Fixed new identity management with SQLite.">
+      <created>1567537332587</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1567537332587</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160947000" />
+    <option name="totallyTimeSpent" value="188335000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24786781" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20309168" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32981783" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.32981783" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39980826" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" visible="true" weight="0.32936078" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" visible="true" weight="0.3279003" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32719395" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50053304" side_tool="true" weight="0.32981783" />
       <window_info anchor="bottom" id="Version Control" order="11" />
@@ -482,14 +481,15 @@
     <MESSAGE value="Some working stuff!" />
     <MESSAGE value="More than one client now supported." />
     <MESSAGE value="Fixing a bug in position generation." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing a bug in position generation." />
+    <MESSAGE value="Fixed new identity management with SQLite." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed new identity management with SQLite." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/src/SignUpDialog.cpp</url>
-          <line>91</line>
+          <line>90</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
@@ -587,13 +587,6 @@
         <state relative-caret-position="-306" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/NetworkingData.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="16" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qobjectdefs_impl.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="65">
@@ -656,33 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Symbol.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-246">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/Symbol.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
-          <folding>
-            <element signature="e#93#112#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Notepad.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" column="71" selection-start-line="50" selection-start-column="71" selection-end-line="50" selection-end-column="71" />
-          <folding>
-            <element signature="e#402#418#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/include/SignUpDialog.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="493">
@@ -703,6 +669,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/Symbol.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/include/StartDialog.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -715,14 +688,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/StartDialog.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3298">
-          <caret line="194" column="40" selection-start-line="194" selection-start-column="40" selection-end-line="194" selection-end-column="40" />
+        <state relative-caret-position="2805">
+          <caret line="165" selection-start-line="165" selection-end-line="165" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Symbol.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="537">
+          <caret line="38" column="54" selection-start-line="38" selection-start-column="54" selection-end-line="38" selection-end-column="54" />
+          <folding>
+            <element signature="e#93#112#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/NetworkingData.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+          <folding>
+            <element signature="e#109#127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/NetworkingData.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-92">
+          <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/include/Notepad.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-551">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding>
+            <element signature="e#37#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/include/SharedDocumentsExplorer.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
+        <state relative-caret-position="61">
           <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
           <folding>
             <element signature="e#127#145#0" expanded="true" />
@@ -732,30 +742,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/SharedDocumentsExplorer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="27" column="56" selection-start-line="27" selection-start-column="56" selection-end-line="27" selection-end-column="56" />
+        <state relative-caret-position="-500">
+          <caret line="114" lean-forward="true" selection-start-line="114" selection-end-line="114" />
           <folding>
             <element signature="e#42#64#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/include/NetworkingData.h">
+    <entry file="file://$PROJECT_DIR$/src/Notepad.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
+        <state relative-caret-position="200">
+          <caret line="271" lean-forward="true" selection-start-line="271" selection-end-line="271" />
           <folding>
-            <element signature="e#109#127#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/include/Notepad.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="50" column="16" lean-forward="true" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
-          <folding>
-            <element signature="e#37#56#0" expanded="true" />
+            <element signature="e#402#418#0" expanded="true" />
           </folding>
         </state>
       </provider>

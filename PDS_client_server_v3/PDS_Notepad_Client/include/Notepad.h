@@ -31,7 +31,6 @@ public:
     ~Notepad();
 
     qint32 getSiteId();
-    qint32 getCounter();
     std::optional<Symbol> getSymbol(qint32 index);
     void localInsert(qint32 index, QChar value);
     void localErase(qint32 index);
@@ -56,7 +55,6 @@ private slots:
     void setFontItalic(bool italic);
 
     // Slots for text changes.
-    void onTextChanged();
     void onCursorPositionChanged();
     void interceptUserInput(int pos, int del, int add);
 
@@ -68,7 +66,6 @@ private:
     QString currentFile;
 
     // Vars for symbols managing.
-    quint32 _counter = 0;
     qint32 boundary;
     qint32 base;
     qint32 strategy;

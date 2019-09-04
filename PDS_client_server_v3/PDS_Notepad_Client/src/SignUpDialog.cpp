@@ -84,7 +84,6 @@ void SignUpDialog::enableOkButton() {
 // Overriding the closeEvent() function to correctly disconnect from the Server.
 void SignUpDialog::closeEvent(QCloseEvent* event) {
     clientConnection->disconnectFromHost();
-    qDebug() << "SignUp process finished.";
     QDialog::closeEvent(event);
 }
 

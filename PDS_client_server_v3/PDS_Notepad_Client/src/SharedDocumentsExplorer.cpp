@@ -151,22 +151,21 @@ void SharedDocumentsExplorer::displayError(QAbstractSocket::SocketError socketEr
 void SharedDocumentsExplorer::readStartDataFromServer() {
     in.startTransaction();
     qint32 siteId;
+    quint32 counter;
     QVector<Symbol> symbols;
-    in >> siteId >> symbols;
+    in >> siteId >> counter >> symbols;
     if (!in.commitTransaction()) {
         qDebug() << "Something went wrong!\n\t-> I could not have Site Id and Symbols from Server!";
         return;
     }
-    qDebug() << "I received the following Site Id: " << siteId;
     disconnect(clientConnection, &QIODevice::readyRead, this, &SharedDocumentsExplorer::readStartDataFromServer);
-    NetworkingData* startData = new NetworkingData(siteId, symbols, clientConnection, networkSession, this);
+    NetworkingData* startData = new NetworkingData(siteId, counter, symbols, clientConnection, networkSession, this);
     showEditor(startData);
 }
 
 
 void SharedDocumentsExplorer::showEditor(NetworkingData* startData) {
-    // DA RIVEDERE!!
-    this->close();
     notepad = new Notepad(startData, this);
+    notepad->setWindowModality(Qt::ApplicationModal);
     notepad->show();
 }

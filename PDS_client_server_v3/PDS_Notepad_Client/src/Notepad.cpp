@@ -40,8 +40,7 @@ Notepad::Notepad(NetworkingData* net_data,
     this->setWindowTitle(tr("Notepad, Site ID -> %1").arg(net_data->getSiteId()));
     this->setCentralWidget(ui->textEdit);
 
-    // DA RIVEDERE!!
-    //connect(this, &QDialog::finished, this, &QObject::deleteLater);
+    this->setAttribute(Qt::WA_DeleteOnClose, true);
 
     in.setDevice(net_data->getTcpSocket());
     in.setVersion(QDataStream::Qt_5_13);
@@ -66,7 +65,6 @@ Notepad::Notepad(NetworkingData* net_data,
     ui->textEdit->document()->setPlainText(this->symbols_to_string());
 
     // Listen on text changed signals.
-    connect(ui->textEdit, &QTextEdit::textChanged, this, &Notepad::onTextChanged);
     connect(ui->textEdit, &QTextEdit::cursorPositionChanged, this, &Notepad::onCursorPositionChanged);
     connect(ui->textEdit->document(), &QTextDocument::contentsChange, this, &Notepad::interceptUserInput);
 
@@ -210,24 +208,12 @@ void Notepad::setFontBold(bool bold) {
     bold ? ui->textEdit->setFontWeight(QFont::Bold) : ui->textEdit->setFontWeight(QFont::Normal);
 }
 
-void Notepad::onTextChanged() {
-    qDebug() << "onTextChanged() WORKS! :O";
-    //Notepad::save();
-}
-
-void Notepad::onCursorPositionChanged() {
-    qDebug() << "onCursorPositionChanged() WORKS! :O";
-    qDebug() << "Position in block: " << ui->textEdit->textCursor().positionInBlock();
-    qDebug() << "Absolute position: " << ui->textEdit->textCursor().position();
-}
-
 void Notepad::interceptUserInput(int pos, int del, int add) {
     if(del > 0) {
         undo();
         QTextCursor c = QTextCursor(ui->textEdit->textCursor());
         c.setPosition(pos);
         c.setPosition(pos + del, QTextCursor::KeepAnchor);
-        qDebug() << "Removed: " << del << " (" << c.selectedText() << ")";
         for (int i = c.selectedText().size() - 1; i >= 0; i--)
             this->localErase(pos + i);
         redo();
@@ -237,7 +223,6 @@ void Notepad::interceptUserInput(int pos, int del, int add) {
         QTextCursor c = QTextCursor(ui->textEdit->textCursor());
         c.setPosition(pos);
         c.setPosition(pos + add, QTextCursor::KeepAnchor);
-        qDebug() << "Added: " << add << " (" << c.selectedText() << ")";
         for (int i = 0; i < c.selectedText().size(); i++)
             this->localInsert(pos + i, c.selectedText()[i]);
     }
@@ -286,7 +271,6 @@ void Notepad::closeEvent(QCloseEvent* event) {
 }
 
 void Notepad::readMessage() {
-    qDebug() << "There is a message to read!";
     in.startTransaction();
 
     Message next_msg;
@@ -297,30 +281,22 @@ void Notepad::readMessage() {
         return;
     }
 
-    qDebug() << "I am going to process the message!";
     this->processSymbol(next_msg);
-
-    // Showing the current symbols on standard output.
-    qDebug() << "Current symbols on this Client with Site Id " << this->net_data->getSiteId() << ": " << this->symbols_to_string();
 }
 
 qint32 Notepad::getSiteId() {
     return net_data->getSiteId();
 }
 
-qint32 Notepad::getCounter() {
-    return _counter;
-}
-
 void Notepad::localInsert(qint32 index, QChar value) {
     Symbol s = this->generateSymbol(value, index);
 
     if (net_data->getSymbols().empty())  net_data->getSymbols().push_back(s);
-    else if (index > static_cast<qint32>(net_data->getSymbols().size() - 1)) net_data->getSymbols().push_back(s);
+    else if (index > net_data->getSymbols().size() - 1) net_data->getSymbols().push_back(s);
     else if (index == 0) net_data->getSymbols().insert(net_data->getSymbols().begin(), s);
     else net_data->getSymbols().insert(net_data->getSymbols().begin() + index, s);
 
-    _counter++;
+    net_data->incrementCounter();
 
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
@@ -328,23 +304,21 @@ void Notepad::localInsert(qint32 index, QChar value) {
     Request req_to_send = Request(this->net_data->getSiteId(), Request::MESSAGE_TYPE, Message(this->net_data->getSiteId(), Message::INSERT_TYPE, s));
     out << req_to_send;
     net_data->getTcpSocket()->write(block);
-    qDebug() << "I have sent an INSERT MESSAGE!";
 }
 
 void Notepad::localErase(qint32 index) {
-    if (index >= static_cast<qint32>(net_data->getSymbols().size())) return;
+    if (index >= net_data->getSymbols().size()) return;
 
     Symbol tmp = net_data->getSymbols().at(index);
     net_data->getSymbols().erase(net_data->getSymbols().begin() + index);
 
-    _counter++;
+    net_data->incrementCounter();
 
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
     out << Request(this->net_data->getSiteId(), Request::MESSAGE_TYPE, Message(this->net_data->getSiteId(), Message::ERASE_TYPE, tmp));
     net_data->getTcpSocket()->write(block);
-    qDebug() << "I have sent an ERASE MESSAGE!";
 }
 
 void Notepad::processSymbol(const Message &m) {
@@ -388,7 +362,7 @@ QString Notepad::symbols_to_string() {
 }
 
 std::optional<Symbol> Notepad::getSymbol(qint32 index) {
-    if (!net_data->getSymbols().empty() && index >= 0 && index <= static_cast<qint32>(net_data->getSymbols().size() - 1)) return net_data->getSymbols().at(index);
+    if (!net_data->getSymbols().empty() && index >= 0 && index <= net_data->getSymbols().size() - 1) return net_data->getSymbols().at(index);
     else return std::nullopt;
 }
 
@@ -419,7 +393,7 @@ Symbol Notepad::generateSymbol(QChar value, qint32 index) {
     qint32 siteIdAfter = (this->getSymbol(index).has_value()) ? this->getSymbol(index).value().getSiteId() : this->getSiteId();
 
     QVector<qint32> newPos = this->generatePosBetween(siteIdBefore, siteIdAfter, before, after, std::nullopt);
-    return Symbol(value, this->getSiteId(), this->getCounter(), newPos);
+    return Symbol(value, this->getSiteId(), net_data->getCounter(), newPos);
 }
 
 QVector<qint32> Notepad::generatePosBetween(qint32 siteId1,
@@ -428,7 +402,7 @@ QVector<qint32> Notepad::generatePosBetween(qint32 siteId1,
                                                  std::optional<QVector<qint32>> after_opt,
                                                  std::optional<QVector<qint32>> newPos_opt,
                                                  qint32 level) {
-    qint32 myBase = static_cast<qint32>(pow(2, level) * this->base);
+    qint32 myBase = pow(2, level) * this->base;
     qint32 myStrategy = this->retrieveStrategy(level);
 
     QVector<qint32> after = (after_opt.has_value()) ? after_opt.value() : QVector<qint32>();
@@ -466,12 +440,12 @@ qint32 Notepad::generateIdBetween(qint32 min, qint32 max, qint32 myStrategy) {
     }
 
     // Random number between 0.0 (inclusive) and 1.0 (exclusive).
-    qreal tmp = static_cast<qreal>(QRandomGenerator::global()->bounded(1.0));
-    return static_cast<qint32>(qFloor(tmp * (max - min)) + min);
+    double tmp = QRandomGenerator::global()->bounded(1.0);
+    return qFloor(tmp * (max - min)) + min;
 }
 
 qint32 Notepad::retrieveStrategy(qint32 level) {
-    if (!strategyCache.empty() && level <= static_cast<qint32>(strategyCache.size() - 1)) return strategyCache[level];
+    if (!strategyCache.empty() && level <= strategyCache.size() - 1) return strategyCache[level];
 
     qint32 myStrategy;
 

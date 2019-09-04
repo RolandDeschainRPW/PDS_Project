@@ -42,7 +42,6 @@ NetworkServer::NetworkServer(QString usersDbFileName,
         }
     }
     users_db.close();
-    QSqlDatabase::removeDatabase("users_db_conn");
 
     setWindowFlags(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     statusLabel->setTextInteractionFlags(Qt::TextBrowserInteraction);
@@ -211,7 +210,6 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
     clientConnection->write(block);
 }
 
-// DA RIVEDERE!!!
 void NetworkServer::readFromExistingConnection(QTcpSocket* clientConnection) {
     QDataStream in(clientConnection);
     in.setVersion(QDataStream::Qt_5_13);
@@ -225,14 +223,11 @@ void NetworkServer::readFromExistingConnection(QTcpSocket* clientConnection) {
         qDebug().noquote() << "Something went wrong!\n\t-> I could not read the incoming request!";
         return;
     }
-    qDebug() << "I am going to process the request!";
     if (next_req.getRequestType() == Request::MESSAGE_TYPE) {
         Message msg = next_req.getMessage();
-        qDebug() << "I am going to process the message!";
         this->getDocument(filename)->readMessage(msg);
     } else if (next_req.getRequestType() == Request::DISCONNECT_TYPE) {
         this->getDocument(filename)->disconnectClient(next_req.getSiteId());
-        //this->removeFromActiveUsers(next_req.getUsername()); // Maybe useless.
     }
 }
 
@@ -245,9 +240,9 @@ void NetworkServer::removeFromActiveUsers(QString username) {
     }
 }
 
-SharedDocument* NetworkServer::getDocument(QString filename) {
+SharedDocument* NetworkServer::getDocument(QString file_path) {
     foreach (SharedDocument* sd, openDocuments) {
-        if (QString::compare(filename, sd->getFilename(), Qt::CaseInsensitive) == 0)
+        if (QString::compare(file_path, sd->getFilePath(), Qt::CaseInsensitive) == 0)
             return sd;
     }
     return nullptr;
@@ -281,53 +276,57 @@ void NetworkServer::processNewConnections(QTcpSocket* clientConnection) {
         clientConnection->abort();
         return;
     }
-    qDebug() << "I am going to process the request!";
     if (next_req.getRequestType() == Request::CONNECT_TYPE) {
-        qDebug() << "Welcoming the incoming client.";
         this->connectClient(clientConnection, next_req.getUsername(), next_req.getPassword());
     } else if (next_req.getRequestType() == Request::SIGN_UP_TYPE) {
-        qDebug() << "Starting the SignUp procedure.";
         this->signUpNewUser(clientConnection, next_req.getUsername(), next_req.getPassword());
     } else if (next_req.getRequestType() == Request::OPEN_DOCUMENT_TYPE) {
-        // do some stuff!
+        this->writeStartDataToClient(clientConnection, false, next_req.getFilename(), next_req.getUsername());
     } else if (next_req.getRequestType() == Request::NEW_DOCUMENT_TYPE) {
-        // do some stuff!
-        qDebug() << "Creating a directory for the new document.";
         this->createNewDocumentDirectory(next_req.getUsername(), next_req.getFilename());
-        this->writeStartDataToClient(clientConnection, true, next_req.getFilename());
+        this->writeStartDataToClient(clientConnection, true, next_req.getFilename(), next_req.getUsername());
     }
 }
 
-// DA RIVEDERE!!
-void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename) {
+void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename, QString username) {
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
 
+    QString file_path = QDir::toNativeSeparators("documents/" + username + "/" + filename + "/" + filename + ".html");
+    QString folder_path = QDir::toNativeSeparators("documents/" + username + "/" + filename);
+    SharedDocument* doc;
+    qint32 site_id_assigned;
+    quint32 counter;
+
     if (new_document) {
-        SharedDocument* doc = new SharedDocument(filename, this);
-        qint32 site_id_assigned = doc->addSharedEditor(clientConnection);
-
-        /* Useful for opening an existing document (so, to use later in development).
-        if (site_id_assigned == SharedDocument::SITE_ID_UNASSIGNED) {
-            // No Site Ids available.
-            qDebug().noquote() << "I cannot host the incoming client!\n\t-> No more Site Ids available!";
-            clientConnection->abort();
-        }
-        */
-
-        out << site_id_assigned << doc->getSymbols();
-        clientConnection->write(block);
-        connect(clientConnection, &QIODevice::readyRead, this, [this, clientConnection] {
-            while (clientConnection->bytesAvailable()) {
-                qDebug() << "There is a request to read!";
-                this->readFromExistingConnection(clientConnection);
-            }
-        });
+        doc = new SharedDocument(file_path, folder_path, this);
+        doc->addCollaborator(username);
+        doc->addSharedEditor(clientConnection, username, &site_id_assigned, &counter);
         openDocuments.push_back(doc);
     } else /* Opening an existing document. */ {
-        // do some stuff!
+        doc = this->getDocument(file_path);
+
+        if (doc == nullptr) { /* Document not already opened. */
+            doc = new SharedDocument(filename, folder_path, this);
+            openDocuments.push_back(doc);
+        }
+
+        doc->addSharedEditor(clientConnection, username, &site_id_assigned, &counter);
+        if (site_id_assigned == SharedDocument::SITE_ID_UNASSIGNED) /* No more Site Ids available. */ {
+            qDebug().noquote() << "I cannot host the incoming client!\n\t-> No more Site Ids available!";
+            clientConnection->abort();
+            return;
+        }
     }
+    out << site_id_assigned << counter << doc->getSymbols();
+    clientConnection->write(block);
+    connect(clientConnection, &QIODevice::readyRead, this, [this, clientConnection] {
+        while (clientConnection->bytesAvailable()) {
+            this->readFromExistingConnection(clientConnection);
+        }
+    });
+
 }
 
 void NetworkServer::createNewDocumentDirectory(QString username, QString filename) {
@@ -374,26 +373,6 @@ void NetworkServer::createNewDocumentDirectory(QString username, QString filenam
     }
     symbols_db.close();
     QSqlDatabase::removeDatabase("symbols_db_conn");
-
-    // Database for those who no longer have access to the document
-    // because the owner revoke the permission to access to it.
-    QString old_collaborators_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/" + filename + "/old_collaborators.db");
-    QSqlDatabase old_collaborators_db = QSqlDatabase::addDatabase("QSQLITE", "old_collaborators_db_conn");
-    old_collaborators_db.setDatabaseName(symbols_db_path);
-    old_collaborators_db.open();
-    {
-        old_collaborators_db.transaction();
-        QSqlQuery query = QSqlQuery(old_collaborators_db);
-        bool done = query.exec("CREATE TABLE OLD_COLLABORATORS("
-                   "USERNAME VARCHAR(30) PRIMARY KEY COLLATE NOCASE, "
-                   "SITE_ID INTEGER NOT NULL, "
-                   "COUNTER INTEGER NOT NULL"
-                   ")");
-        if (!done) qDebug() << query.lastError();
-        old_collaborators_db.commit();
-    }
-    old_collaborators_db.close();
-    QSqlDatabase::removeDatabase("old_collaborators_db_conn");
 }
 
 void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username, QString password) {
@@ -410,8 +389,7 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
     }
 
     // Storing the new credentials.
-    QSqlDatabase users_db = QSqlDatabase::addDatabase("QSQLITE", "users_db_conn");
-    users_db.setDatabaseName(users_db_path);
+    QSqlDatabase users_db = QSqlDatabase::database("users_db_conn");
     users_db.open(); // If it doesn't exists, it will be created.
     {
         users_db.transaction();
@@ -421,7 +399,6 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
         users_db.commit();
     }
     users_db.close();
-    QSqlDatabase::removeDatabase("users_db_conn");
 
     // Creating the user's documents folder.
     QString new_path = "documents/" + username;
@@ -453,8 +430,7 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
 bool NetworkServer::isThisUsernameInDatabase(QString username, QString* password) {
     bool found;
 
-    QSqlDatabase users_db = QSqlDatabase::addDatabase("QSQLITE", "users_db_conn");
-    users_db.setDatabaseName(users_db_path);
+    QSqlDatabase users_db = QSqlDatabase::database("users_db_conn");
     users_db.open(); // If it doesn't exists, it will be created.
     {
         QSqlQuery query(users_db);
@@ -471,22 +447,6 @@ bool NetworkServer::isThisUsernameInDatabase(QString username, QString* password
         } else found = false;
     }
     users_db.close();
-    QSqlDatabase::removeDatabase("users_db_conn");
 
     return found;
 }
-
-
-/*
-void NetworkServer::saveDocument() {
-    //QFile file(this->fileName);
-    QFile file("temp.rtf");
-    if (!file.open(QIODevice::WriteOnly | QFile::Text)) {
-        QMessageBox::warning(this, "Warning", "Cannot save file: " + file.errorString());
-        return;
-    }
-    QTextStream out(&file);
-    QString text = this->symbols_to_string();
-    out << text;
-    file.close();
-}*/

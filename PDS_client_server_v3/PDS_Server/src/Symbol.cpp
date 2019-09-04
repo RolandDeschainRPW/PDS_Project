@@ -10,7 +10,10 @@ Symbol::Symbol(QChar c, qint32 siteId, quint32 counter, QVector<qint32> pos) {
     this->c = c;
     this->siteId = siteId;
     this->counter = counter;
-    this->id = siteId + counter;
+
+    if (siteId == 0) this->id = counter;
+    else this->id = static_cast<quint32>(siteId) + counter;
+
     this->pos = pos;
 }
 
@@ -47,7 +50,7 @@ qint32 Symbol::getCounter() const {
     return counter;
 }
 
-qint32 Symbol::getId() const {
+quint32 Symbol::getId() const {
     return id;
 }
 

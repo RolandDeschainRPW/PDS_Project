@@ -5,11 +5,13 @@
 #include "../include/NetworkingData.h"
 
 NetworkingData::NetworkingData(qint32 _siteId,
+        quint32 _counter,
         QVector<Symbol> _symbols,
         QTcpSocket* tcpSocket,
         QNetworkSession* networkSession,
         QObject* parent) : QObject(parent),
                         _siteId(_siteId),
+                        _counter(_counter),
                         _symbols(_symbols),
                         tcpSocket(tcpSocket),
                         networkSession(networkSession) {
@@ -31,6 +33,14 @@ QNetworkSession* NetworkingData::getNetworkSession() {
     return networkSession;
 }
 
+quint32 NetworkingData::getCounter() {
+    return _counter;
+}
+
 qint32 NetworkingData::getSiteId() {
     return _siteId;
+}
+
+void NetworkingData::incrementCounter() {
+    _counter++;
 }

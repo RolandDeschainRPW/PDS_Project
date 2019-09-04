@@ -394,6 +394,7 @@ CMakeFiles/notepad.dir/src/DocumentsModel.cpp.obj
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/src/DocumentsModel.cpp
 CMakeFiles/notepad.dir/src/Message.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
+ C:/Qt/5.13.0/mingw73_64/include/QtCore/QVector
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qalgorithms.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qarraydata.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qatomic.h
@@ -1070,6 +1071,7 @@ CMakeFiles/notepad.dir/src/Request.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QObject
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QStringList
+ C:/Qt/5.13.0/mingw73_64/include/QtCore/QVector
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QtCore
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QtCoreDepends
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qabstractanimation.h
@@ -1469,6 +1471,7 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QAbstractTableModel
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QByteArray
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QCryptographicHash
+ C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QFlags
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QHash
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QIODevice
@@ -1674,6 +1677,7 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/QTextCursor
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qcursor.h
@@ -1690,12 +1694,17 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qpaintdevice.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qpainterpath.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qpalette.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qpen.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qpixelformat.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qpixmap.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qpolygon.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qregion.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qrgb.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qrgba64.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qtextcursor.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qtextdocument.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qtextformat.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qtextoption.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtgui-config.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtguiglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h
@@ -1757,10 +1766,13 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QDialog
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QHeaderView
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QInputDialog
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLabel
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMainWindow
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMessageBox
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QPushButton
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QTableView
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QTextEdit
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractbutton.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractitemdelegate.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractitemview.h
@@ -1772,7 +1784,10 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qdialog.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qframe.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qheaderview.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qinputdialog.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlabel.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlineedit.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmainwindow.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmessagebox.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qpushbutton.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qrubberband.h
@@ -1783,11 +1798,19 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtabbar.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtableview.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtabwidget.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtextedit.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgets-config.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgetsglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidget.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/DocumentsModel.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Message.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/NetworkingData.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Notepad.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Request.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SharedDocumentsExplorer.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SignUpDialog.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/StartDialog.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Symbol.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/src/SharedDocumentsExplorer.cpp
  notepad_autogen/include/ui_shareddocumentsexplorer.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj
@@ -2657,6 +2680,7 @@ CMakeFiles/notepad.dir/src/StartDialog.cpp.obj
  notepad_autogen/include/ui_startdialog.h
 CMakeFiles/notepad.dir/src/Symbol.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
+ C:/Qt/5.13.0/mingw73_64/include/QtCore/QVector
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qalgorithms.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qarraydata.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qatomic.h

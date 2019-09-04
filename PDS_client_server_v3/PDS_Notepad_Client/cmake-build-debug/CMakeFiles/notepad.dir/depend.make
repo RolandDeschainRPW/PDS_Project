@@ -393,6 +393,7 @@ CMakeFiles/notepad.dir/src/DocumentsModel.cpp.obj: ../include/DocumentsModel.h
 CMakeFiles/notepad.dir/src/DocumentsModel.cpp.obj: ../src/DocumentsModel.cpp
 
 CMakeFiles/notepad.dir/src/Message.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
+CMakeFiles/notepad.dir/src/Message.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QVector
 CMakeFiles/notepad.dir/src/Message.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qalgorithms.h
 CMakeFiles/notepad.dir/src/Message.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qarraydata.h
 CMakeFiles/notepad.dir/src/Message.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qatomic.h
@@ -1069,6 +1070,7 @@ CMakeFiles/notepad.dir/src/Notepad.cpp.obj: notepad_autogen/include/ui_notepad.h
 CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
 CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QObject
 CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QStringList
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QVector
 CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QtCore
 CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QtCoreDepends
 CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qabstractanimation.h
@@ -1468,6 +1470,7 @@ CMakeFiles/notepad.dir/src/Response.cpp.obj: ../src/Response.cpp
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QAbstractTableModel
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QByteArray
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QCryptographicHash
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QFlags
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QHash
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QIODevice
@@ -1673,6 +1676,7 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QTextCursor
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qcursor.h
@@ -1689,12 +1693,17 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qpaintdevice.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qpainterpath.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qpalette.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qpen.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qpixelformat.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qpixmap.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qpolygon.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qregion.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qrgb.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qrgba64.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qtextcursor.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qtextdocument.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qtextformat.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qtextoption.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qtgui-config.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qtguiglobal.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qtouchdevice.h
@@ -1756,10 +1765,13 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QDialog
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QHeaderView
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QInputDialog
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLabel
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMainWindow
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMessageBox
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QPushButton
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QTableView
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QTextEdit
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractbutton.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractitemdelegate.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qabstractitemview.h
@@ -1771,7 +1783,10 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qdialog.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qframe.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qheaderview.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qinputdialog.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlabel.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlineedit.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmainwindow.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmessagebox.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qpushbutton.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qrubberband.h
@@ -1782,11 +1797,19 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtabbar.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtableview.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtabwidget.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtextedit.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgets-config.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgetsglobal.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidget.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/DocumentsModel.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/Message.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/NetworkingData.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/Notepad.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/Request.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/SharedDocumentsExplorer.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/SignUpDialog.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/StartDialog.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/Symbol.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../src/SharedDocumentsExplorer.cpp
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: notepad_autogen/include/ui_shareddocumentsexplorer.h
 
@@ -2656,6 +2679,7 @@ CMakeFiles/notepad.dir/src/StartDialog.cpp.obj: ../src/StartDialog.cpp
 CMakeFiles/notepad.dir/src/StartDialog.cpp.obj: notepad_autogen/include/ui_startdialog.h
 
 CMakeFiles/notepad.dir/src/Symbol.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
+CMakeFiles/notepad.dir/src/Symbol.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/QVector
 CMakeFiles/notepad.dir/src/Symbol.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qalgorithms.h
 CMakeFiles/notepad.dir/src/Symbol.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qarraydata.h
 CMakeFiles/notepad.dir/src/Symbol.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qatomic.h

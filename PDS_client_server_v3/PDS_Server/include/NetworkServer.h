@@ -53,10 +53,9 @@ private:
     bool isThisUsernameInDatabase(QString username, QString* password = nullptr);
     void readFromExistingConnection(QTcpSocket* clientConnection);
     void processNewConnections(QTcpSocket* clientConnection);
-    void writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename);
-    SharedDocument* getDocument(QString filename);
+    void writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename, QString username);
+    SharedDocument* getDocument(QString file_path);
     void removeFromActiveUsers(QString username);
-    //void saveDocument();
 };
 
 #endif //PDS_SERVER_NETWORKSERVER_H

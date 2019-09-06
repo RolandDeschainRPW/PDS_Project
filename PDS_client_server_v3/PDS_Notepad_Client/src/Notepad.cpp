@@ -345,7 +345,7 @@ void Notepad::processSymbol(const Message &m) {
         }
     } else /* Message::ERASE_TYPE */ {
         foreach (Symbol s, net_data->getSymbols()){
-            if (s.getChar() == m.getSymbol().getChar() && s.getId() == m.getSymbol().getId()) {
+            if (s.getChar() == m.getSymbol().getChar() && s.getSiteId() == m.getSymbol().getSiteId() && s.getCounter() == m.getSymbol().getCounter()) {
                 net_data->getSymbols().erase(net_data->getSymbols().begin() + index);
                 updateDocument(index, Message::ERASE_TYPE, "");
                 return;

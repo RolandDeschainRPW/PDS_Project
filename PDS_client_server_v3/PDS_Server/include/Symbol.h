@@ -18,7 +18,6 @@ private:
     QChar c;
     qint32 siteId;
     quint32 counter;
-    quint32 id;
     QVector<qint32> pos;
 
 public:
@@ -32,7 +31,6 @@ public:
     QChar getChar() const;
     qint32 getSiteId() const;
     qint32 getCounter() const;
-    quint32 getId() const;
 };
 
 QDataStream &operator<<(QDataStream &out, const Symbol& msg);

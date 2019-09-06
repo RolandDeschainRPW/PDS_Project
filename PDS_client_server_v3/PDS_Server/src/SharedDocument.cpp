@@ -66,7 +66,6 @@ SharedDocument::SharedDocument(QString file_path, QString folder_path, QObject* 
             QChar ch = tmp1.toString()[0];
             qint32 site_id = tmp2.toInt();
             quint32 cnt = tmp3.toUInt();
-            quint32 id = static_cast<quint32>(site_id) + cnt;
             QVector<qint32> pos = QVector<qint32>();
 
             QString symbols_txt_path = QDir::toNativeSeparators(folder_path + "/symbols.txt");
@@ -81,9 +80,10 @@ SharedDocument::SharedDocument(QString file_path, QString folder_path, QObject* 
             bool finished = false;
             while (!line.isNull() && !finished) {
                 QStringList list = line.simplified().split(',');
-                qint32 searched_id = list[0].trimmed().toInt();
-                if (id == searched_id) {
-                    for (int i = 1; i < list.size(); i++)
+                qint32 searched_site_id = list[0].trimmed().toInt();
+                qint32 searched_counter = list[1].trimmed().toInt();
+                if (site_id == searched_site_id && cnt == searched_counter) {
+                    for (int i = 2; i < list.size(); i++)
                         pos.push_back(list[i].trimmed().toInt());
                     finished = true;
                 }
@@ -260,7 +260,7 @@ void SharedDocument::processSymbol(const Symbol& symbol, int msg_type, bool open
         }
     } else /* Message::ERASE_TYPE */ {
         foreach (Symbol s, _symbols) {
-            if (s.getChar() == symbol.getChar() && s.getId() == symbol.getId()) {
+            if (s.getChar() == symbol.getChar() && s.getSiteId() == symbol.getSiteId() && s.getCounter() == symbol.getCounter()) {
                 _symbols.erase(_symbols.begin() + index);
                 if (!open) this->updateDocument(symbol, msg_type);
                 return;
@@ -337,7 +337,7 @@ QString SharedDocument::positions_to_string() {
     QString pos_str = "";
     quint32 cnt = 0;
     foreach (Symbol s, _symbols) {
-        pos_str.append(QString("%1").arg(s.getId()));
+        pos_str.append(QString("%1, %2").arg(s.getSiteId()).arg(s.getCounter()));
         foreach (qint32 digit, s.getPos()) pos_str.append(QString(", %1").arg(digit));
         pos_str.append("\n");
         cnt++;

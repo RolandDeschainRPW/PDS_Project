@@ -285,6 +285,7 @@ void SharedDocument::updateSymbolsDb(const Symbol& symbol, int update_type) {
         bool done;
         if (update_type == Message::INSERT_TYPE) {
             QString ch = symbol.getChar();
+            if (QString::compare(ch, "'") == 0) ch = "''"; // Escaping single quote character in SQL.
             qint32 site_id = symbol.getSiteId();
             quint32 counter = symbol.getCounter();
             done = query.exec("INSERT INTO SYMBOLS(CHARACTER, SITE_ID, COUNTER) VALUES('" + ch + "', " + QString::number(site_id) + ", " + QString::number(counter) + ")");

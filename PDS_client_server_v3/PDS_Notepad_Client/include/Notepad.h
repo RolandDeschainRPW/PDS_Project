@@ -55,7 +55,6 @@ private slots:
     void setFontItalic(bool italic);
 
     // Slots for text changes.
-    void onCursorPositionChanged();
     void interceptUserInput(int pos, int del, int add);
 
     // Slots for networking.
@@ -64,7 +63,7 @@ private slots:
 private:
     Ui::Notepad* ui;
     QString currentFile;
-
+    
     // Vars for symbols managing.
     qint32 boundary;
     qint32 base;

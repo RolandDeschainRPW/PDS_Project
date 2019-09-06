@@ -6,12 +6,14 @@
 
 NetworkingData::NetworkingData(qint32 _siteId,
         quint32 _counter,
+        QString remote_file_path,
         QVector<Symbol> _symbols,
         QTcpSocket* tcpSocket,
         QNetworkSession* networkSession,
         QObject* parent) : QObject(parent),
                         _siteId(_siteId),
                         _counter(_counter),
+                        remote_file_path(remote_file_path),
                         _symbols(_symbols),
                         tcpSocket(tcpSocket),
                         networkSession(networkSession) {
@@ -39,6 +41,10 @@ quint32 NetworkingData::getCounter() {
 
 qint32 NetworkingData::getSiteId() {
     return _siteId;
+}
+
+QString NetworkingData::getRemoteFilePath() {
+    return remote_file_path;
 }
 
 void NetworkingData::incrementCounter() {

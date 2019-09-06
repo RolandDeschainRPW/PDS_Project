@@ -15,7 +15,7 @@ class Request {
 public:
     Request();
     Request(const Request& req);
-    Request(qint32 siteId, qint32 requestType, std::optional<Message> opt_msg, QString username = "", QString password = "", QString filename = "");
+    Request(qint32 siteId, qint32 requestType, std::optional<Message> opt_msg, QString username = "", QString password = "", QString filename = "", quint32 counter = 0);
     ~Request();
 
     static const qint32 MESSAGE_TYPE = -1;
@@ -32,9 +32,11 @@ public:
     QString getUsername() const;
     QString getPassword() const;
     QString getFilename() const;
+    quint32 getCounter() const;
 
 private:
     qint32 siteId;
+    quint32 counter;
     qint32 requestType;
     Message msg;
     QString username;

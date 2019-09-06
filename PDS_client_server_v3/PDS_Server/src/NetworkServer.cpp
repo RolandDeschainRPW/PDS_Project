@@ -25,7 +25,7 @@ NetworkServer::NetworkServer(QString usersDbFileName,
 
     // Connecting to users database
     bool newly_created = !QFile(usersDbFileName).exists();
-    users_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/" + usersDbFileName);
+    users_db_path = QDir::toNativeSeparators(usersDbFileName);
     QSqlDatabase users_db = QSqlDatabase::addDatabase("QSQLITE", "users_db_conn");
     users_db.setDatabaseName(users_db_path);
     users_db.open(); // If it doesn't exists, it will be created.
@@ -177,26 +177,26 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
     }
 
     // Listing all docs the user has access to.
-    QString permissions_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/permissions.db");
-    QSqlDatabase permissions_db = QSqlDatabase::addDatabase("QSQLITE", "permissions_db_conn");
+    QString permissions_db_path = QDir::toNativeSeparators("documents/" + username + "/permissions.db");
+    QSqlDatabase permissions_db = QSqlDatabase::addDatabase("QSQLITE", permissions_db_path);
     permissions_db.setDatabaseName(permissions_db_path);
     permissions_db.open();
     {
         QSqlQuery query(permissions_db);
         bool done = query.exec("SELECT * FROM PERMISSIONS");
         if (!done) qDebug() << query.lastError();
-        QSqlRecord record = query.record();
 
-        if (query.first()) {
-            do {
-                QString owner = query.value(record.indexOf("OWNER")).toString();
-                QString document = query.value(record.indexOf("DOCUMENT")).toString();
-                all_docs.insertMulti(document, owner);
-            } while (query.next());
+        while (query.next()) {
+            QVariant tmp1 = query.value(0); // OWNER
+            QVariant tmp2 = query.value(1); // DOCUMENT
+
+            QString owner = tmp1.toString();
+            QString document = tmp2.toString();
+            all_docs.insertMulti(document, owner);
         }
     }
     permissions_db.close();
-    QSqlDatabase::removeDatabase("permissions_db_conn");
+    QSqlDatabase::removeDatabase(permissions_db_path);
 
     // Adding current user to active users.
     activeUsers.push_back(username);
@@ -210,7 +210,8 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
     clientConnection->write(block);
 }
 
-void NetworkServer::readFromExistingConnection(QTcpSocket* clientConnection) {
+// It returns false when the socket has been disconnected.
+bool NetworkServer::readFromExistingConnection(QTcpSocket* clientConnection) {
     QDataStream in(clientConnection);
     in.setVersion(QDataStream::Qt_5_13);
     in.startTransaction();
@@ -218,24 +219,44 @@ void NetworkServer::readFromExistingConnection(QTcpSocket* clientConnection) {
     Request next_req;
     in >> next_req;
     qint32 site_id = next_req.getSiteId();
-    QString filename = next_req.getFilename();
+    quint32 counter = next_req.getCounter();
+    QString file_path = next_req.getFilename();
     if (!in.commitTransaction()) {
         qDebug().noquote() << "Something went wrong!\n\t-> I could not read the incoming request!";
-        return;
+        return true;
     }
     if (next_req.getRequestType() == Request::MESSAGE_TYPE) {
         Message msg = next_req.getMessage();
-        this->getDocument(filename)->readMessage(msg);
+        this->getDocument(file_path)->readMessage(msg);
+        return true;
     } else if (next_req.getRequestType() == Request::DISCONNECT_TYPE) {
-        this->getDocument(filename)->disconnectClient(next_req.getSiteId());
+        SharedDocument* document = this->getDocument(file_path);
+        document->disconnectClient(site_id, counter);
+        if (document->getEditorsCounter() == 0) this->removeFromOpenDocuments(document);
+        return false;
+    }
+}
+
+void NetworkServer::removeFromOpenDocuments(SharedDocument* document) {
+    qint32 i = 0;
+    foreach (SharedDocument* sd, openDocuments) {
+        // If the two pointers are equal, they indicate the same memory location.
+        if (sd == document) {
+            this->openDocuments.erase(openDocuments.begin() + i);
+            delete document; // To prevent Memory Leakage!
+            return;
+        }
+        i++;
     }
 }
 
 void NetworkServer::removeFromActiveUsers(QString username) {
     qint32 i = 0;
     foreach (QString active_username, this->activeUsers) {
-        if (QString::compare(username, active_username, Qt::CaseInsensitive) == 0)
+        if (QString::compare(username, active_username, Qt::CaseInsensitive) == 0) {
             activeUsers.erase(activeUsers.begin() + i);
+            return;
+        }
         i++;
     }
 }
@@ -251,17 +272,9 @@ SharedDocument* NetworkServer::getDocument(QString file_path) {
 void NetworkServer::readFromNewConnection() {
     QTcpSocket* clientConnection = tcpServer->nextPendingConnection();
     connect(clientConnection, &QAbstractSocket::disconnected, clientConnection, &QObject::deleteLater);
-    // I use this cycle to be sure to receive the data from Client.
-    for (int retry = 2; retry > 0; retry--) {
-        if (clientConnection->bytesAvailable()) {
-            this->processNewConnections(clientConnection);
-            break;
-        } else if (retry == 2) {
-            connect(clientConnection, &QIODevice::readyRead, this, [this, clientConnection] {
-                this->processNewConnections(clientConnection);
-            });
-        }
-    }
+    connect(clientConnection, &QIODevice::readyRead, this, [this, clientConnection] {
+        this->processNewConnections(clientConnection);
+    });
 }
 
 void NetworkServer::processNewConnections(QTcpSocket* clientConnection) {
@@ -308,7 +321,7 @@ void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection, bool ne
         doc = this->getDocument(file_path);
 
         if (doc == nullptr) { /* Document not already opened. */
-            doc = new SharedDocument(filename, folder_path, this);
+            doc = new SharedDocument(file_path, folder_path, this);
             openDocuments.push_back(doc);
         }
 
@@ -319,11 +332,13 @@ void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection, bool ne
             return;
         }
     }
-    out << site_id_assigned << counter << doc->getSymbols();
+    out << site_id_assigned << counter << file_path << doc->getSymbols();
     clientConnection->write(block);
+    disconnect(clientConnection, &QIODevice::readyRead, this, 0);
     connect(clientConnection, &QIODevice::readyRead, this, [this, clientConnection] {
         while (clientConnection->bytesAvailable()) {
-            this->readFromExistingConnection(clientConnection);
+            // When the socket has been disconnected, the cycle gets broken.
+            if (!this->readFromExistingConnection(clientConnection)) break;
         }
     });
 
@@ -337,8 +352,8 @@ void NetworkServer::createNewDocumentDirectory(QString username, QString filenam
     QString symbols_pos_data_path = QDir::toNativeSeparators("documents/" + username + "/" + filename + "/" + "symbols.txt");
     QFile(symbols_pos_data_path).open(QIODevice::ReadWrite);
 
-    QString collaborators_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/" + filename + "/collaborators.db");
-    QSqlDatabase collaborators_db = QSqlDatabase::addDatabase("QSQLITE", "collaborators_db_conn");
+    QString collaborators_db_path = QDir::toNativeSeparators("documents/" + username + "/" + filename + "/collaborators.db");
+    QSqlDatabase collaborators_db = QSqlDatabase::addDatabase("QSQLITE", collaborators_db_path);
     collaborators_db.setDatabaseName(collaborators_db_path);
     collaborators_db.open();
     {
@@ -353,10 +368,10 @@ void NetworkServer::createNewDocumentDirectory(QString username, QString filenam
         collaborators_db.commit();
     }
     collaborators_db.close();
-    QSqlDatabase::removeDatabase("collaborators_db_conn");
+    QSqlDatabase::removeDatabase(collaborators_db_path);
 
-    QString symbols_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/" + filename + "/symbols.db");
-    QSqlDatabase symbols_db = QSqlDatabase::addDatabase("QSQLITE", "symbols_db_conn");
+    QString symbols_db_path = QDir::toNativeSeparators("documents/" + username + "/" + filename + "/symbols.db");
+    QSqlDatabase symbols_db = QSqlDatabase::addDatabase("QSQLITE", symbols_db_path);
     symbols_db.setDatabaseName(symbols_db_path);
     symbols_db.open();
     {
@@ -372,7 +387,7 @@ void NetworkServer::createNewDocumentDirectory(QString username, QString filenam
         symbols_db.commit();
     }
     symbols_db.close();
-    QSqlDatabase::removeDatabase("symbols_db_conn");
+    QSqlDatabase::removeDatabase(symbols_db_path);
 }
 
 void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username, QString password) {
@@ -405,8 +420,8 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
     QDir().mkdir(QDir::toNativeSeparators(new_path));
 
     // Creating the user's permissions file.
-    QString permissions_db_path = QDir::toNativeSeparators(QDir().currentPath() + "/documents/" + username + "/permissions.db");
-    QSqlDatabase permissions_db = QSqlDatabase::addDatabase("QSQLITE", "permissions_db_conn");
+    QString permissions_db_path = QDir::toNativeSeparators("documents/" + username + "/permissions.db");
+    QSqlDatabase permissions_db = QSqlDatabase::addDatabase("QSQLITE", permissions_db_path);
     permissions_db.setDatabaseName(permissions_db_path);
     permissions_db.open(); // If it doesn't exists, it will be created.
     {
@@ -420,7 +435,7 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
         permissions_db.commit();
     }
     permissions_db.close();
-    QSqlDatabase::removeDatabase("permissions_db_conn");
+    QSqlDatabase::removeDatabase(permissions_db_path);
 
     // Telling the client that SignUp went well.
     out << Response(Response::USERNAME_ACCEPTED, QMap<QString, QString>());
@@ -436,12 +451,11 @@ bool NetworkServer::isThisUsernameInDatabase(QString username, QString* password
         QSqlQuery query(users_db);
         bool done = query.exec("SELECT * FROM USERS WHERE USERNAME='" + username + "'");
         if (!done) qDebug() << query.lastError();
-        QSqlRecord record = query.record();
 
         if (query.first()) {
             if (password != nullptr) {
-                QVariant val = query.value(record.indexOf("PASSWORD"));
-                *password = QString(val.toString());
+                QVariant val = query.value(1); // PASSWORD
+                *password = val.toString();
             }
             found = true;
         } else found = false;

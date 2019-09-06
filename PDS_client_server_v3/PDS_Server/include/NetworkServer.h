@@ -51,11 +51,12 @@ private:
     void signUpNewUser(QTcpSocket* clientConnection, QString username, QString password);
     void createNewDocumentDirectory(QString username, QString filename);
     bool isThisUsernameInDatabase(QString username, QString* password = nullptr);
-    void readFromExistingConnection(QTcpSocket* clientConnection);
+    bool readFromExistingConnection(QTcpSocket* clientConnection);
     void processNewConnections(QTcpSocket* clientConnection);
     void writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename, QString username);
     SharedDocument* getDocument(QString file_path);
     void removeFromActiveUsers(QString username);
+    void removeFromOpenDocuments(SharedDocument* document);
 };
 
 #endif //PDS_SERVER_NETWORKSERVER_H

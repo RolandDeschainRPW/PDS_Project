@@ -24,9 +24,9 @@ public:
     qint32 addCollaborator(QString username);
     QVector<Symbol> getSymbols();
     QString getFilePath();
-    SharedEditor* getSharedEditor(qint32 siteId);
     void readMessage(Message& msg);
-    void disconnectClient(qint32 siteId);
+    void disconnectClient(qint32 siteId, quint32 counter);
+    qint32 getEditorsCounter();
 
     static const qint32 MAX_SITE_IDS = 7; // Maximum number of collaborators per document (7 + the owner = 8).
     static const qint32 SITE_ID_UNASSIGNED = -1;
@@ -50,10 +50,11 @@ private:
     bool comparePositions(std::optional<QVector<qint32>> pos1_opt, std::optional<QVector<qint32>> pos2_opt);
     void dispatchMessages();
     void processMessage(const Message& msg);
-    void processSymbol(const Symbol& symbol, int msg_type);
+    void processSymbol(const Symbol& symbol, int msg_type, bool open = false);
     QString symbols_to_string();
     QString positions_to_string();
     void updateSymbolsDb(const Symbol& symbol, int update_type);
+    void updateDocument(const Symbol& symbol, int msg_type);
 };
 
 

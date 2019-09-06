@@ -36,11 +36,12 @@ Notepad::Notepad(NetworkingData* net_data,
                         strategy(strategy),
                         net_data(net_data) {
     ui->setupUi(this);
+
+    this->setAttribute(Qt::WA_DeleteOnClose, true);
+
     this->net_data->setParent(this); // To avoid Memory Leakage!
     this->setWindowTitle(tr("Notepad, Site ID -> %1").arg(net_data->getSiteId()));
     this->setCentralWidget(ui->textEdit);
-
-    this->setAttribute(Qt::WA_DeleteOnClose, true);
 
     in.setDevice(net_data->getTcpSocket());
     in.setVersion(QDataStream::Qt_5_13);
@@ -65,7 +66,6 @@ Notepad::Notepad(NetworkingData* net_data,
     ui->textEdit->document()->setPlainText(this->symbols_to_string());
 
     // Listen on text changed signals.
-    connect(ui->textEdit, &QTextEdit::cursorPositionChanged, this, &Notepad::onCursorPositionChanged);
     connect(ui->textEdit->document(), &QTextDocument::contentsChange, this, &Notepad::interceptUserInput);
 
     // Connecting signals for networking.
@@ -254,7 +254,6 @@ void Notepad::displayError(QAbstractSocket::SocketError socketError) {
 void Notepad::closeEvent(QCloseEvent* event) {
     // Knowing how to handle the disconnection from Server.
     connect(net_data->getTcpSocket(), &QAbstractSocket::disconnected, net_data->getTcpSocket(), [this, event] {
-        net_data->getTcpSocket()->abort();
         qDebug() << "DISCONNECTED!";
         QMainWindow::closeEvent(event);
     });
@@ -264,7 +263,7 @@ void Notepad::closeEvent(QCloseEvent* event) {
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
 
-    Request req_to_send = Request(this->net_data->getSiteId(), Request::DISCONNECT_TYPE, std::nullopt);
+    Request req_to_send = Request(this->net_data->getSiteId(), Request::DISCONNECT_TYPE, std::nullopt, "", "", net_data->getRemoteFilePath(), net_data->getCounter());
     out << req_to_send;
     net_data->getTcpSocket()->write(block);
     qDebug() << "I am going to DISCONNECT!";
@@ -301,7 +300,8 @@ void Notepad::localInsert(qint32 index, QChar value) {
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
-    Request req_to_send = Request(this->net_data->getSiteId(), Request::MESSAGE_TYPE, Message(this->net_data->getSiteId(), Message::INSERT_TYPE, s));
+
+    Request req_to_send = Request(this->net_data->getSiteId(), Request::MESSAGE_TYPE, Message(this->net_data->getSiteId(), Message::INSERT_TYPE, s), "", "", net_data->getRemoteFilePath());
     out << req_to_send;
     net_data->getTcpSocket()->write(block);
 }
@@ -309,7 +309,7 @@ void Notepad::localInsert(qint32 index, QChar value) {
 void Notepad::localErase(qint32 index) {
     if (index >= net_data->getSymbols().size()) return;
 
-    Symbol tmp = net_data->getSymbols().at(index);
+    Symbol s = net_data->getSymbols().at(index);
     net_data->getSymbols().erase(net_data->getSymbols().begin() + index);
 
     net_data->incrementCounter();
@@ -317,7 +317,9 @@ void Notepad::localErase(qint32 index) {
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
-    out << Request(this->net_data->getSiteId(), Request::MESSAGE_TYPE, Message(this->net_data->getSiteId(), Message::ERASE_TYPE, tmp));
+
+    Request req_to_send = Request(this->net_data->getSiteId(), Request::MESSAGE_TYPE, Message(this->net_data->getSiteId(), Message::ERASE_TYPE, s), "", "", net_data->getRemoteFilePath());
+    out << req_to_send;
     net_data->getTcpSocket()->write(block);
 }
 

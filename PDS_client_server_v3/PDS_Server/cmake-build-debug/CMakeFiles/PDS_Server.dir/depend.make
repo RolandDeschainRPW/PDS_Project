@@ -1579,6 +1579,16 @@ CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/in
 CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qtnetworkglobal.h
 CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qtnetworkversion.h
 CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qudpsocket.h
+CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/QSqlDatabase
+CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/QSqlError
+CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/QSqlQuery
+CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/QSqlRecord
+CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqldatabase.h
+CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlerror.h
+CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlquery.h
+CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlrecord.h
+CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/qtsql-config.h
+CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtSql/qtsqlglobal.h
 CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: ../include/Message.h
 CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: ../include/SharedDocument.h
 CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj: ../include/SharedEditor.h

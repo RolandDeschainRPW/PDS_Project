@@ -53,6 +53,7 @@ SharedDocumentsExplorer::SharedDocumentsExplorer(QTcpSocket* clientConnection,
     ui->documentsView->horizontalHeader()->setVisible(true);
     ui->documentsView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
     ui->documentsView->setSelectionBehavior(QAbstractItemView::SelectRows);
+    ui->documentsView->setSelectionMode(QAbstractItemView::SingleSelection);
     ui->documentsView->show();
 
     connect(ui->cancelButton, &QAbstractButton::clicked, this, &QWidget::close);
@@ -112,14 +113,36 @@ bool SharedDocumentsExplorer::isThisFilenameAlreadyInUse(QString new_filename) {
 }
 
 void SharedDocumentsExplorer::openDocument() {
+    QItemSelectionModel* select = ui->documentsView->selectionModel();
 
+    // Checking if has selection.
+    if (!select->hasSelection()) {
+        QMessageBox::information(this, tr("No document selected!"),
+                                 tr("Please select a document to open it."));
+        return;
+    }
+
+    int row = select->selectedRows()[0].row();
+    DocumentsModel* model = dynamic_cast<DocumentsModel*>(ui->documentsView->model());
+    QModelIndex index = model->index(row, 0, QModelIndex());
+    QString filename = ui->documentsView->model()->data(index).toString();
+    filename = filename.replace(QString(".html"), QString(""), Qt::CaseInsensitive);
+
+    QByteArray block;
+    QDataStream out(&block, QIODevice::WriteOnly);
+    out.setVersion(QDataStream::Qt_5_13);
+
+    Request req_to_send = Request(Request::SITE_ID_UNASSIGNED, Request::OPEN_DOCUMENT_TYPE, std::nullopt, username, "", filename);
+    out << req_to_send;
+    clientConnection->write(block);
+    selected = true;
 }
 
 void SharedDocumentsExplorer::closeEvent(QCloseEvent* event) {
+    StartDialog* parent = dynamic_cast<StartDialog*>(this->parent());
+    connect(clientConnection, &QIODevice::readyRead, parent, &StartDialog::openSharedDocumentsExplorer);
     if (!selected) {
         qDebug().noquote() << "No document selected.\n\t-> Disconnecting from Server.";
-        StartDialog* parent = dynamic_cast<StartDialog*>(this->parent());
-        connect(clientConnection, &QIODevice::readyRead, parent, &StartDialog::openSharedDocumentsExplorer);
         clientConnection->disconnectFromHost();
     }
     QDialog::closeEvent(event);
@@ -152,14 +175,15 @@ void SharedDocumentsExplorer::readStartDataFromServer() {
     in.startTransaction();
     qint32 siteId;
     quint32 counter;
+    QString remote_file_path;
     QVector<Symbol> symbols;
-    in >> siteId >> counter >> symbols;
+    in >> siteId >> counter >> remote_file_path >> symbols;
     if (!in.commitTransaction()) {
         qDebug() << "Something went wrong!\n\t-> I could not have Site Id and Symbols from Server!";
         return;
     }
     disconnect(clientConnection, &QIODevice::readyRead, this, &SharedDocumentsExplorer::readStartDataFromServer);
-    NetworkingData* startData = new NetworkingData(siteId, counter, symbols, clientConnection, networkSession, this);
+    NetworkingData* startData = new NetworkingData(siteId, counter, remote_file_path, symbols, clientConnection, networkSession, this);
     showEditor(startData);
 }
 

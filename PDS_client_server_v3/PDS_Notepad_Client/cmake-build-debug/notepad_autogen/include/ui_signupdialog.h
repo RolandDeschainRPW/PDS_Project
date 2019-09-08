@@ -32,12 +32,14 @@ public:
     QLineEdit *repeatPasswordLineEdit;
     QPushButton *okButton;
     QPushButton *cancelButton;
+    QLabel *NewNicknameLabel;
+    QLineEdit *newNicknameLineEdit;
 
     void setupUi(QDialog *SignUpDialog)
     {
         if (SignUpDialog->objectName().isEmpty())
             SignUpDialog->setObjectName(QString::fromUtf8("SignUpDialog"));
-        SignUpDialog->resize(289, 243);
+        SignUpDialog->resize(289, 273);
         SignUpDialog->setModal(false);
         newUsernameLineEdit = new QLineEdit(SignUpDialog);
         newUsernameLineEdit->setObjectName(QString::fromUtf8("newUsernameLineEdit"));
@@ -71,15 +73,22 @@ public:
         okButton = new QPushButton(SignUpDialog);
         okButton->setObjectName(QString::fromUtf8("okButton"));
         okButton->setEnabled(false);
-        okButton->setGeometry(QRect(30, 200, 81, 23));
+        okButton->setGeometry(QRect(40, 240, 81, 23));
         cancelButton = new QPushButton(SignUpDialog);
         cancelButton->setObjectName(QString::fromUtf8("cancelButton"));
-        cancelButton->setGeometry(QRect(180, 200, 81, 23));
+        cancelButton->setGeometry(QRect(170, 240, 81, 23));
+        NewNicknameLabel = new QLabel(SignUpDialog);
+        NewNicknameLabel->setObjectName(QString::fromUtf8("NewNicknameLabel"));
+        NewNicknameLabel->setGeometry(QRect(10, 200, 101, 21));
+        newNicknameLineEdit = new QLineEdit(SignUpDialog);
+        newNicknameLineEdit->setObjectName(QString::fromUtf8("newNicknameLineEdit"));
+        newNicknameLineEdit->setGeometry(QRect(110, 200, 171, 20));
 #if QT_CONFIG(shortcut)
         newPasswordLabel->setBuddy(newPasswordLineEdit);
         newUsernameLabel->setBuddy(newUsernameLineEdit);
         repeatUsernameLabel->setBuddy(repeatUsernameLineEdit);
         repeatPasswordLabel->setBuddy(repeatPasswordLineEdit);
+        NewNicknameLabel->setBuddy(newNicknameLineEdit);
 #endif // QT_CONFIG(shortcut)
 
         retranslateUi(SignUpDialog);
@@ -97,6 +106,7 @@ public:
         repeatPasswordLabel->setText(QCoreApplication::translate("SignUpDialog", "Repeat Password:", nullptr));
         okButton->setText(QCoreApplication::translate("SignUpDialog", "OK", nullptr));
         cancelButton->setText(QCoreApplication::translate("SignUpDialog", "Cancel", nullptr));
+        NewNicknameLabel->setText(QCoreApplication::translate("SignUpDialog", "New Nickname:", nullptr));
     } // retranslateUi
 
 };

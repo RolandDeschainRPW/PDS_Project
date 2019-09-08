@@ -28,6 +28,7 @@ private slots:
     void askNewDocumentFilename();
     void openDocument();
     void readStartDataFromServer();
+    void addCollaborator();
 
 private:
     Ui::SharedDocumentsExplorer* ui = nullptr;

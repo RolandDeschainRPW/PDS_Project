@@ -6,6 +6,7 @@
 #include <QInputDialog>
 
 #include "../include/Request.h"
+#include "../include/Response.h"
 #include "../include/SharedDocumentsExplorer.h"
 #include "../include/DocumentsModel.h"
 #include "../include/NetworkingData.h"
@@ -59,6 +60,7 @@ SharedDocumentsExplorer::SharedDocumentsExplorer(QTcpSocket* clientConnection,
     connect(ui->cancelButton, &QAbstractButton::clicked, this, &QWidget::close);
     connect(ui->newDocumentButton, &QAbstractButton::clicked, this, &SharedDocumentsExplorer::askNewDocumentFilename);
     connect(ui->openDocumentButton, &QAbstractButton::clicked, this, &SharedDocumentsExplorer::openDocument);
+    connect(ui->addCollaboratorButton, &QAbstractButton::clicked, this, &SharedDocumentsExplorer::addCollaborator);
 }
 
 SharedDocumentsExplorer::~SharedDocumentsExplorer() {
@@ -76,7 +78,6 @@ void SharedDocumentsExplorer::askNewDocumentFilename() {
                                              QDir::home().dirName(),
                                              &ok);
         if (ok && !new_filename.isEmpty()) {
-            // We must consider also username and password!
             QByteArray block;
             QDataStream out(&block, QIODevice::WriteOnly);
             out.setVersion(QDataStream::Qt_5_13);
@@ -124,15 +125,19 @@ void SharedDocumentsExplorer::openDocument() {
 
     int row = select->selectedRows()[0].row();
     DocumentsModel* model = dynamic_cast<DocumentsModel*>(ui->documentsView->model());
+
     QModelIndex index = model->index(row, 0, QModelIndex());
     QString filename = ui->documentsView->model()->data(index).toString();
     filename = filename.replace(QString(".html"), QString(""), Qt::CaseInsensitive);
+
+    index = model->index(row, 1, QModelIndex());
+    QString owner_nickname = ui->documentsView->model()->data(index).toString();
 
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
 
-    Request req_to_send = Request(Request::SITE_ID_UNASSIGNED, Request::OPEN_DOCUMENT_TYPE, std::nullopt, username, "", filename);
+    Request req_to_send = Request(Request::SITE_ID_UNASSIGNED, Request::OPEN_DOCUMENT_TYPE, std::nullopt, username, "", filename, 0, owner_nickname);
     out << req_to_send;
     clientConnection->write(block);
     selected = true;
@@ -192,4 +197,66 @@ void SharedDocumentsExplorer::showEditor(NetworkingData* startData) {
     notepad = new Notepad(startData, this);
     notepad->setWindowModality(Qt::ApplicationModal);
     notepad->show();
+}
+
+void SharedDocumentsExplorer::addCollaborator() {
+    QItemSelectionModel* select = ui->documentsView->selectionModel();
+
+    // Checking if has selection.
+    if (!select->hasSelection()) {
+        QMessageBox::information(this, tr("No document selected!"),
+                                 tr("Please select a document before adding a collaborator."));
+        return;
+    }
+
+    int row = select->selectedRows()[0].row();
+    DocumentsModel* model = dynamic_cast<DocumentsModel*>(ui->documentsView->model());
+    QModelIndex index = model->index(row, 0, QModelIndex());
+    QString filename = ui->documentsView->model()->data(index).toString();
+    filename = filename.replace(QString(".html"), QString(""), Qt::CaseInsensitive);
+
+    disconnect(clientConnection, &QIODevice::readyRead, this, &SharedDocumentsExplorer::readStartDataFromServer);
+    connect(clientConnection, &QIODevice::readyRead, this, [this] {
+        in.startTransaction();
+        Response res;
+        in >> res;
+
+        if (res.getResult() == Response::NICKNAME_NON_EXISTENT) {
+            QMessageBox::information(this, tr("Nickname non existent!"),
+                                     tr("Please insert the nickname of an existent user."));
+        } else /* Response::NICKNAME_ACTIVE */ {
+            QMessageBox::information(this, tr("Success!"),
+                                     tr("Collaborator added successfully."));
+        }
+
+        disconnect(clientConnection, &QIODevice::readyRead, this, 0);
+        connect(clientConnection, &QIODevice::readyRead, this, &SharedDocumentsExplorer::readStartDataFromServer);
+    });
+
+    bool ok;
+    QString nickname;
+    while (true) {
+        nickname = QInputDialog::getText(this,
+                                         tr("Add a new collaborator"),
+                                         tr("Insert new collaborator's nickname:"),
+                                         QLineEdit::Normal,
+                                         QDir::home().dirName(),
+                                         &ok);
+        if (ok && !nickname.isEmpty()) {
+            QByteArray block;
+            QDataStream out(&block, QIODevice::WriteOnly);
+            out.setVersion(QDataStream::Qt_5_13);
+
+            Request req_to_send = Request(Request::SITE_ID_UNASSIGNED, Request::ADD_COLLABORATOR_TYPE, std::nullopt, username, "", filename, 0, nickname);
+            out << req_to_send;
+            clientConnection->write(block);
+            return;
+        } else if (ok && nickname.isEmpty()) {
+            QMessageBox::information(this, tr("Missing nickname!"),
+                                     tr("Please insert the nickname of the new collaborator."));
+        } else {
+            connect(clientConnection, &QIODevice::readyRead, this, &SharedDocumentsExplorer::readStartDataFromServer);
+            return;
+        }
+    }
 }

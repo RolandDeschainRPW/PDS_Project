@@ -1026,6 +1026,7 @@ CMakeFiles/notepad.dir/src/Notepad.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QFileDialog
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QFontDialog
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QInputDialog
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMainWindow
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMenu
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMenuBar
@@ -1046,8 +1047,10 @@ CMakeFiles/notepad.dir/src/Notepad.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qfontdialog.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qframe.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qgridlayout.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qinputdialog.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlayout.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlayoutitem.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlineedit.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmainwindow.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmenu.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmenubar.h
@@ -1807,6 +1810,7 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/NetworkingData.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Notepad.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Request.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Response.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SharedDocumentsExplorer.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SignUpDialog.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/StartDialog.h

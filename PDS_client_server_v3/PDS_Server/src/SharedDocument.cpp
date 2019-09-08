@@ -17,30 +17,12 @@
 // collaborators.db, symbols.db, symbols.txt and the html file MUST be read in case of
 // pre-existing data on Server!
 SharedDocument::SharedDocument(QString file_path, QString folder_path, QObject* parent) : QObject(parent), file_path(file_path), folder_path(folder_path) {
-    // Initializing a map for free Site Ids.
-    for (qint32 i = 0; i < MAX_SITE_IDS; i++) free_site_ids.push_back(true);
-    QString collaborators_db_path = QDir::toNativeSeparators(folder_path + "/collaborators.db");
-    QSqlDatabase collaborators_db = QSqlDatabase::addDatabase("QSQLITE", QDir::toNativeSeparators(folder_path + "/collaborators.db"));
-    collaborators_db.setDatabaseName(collaborators_db_path);
-    collaborators_db.open();
-    {
-        QSqlQuery query(collaborators_db);
-        bool done = query.exec("SELECT SITE_ID FROM COLLABORATORS");
-        if (!done) qDebug() << query.lastError();
-
-        while (query.next()) {
-            QVariant val = query.value(0);
-            qint32 site_id = val.toInt();
-            free_site_ids[site_id] = false;
-        }
-    }
-    collaborators_db.close();
-
     // Reading from file.
     document = new QTextDocument(this);
     QFile file = QFile(file_path);
     if (!file.open(QIODevice::ReadOnly | QFile::Text)) {
         qDebug().noquote() << "Warning!\n\t-> Cannot read file: " << file.errorString();
+        qDebug() << file_path;
         return;
     }
     QTextStream in(&file);
@@ -56,7 +38,7 @@ SharedDocument::SharedDocument(QString file_path, QString folder_path, QObject* 
     {
         QSqlQuery query = QSqlQuery(symbols_db);
         bool done = query.exec("SELECT * FROM SYMBOLS");
-        if (!done) qDebug() << query.lastError();
+        if (!done) qDebug() << query.lastError() << "PRIMO";
 
         while (query.next()) {
             QVariant tmp1 = query.value(0); // CHARACTER
@@ -124,54 +106,29 @@ void SharedDocument::automaticSave() {
     symbols_txt.close();
 }
 
-void SharedDocument::addSharedEditor(QTcpSocket* clientConnection, QString username, qint32* site_id, quint32* counter) {
-    // Retrieving Site Id of incoming Shared Editor.
-    QSqlDatabase collaborators_db = QSqlDatabase::database(QDir::toNativeSeparators(folder_path + "/collaborators.db"));
+void SharedDocument::addSharedEditor(QTcpSocket* clientConnection, QString nickname, qint32* site_id, quint32* counter) {
+    QString collaborators_db_path = QDir::toNativeSeparators(folder_path + "/collaborators.db");
+    QSqlDatabase collaborators_db = QSqlDatabase::addDatabase("QSQLITE", collaborators_db_path);
+    collaborators_db.setDatabaseName(collaborators_db_path);
     collaborators_db.open();
     {
         QSqlQuery query(collaborators_db);
-        bool done = query.exec("SELECT * FROM COLLABORATORS WHERE USERNAME='" + username + "'");
-        if (!done) qDebug() << query.lastError();
+        bool done = query.exec("SELECT ROWID, NICKNAME, COUNTER FROM COLLABORATORS WHERE NICKNAME='" + nickname + "'");
+        if (!done) qDebug() << query.lastError() << "SECONDO";
 
         if (query.first()) {
-            QVariant tmp1 = query.value(1); // SITE_ID
+            QVariant tmp1 = query.value(0); // ROWID as SITE_ID
             QVariant tmp2 = query.value(2); // COUNTER
 
             *site_id = tmp1.toInt();
             *counter = tmp2.toUInt();
             editors_counter++;
             SharedEditor* new_se = new SharedEditor(clientConnection, *site_id, this);
-            sharedEditors.insert(sharedEditors.begin() + *site_id, new_se);
+            sharedEditors.push_back(new_se);
         }
     }
     collaborators_db.close();
-}
-
-qint32 SharedDocument::addCollaborator(QString username) {
-    // Here a new Site Id is assigned to the incoming Shared Editor.
-    quint32 candidate_id = 0;
-    foreach (bool free, this->free_site_ids) {
-        if (free) {
-            this->free_site_ids[candidate_id] = false;
-
-            // Adding data to collaborators.db.
-            QSqlDatabase collaborators_db = QSqlDatabase::database(QDir::toNativeSeparators(folder_path + "/collaborators.db"));
-            collaborators_db.open();
-            {
-                collaborators_db.transaction();
-                quint32 counter = 0;
-                QSqlQuery query(collaborators_db);
-                bool done = query.exec("INSERT INTO COLLABORATORS(USERNAME, SITE_ID, COUNTER) VALUES('" + username + "', " + QString::number(candidate_id) + ", " + QString::number(counter) + ")");
-                if (!done) qDebug() << query.lastError();
-
-                collaborators_db.commit();
-            }
-            collaborators_db.close();
-            return candidate_id;
-        }
-        candidate_id++;
-    }
-    return SharedDocument::SITE_ID_UNASSIGNED;
+    QSqlDatabase::removeDatabase(collaborators_db_path);
 }
 
 QVector<Symbol> SharedDocument::getSymbols() {
@@ -196,16 +153,19 @@ void SharedDocument::disconnectClient(qint32 siteId, quint32 counter) {
             delete tmp; // To prevent Memory Leakage!
 
             // Updating data in collaborators.db.
-            QSqlDatabase collaborators_db = QSqlDatabase::database(QDir::toNativeSeparators(folder_path + "/collaborators.db"));
+            QString collaborators_db_path = QDir::toNativeSeparators(folder_path + "/collaborators.db");
+            QSqlDatabase collaborators_db = QSqlDatabase::addDatabase("QSQLITE", collaborators_db_path);
+            collaborators_db.setDatabaseName(collaborators_db_path);
             collaborators_db.open();
             {
                 collaborators_db.transaction();
                 QSqlQuery query(collaborators_db);
-                bool done = query.exec("UPDATE COLLABORATORS SET COUNTER=" + QString::number(counter) + " WHERE SITE_ID=" + QString::number(siteId));
-                if (!done) qDebug() << query.lastError();
+                bool done = query.exec("UPDATE COLLABORATORS SET COUNTER=" + QString::number(counter) + " WHERE ROWID=" + QString::number(siteId));
+                if (!done) qDebug() << query.lastError() << "TERZO";
                 collaborators_db.commit();
             }
             collaborators_db.close();
+            QSqlDatabase::removeDatabase(collaborators_db_path);
 
             editors_counter--;
             if (editors_counter == 0) {
@@ -294,7 +254,7 @@ void SharedDocument::updateSymbolsDb(const Symbol& symbol, int update_type) {
             quint32 counter = symbol.getCounter();
             done = query.exec("DELETE FROM SYMBOLS WHERE SITE_ID=" + QString::number(site_id) + " AND COUNTER=" + QString::number(counter));
         }
-        if (!done) qDebug() << query.lastError();
+        if (!done) qDebug() << query.lastError() << "QUARTO";
 
         symbols_db.commit();
     }

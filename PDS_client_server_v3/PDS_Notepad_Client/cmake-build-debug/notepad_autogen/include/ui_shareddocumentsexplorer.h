@@ -27,12 +27,13 @@ public:
     QPushButton *cancelButton;
     QTableView *documentsView;
     QLabel *statusLabel;
+    QPushButton *addCollaboratorButton;
 
     void setupUi(QDialog *SharedDocumentsExplorer)
     {
         if (SharedDocumentsExplorer->objectName().isEmpty())
             SharedDocumentsExplorer->setObjectName(QString::fromUtf8("SharedDocumentsExplorer"));
-        SharedDocumentsExplorer->resize(333, 286);
+        SharedDocumentsExplorer->resize(441, 286);
         newDocumentButton = new QPushButton(SharedDocumentsExplorer);
         newDocumentButton->setObjectName(QString::fromUtf8("newDocumentButton"));
         newDocumentButton->setGeometry(QRect(10, 250, 121, 23));
@@ -41,13 +42,16 @@ public:
         openDocumentButton->setGeometry(QRect(140, 250, 101, 23));
         cancelButton = new QPushButton(SharedDocumentsExplorer);
         cancelButton->setObjectName(QString::fromUtf8("cancelButton"));
-        cancelButton->setGeometry(QRect(250, 250, 75, 23));
+        cancelButton->setGeometry(QRect(360, 250, 71, 23));
         documentsView = new QTableView(SharedDocumentsExplorer);
         documentsView->setObjectName(QString::fromUtf8("documentsView"));
-        documentsView->setGeometry(QRect(10, 40, 311, 192));
+        documentsView->setGeometry(QRect(10, 40, 421, 192));
         statusLabel = new QLabel(SharedDocumentsExplorer);
         statusLabel->setObjectName(QString::fromUtf8("statusLabel"));
         statusLabel->setGeometry(QRect(10, 10, 231, 21));
+        addCollaboratorButton = new QPushButton(SharedDocumentsExplorer);
+        addCollaboratorButton->setObjectName(QString::fromUtf8("addCollaboratorButton"));
+        addCollaboratorButton->setGeometry(QRect(250, 250, 101, 23));
 
         retranslateUi(SharedDocumentsExplorer);
 
@@ -61,6 +65,7 @@ public:
         openDocumentButton->setText(QCoreApplication::translate("SharedDocumentsExplorer", "Open document", nullptr));
         cancelButton->setText(QCoreApplication::translate("SharedDocumentsExplorer", "Cancel", nullptr));
         statusLabel->setText(QCoreApplication::translate("SharedDocumentsExplorer", "Select the document you want to open.", nullptr));
+        addCollaboratorButton->setText(QCoreApplication::translate("SharedDocumentsExplorer", "Add collaborator", nullptr));
     } // retranslateUi
 
 };

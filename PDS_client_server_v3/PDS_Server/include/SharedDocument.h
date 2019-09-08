@@ -20,15 +20,13 @@ class SharedDocument : public QObject {
 public:
     SharedDocument(QString file_path, QString folder_path, QObject* parent = 0);
 
-    void addSharedEditor(QTcpSocket* clientConnection, QString username, qint32* site_id, quint32* counter);
-    qint32 addCollaborator(QString username);
+    void addSharedEditor(QTcpSocket* clientConnection, QString nickname, qint32* site_id, quint32* counter);
     QVector<Symbol> getSymbols();
     QString getFilePath();
     void readMessage(Message& msg);
     void disconnectClient(qint32 siteId, quint32 counter);
     qint32 getEditorsCounter();
 
-    static const qint32 MAX_SITE_IDS = 7; // Maximum number of collaborators per document (7 + the owner = 8).
     static const qint32 SITE_ID_UNASSIGNED = -1;
 
 public slots:
@@ -44,7 +42,6 @@ private:
     QVector<SharedEditor*> sharedEditors;
     QTextDocument* document = nullptr;
     std::queue<Message> messages;
-    QVector<bool> free_site_ids;
     qint32 editors_counter = 0;
 
     bool comparePositions(std::optional<QVector<qint32>> pos1_opt, std::optional<QVector<qint32>> pos2_opt);

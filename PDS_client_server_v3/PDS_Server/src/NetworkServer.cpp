@@ -35,7 +35,8 @@ NetworkServer::NetworkServer(QString usersDbFileName,
             QSqlQuery query(users_db);
             bool done = query.exec("CREATE TABLE USERS("
                        "USERNAME VARCHAR(30) PRIMARY KEY COLLATE NOCASE, "
-                       "PASSWORD VARCHAR(30) NOT NULL"
+                       "PASSWORD VARCHAR(30) NOT NULL, "
+                       "NICKNAME VARCHAR(30) NOT NULL COLLATE NOCASE"
                        ")");
             if (!done) qDebug() << query.lastError();
             users_db.commit();
@@ -150,7 +151,8 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
 
     // Verifying if credentials are correct.
     QString real_password;
-    bool found = isThisUsernameInDatabase(username, &real_password);
+    QString nickname;
+    bool found = isThisUsernameInDatabase(username, &real_password, &nickname);
     if (!found || QString::compare(password, real_password, Qt::CaseSensitive) != 0) {
         out << Response(Response::WRONG_CREDENTIALS, QMap<QString, QString>());
         clientConnection->write(block);
@@ -173,7 +175,7 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
     while(dirs.hasNext()) {
         dirs.next();
         QString filename = dirs.fileName() + ".html";
-        all_docs.insertMulti(filename, username);
+        all_docs.insertMulti(filename, nickname);
     }
 
     // Listing all docs the user has access to.
@@ -191,7 +193,7 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
             QVariant tmp2 = query.value(1); // DOCUMENT
 
             QString owner = tmp1.toString();
-            QString document = tmp2.toString();
+            QString document = tmp2.toString() + ".html";
             all_docs.insertMulti(document, owner);
         }
     }
@@ -292,30 +294,62 @@ void NetworkServer::processNewConnections(QTcpSocket* clientConnection) {
     if (next_req.getRequestType() == Request::CONNECT_TYPE) {
         this->connectClient(clientConnection, next_req.getUsername(), next_req.getPassword());
     } else if (next_req.getRequestType() == Request::SIGN_UP_TYPE) {
-        this->signUpNewUser(clientConnection, next_req.getUsername(), next_req.getPassword());
+        this->signUpNewUser(clientConnection, next_req.getUsername(), next_req.getPassword(), next_req.getNickname());
     } else if (next_req.getRequestType() == Request::OPEN_DOCUMENT_TYPE) {
-        this->writeStartDataToClient(clientConnection, false, next_req.getFilename(), next_req.getUsername());
+        // Retrieving the document's owner username by its nickname.
+        QString owner_username;
+        this->isThisNicknameInDatabase(next_req.getNickname(), &owner_username);
+
+        // Retrieving the opener's nickname.
+        QString opener_nickname;
+        this->isThisUsernameInDatabase(next_req.getUsername(), nullptr, &opener_nickname);
+
+        this->writeStartDataToClient(clientConnection, false, next_req.getFilename(), owner_username, opener_nickname);
     } else if (next_req.getRequestType() == Request::NEW_DOCUMENT_TYPE) {
         this->createNewDocumentDirectory(next_req.getUsername(), next_req.getFilename());
         this->writeStartDataToClient(clientConnection, true, next_req.getFilename(), next_req.getUsername());
+    } else if (next_req.getRequestType() == Request::ADD_COLLABORATOR_TYPE) {
+        QByteArray block;
+        QDataStream out(&block, QIODevice::WriteOnly);
+        out.setVersion(QDataStream::Qt_5_13);
+        qint32 result;
+        QString collaborator_username;
+        QString owner_nickname;
+
+        if (!this->isThisNicknameInDatabase(next_req.getNickname(), &collaborator_username))
+            result = Response::NICKNAME_NON_EXISTENT;
+        else {
+            result = Response::NICKNAME_ACTIVE;
+            this->isThisUsernameInDatabase(next_req.getUsername(), nullptr, &owner_nickname);
+            this->addCollaborator(next_req.getNickname(), next_req.getUsername(), next_req.getFilename());
+            this->addPermission(collaborator_username, owner_nickname, next_req.getFilename());
+        }
+
+        Response res = Response(result, QMap<QString, QString>());
+        out << res;
+        clientConnection->write(block);
     }
 }
 
-void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename, QString username) {
+void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename, QString owner_username, QString opener_nickname) {
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
 
-    QString file_path = QDir::toNativeSeparators("documents/" + username + "/" + filename + "/" + filename + ".html");
-    QString folder_path = QDir::toNativeSeparators("documents/" + username + "/" + filename);
+    QString file_path = QDir::toNativeSeparators("documents/" + owner_username + "/" + filename + "/" + filename + ".html");
+    QString folder_path = QDir::toNativeSeparators("documents/" + owner_username + "/" + filename);
     SharedDocument* doc;
     qint32 site_id_assigned;
     quint32 counter;
+    QString owner_nickname;
+
+    // Retrieving the nickname corresponding to the owner username.
+    this->isThisUsernameInDatabase(owner_username, nullptr, &owner_nickname);
 
     if (new_document) {
         doc = new SharedDocument(file_path, folder_path, this);
-        doc->addCollaborator(username);
-        doc->addSharedEditor(clientConnection, username, &site_id_assigned, &counter);
+        this->addCollaborator(owner_nickname, owner_username, filename);
+        doc->addSharedEditor(clientConnection, owner_nickname, &site_id_assigned, &counter);
         openDocuments.push_back(doc);
     } else /* Opening an existing document. */ {
         doc = this->getDocument(file_path);
@@ -325,7 +359,7 @@ void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection, bool ne
             openDocuments.push_back(doc);
         }
 
-        doc->addSharedEditor(clientConnection, username, &site_id_assigned, &counter);
+        doc->addSharedEditor(clientConnection, opener_nickname, &site_id_assigned, &counter);
         if (site_id_assigned == SharedDocument::SITE_ID_UNASSIGNED) /* No more Site Ids available. */ {
             qDebug().noquote() << "I cannot host the incoming client!\n\t-> No more Site Ids available!";
             clientConnection->abort();
@@ -360,8 +394,7 @@ void NetworkServer::createNewDocumentDirectory(QString username, QString filenam
         collaborators_db.transaction();
         QSqlQuery query(collaborators_db);
         bool done = query.exec("CREATE TABLE COLLABORATORS("
-                   "USERNAME VARCHAR(30) PRIMARY KEY COLLATE NOCASE, "
-                   "SITE_ID INTEGER NOT NULL, "
+                   "NICKNAME VARCHAR(30) PRIMARY KEY COLLATE NOCASE, "
                    "COUNTER INTEGER NOT NULL"
                    ")");
         if (!done) qDebug() << query.lastError();
@@ -390,15 +423,23 @@ void NetworkServer::createNewDocumentDirectory(QString username, QString filenam
     QSqlDatabase::removeDatabase(symbols_db_path);
 }
 
-void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username, QString password) {
+void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username, QString password, QString nickname) {
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
 
     // Verifying if the chosen username is already in use.
-    bool found = isThisUsernameInDatabase(username);
-    if (found) {
+    bool username_found = this->isThisUsernameInDatabase(username);
+    if (username_found) {
         out << Response(Response::USERNAME_ALREADY_IN_USE, QMap<QString, QString>());
+        clientConnection->write(block);
+        return;
+    }
+
+    // Verifying if the chosen nickname is already in use.
+    bool nickname_found = this->isThisNicknameInDatabase(nickname);
+    if (nickname_found) {
+        out << Response(Response::NICKNAME_ALREADY_IN_USE, QMap<QString, QString>());
         clientConnection->write(block);
         return;
     }
@@ -409,7 +450,7 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
     {
         users_db.transaction();
         QSqlQuery query(users_db);
-        bool done = query.exec("INSERT INTO USERS(USERNAME, PASSWORD) VALUES('" + username + "', '" + password + "')");
+        bool done = query.exec("INSERT INTO USERS(USERNAME, PASSWORD, NICKNAME) VALUES('" + username + "', '" + password + "', '" + nickname + "')");
         if (!done) qDebug() << query.lastError();
         users_db.commit();
     }
@@ -442,11 +483,11 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
     clientConnection->write(block);
 }
 
-bool NetworkServer::isThisUsernameInDatabase(QString username, QString* password) {
+bool NetworkServer::isThisUsernameInDatabase(QString username, QString* password, QString* nickname) {
     bool found;
 
     QSqlDatabase users_db = QSqlDatabase::database("users_db_conn");
-    users_db.open(); // If it doesn't exists, it will be created.
+    users_db.open();
     {
         QSqlQuery query(users_db);
         bool done = query.exec("SELECT * FROM USERS WHERE USERNAME='" + username + "'");
@@ -457,10 +498,78 @@ bool NetworkServer::isThisUsernameInDatabase(QString username, QString* password
                 QVariant val = query.value(1); // PASSWORD
                 *password = val.toString();
             }
+            if (nickname != nullptr) {
+                QVariant val = query.value(2); // NICKNAME
+                *nickname = val.toString();
+            }
             found = true;
         } else found = false;
     }
     users_db.close();
 
     return found;
+}
+
+bool NetworkServer::isThisNicknameInDatabase(QString nickname, QString* username) {
+    bool found;
+
+    QSqlDatabase users_db = QSqlDatabase::database("users_db_conn");
+    users_db.open();
+    {
+        QSqlQuery query(users_db);
+        bool done = query.exec("SELECT USERNAME, NICKNAME FROM USERS WHERE NICKNAME='" + nickname + "'");
+        if (!done) qDebug() << query.lastError();
+
+        if (query.first()) {
+            if (username != nullptr) {
+                QVariant val = query.value(0); // USERNAME
+                *username = val.toString();
+            }
+            found = true;
+        }
+        else found = false;
+    }
+    users_db.close();
+
+    return found;
+}
+
+void NetworkServer::addCollaborator(QString nickname, QString username, QString filename) {
+    QString folder_path = QDir::toNativeSeparators("documents/" + username + "/" + filename);
+
+    // Adding data to collaborators.db.
+    QString collaborators_db_path = QDir::toNativeSeparators(folder_path + "/collaborators.db");
+    QSqlDatabase collaborators_db = QSqlDatabase::addDatabase("QSQLITE", collaborators_db_path);
+    collaborators_db.setDatabaseName(collaborators_db_path);
+    collaborators_db.open();
+    {
+        collaborators_db.transaction();
+        QSqlQuery query(collaborators_db);
+        bool done = query.exec("INSERT INTO COLLABORATORS(NICKNAME, COUNTER) VALUES('" + nickname + "', " + QString::number(0) + ")");
+        if (!done) qDebug() << query.lastError();
+        collaborators_db.commit();
+    }
+    collaborators_db.close();
+    QSqlDatabase::removeDatabase(collaborators_db_path);
+}
+
+void NetworkServer::addPermission(QString collaborator_username, QString owner_nickname, QString file_path) {
+    QFile file(file_path);
+    QFileInfo fileInfo(file);
+    QString filename(fileInfo.fileName());
+    filename.replace(QString(".html"), QString(""), Qt::CaseInsensitive);
+
+    QString permissions_db_path = QDir::toNativeSeparators("documents/" + collaborator_username + "/permissions.db");
+    QSqlDatabase permissions_db = QSqlDatabase::addDatabase("QSQLITE", permissions_db_path);
+    permissions_db.setDatabaseName(permissions_db_path);
+    permissions_db.open(); // If it doesn't exists, it will be created.
+    {
+        permissions_db.transaction();
+        QSqlQuery query = QSqlQuery(permissions_db);
+        bool done = query.exec("INSERT INTO PERMISSIONS(OWNER, DOCUMENT) VALUES('" + owner_nickname + "', '" + filename + "')");
+        if (!done) qDebug() << query.lastError();
+        permissions_db.commit();
+    }
+    permissions_db.close();
+    QSqlDatabase::removeDatabase(permissions_db_path);
 }

@@ -48,15 +48,18 @@ private:
     QNetworkSession* networkSession = nullptr;
 
     void connectClient(QTcpSocket* clientConnection, QString username, QString password);
-    void signUpNewUser(QTcpSocket* clientConnection, QString username, QString password);
+    void signUpNewUser(QTcpSocket* clientConnection, QString username, QString password, QString nickname);
     void createNewDocumentDirectory(QString username, QString filename);
-    bool isThisUsernameInDatabase(QString username, QString* password = nullptr);
+    bool isThisUsernameInDatabase(QString username, QString* password = nullptr, QString* nickname = nullptr);
+    bool isThisNicknameInDatabase(QString nickname, QString* username = nullptr);
     bool readFromExistingConnection(QTcpSocket* clientConnection);
     void processNewConnections(QTcpSocket* clientConnection);
-    void writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename, QString username);
+    void writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename, QString owner_username, QString opener_nickname = "");
     SharedDocument* getDocument(QString file_path);
     void removeFromActiveUsers(QString username);
     void removeFromOpenDocuments(SharedDocument* document);
+    void addCollaborator(QString nickname, QString username, QString filename);
+    void addPermission(QString collaborator_username, QString owner_nickname, QString file_path);
 };
 
 #endif //PDS_SERVER_NETWORKSERVER_H

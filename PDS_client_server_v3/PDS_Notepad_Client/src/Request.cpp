@@ -11,7 +11,8 @@ Request::Request(const Request& req) : siteId(req.siteId),
                                        username(req.username),
                                        password(req.password),
                                        filename(req.filename),
-                                       counter(req.counter) {
+                                       counter(req.counter),
+                                       nickname(req.nickname){
     if (req.requestType == MESSAGE_TYPE) this->msg = req.msg;
 }
 
@@ -21,12 +22,14 @@ Request::Request(qint32 siteId,
                  QString username,
                  QString password,
                  QString filename,
-                 quint32 counter) : siteId(siteId),
+                 quint32 counter,
+                 QString nickname) : siteId(siteId),
                                     requestType(requestType),
                                     username(username),
                                     password(password),
                                     filename(filename),
-                                    counter(counter) {
+                                    counter(counter),
+                                    nickname(nickname){
     if (opt_msg.has_value()) msg = opt_msg.value();
 }
 
@@ -61,8 +64,12 @@ quint32 Request::getCounter() const {
     return counter;
 }
 
+QString Request::getNickname() const {
+    return nickname;
+}
+
 QDataStream &operator<<(QDataStream &out, const Request& req) {
-    out << req.getSiteId() << req.getRequestType() << req.getUsername() << req.getPassword() << req.getFilename() << req.getCounter();
+    out << req.getSiteId() << req.getRequestType() << req.getUsername() << req.getPassword() << req.getFilename() << req.getCounter() << req.getNickname();
     if (req.getRequestType() == Request::MESSAGE_TYPE)
         out << req.getMessage();
     return out;
@@ -75,14 +82,15 @@ QDataStream &operator>>(QDataStream &in, Request& req) {
     QString password;
     QString filename;
     quint32 counter;
+    QString nickname;
     Message msg;
 
-    in >> siteId >> request_type >> username >> password >> filename >> counter;
+    in >> siteId >> request_type >> username >> password >> filename >> counter >> nickname;
     if (request_type == Request::MESSAGE_TYPE) {
         in >> msg;
-        req = Request(siteId, request_type, msg, username, password, filename, counter);
+        req = Request(siteId, request_type, msg, username, password, filename, counter, nickname);
         return in;
     }
-    req = Request(siteId, request_type, std::nullopt, username, password, filename, counter);
+    req = Request(siteId, request_type, std::nullopt, username, password, filename, counter, nickname);
     return in;
 }

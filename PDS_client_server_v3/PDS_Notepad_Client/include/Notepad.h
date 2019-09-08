@@ -38,10 +38,6 @@ public:
     QString symbols_to_string();
 
 private slots:
-    void newDocument();
-    void open();
-    void save();
-    void saveAs();
     void print();
     void exit();
     void copy();
@@ -49,21 +45,16 @@ private slots:
     void paste();
     void undo();
     void redo();
-    void selectFont();
-    void setFontBold(bool bold);
-    void setFontUnderline(bool underline);
-    void setFontItalic(bool italic);
 
-    // Slots for text changes.
+    // Slot for text changes.
     void interceptUserInput(int pos, int del, int add);
 
-    // Slots for networking.
+    // Slot for networking error.
     void displayError(QAbstractSocket::SocketError socketError);
 
 private:
     Ui::Notepad* ui;
-    QString currentFile;
-    
+
     // Vars for symbols managing.
     qint32 boundary;
     qint32 base;

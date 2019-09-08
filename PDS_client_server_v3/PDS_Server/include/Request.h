@@ -15,7 +15,14 @@ class Request {
 public:
     Request();
     Request(const Request& req);
-    Request(qint32 siteId, qint32 requestType, std::optional<Message> opt_msg, QString username = "", QString password = "", QString filename = "", quint32 counter = 0);
+    Request(qint32 siteId,
+            qint32 requestType,
+            std::optional<Message> opt_msg,
+            QString username = "",
+            QString password = "",
+            QString filename = "",
+            quint32 counter = 0,
+            QString nickname = "");
     ~Request();
 
     static const qint32 MESSAGE_TYPE = -1;
@@ -25,6 +32,7 @@ public:
     static const qint32 SITE_ID_UNASSIGNED = -9;
     static const qint32 OPEN_DOCUMENT_TYPE = -20;
     static const qint32 NEW_DOCUMENT_TYPE = -21;
+    static const qint32 ADD_COLLABORATOR_TYPE = -30;
 
     qint32 getSiteId() const;
     qint32 getRequestType() const;
@@ -33,6 +41,7 @@ public:
     QString getPassword() const;
     QString getFilename() const;
     quint32 getCounter() const;
+    QString getNickname() const;
 
 private:
     qint32 siteId;
@@ -42,6 +51,7 @@ private:
     QString username;
     QString password;
     QString filename;
+    QString nickname;
 };
 
 QDataStream &operator<<(QDataStream &out, const Request& req);

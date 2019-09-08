@@ -26,6 +26,11 @@ public:
     // For SignUp purposes.
     static const qint32 USERNAME_ALREADY_IN_USE = -7;
     static const qint32 USERNAME_ACCEPTED = -8;
+    static const qint32 NICKNAME_ALREADY_IN_USE = -18;
+
+    // For adding collaborators.
+    static const qint32 NICKNAME_NON_EXISTENT = -50;
+    static const qint32 NICKNAME_ACTIVE = -60;
 
 private:
     qint32 result;

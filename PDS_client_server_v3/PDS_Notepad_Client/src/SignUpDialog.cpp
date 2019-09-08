@@ -28,6 +28,7 @@ SignUpDialog::SignUpDialog(QTcpSocket* clientConnection,
     connect(ui->newPasswordLineEdit, &QLineEdit::textChanged, this, &SignUpDialog::enableOkButton);
     connect(ui->repeatUsernameLineEdit, &QLineEdit::textChanged, this, &SignUpDialog::enableOkButton);
     connect(ui->repeatPasswordLineEdit, &QLineEdit::textChanged, this, &SignUpDialog::enableOkButton);
+    connect(ui->newNicknameLineEdit, &QLineEdit::textChanged, this, &SignUpDialog::enableOkButton);
 }
 
 SignUpDialog::~SignUpDialog() {
@@ -47,6 +48,10 @@ void SignUpDialog::getSignUpResult() {
         QMessageBox::information(this, tr("Sign Up Information"), tr("Username already in use!\n"
                                                                      "Choose another username."));
         ui->okButton->setEnabled(true);
+    } else if (res.getResult() == Response::NICKNAME_ALREADY_IN_USE) {
+        QMessageBox::information(this, tr("Sign Up Information"), tr("Nickname already in use!\n"
+                                                                     "Choose another nickname."));
+        ui->okButton->setEnabled(true);
     } else /* Request::USERNAME_ACCEPTED */ {
         if (QMessageBox::information(this, tr("Sign Up Information"), tr("Username accepted!")) == QMessageBox::Ok)
             this->close();
@@ -63,7 +68,11 @@ void SignUpDialog::signUp() {
         QDataStream out(&block, QIODevice::WriteOnly);
         out.setVersion(QDataStream::Qt_5_13);
 
-        Request req_to_send = Request(Request::SITE_ID_UNASSIGNED, Request::SIGN_UP_TYPE, std::nullopt, ui->newUsernameLineEdit->text(), ui->newPasswordLineEdit->text());
+        Request req_to_send = Request(Request::SITE_ID_UNASSIGNED,
+                Request::SIGN_UP_TYPE, std::nullopt,
+                ui->newUsernameLineEdit->text(),
+                ui->newPasswordLineEdit->text(),
+                "", 0, ui->newNicknameLineEdit->text());
         out << req_to_send;
         clientConnection->write(block);
     } else {
@@ -78,7 +87,8 @@ void SignUpDialog::enableOkButton() {
     ui->okButton->setEnabled(!ui->newPasswordLineEdit->text().isEmpty() &&
                             !ui->repeatPasswordLineEdit->text().isEmpty() &&
                             !ui->newUsernameLineEdit->text().isEmpty() &&
-                            !ui->repeatUsernameLineEdit->text().isEmpty());
+                            !ui->repeatUsernameLineEdit->text().isEmpty() &&
+                            !ui->newNicknameLineEdit->text().isEmpty());
 }
 
 // Overriding the closeEvent() function to correctly disconnect from the Server.

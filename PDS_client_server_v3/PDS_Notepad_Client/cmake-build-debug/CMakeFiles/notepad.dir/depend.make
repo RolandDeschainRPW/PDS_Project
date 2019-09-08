@@ -1025,6 +1025,7 @@ CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWi
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QFileDialog
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QFontDialog
+CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QInputDialog
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMainWindow
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMenu
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMenuBar
@@ -1045,8 +1046,10 @@ CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWi
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qfontdialog.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qframe.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qgridlayout.h
+CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qinputdialog.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlayout.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlayoutitem.h
+CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlineedit.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmainwindow.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmenu.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qmenubar.h
@@ -1806,6 +1809,7 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/Message.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/NetworkingData.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/Notepad.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/Request.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/Response.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/SharedDocumentsExplorer.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/SignUpDialog.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/StartDialog.h

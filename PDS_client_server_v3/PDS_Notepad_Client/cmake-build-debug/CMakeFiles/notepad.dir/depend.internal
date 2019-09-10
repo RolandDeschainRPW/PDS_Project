@@ -213,6 +213,7 @@ CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
  C:/Qt/5.13.0/mingw73_64/include/QtGui/QTextCursor
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
@@ -927,6 +928,7 @@ CMakeFiles/notepad.dir/src/Notepad.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/QFont
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
  C:/Qt/5.13.0/mingw73_64/include/QtGui/QTextCursor
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
@@ -1067,6 +1069,7 @@ CMakeFiles/notepad.dir/src/Notepad.cpp.obj
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/NetworkingData.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Notepad.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Request.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SerialSize.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Symbol.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/src/Notepad.cpp
  notepad_autogen/include/ui_notepad.h
@@ -1268,6 +1271,22 @@ CMakeFiles/notepad.dir/src/Request.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qimage.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qmatrix.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qpaintdevice.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qpainterpath.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qpixelformat.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qpolygon.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qregion.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qrgb.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qrgba64.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qtgui-config.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qtguiglobal.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qtransform.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Message.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Request.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Symbol.h
@@ -1680,6 +1699,7 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
  C:/Qt/5.13.0/mingw73_64/include/QtGui/QTextCursor
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
@@ -1811,6 +1831,7 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Notepad.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Request.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Response.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SerialSize.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SharedDocumentsExplorer.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SignUpDialog.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/StartDialog.h
@@ -2026,6 +2047,9 @@ CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/QImageWriter
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/QPixmap
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qcursor.h
@@ -2036,6 +2060,8 @@ CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qguiapplication.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qicon.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qimage.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qimageiohandler.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qimagewriter.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qinputmethod.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qkeysequence.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qmatrix.h
@@ -2111,6 +2137,7 @@ CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qudpsocket.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QDialog
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QFileDialog
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLabel
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLineEdit
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMessageBox
@@ -2119,6 +2146,7 @@ CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qapplication.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qdesktopwidget.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qdialog.h
+ C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qfiledialog.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qframe.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlabel.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlineedit.h
@@ -2132,6 +2160,7 @@ CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/NetworkingData.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Request.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Response.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SerialSize.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SignUpDialog.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Symbol.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/src/SignUpDialog.cpp
@@ -2676,6 +2705,7 @@ CMakeFiles/notepad.dir/src/StartDialog.cpp.obj
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Notepad.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Request.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Response.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SerialSize.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SharedDocumentsExplorer.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SignUpDialog.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/StartDialog.h
@@ -2949,6 +2979,7 @@ CMakeFiles/notepad.dir/src/main.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
  C:/Qt/5.13.0/mingw73_64/include/QtGui/QTextCursor
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h

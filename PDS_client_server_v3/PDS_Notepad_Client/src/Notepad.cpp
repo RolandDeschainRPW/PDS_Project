@@ -24,6 +24,7 @@
 #include "../include/Symbol.h"
 #include "../include/Message.h"
 #include "../include/Request.h"
+#include "../include/SerialSize.h"
 #include "ui_notepad.h"
 
 Notepad::Notepad(NetworkingData* net_data,
@@ -181,7 +182,12 @@ void Notepad::closeEvent(QCloseEvent* event) {
     out.setVersion(QDataStream::Qt_5_13);
 
     Request req_to_send = Request(this->net_data->getSiteId(), Request::DISCONNECT_TYPE, std::nullopt, "", "", net_data->getRemoteFilePath(), net_data->getCounter());
-    out << req_to_send;
+
+    // Calculating the size of the request in bytes.
+    SerialSize size;
+    qint64 req_size = size(req_to_send);
+
+    out << req_size << req_to_send;
     net_data->getTcpSocket()->write(block);
     qDebug() << "I am going to DISCONNECT!";
 }
@@ -219,7 +225,12 @@ void Notepad::localInsert(qint32 index, QChar value) {
     out.setVersion(QDataStream::Qt_5_13);
 
     Request req_to_send = Request(this->net_data->getSiteId(), Request::MESSAGE_TYPE, Message(this->net_data->getSiteId(), Message::INSERT_TYPE, s), "", "", net_data->getRemoteFilePath());
-    out << req_to_send;
+
+    // Calculating the size of the request in bytes.
+    SerialSize size;
+    qint64 req_size = size(req_to_send);
+
+    out << req_size << req_to_send;
     net_data->getTcpSocket()->write(block);
 }
 
@@ -236,7 +247,12 @@ void Notepad::localErase(qint32 index) {
     out.setVersion(QDataStream::Qt_5_13);
 
     Request req_to_send = Request(this->net_data->getSiteId(), Request::MESSAGE_TYPE, Message(this->net_data->getSiteId(), Message::ERASE_TYPE, s), "", "", net_data->getRemoteFilePath());
-    out << req_to_send;
+
+    // Calculating the size of the request in bytes.
+    SerialSize size;
+    qint64 req_size = size(req_to_send);
+
+    out << req_size << req_to_send;
     net_data->getTcpSocket()->write(block);
 }
 

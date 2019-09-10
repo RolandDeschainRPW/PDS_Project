@@ -51,7 +51,8 @@ set(INCLUDE_FILES
         include/SignUpDialog.h
         include/Response.h
         include/DocumentsModel.h
-        include/SharedDocumentsExplorer.h)
+        include/SharedDocumentsExplorer.h
+        include/SerialSize.h)
 
 set(RESOURCE_FILES
         notepad.qrc)

@@ -11,6 +11,7 @@
 #include "../include/DocumentsModel.h"
 #include "../include/NetworkingData.h"
 #include "../include/StartDialog.h"
+#include "../include/SerialSize.h"
 #include "ui_shareddocumentsexplorer.h"
 
 SharedDocumentsExplorer::SharedDocumentsExplorer(QTcpSocket* clientConnection,
@@ -83,7 +84,12 @@ void SharedDocumentsExplorer::askNewDocumentFilename() {
             out.setVersion(QDataStream::Qt_5_13);
             if (isThisFilenameAlreadyInUse(new_filename)) continue;
             Request req_to_send = Request(Request::SITE_ID_UNASSIGNED, Request::NEW_DOCUMENT_TYPE, std::nullopt, username, "", new_filename);
-            out << req_to_send;
+
+            // Calculating the size of the request in bytes.
+            SerialSize size;
+            qint64 req_size = size(req_to_send);
+
+            out << req_size << req_to_send;
             clientConnection->write(block);
             selected = true;
             return;
@@ -138,7 +144,12 @@ void SharedDocumentsExplorer::openDocument() {
     out.setVersion(QDataStream::Qt_5_13);
 
     Request req_to_send = Request(Request::SITE_ID_UNASSIGNED, Request::OPEN_DOCUMENT_TYPE, std::nullopt, username, "", filename, 0, owner_nickname);
-    out << req_to_send;
+
+    // Calculating the size of the request in bytes.
+    SerialSize size;
+    qint64 req_size = size(req_to_send);
+
+    out << req_size << req_to_send;
     clientConnection->write(block);
     selected = true;
 }
@@ -248,7 +259,12 @@ void SharedDocumentsExplorer::addCollaborator() {
             out.setVersion(QDataStream::Qt_5_13);
 
             Request req_to_send = Request(Request::SITE_ID_UNASSIGNED, Request::ADD_COLLABORATOR_TYPE, std::nullopt, username, "", filename, 0, nickname);
-            out << req_to_send;
+
+            // Calculating the size of the request in bytes.
+            SerialSize size;
+            qint64 req_size = size(req_to_send);
+
+            out << req_size << req_to_send;
             clientConnection->write(block);
             return;
         } else if (ok && nickname.isEmpty()) {

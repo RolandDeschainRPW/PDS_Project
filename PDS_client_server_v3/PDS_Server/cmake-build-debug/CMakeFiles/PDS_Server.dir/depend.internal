@@ -210,6 +210,7 @@ CMakeFiles/PDS_Server.dir/PDS_Server_autogen/mocs_compilation.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
  C:/Qt/5.13.0/mingw73_64/include/QtGui/QTextDocument
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
@@ -1112,6 +1113,22 @@ CMakeFiles/PDS_Server.dir/src/Request.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qimage.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qmatrix.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qpaintdevice.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qpainterpath.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qpixelformat.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qpolygon.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qregion.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qrgb.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qrgba64.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qtgui-config.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qtguiglobal.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qtransform.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Message.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Request.h
  D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Symbol.h
@@ -2122,6 +2139,7 @@ CMakeFiles/PDS_Server.dir/src/main.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+ C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
  C:/Qt/5.13.0/mingw73_64/include/QtGui/QTextDocument
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h

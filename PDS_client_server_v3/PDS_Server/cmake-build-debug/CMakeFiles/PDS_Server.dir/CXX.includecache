@@ -4080,10 +4080,6 @@ QtCore/qglobal.h
 QtSql/qtsql-config.h
 -
 
-C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
-qapplication.h
-C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qapplication.h
-
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QCommonStyle
 qcommonstyle.h
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qcommonstyle.h
@@ -5526,44 +5522,6 @@ QtWidgets/qtwidgetsglobal.h
 QtWidgets/qdialog.h
 -
 
-D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_NetworkServer.cpp
-memory
--
-../../../include/NetworkServer.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/NetworkServer.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedDocument.cpp
-memory
--
-../../../include/SharedDocument.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SharedDocument.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedEditor.cpp
-memory
--
-../../../include/SharedEditor.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SharedEditor.h
-QtCore/qbytearray.h
--
-QtCore/qmetatype.h
--
-
-D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/mocs_compilation.cpp
-6YEA5652QU/moc_NetworkServer.cpp
-D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_NetworkServer.cpp
-6YEA5652QU/moc_SharedDocument.cpp
-D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedDocument.cpp
-6YEA5652QU/moc_SharedEditor.cpp
-D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedEditor.cpp
-
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Message.h
 iostream
 -
@@ -5597,6 +5555,8 @@ QVector
 -
 QSqlDatabase
 -
+QImage
+-
 ../include/Symbol.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Symbol.h
 ../include/Message.h
@@ -5610,6 +5570,8 @@ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include
 optional
 -
 QtCore
+-
+QImage
 -
 ../include/Message.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Message.h
@@ -5675,10 +5637,4 @@ QSqlError
 -
 ../include/Response.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Response.h
-
-D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/main.cpp
-QApplication
--
-../include/NetworkServer.h
-D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/NetworkServer.h
 

@@ -21,7 +21,7 @@ NetworkServer::NetworkServer(QString usersDbFileName,
                                         statusLabel(new QLabel) {
     // Initialiting directories.
     if (!QDir("documents").exists()) QDir().mkdir("documents");
-    if (!QDir("profiles").exists()) QDir().mkdir("profiles");
+    if (!QDir("profiles_pics").exists()) QDir().mkdir("profiles_pics");
 
     // Connecting to users database
     bool newly_created = !QFile(usersDbFileName).exists();
@@ -275,6 +275,20 @@ void NetworkServer::readFromNewConnection() {
     QTcpSocket* clientConnection = tcpServer->nextPendingConnection();
     connect(clientConnection, &QAbstractSocket::disconnected, clientConnection, &QObject::deleteLater);
     connect(clientConnection, &QIODevice::readyRead, this, [this, clientConnection] {
+        QDataStream in(clientConnection);
+        in.setVersion(QDataStream::Qt_5_13);
+        in.startTransaction();
+
+        qint64 size;
+        in >> size;
+
+        if(size > clientConnection->bytesAvailable()) {
+            in.rollbackTransaction();
+            in.abortTransaction();
+            return;
+        }
+
+        in.commitTransaction();
         this->processNewConnections(clientConnection);
     });
 }
@@ -294,7 +308,7 @@ void NetworkServer::processNewConnections(QTcpSocket* clientConnection) {
     if (next_req.getRequestType() == Request::CONNECT_TYPE) {
         this->connectClient(clientConnection, next_req.getUsername(), next_req.getPassword());
     } else if (next_req.getRequestType() == Request::SIGN_UP_TYPE) {
-        this->signUpNewUser(clientConnection, next_req.getUsername(), next_req.getPassword(), next_req.getNickname());
+        this->signUpNewUser(clientConnection, next_req.getUsername(), next_req.getPassword(), next_req.getNickname(), next_req.getProfilePic(), next_req.getImageFormat());
     } else if (next_req.getRequestType() == Request::OPEN_DOCUMENT_TYPE) {
         // Retrieving the document's owner username by its nickname.
         QString owner_username;
@@ -371,6 +385,9 @@ void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection, bool ne
     disconnect(clientConnection, &QIODevice::readyRead, this, 0);
     connect(clientConnection, &QIODevice::readyRead, this, [this, clientConnection] {
         while (clientConnection->bytesAvailable()) {
+            // Discard the qint64 before the Request object.
+            clientConnection->read(sizeof(qint64));
+
             // When the socket has been disconnected, the cycle gets broken.
             if (!this->readFromExistingConnection(clientConnection)) break;
         }
@@ -423,7 +440,7 @@ void NetworkServer::createNewDocumentDirectory(QString username, QString filenam
     QSqlDatabase::removeDatabase(symbols_db_path);
 }
 
-void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username, QString password, QString nickname) {
+void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username, QString password, QString nickname, QImage profile_pic, QString image_format) {
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
@@ -455,6 +472,10 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
         users_db.commit();
     }
     users_db.close();
+
+    // Storing the profile picture.
+    QString profile_pic_path = QDir::toNativeSeparators("profiles_pics/" + username + "." + image_format);
+    profile_pic.save(profile_pic_path, image_format.toStdString().c_str());
 
     // Creating the user's documents folder.
     QString new_path = "documents/" + username;

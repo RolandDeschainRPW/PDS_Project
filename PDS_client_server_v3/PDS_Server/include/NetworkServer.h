@@ -15,6 +15,7 @@
 #include <QString>
 #include <QVector>
 #include <QSqlDatabase>
+#include <QImage>
 
 #include "../include/Symbol.h"
 #include "../include/Message.h"
@@ -48,7 +49,7 @@ private:
     QNetworkSession* networkSession = nullptr;
 
     void connectClient(QTcpSocket* clientConnection, QString username, QString password);
-    void signUpNewUser(QTcpSocket* clientConnection, QString username, QString password, QString nickname);
+    void signUpNewUser(QTcpSocket* clientConnection, QString username, QString password, QString nickname, QImage profile_pic, QString image_format);
     void createNewDocumentDirectory(QString username, QString filename);
     bool isThisUsernameInDatabase(QString username, QString* password = nullptr, QString* nickname = nullptr);
     bool isThisNicknameInDatabase(QString nickname, QString* username = nullptr);

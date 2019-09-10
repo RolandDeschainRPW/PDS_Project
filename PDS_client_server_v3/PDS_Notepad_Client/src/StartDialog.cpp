@@ -11,6 +11,7 @@
 #include "../include/NetworkingData.h"
 #include "../include/Request.h"
 #include "../include/Response.h"
+#include "../include/SerialSize.h"
 #include "ui_startdialog.h"
 
 StartDialog::StartDialog(QWidget* parent) : QDialog(parent),
@@ -143,7 +144,12 @@ void StartDialog::connectToServer() {
     out.setVersion(QDataStream::Qt_5_13);
 
     Request req_to_send = Request(Request::SITE_ID_UNASSIGNED, Request::CONNECT_TYPE, std::nullopt, ui->usernameLineEdit->text(), ui->passwordLineEdit->text());
-    out << req_to_send;
+
+    // Calculating the size of the request in bytes.
+    SerialSize size;
+    qint64 req_size = size(req_to_send);
+
+    out << req_size << req_to_send;
     tcpSocket->write(block);
 }
 

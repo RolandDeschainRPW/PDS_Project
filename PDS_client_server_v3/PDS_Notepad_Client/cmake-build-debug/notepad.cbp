@@ -149,6 +149,9 @@
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Response.h">
 			<Option target="notepad"/>
 		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SerialSize.h">
+			<Option target="notepad"/>
+		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/SharedDocumentsExplorer.h">
 			<Option target="notepad"/>
 		</Unit>

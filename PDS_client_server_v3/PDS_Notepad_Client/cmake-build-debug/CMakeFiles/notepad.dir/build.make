@@ -75,6 +75,7 @@ notepad_autogen/EWIEGA46WW/qrc_notepad.cpp: ../images/edit_undo.png
 notepad_autogen/EWIEGA46WW/qrc_notepad.cpp: ../images/cut.png
 notepad_autogen/EWIEGA46WW/qrc_notepad.cpp: ../images/save_as.png
 notepad_autogen/EWIEGA46WW/qrc_notepad.cpp: ../images/new.png
+notepad_autogen/EWIEGA46WW/qrc_notepad.cpp: ../images/default_profile_pic.png
 notepad_autogen/EWIEGA46WW/qrc_notepad.cpp: ../images/italic.png
 notepad_autogen/EWIEGA46WW/qrc_notepad.cpp: C:/Qt/5.13.0/mingw73_64/bin/rcc.exe
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Automatic RCC for notepad.qrc"

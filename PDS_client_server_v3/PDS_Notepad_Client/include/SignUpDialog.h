@@ -7,6 +7,8 @@
 
 #include <QDialog>
 #include <QtNetwork>
+#include <QImage>
+
 #include "../include/NetworkingData.h"
 
 QT_BEGIN_NAMESPACE
@@ -27,11 +29,13 @@ private slots:
     void enableOkButton();
     void displayError(QAbstractSocket::SocketError socketError);
     void getSignUpResult();
+    void changeProfilePic();
 
 private:
     Ui::SignUpDialog* ui = nullptr;
     QTcpSocket* clientConnection;
     QDataStream in;
+    QString profile_pic_path;
 
     void closeEvent(QCloseEvent* event) override;
 };

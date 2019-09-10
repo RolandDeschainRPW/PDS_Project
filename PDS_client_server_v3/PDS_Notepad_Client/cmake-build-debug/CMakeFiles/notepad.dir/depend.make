@@ -212,6 +212,7 @@ CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj: C:/Qt/5.13.0/mi
 CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
 CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
 CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
 CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QTextCursor
 CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
 CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
@@ -926,6 +927,7 @@ CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCo
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QFont
+CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QTextCursor
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
@@ -1066,6 +1068,7 @@ CMakeFiles/notepad.dir/src/Notepad.cpp.obj: ../include/Message.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: ../include/NetworkingData.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: ../include/Notepad.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: ../include/Request.h
+CMakeFiles/notepad.dir/src/Notepad.cpp.obj: ../include/SerialSize.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: ../include/Symbol.h
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: ../src/Notepad.cpp
 CMakeFiles/notepad.dir/src/Notepad.cpp.obj: notepad_autogen/include/ui_notepad.h
@@ -1267,6 +1270,22 @@ CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCo
 CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
 CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
 CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qimage.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qmatrix.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qpaintdevice.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qpainterpath.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qpixelformat.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qpolygon.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qregion.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qrgb.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qrgba64.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qtgui-config.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qtguiglobal.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qtransform.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h
+CMakeFiles/notepad.dir/src/Request.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h
 CMakeFiles/notepad.dir/src/Request.cpp.obj: ../include/Message.h
 CMakeFiles/notepad.dir/src/Request.cpp.obj: ../include/Request.h
 CMakeFiles/notepad.dir/src/Request.cpp.obj: ../include/Symbol.h
@@ -1679,6 +1698,7 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QTextCursor
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
@@ -1810,6 +1830,7 @@ CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/Networkin
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/Notepad.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/Request.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/Response.h
+CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/SerialSize.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/SharedDocumentsExplorer.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/SignUpDialog.h
 CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj: ../include/StartDialog.h
@@ -2025,6 +2046,9 @@ CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
+CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QImageWriter
+CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QPixmap
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qcursor.h
@@ -2035,6 +2059,8 @@ CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qguiapplication.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qicon.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qimage.h
+CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qimageiohandler.h
+CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qimagewriter.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qinputmethod.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qkeysequence.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qmatrix.h
@@ -2110,6 +2136,7 @@ CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qudpsocket.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QDialog
+CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QFileDialog
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLabel
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QLineEdit
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QMessageBox
@@ -2118,6 +2145,7 @@ CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qapplication.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qdesktopwidget.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qdialog.h
+CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qfiledialog.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qframe.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlabel.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qlineedit.h
@@ -2131,6 +2159,7 @@ CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: ../include/Message.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: ../include/NetworkingData.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: ../include/Request.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: ../include/Response.h
+CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: ../include/SerialSize.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: ../include/SignUpDialog.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: ../include/Symbol.h
 CMakeFiles/notepad.dir/src/SignUpDialog.cpp.obj: ../src/SignUpDialog.cpp
@@ -2675,6 +2704,7 @@ CMakeFiles/notepad.dir/src/StartDialog.cpp.obj: ../include/NetworkingData.h
 CMakeFiles/notepad.dir/src/StartDialog.cpp.obj: ../include/Notepad.h
 CMakeFiles/notepad.dir/src/StartDialog.cpp.obj: ../include/Request.h
 CMakeFiles/notepad.dir/src/StartDialog.cpp.obj: ../include/Response.h
+CMakeFiles/notepad.dir/src/StartDialog.cpp.obj: ../include/SerialSize.h
 CMakeFiles/notepad.dir/src/StartDialog.cpp.obj: ../include/SharedDocumentsExplorer.h
 CMakeFiles/notepad.dir/src/StartDialog.cpp.obj: ../include/SignUpDialog.h
 CMakeFiles/notepad.dir/src/StartDialog.cpp.obj: ../include/StartDialog.h
@@ -2948,6 +2978,7 @@ CMakeFiles/notepad.dir/src/main.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/
 CMakeFiles/notepad.dir/src/main.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qwaitcondition.h
 CMakeFiles/notepad.dir/src/main.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qwineventnotifier.h
 CMakeFiles/notepad.dir/src/main.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtCore/qxmlstream.h
+CMakeFiles/notepad.dir/src/main.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QImage
 CMakeFiles/notepad.dir/src/main.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/QTextCursor
 CMakeFiles/notepad.dir/src/main.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qbrush.h
 CMakeFiles/notepad.dir/src/main.cpp.obj: C:/Qt/5.13.0/mingw73_64/include/QtGui/qcolor.h

@@ -1,13 +1,14 @@
 //
-// Created by raffa on 24/08/2019.
+// Created by raffa on 21/08/2019.
 //
 
-#ifndef NOTEPAD_REQUEST_H
-#define NOTEPAD_REQUEST_H
+#ifndef PDS_SERVER_REQUEST_H
+#define PDS_SERVER_REQUEST_H
 
 #include <optional>
 
 #include <QtCore>
+#include <QImage>
 
 #include "../include/Message.h"
 
@@ -17,12 +18,14 @@ public:
     Request(const Request& req);
     Request(qint32 siteId,
             qint32 requestType,
-            std::optional<Message> opt_msg,
+            std::optional<Message> opt_msg = std::nullopt,
             QString username = "",
             QString password = "",
             QString filename = "",
             quint32 counter = 0,
-            QString nickname = "");
+            QString nickname = "",
+            std::optional<QImage> opt_img = std::nullopt,
+            QString image_format = "");
     ~Request();
 
     static const qint32 MESSAGE_TYPE = -1;
@@ -42,6 +45,8 @@ public:
     QString getFilename() const;
     quint32 getCounter() const;
     QString getNickname() const;
+    QImage getProfilePic() const;
+    QString getImageFormat() const;
 
 private:
     qint32 siteId;
@@ -52,9 +57,11 @@ private:
     QString password;
     QString filename;
     QString nickname;
+    QImage profile_pic;
+    QString image_format;
 };
 
 QDataStream &operator<<(QDataStream &out, const Request& req);
 QDataStream &operator>>(QDataStream &in, Request& req);
 
-#endif //NOTEPAD_REQUEST_H
+#endif //PDS_SERVER_REQUEST_H

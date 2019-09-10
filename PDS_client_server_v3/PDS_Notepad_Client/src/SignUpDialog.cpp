@@ -3,10 +3,14 @@
 //
 
 #include <QMessageBox>
+#include <QFileDialog>
+#include <QPixmap>
+#include <QImageWriter>
 
 #include "../include/SignUpDialog.h"
 #include "../include/Request.h"
 #include "../include/Response.h"
+#include "../include/SerialSize.h"
 #include "ui_signupdialog.h"
 
 SignUpDialog::SignUpDialog(QTcpSocket* clientConnection,
@@ -14,6 +18,8 @@ SignUpDialog::SignUpDialog(QTcpSocket* clientConnection,
                                         ui(new Ui::SignUpDialog),
                                         clientConnection(clientConnection) {
     ui->setupUi(this);
+
+    profile_pic_path = QDir::toNativeSeparators(":/images/default_profile_pic.png");
 
     connect(this, &QDialog::finished, this, &QObject::deleteLater);
     connect(clientConnection, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), this, &SignUpDialog::displayError);
@@ -24,6 +30,7 @@ SignUpDialog::SignUpDialog(QTcpSocket* clientConnection,
 
     connect(ui->cancelButton, &QAbstractButton::clicked, this, &QWidget::close);
     connect(ui->okButton, &QAbstractButton::clicked, this, &SignUpDialog::signUp);
+    connect(ui->newImageButton, &QAbstractButton::clicked, this, &SignUpDialog::changeProfilePic);
     connect(ui->newUsernameLineEdit, &QLineEdit::textChanged, this, &SignUpDialog::enableOkButton);
     connect(ui->newPasswordLineEdit, &QLineEdit::textChanged, this, &SignUpDialog::enableOkButton);
     connect(ui->repeatUsernameLineEdit, &QLineEdit::textChanged, this, &SignUpDialog::enableOkButton);
@@ -33,6 +40,20 @@ SignUpDialog::SignUpDialog(QTcpSocket* clientConnection,
 
 SignUpDialog::~SignUpDialog() {
     delete ui;
+}
+
+void SignUpDialog::changeProfilePic() {
+    profile_pic_path = QFileDialog::getOpenFileName(this, tr("Open Image"), "", tr("Image Files (*.png *.jpg)"));
+    QImage tmp_img = QImage(profile_pic_path);
+    QPixmap tmp_pixmap = QPixmap::fromImage(tmp_img);
+    if (tmp_pixmap.height() > 150 ||
+        tmp_pixmap.width() > 150) /* Resolution too high */ {
+        QMessageBox::information(this, tr("Resolution too high!"), tr("Choose a compatible profile picture (max. 150x150)"));
+        profile_pic_path = QDir::toNativeSeparators("images/default_profile_pic.png");
+        return;
+    }
+
+    ui->imageLabel->setPixmap(tmp_pixmap);
 }
 
 void SignUpDialog::getSignUpResult() {
@@ -68,12 +89,23 @@ void SignUpDialog::signUp() {
         QDataStream out(&block, QIODevice::WriteOnly);
         out.setVersion(QDataStream::Qt_5_13);
 
+        QFileInfo fileInfo = QFileInfo(profile_pic_path);
+        QString image_format = fileInfo.suffix();
+
+        QImage profile_pic = QImage(profile_pic_path, image_format.toStdString().c_str());
+
         Request req_to_send = Request(Request::SITE_ID_UNASSIGNED,
                 Request::SIGN_UP_TYPE, std::nullopt,
                 ui->newUsernameLineEdit->text(),
                 ui->newPasswordLineEdit->text(),
-                "", 0, ui->newNicknameLineEdit->text());
-        out << req_to_send;
+                "", 0, ui->newNicknameLineEdit->text(),
+                profile_pic, image_format);
+
+        // Calculating the size of the request in bytes.
+        SerialSize size;
+        qint64 req_size = size(req_to_send);
+
+        out << req_size << req_to_send;
         clientConnection->write(block);
     } else {
         QMessageBox::information(this, tr("Sign Up Information"), tr("Be sure that New Username and Repeat Username are equal.\n"

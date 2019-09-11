@@ -910,6 +910,7 @@ CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: ../include/Message.h
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: ../include/NetworkServer.h
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: ../include/Request.h
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: ../include/Response.h
+CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: ../include/SerialSize.h
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: ../include/SharedDocument.h
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: ../include/SharedEditor.h
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj: ../include/Symbol.h

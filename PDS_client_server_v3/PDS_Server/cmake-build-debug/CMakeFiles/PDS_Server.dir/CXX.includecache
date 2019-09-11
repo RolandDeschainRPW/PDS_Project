@@ -5580,6 +5580,10 @@ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include
 QtCore
 -
 
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SerialSize.h
+QtCore
+-
+
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SharedDocument.h
 queue
 -
@@ -5637,4 +5641,6 @@ QSqlError
 -
 ../include/Response.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Response.h
+../include/SerialSize.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SerialSize.h
 

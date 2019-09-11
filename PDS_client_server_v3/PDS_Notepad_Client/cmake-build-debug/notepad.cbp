@@ -137,6 +137,9 @@
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Message.h">
 			<Option target="notepad"/>
 		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/ModifyProfileDialog.h">
+			<Option target="notepad"/>
+		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/NetworkingData.h">
 			<Option target="notepad"/>
 		</Unit>
@@ -173,6 +176,9 @@
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/src/Message.cpp">
 			<Option target="notepad"/>
 		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/src/ModifyProfileDialog.cpp">
+			<Option target="notepad"/>
+		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/src/NetworkingData.cpp">
 			<Option target="notepad"/>
 		</Unit>
@@ -198,6 +204,9 @@
 			<Option target="notepad"/>
 		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/src/main.cpp">
+			<Option target="notepad"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/ui/modifyprofiledialog.ui">
 			<Option target="notepad"/>
 		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/ui/notepad.ui">

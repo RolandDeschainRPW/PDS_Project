@@ -32,6 +32,10 @@ public:
     static const qint32 NICKNAME_NON_EXISTENT = -50;
     static const qint32 NICKNAME_ACTIVE = -60;
 
+    // For profile modifications.
+    static const qint32 PROFILE_MODIFIED = -80;
+    static const qint32 PROFILE_PIC_NOT_STORED = -90;
+    static const qint32 PASSWORD_NOT_STORED = -100;
 
 private:
     qint32 result;

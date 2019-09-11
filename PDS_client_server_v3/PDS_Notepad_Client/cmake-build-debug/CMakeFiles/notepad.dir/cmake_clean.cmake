@@ -14,6 +14,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/notepad.dir/src/Response.cpp.obj"
   "CMakeFiles/notepad.dir/src/DocumentsModel.cpp.obj"
   "CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj"
+  "CMakeFiles/notepad.dir/src/ModifyProfileDialog.cpp.obj"
   "CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj"
   "notepad.pdb"
   "notepad.exe"

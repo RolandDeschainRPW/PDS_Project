@@ -86,8 +86,9 @@ QDataStream &operator<<(QDataStream &out, const Request& req) {
     out << req.getSiteId() << req.getRequestType() << req.getUsername() << req.getPassword() << req.getFilename() << req.getCounter() << req.getNickname() << req.getImageFormat();
     if (req.getRequestType() == Request::MESSAGE_TYPE)
         out << req.getMessage();
-    if (req.getRequestType() == Request::SIGN_UP_TYPE)
+    if (req.getRequestType() == Request::SIGN_UP_TYPE || req.getRequestType() == Request::MODIFY_PROFILE_PIC_TYPE)
         out << req.getProfilePic();
+
     return out;
 }
 
@@ -111,7 +112,7 @@ QDataStream &operator>>(QDataStream &in, Request& req) {
         return in;
     }
 
-    if (request_type == Request::SIGN_UP_TYPE) {
+    if (request_type == Request::SIGN_UP_TYPE || request_type == Request::MODIFY_PROFILE_PIC_TYPE) {
         in >> profile_pic;
         req = Request(siteId, request_type, msg, username, password, filename, counter, nickname, profile_pic, image_format);
         return in;

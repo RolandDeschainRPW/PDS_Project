@@ -62,10 +62,29 @@ SharedDocumentsExplorer::SharedDocumentsExplorer(QTcpSocket* clientConnection,
     connect(ui->newDocumentButton, &QAbstractButton::clicked, this, &SharedDocumentsExplorer::askNewDocumentFilename);
     connect(ui->openDocumentButton, &QAbstractButton::clicked, this, &SharedDocumentsExplorer::openDocument);
     connect(ui->addCollaboratorButton, &QAbstractButton::clicked, this, &SharedDocumentsExplorer::addCollaborator);
+    connect(ui->modifyProfileButton, &QAbstractButton::clicked, this, &SharedDocumentsExplorer::openModifyProfileDialog);
 }
 
 SharedDocumentsExplorer::~SharedDocumentsExplorer() {
     delete ui;
+}
+
+void SharedDocumentsExplorer::openModifyProfileDialog() {
+    ui->modifyProfileButton->setEnabled(false);
+
+    // Temporarily disconnecting these two signals
+    disconnect(clientConnection, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), this, &SharedDocumentsExplorer::displayError);
+    disconnect(clientConnection, &QIODevice::readyRead, this, &SharedDocumentsExplorer::readStartDataFromServer);
+
+    mod_profile_dialog = new ModifyProfileDialog(clientConnection, networkSession, username, this);
+    connect(mod_profile_dialog, &QDialog::finished, this, [this] {
+        // Reconnecting signals.
+        connect(clientConnection, QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), this, &SharedDocumentsExplorer::displayError);
+        connect(clientConnection, &QIODevice::readyRead, this, &SharedDocumentsExplorer::readStartDataFromServer);
+    });
+
+    mod_profile_dialog->open();
+    ui->modifyProfileButton->setEnabled(true);
 }
 
 void SharedDocumentsExplorer::askNewDocumentFilename() {

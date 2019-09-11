@@ -137,6 +137,9 @@
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Response.h">
 			<Option target="PDS_Server"/>
 		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SerialSize.h">
+			<Option target="PDS_Server"/>
+		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SharedDocument.h">
 			<Option target="PDS_Server"/>
 		</Unit>

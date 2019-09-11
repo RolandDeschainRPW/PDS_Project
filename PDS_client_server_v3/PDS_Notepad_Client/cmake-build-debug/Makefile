@@ -243,6 +243,33 @@ src/Message.cpp.s:
 	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Message.cpp.s
 .PHONY : src/Message.cpp.s
 
+src/ModifyProfileDialog.obj: src/ModifyProfileDialog.cpp.obj
+
+.PHONY : src/ModifyProfileDialog.obj
+
+# target to build an object file
+src/ModifyProfileDialog.cpp.obj:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/ModifyProfileDialog.cpp.obj
+.PHONY : src/ModifyProfileDialog.cpp.obj
+
+src/ModifyProfileDialog.i: src/ModifyProfileDialog.cpp.i
+
+.PHONY : src/ModifyProfileDialog.i
+
+# target to preprocess a source file
+src/ModifyProfileDialog.cpp.i:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/ModifyProfileDialog.cpp.i
+.PHONY : src/ModifyProfileDialog.cpp.i
+
+src/ModifyProfileDialog.s: src/ModifyProfileDialog.cpp.s
+
+.PHONY : src/ModifyProfileDialog.s
+
+# target to generate assembly for a file
+src/ModifyProfileDialog.cpp.s:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/ModifyProfileDialog.cpp.s
+.PHONY : src/ModifyProfileDialog.cpp.s
+
 src/NetworkingData.obj: src/NetworkingData.cpp.obj
 
 .PHONY : src/NetworkingData.obj
@@ -508,6 +535,9 @@ help:
 	@echo ... src/Message.obj
 	@echo ... src/Message.i
 	@echo ... src/Message.s
+	@echo ... src/ModifyProfileDialog.obj
+	@echo ... src/ModifyProfileDialog.i
+	@echo ... src/ModifyProfileDialog.s
 	@echo ... src/NetworkingData.obj
 	@echo ... src/NetworkingData.i
 	@echo ... src/NetworkingData.s

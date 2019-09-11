@@ -36,6 +36,9 @@ public:
     static const qint32 OPEN_DOCUMENT_TYPE = -20;
     static const qint32 NEW_DOCUMENT_TYPE = -21;
     static const qint32 ADD_COLLABORATOR_TYPE = -30;
+    static const qint32 GET_PROFILE_PIC_TYPE = -80;
+    static const qint32 MODIFY_PASSWORD_TYPE = -70;
+    static const qint32 MODIFY_PROFILE_PIC_TYPE = -100;
 
     qint32 getSiteId() const;
     qint32 getRequestType() const;

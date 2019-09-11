@@ -9,6 +9,7 @@
 #include <QtNetwork>
 
 #include "../include/Notepad.h"
+#include "../include/ModifyProfileDialog.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -29,10 +30,12 @@ private slots:
     void openDocument();
     void readStartDataFromServer();
     void addCollaborator();
+    void openModifyProfileDialog();
 
 private:
     Ui::SharedDocumentsExplorer* ui = nullptr;
     Notepad* notepad = nullptr;
+    ModifyProfileDialog* mod_profile_dialog = nullptr;
     QTcpSocket* clientConnection = nullptr;
     QNetworkSession* networkSession = nullptr;
     QMap<QString, QString> files_map;

@@ -43,7 +43,8 @@ set(INCLUDE_FILES
         include/NetworkServer.h
         include/SharedEditor.h
         include/SharedDocument.h
-        include/Response.h)
+        include/Response.h
+        include/SerialSize.h)
 
 add_executable(PDS_Server
         ${INCLUDE_FILES}

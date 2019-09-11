@@ -61,6 +61,8 @@ private:
     void removeFromOpenDocuments(SharedDocument* document);
     void addCollaborator(QString nickname, QString username, QString filename);
     void addPermission(QString collaborator_username, QString owner_nickname, QString file_path);
+    void modifyProfile(QTcpSocket* clientConnection, QString username, QString image_format, std::optional<QImage> opt_profile_pic, QString new_password);
+    void sendProfilePic(QTcpSocket* clientConnection, QString username);
 };
 
 #endif //PDS_SERVER_NETWORKSERVER_H

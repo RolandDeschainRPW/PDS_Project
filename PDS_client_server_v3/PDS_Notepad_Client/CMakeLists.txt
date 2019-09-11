@@ -39,7 +39,8 @@ set(SOURCE_FILES
         src/SignUpDialog.cpp
         src/Response.cpp
         src/DocumentsModel.cpp
-        src/SharedDocumentsExplorer.cpp)
+        src/SharedDocumentsExplorer.cpp
+        src/ModifyProfileDialog.cpp)
 
 set(INCLUDE_FILES
         include/Notepad.h
@@ -52,7 +53,8 @@ set(INCLUDE_FILES
         include/Response.h
         include/DocumentsModel.h
         include/SharedDocumentsExplorer.h
-        include/SerialSize.h)
+        include/SerialSize.h
+        include/ModifyProfileDialog.h)
 
 set(RESOURCE_FILES
         notepad.qrc)
@@ -60,7 +62,8 @@ set(RESOURCE_FILES
 set(UI_FILES
         ui/notepad.ui
         ui/startdialog.ui
-        ui/shareddocumentsexplorer.ui)
+        ui/shareddocumentsexplorer.ui
+        ui/modifyprofiledialog.ui)
 
 add_executable(notepad
         ${UI_FILES}

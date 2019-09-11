@@ -15,6 +15,7 @@
 #include <QSqlError>
 
 #include "../include/Response.h"
+#include "../include/SerialSize.h"
 
 NetworkServer::NetworkServer(QString usersDbFileName,
                         QWidget *parent) : QDialog(parent),
@@ -342,7 +343,114 @@ void NetworkServer::processNewConnections(QTcpSocket* clientConnection) {
         Response res = Response(result, QMap<QString, QString>());
         out << res;
         clientConnection->write(block);
+    } else if (next_req.getRequestType() == Request::GET_PROFILE_PIC_TYPE) {
+        this->sendProfilePic(clientConnection, next_req.getUsername());
+    } else if (next_req.getRequestType() == Request::MODIFY_PASSWORD_TYPE) {
+        this->modifyProfile(clientConnection,
+                            next_req.getUsername(),
+                            next_req.getImageFormat(),
+                            std::nullopt,
+                            next_req.getPassword());
+    } else if (next_req.getRequestType() == Request::MODIFY_PROFILE_PIC_TYPE) {
+        this->modifyProfile(clientConnection,
+                            next_req.getUsername(),
+                            next_req.getImageFormat(),
+                            next_req.getProfilePic(),
+                            next_req.getPassword());
     }
+}
+
+void NetworkServer::sendProfilePic(QTcpSocket* clientConnection, QString username) {
+    QString profile_pic_path = "";
+
+    QDirIterator it("profiles_pics", QDirIterator::Subdirectories);
+    while (it.hasNext()) {
+        it.next();
+        if (QFileInfo(it.filePath()).isFile())
+            if (QFileInfo(it.filePath()).fileName().contains(username, Qt::CaseInsensitive)) {
+                profile_pic_path = it.filePath();
+                break;
+            }
+    }
+
+    QImage profile_pic(QDir::toNativeSeparators(profile_pic_path));
+
+    // Calculating the size of the image.
+    SerialSize size;
+    qint64 img_size = size(profile_pic);
+
+    QByteArray block;
+    QDataStream out(&block, QIODevice::WriteOnly);
+    out.setVersion(QDataStream::Qt_5_13);
+
+    out << img_size << profile_pic;
+    clientConnection->write(block);
+}
+
+void NetworkServer::modifyProfile(QTcpSocket* clientConnection, QString username, QString image_format, std::optional<QImage> opt_profile_pic, QString new_password) {
+    qint32 result;
+    QImage tmp_img;
+    QString tmp_img_format;
+    bool failed = false;
+
+    if (opt_profile_pic.has_value()) {
+        QImage profile_pic = opt_profile_pic.value();
+
+        // Deleting old profile pic.
+        QDirIterator it("profiles_pics", QDirIterator::Subdirectories);
+        while (it.hasNext()) {
+            it.next();
+            if (QFileInfo(it.filePath()).isFile())
+                if (QFileInfo(it.filePath()).fileName().contains(username, Qt::CaseInsensitive)) {
+                    tmp_img_format = QFileInfo(it.filePath()).suffix();
+                    tmp_img.load(it.filePath(), tmp_img_format.toStdString().c_str());
+                    failed = !QFile::remove(it.filePath());
+                    if (failed) {
+                        qDebug().noquote() << "Something went wrong!\n\t-> I could not delete old profile picture!";
+                        result = Response::PROFILE_PIC_NOT_STORED;
+                    }
+                    break;
+                }
+        }
+
+        // Storing the new profile picture.
+        QString profile_pic_path = QDir::toNativeSeparators("profiles_pics/" + username + "." + image_format);
+        failed = !profile_pic.save(profile_pic_path, image_format.toStdString().c_str());
+        if (failed) {
+            qDebug().noquote() << "Something went wrong!\n\t-> I could not save the profile picture!";
+            QString old_path = QDir::toNativeSeparators("profiles_pics/" + username + "." + tmp_img_format);
+            tmp_img.save(old_path, tmp_img_format.toStdString().c_str());
+            result = Response::PROFILE_PIC_NOT_STORED;
+        }
+    }
+
+    if (QString::compare(new_password, "") != 0 && !failed) /* Updating the password. */ {
+        QSqlDatabase users_db = QSqlDatabase::database("users_db_conn");
+        users_db.open();
+        {
+            users_db.transaction();
+            QSqlQuery query(users_db);
+            bool done = query.exec("UPDATE USERS SET PASSWORD='" + new_password + "' WHERE USERNAME='" + username + "'");
+            if (!done) {
+                qDebug() << query.lastError();
+                result = Response::PASSWORD_NOT_STORED;
+                failed = true;
+            }
+            users_db.commit();
+        }
+        users_db.close();
+    }
+
+    if (!failed) result = Response::PROFILE_MODIFIED;
+
+    QByteArray block;
+    QDataStream out(&block, QIODevice::WriteOnly);
+    out.setVersion(QDataStream::Qt_5_13);
+
+    Response res = Response(result, QMap<QString, QString>());
+
+    out << res;
+    clientConnection->write(block);
 }
 
 void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename, QString owner_username, QString opener_nickname) {

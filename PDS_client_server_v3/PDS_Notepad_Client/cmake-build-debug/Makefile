@@ -189,6 +189,33 @@ notepad_autogen/mocs_compilation.cpp.s:
 	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/notepad_autogen/mocs_compilation.cpp.s
 .PHONY : notepad_autogen/mocs_compilation.cpp.s
 
+src/Collaborator.obj: src/Collaborator.cpp.obj
+
+.PHONY : src/Collaborator.obj
+
+# target to build an object file
+src/Collaborator.cpp.obj:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Collaborator.cpp.obj
+.PHONY : src/Collaborator.cpp.obj
+
+src/Collaborator.i: src/Collaborator.cpp.i
+
+.PHONY : src/Collaborator.i
+
+# target to preprocess a source file
+src/Collaborator.cpp.i:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Collaborator.cpp.i
+.PHONY : src/Collaborator.cpp.i
+
+src/Collaborator.s: src/Collaborator.cpp.s
+
+.PHONY : src/Collaborator.s
+
+# target to generate assembly for a file
+src/Collaborator.cpp.s:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/Collaborator.cpp.s
+.PHONY : src/Collaborator.cpp.s
+
 src/DocumentsModel.obj: src/DocumentsModel.cpp.obj
 
 .PHONY : src/DocumentsModel.obj
@@ -269,6 +296,33 @@ src/ModifyProfileDialog.s: src/ModifyProfileDialog.cpp.s
 src/ModifyProfileDialog.cpp.s:
 	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/ModifyProfileDialog.cpp.s
 .PHONY : src/ModifyProfileDialog.cpp.s
+
+src/MyTextEdit.obj: src/MyTextEdit.cpp.obj
+
+.PHONY : src/MyTextEdit.obj
+
+# target to build an object file
+src/MyTextEdit.cpp.obj:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/MyTextEdit.cpp.obj
+.PHONY : src/MyTextEdit.cpp.obj
+
+src/MyTextEdit.i: src/MyTextEdit.cpp.i
+
+.PHONY : src/MyTextEdit.i
+
+# target to preprocess a source file
+src/MyTextEdit.cpp.i:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/MyTextEdit.cpp.i
+.PHONY : src/MyTextEdit.cpp.i
+
+src/MyTextEdit.s: src/MyTextEdit.cpp.s
+
+.PHONY : src/MyTextEdit.s
+
+# target to generate assembly for a file
+src/MyTextEdit.cpp.s:
+	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/src/MyTextEdit.cpp.s
+.PHONY : src/MyTextEdit.cpp.s
 
 src/NetworkingData.obj: src/NetworkingData.cpp.obj
 
@@ -529,6 +583,9 @@ help:
 	@echo ... notepad_autogen/mocs_compilation.obj
 	@echo ... notepad_autogen/mocs_compilation.i
 	@echo ... notepad_autogen/mocs_compilation.s
+	@echo ... src/Collaborator.obj
+	@echo ... src/Collaborator.i
+	@echo ... src/Collaborator.s
 	@echo ... src/DocumentsModel.obj
 	@echo ... src/DocumentsModel.i
 	@echo ... src/DocumentsModel.s
@@ -538,6 +595,9 @@ help:
 	@echo ... src/ModifyProfileDialog.obj
 	@echo ... src/ModifyProfileDialog.i
 	@echo ... src/ModifyProfileDialog.s
+	@echo ... src/MyTextEdit.obj
+	@echo ... src/MyTextEdit.i
+	@echo ... src/MyTextEdit.s
 	@echo ... src/NetworkingData.obj
 	@echo ... src/NetworkingData.i
 	@echo ... src/NetworkingData.s

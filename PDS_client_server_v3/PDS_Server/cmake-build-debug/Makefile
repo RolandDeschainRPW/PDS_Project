@@ -162,6 +162,33 @@ PDS_Server_autogen/mocs_compilation.cpp.s:
 	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/PDS_Server_autogen/mocs_compilation.cpp.s
 .PHONY : PDS_Server_autogen/mocs_compilation.cpp.s
 
+src/Collaborator.obj: src/Collaborator.cpp.obj
+
+.PHONY : src/Collaborator.obj
+
+# target to build an object file
+src/Collaborator.cpp.obj:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/Collaborator.cpp.obj
+.PHONY : src/Collaborator.cpp.obj
+
+src/Collaborator.i: src/Collaborator.cpp.i
+
+.PHONY : src/Collaborator.i
+
+# target to preprocess a source file
+src/Collaborator.cpp.i:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/Collaborator.cpp.i
+.PHONY : src/Collaborator.cpp.i
+
+src/Collaborator.s: src/Collaborator.cpp.s
+
+.PHONY : src/Collaborator.s
+
+# target to generate assembly for a file
+src/Collaborator.cpp.s:
+	$(MAKE) -f CMakeFiles\PDS_Server.dir\build.make CMakeFiles/PDS_Server.dir/src/Collaborator.cpp.s
+.PHONY : src/Collaborator.cpp.s
+
 src/Message.obj: src/Message.cpp.obj
 
 .PHONY : src/Message.obj
@@ -391,6 +418,9 @@ help:
 	@echo ... PDS_Server_autogen/mocs_compilation.obj
 	@echo ... PDS_Server_autogen/mocs_compilation.i
 	@echo ... PDS_Server_autogen/mocs_compilation.s
+	@echo ... src/Collaborator.obj
+	@echo ... src/Collaborator.i
+	@echo ... src/Collaborator.s
 	@echo ... src/Message.obj
 	@echo ... src/Message.i
 	@echo ... src/Message.s

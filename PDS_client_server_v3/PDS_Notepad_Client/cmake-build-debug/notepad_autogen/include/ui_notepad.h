@@ -12,14 +12,16 @@
 #include <QtCore/QVariant>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
-#include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "MyTextEdit.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -34,8 +36,22 @@ public:
     QAction *actionUndo;
     QAction *actionRedo;
     QWidget *centralWidget;
+    QHBoxLayout *horizontalLayout;
+    MyTextEdit *textEdit;
+    QWidget *collaboratorsWidget;
     QVBoxLayout *verticalLayout;
-    QTextEdit *textEdit;
+    QHBoxLayout *collaboratorLayout1;
+    QLabel *collaboratorPicLabel1;
+    QLabel *nicknameLabel1;
+    QHBoxLayout *collaboratorLayout2;
+    QLabel *collaboratorPicLabel2;
+    QLabel *nicknameLabel2;
+    QHBoxLayout *collaboratorLayout3;
+    QLabel *collaboratorPicLabel3;
+    QLabel *nicknameLabel3;
+    QHBoxLayout *collaboratorLayout4;
+    QLabel *collaboratorPicLabel4;
+    QLabel *nicknameLabel4;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuEdit;
@@ -46,7 +62,7 @@ public:
     {
         if (Notepad->objectName().isEmpty())
             Notepad->setObjectName(QString::fromUtf8("Notepad"));
-        Notepad->resize(800, 400);
+        Notepad->resize(1052, 737);
         actionPrint = new QAction(Notepad);
         actionPrint->setObjectName(QString::fromUtf8("actionPrint"));
         QIcon icon;
@@ -89,19 +105,176 @@ public:
         actionRedo->setIcon(icon6);
         centralWidget = new QWidget(Notepad);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        verticalLayout = new QVBoxLayout(centralWidget);
+        horizontalLayout = new QHBoxLayout(centralWidget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        textEdit = new MyTextEdit(centralWidget);
+        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+
+        horizontalLayout->addWidget(textEdit);
+
+        collaboratorsWidget = new QWidget(centralWidget);
+        collaboratorsWidget->setObjectName(QString::fromUtf8("collaboratorsWidget"));
+        verticalLayout = new QVBoxLayout(collaboratorsWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        textEdit = new QTextEdit(centralWidget);
-        textEdit->setObjectName(QString::fromUtf8("textEdit"));
+        collaboratorLayout1 = new QHBoxLayout();
+        collaboratorLayout1->setSpacing(6);
+        collaboratorLayout1->setObjectName(QString::fromUtf8("collaboratorLayout1"));
+        collaboratorPicLabel1 = new QLabel(collaboratorsWidget);
+        collaboratorPicLabel1->setObjectName(QString::fromUtf8("collaboratorPicLabel1"));
+        collaboratorPicLabel1->setMaximumSize(QSize(100, 100));
+        collaboratorPicLabel1->setPixmap(QPixmap(QString::fromUtf8(":/images/default_profile_pic.png")));
+        collaboratorPicLabel1->setScaledContents(true);
 
-        verticalLayout->addWidget(textEdit);
+        collaboratorLayout1->addWidget(collaboratorPicLabel1);
+
+        nicknameLabel1 = new QLabel(collaboratorsWidget);
+        nicknameLabel1->setObjectName(QString::fromUtf8("nicknameLabel1"));
+        nicknameLabel1->setMaximumSize(QSize(16777215, 35));
+        QPalette palette;
+        QBrush brush(QColor(255, 255, 255, 255));
+        brush.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Active, QPalette::Base, brush);
+        QBrush brush1(QColor(255, 0, 0, 255));
+        brush1.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Active, QPalette::Window, brush1);
+        palette.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette.setBrush(QPalette::Inactive, QPalette::Window, brush1);
+        QBrush brush2(QColor(120, 120, 120, 255));
+        brush2.setStyle(Qt::SolidPattern);
+        palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
+        palette.setBrush(QPalette::Disabled, QPalette::Base, brush1);
+        palette.setBrush(QPalette::Disabled, QPalette::Window, brush1);
+        nicknameLabel1->setPalette(palette);
+        QFont font;
+        font.setPointSize(10);
+        font.setBold(true);
+        font.setWeight(75);
+        nicknameLabel1->setFont(font);
+        nicknameLabel1->setAutoFillBackground(true);
+
+        collaboratorLayout1->addWidget(nicknameLabel1);
+
+
+        verticalLayout->addLayout(collaboratorLayout1);
+
+        collaboratorLayout2 = new QHBoxLayout();
+        collaboratorLayout2->setSpacing(6);
+        collaboratorLayout2->setObjectName(QString::fromUtf8("collaboratorLayout2"));
+        collaboratorPicLabel2 = new QLabel(collaboratorsWidget);
+        collaboratorPicLabel2->setObjectName(QString::fromUtf8("collaboratorPicLabel2"));
+        collaboratorPicLabel2->setMaximumSize(QSize(100, 100));
+        collaboratorPicLabel2->setPixmap(QPixmap(QString::fromUtf8(":/images/default_profile_pic.png")));
+        collaboratorPicLabel2->setScaledContents(true);
+
+        collaboratorLayout2->addWidget(collaboratorPicLabel2);
+
+        nicknameLabel2 = new QLabel(collaboratorsWidget);
+        nicknameLabel2->setObjectName(QString::fromUtf8("nicknameLabel2"));
+        nicknameLabel2->setMaximumSize(QSize(16777215, 35));
+        QPalette palette1;
+        palette1.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette1.setBrush(QPalette::Active, QPalette::Base, brush);
+        QBrush brush3(QColor(0, 255, 0, 255));
+        brush3.setStyle(Qt::SolidPattern);
+        palette1.setBrush(QPalette::Active, QPalette::Window, brush3);
+        palette1.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette1.setBrush(QPalette::Inactive, QPalette::Window, brush3);
+        palette1.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
+        palette1.setBrush(QPalette::Disabled, QPalette::Base, brush3);
+        palette1.setBrush(QPalette::Disabled, QPalette::Window, brush3);
+        nicknameLabel2->setPalette(palette1);
+        nicknameLabel2->setFont(font);
+        nicknameLabel2->setAutoFillBackground(true);
+
+        collaboratorLayout2->addWidget(nicknameLabel2);
+
+
+        verticalLayout->addLayout(collaboratorLayout2);
+
+        collaboratorLayout3 = new QHBoxLayout();
+        collaboratorLayout3->setSpacing(6);
+        collaboratorLayout3->setObjectName(QString::fromUtf8("collaboratorLayout3"));
+        collaboratorPicLabel3 = new QLabel(collaboratorsWidget);
+        collaboratorPicLabel3->setObjectName(QString::fromUtf8("collaboratorPicLabel3"));
+        collaboratorPicLabel3->setMaximumSize(QSize(100, 100));
+        collaboratorPicLabel3->setPixmap(QPixmap(QString::fromUtf8(":/images/default_profile_pic.png")));
+        collaboratorPicLabel3->setScaledContents(true);
+
+        collaboratorLayout3->addWidget(collaboratorPicLabel3);
+
+        nicknameLabel3 = new QLabel(collaboratorsWidget);
+        nicknameLabel3->setObjectName(QString::fromUtf8("nicknameLabel3"));
+        nicknameLabel3->setMaximumSize(QSize(16777215, 35));
+        QPalette palette2;
+        palette2.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette2.setBrush(QPalette::Active, QPalette::Base, brush);
+        QBrush brush4(QColor(0, 0, 255, 255));
+        brush4.setStyle(Qt::SolidPattern);
+        palette2.setBrush(QPalette::Active, QPalette::Window, brush4);
+        palette2.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette2.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette2.setBrush(QPalette::Inactive, QPalette::Window, brush4);
+        palette2.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
+        palette2.setBrush(QPalette::Disabled, QPalette::Base, brush4);
+        palette2.setBrush(QPalette::Disabled, QPalette::Window, brush4);
+        nicknameLabel3->setPalette(palette2);
+        nicknameLabel3->setFont(font);
+        nicknameLabel3->setAutoFillBackground(true);
+
+        collaboratorLayout3->addWidget(nicknameLabel3);
+
+
+        verticalLayout->addLayout(collaboratorLayout3);
+
+        collaboratorLayout4 = new QHBoxLayout();
+        collaboratorLayout4->setSpacing(6);
+        collaboratorLayout4->setObjectName(QString::fromUtf8("collaboratorLayout4"));
+        collaboratorPicLabel4 = new QLabel(collaboratorsWidget);
+        collaboratorPicLabel4->setObjectName(QString::fromUtf8("collaboratorPicLabel4"));
+        collaboratorPicLabel4->setMaximumSize(QSize(100, 100));
+        collaboratorPicLabel4->setPixmap(QPixmap(QString::fromUtf8(":/images/default_profile_pic.png")));
+        collaboratorPicLabel4->setScaledContents(true);
+
+        collaboratorLayout4->addWidget(collaboratorPicLabel4);
+
+        nicknameLabel4 = new QLabel(collaboratorsWidget);
+        nicknameLabel4->setObjectName(QString::fromUtf8("nicknameLabel4"));
+        nicknameLabel4->setMaximumSize(QSize(16777215, 35));
+        QPalette palette3;
+        palette3.setBrush(QPalette::Active, QPalette::WindowText, brush);
+        palette3.setBrush(QPalette::Active, QPalette::Base, brush);
+        QBrush brush5(QColor(255, 85, 0, 255));
+        brush5.setStyle(Qt::SolidPattern);
+        palette3.setBrush(QPalette::Active, QPalette::Window, brush5);
+        palette3.setBrush(QPalette::Inactive, QPalette::WindowText, brush);
+        palette3.setBrush(QPalette::Inactive, QPalette::Base, brush);
+        palette3.setBrush(QPalette::Inactive, QPalette::Window, brush5);
+        palette3.setBrush(QPalette::Disabled, QPalette::WindowText, brush2);
+        palette3.setBrush(QPalette::Disabled, QPalette::Base, brush5);
+        palette3.setBrush(QPalette::Disabled, QPalette::Window, brush5);
+        nicknameLabel4->setPalette(palette3);
+        nicknameLabel4->setFont(font);
+        nicknameLabel4->setAutoFillBackground(true);
+
+        collaboratorLayout4->addWidget(nicknameLabel4);
+
+
+        verticalLayout->addLayout(collaboratorLayout4);
+
+
+        horizontalLayout->addWidget(collaboratorsWidget);
 
         Notepad->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(Notepad);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 800, 21));
+        menuBar->setGeometry(QRect(0, 0, 1052, 21));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuEdit = new QMenu(menuBar);
@@ -174,6 +347,14 @@ public:
 #if QT_CONFIG(shortcut)
         actionRedo->setShortcut(QCoreApplication::translate("Notepad", "Ctrl+Y", nullptr));
 #endif // QT_CONFIG(shortcut)
+        collaboratorPicLabel1->setText(QString());
+        nicknameLabel1->setText(QCoreApplication::translate("Notepad", "Unconnected", nullptr));
+        collaboratorPicLabel2->setText(QString());
+        nicknameLabel2->setText(QCoreApplication::translate("Notepad", "Unconnected", nullptr));
+        collaboratorPicLabel3->setText(QString());
+        nicknameLabel3->setText(QCoreApplication::translate("Notepad", "Unconnected", nullptr));
+        collaboratorPicLabel4->setText(QString());
+        nicknameLabel4->setText(QCoreApplication::translate("Notepad", "Unconnected", nullptr));
         menuFile->setTitle(QCoreApplication::translate("Notepad", "File", nullptr));
         menuEdit->setTitle(QCoreApplication::translate("Notepad", "Edit", nullptr));
     } // retranslateUi

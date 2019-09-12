@@ -70,7 +70,7 @@ CMAKE_BINARY_DIR = D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3
 CMakeFiles/notepad.dir/all: CMakeFiles/notepad_autogen.dir/all
 	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/depend
 	$(MAKE) -f CMakeFiles\notepad.dir\build.make CMakeFiles/notepad.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 "Built target notepad"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18 "Built target notepad"
 .PHONY : CMakeFiles/notepad.dir/all
 
 # Include target in all.
@@ -80,7 +80,7 @@ all: CMakeFiles/notepad.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/notepad.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles 17
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles 19
 	$(MAKE) -f CMakeFiles\Makefile2 CMakeFiles/notepad.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles 0
 .PHONY : CMakeFiles/notepad.dir/rule
@@ -107,7 +107,7 @@ clean: CMakeFiles/notepad.dir/clean
 CMakeFiles/notepad_autogen.dir/all:
 	$(MAKE) -f CMakeFiles\notepad_autogen.dir\build.make CMakeFiles/notepad_autogen.dir/depend
 	$(MAKE) -f CMakeFiles\notepad_autogen.dir\build.make CMakeFiles/notepad_autogen.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles --progress-num=17 "Built target notepad_autogen"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles --progress-num=19 "Built target notepad_autogen"
 .PHONY : CMakeFiles/notepad_autogen.dir/all
 
 # Build rule for subdir invocation for target.

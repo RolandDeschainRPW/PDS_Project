@@ -131,6 +131,9 @@
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/cmake-build-debug/notepad_autogen/mocs_compilation.cpp">
 			<Option target="notepad"/>
 		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/Collaborator.h">
+			<Option target="notepad"/>
+		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/DocumentsModel.h">
 			<Option target="notepad"/>
 		</Unit>
@@ -138,6 +141,9 @@
 			<Option target="notepad"/>
 		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/ModifyProfileDialog.h">
+			<Option target="notepad"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/MyTextEdit.h">
 			<Option target="notepad"/>
 		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/include/NetworkingData.h">
@@ -170,6 +176,9 @@
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/notepad.qrc">
 			<Option target="notepad"/>
 		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/src/Collaborator.cpp">
+			<Option target="notepad"/>
+		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/src/DocumentsModel.cpp">
 			<Option target="notepad"/>
 		</Unit>
@@ -177,6 +186,9 @@
 			<Option target="notepad"/>
 		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/src/ModifyProfileDialog.cpp">
+			<Option target="notepad"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/src/MyTextEdit.cpp">
 			<Option target="notepad"/>
 		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Notepad_Client/src/NetworkingData.cpp">

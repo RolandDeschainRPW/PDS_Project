@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/mocs_compilation.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/PDS_Server_autogen/mocs_compilation.cpp.obj"
+  "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/Collaborator.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/src/Collaborator.cpp.obj"
   "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/Message.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/src/Message.cpp.obj"
   "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/NetworkServer.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj"
   "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/Request.cpp" "D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/CMakeFiles/PDS_Server.dir/src/Request.cpp.obj"

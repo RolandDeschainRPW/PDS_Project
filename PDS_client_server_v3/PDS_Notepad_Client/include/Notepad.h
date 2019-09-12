@@ -12,6 +12,7 @@
 #include "../include/Symbol.h"
 #include "../include/Message.h"
 #include "../include/NetworkingData.h"
+#include "../include/Collaborator.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -27,7 +28,14 @@ public:
     static const qint32 BOUNDARY_MINUS = 1;
     static const qint32 RANDOM = 2;
 
-    explicit Notepad(NetworkingData* net_data, QWidget *parent = 0, qint32 base = 32, qint32 boundary = 10, qint32 strategy = RANDOM);
+    explicit Notepad(NetworkingData* net_data,
+                     QImage profile_pic,
+                     QString nickname,
+                     QVector<Collaborator> connected_editors,
+                     QWidget *parent = 0,
+                     qint32 base = 32,
+                     qint32 boundary = 10,
+                     qint32 strategy = RANDOM);
     ~Notepad();
 
     qint32 getSiteId();
@@ -75,9 +83,13 @@ private:
     qint32 generateIdBetween(qint32 min, qint32 max, qint32 myStrategy);
     qint32 retrieveStrategy(qint32 level);
     bool comparePositions(std::optional<QVector<qint32>> pos1_opt, std::optional<QVector<qint32>> pos2_opt);
-    void readMessage();
+    void readMessage(Message& msg);
     void closeEvent(QCloseEvent* event) override;
     void updateDocument(qint32 index, qint32 updateType, QString text);
+    void updateConnectedCollaborators(qint32 site_id,
+                                      qint32 update_type,
+                                      QString nickname = "",
+                                      std::optional<QImage> opt_profile_pic = std::nullopt);
 };
 
 #endif // NOTEPAD_H

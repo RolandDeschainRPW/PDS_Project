@@ -263,10 +263,38 @@ CMakeFiles/notepad.dir/src/ModifyProfileDialog.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/notepad.dir/src/ModifyProfileDialog.cpp.s"
 	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\src\ModifyProfileDialog.cpp -o CMakeFiles\notepad.dir\src\ModifyProfileDialog.cpp.s
 
+CMakeFiles/notepad.dir/src/MyTextEdit.cpp.obj: CMakeFiles/notepad.dir/flags.make
+CMakeFiles/notepad.dir/src/MyTextEdit.cpp.obj: CMakeFiles/notepad.dir/includes_CXX.rsp
+CMakeFiles/notepad.dir/src/MyTextEdit.cpp.obj: ../src/MyTextEdit.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/notepad.dir/src/MyTextEdit.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\notepad.dir\src\MyTextEdit.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\src\MyTextEdit.cpp
+
+CMakeFiles/notepad.dir/src/MyTextEdit.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/notepad.dir/src/MyTextEdit.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\src\MyTextEdit.cpp > CMakeFiles\notepad.dir\src\MyTextEdit.cpp.i
+
+CMakeFiles/notepad.dir/src/MyTextEdit.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/notepad.dir/src/MyTextEdit.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\src\MyTextEdit.cpp -o CMakeFiles\notepad.dir\src\MyTextEdit.cpp.s
+
+CMakeFiles/notepad.dir/src/Collaborator.cpp.obj: CMakeFiles/notepad.dir/flags.make
+CMakeFiles/notepad.dir/src/Collaborator.cpp.obj: CMakeFiles/notepad.dir/includes_CXX.rsp
+CMakeFiles/notepad.dir/src/Collaborator.cpp.obj: ../src/Collaborator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/notepad.dir/src/Collaborator.cpp.obj"
+	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\notepad.dir\src\Collaborator.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\src\Collaborator.cpp
+
+CMakeFiles/notepad.dir/src/Collaborator.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/notepad.dir/src/Collaborator.cpp.i"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\src\Collaborator.cpp > CMakeFiles\notepad.dir\src\Collaborator.cpp.i
+
+CMakeFiles/notepad.dir/src/Collaborator.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/notepad.dir/src/Collaborator.cpp.s"
+	C:\msys64\mingw64\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\src\Collaborator.cpp -o CMakeFiles\notepad.dir\src\Collaborator.cpp.s
+
 CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj: CMakeFiles/notepad.dir/flags.make
 CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj: CMakeFiles/notepad.dir/includes_CXX.rsp
 CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj: notepad_autogen/EWIEGA46WW/qrc_notepad.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj"
 	C:\msys64\mingw64\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\notepad.dir\notepad_autogen\EWIEGA46WW\qrc_notepad.cpp.obj -c D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\notepad_autogen\EWIEGA46WW\qrc_notepad.cpp
 
 CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.i: cmake_force
@@ -292,6 +320,8 @@ notepad_OBJECTS = \
 "CMakeFiles/notepad.dir/src/DocumentsModel.cpp.obj" \
 "CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj" \
 "CMakeFiles/notepad.dir/src/ModifyProfileDialog.cpp.obj" \
+"CMakeFiles/notepad.dir/src/MyTextEdit.cpp.obj" \
+"CMakeFiles/notepad.dir/src/Collaborator.cpp.obj" \
 "CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj"
 
 # External object files for target notepad
@@ -310,6 +340,8 @@ notepad.exe: CMakeFiles/notepad.dir/src/Response.cpp.obj
 notepad.exe: CMakeFiles/notepad.dir/src/DocumentsModel.cpp.obj
 notepad.exe: CMakeFiles/notepad.dir/src/SharedDocumentsExplorer.cpp.obj
 notepad.exe: CMakeFiles/notepad.dir/src/ModifyProfileDialog.cpp.obj
+notepad.exe: CMakeFiles/notepad.dir/src/MyTextEdit.cpp.obj
+notepad.exe: CMakeFiles/notepad.dir/src/Collaborator.cpp.obj
 notepad.exe: CMakeFiles/notepad.dir/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.obj
 notepad.exe: CMakeFiles/notepad.dir/build.make
 notepad.exe: C:/Qt/5.13.0/mingw73_64/lib/libQt5Networkd.a
@@ -320,7 +352,7 @@ notepad.exe: C:/Qt/5.13.0/mingw73_64/lib/libQt5Cored.a
 notepad.exe: CMakeFiles/notepad.dir/linklibs.rsp
 notepad.exe: CMakeFiles/notepad.dir/objects1.rsp
 notepad.exe: CMakeFiles/notepad.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable notepad.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Raffaele\Documenti\GitHub\PDS_Project\PDS_client_server_v3\PDS_Notepad_Client\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Linking CXX executable notepad.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\notepad.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

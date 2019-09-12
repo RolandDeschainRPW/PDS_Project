@@ -125,6 +125,9 @@
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/mocs_compilation.cpp">
 			<Option target="PDS_Server"/>
 		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Collaborator.h">
+			<Option target="PDS_Server"/>
+		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Message.h">
 			<Option target="PDS_Server"/>
 		</Unit>
@@ -147,6 +150,9 @@
 			<Option target="PDS_Server"/>
 		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Symbol.h">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/Collaborator.cpp">
 			<Option target="PDS_Server"/>
 		</Unit>
 		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/Message.cpp">

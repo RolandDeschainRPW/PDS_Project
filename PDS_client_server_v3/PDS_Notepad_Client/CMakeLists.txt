@@ -40,7 +40,9 @@ set(SOURCE_FILES
         src/Response.cpp
         src/DocumentsModel.cpp
         src/SharedDocumentsExplorer.cpp
-        src/ModifyProfileDialog.cpp)
+        src/ModifyProfileDialog.cpp
+        src/MyTextEdit.cpp
+        src/Collaborator.cpp)
 
 set(INCLUDE_FILES
         include/Notepad.h
@@ -54,7 +56,9 @@ set(INCLUDE_FILES
         include/DocumentsModel.h
         include/SharedDocumentsExplorer.h
         include/SerialSize.h
-        include/ModifyProfileDialog.h)
+        include/ModifyProfileDialog.h
+        include/MyTextEdit.h
+        include/Collaborator.h)
 
 set(RESOURCE_FILES
         notepad.qrc)

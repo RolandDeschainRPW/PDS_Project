@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/PDS_Server.dir/src/SharedEditor.cpp.obj"
   "CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj"
   "CMakeFiles/PDS_Server.dir/src/Response.cpp.obj"
+  "CMakeFiles/PDS_Server.dir/src/Collaborator.cpp.obj"
   "PDS_Server.pdb"
   "PDS_Server.exe"
   "PDS_Server.exe.manifest"

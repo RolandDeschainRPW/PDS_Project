@@ -58,8 +58,19 @@ void SignUpDialog::changeProfilePic() {
 
 void SignUpDialog::getSignUpResult() {
     in.startTransaction();
+
+    qint64 size;
+    in >> size;
+
+    if(size > clientConnection->bytesAvailable()) {
+        in.rollbackTransaction();
+        in.abortTransaction();
+        return;
+    }
+
     Response res;
     in >> res;
+
     if (!in.commitTransaction()) {
         qDebug() << "Something went wrong!\n\t-> I could not complete SignUp process!";
         ui->okButton->setEnabled(true);

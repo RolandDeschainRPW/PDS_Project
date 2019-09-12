@@ -5,11 +5,14 @@
 #ifndef NOTEPAD_MESSAGE_H
 #define NOTEPAD_MESSAGE_H
 
+#include <optional>
+
 #include <iostream>
 #include <queue>
 #include <memory>
 #include <vector>
 #include <QDataStream>
+#include <QImage>
 
 #include "../include/Symbol.h"
 
@@ -18,13 +21,21 @@ private:
     qint32 _siteId;
     qint32 type;
     Symbol s;
+    QString incoming_nickname;
+    QImage incoming_user_pic;
 
 public:
-    static const qint32 INSERT_TYPE = -1;
-    static const qint32 ERASE_TYPE = -2;
+    static const int INSERT_TYPE = -1;
+    static const int ERASE_TYPE = -2;
+    static const int NOTIFY_CONNECTION = -3;
+    static const int NOTIFY_DISCONNECTION = -4;
 
     Message();
-    Message(qint32 _siteId, qint32 type, Symbol s);
+    Message(qint32 _siteId,
+            qint32 type,
+            std::optional<Symbol> opt_s = std::nullopt,
+            std::optional<QImage> opt_incoming_user_pic = std::nullopt,
+            QString incoming_nickname = "");
     Message(const Message& m);
     ~Message();
 
@@ -32,6 +43,8 @@ public:
     qint32 getSiteId() const;
     qint32 getType() const;
     Symbol getSymbol() const;
+    QString getIncomingNickname() const;
+    QImage getIncomingUserPic() const;
 };
 
 QDataStream &operator<<(QDataStream &out, const Message& msg);

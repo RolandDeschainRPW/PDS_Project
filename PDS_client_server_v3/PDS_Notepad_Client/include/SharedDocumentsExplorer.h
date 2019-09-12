@@ -10,6 +10,7 @@
 
 #include "../include/Notepad.h"
 #include "../include/ModifyProfileDialog.h"
+#include "../include/Collaborator.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -45,7 +46,7 @@ private:
 
     bool isThisFilenameAlreadyInUse(QString new_filename);
     void closeEvent(QCloseEvent* event) override;
-    void showEditor(NetworkingData* startData);
+    void showEditor(NetworkingData* startData, QImage profile_pic, QString nickname, QVector<Collaborator> connected_editors);
 };
 
 

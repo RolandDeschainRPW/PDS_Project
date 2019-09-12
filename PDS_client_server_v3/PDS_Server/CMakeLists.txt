@@ -34,7 +34,8 @@ set(SOURCE_FILES
         src/NetworkServer.cpp
         src/SharedEditor.cpp
         src/SharedDocument.cpp
-        src/Response.cpp)
+        src/Response.cpp
+        src/Collaborator.cpp)
 
 set(INCLUDE_FILES
         include/Symbol.h
@@ -44,7 +45,8 @@ set(INCLUDE_FILES
         include/SharedEditor.h
         include/SharedDocument.h
         include/Response.h
-        include/SerialSize.h)
+        include/SerialSize.h
+        include/Collaborator.h)
 
 add_executable(PDS_Server
         ${INCLUDE_FILES}

@@ -19,6 +19,9 @@
 #include <QFontDialog>
 #include <QDebug>
 #include <QInputDialog>
+#include <QPainter>
+#include <QPainterPath>
+#include <QBrush>
 
 #include "../include/Notepad.h"
 #include "../include/Symbol.h"
@@ -28,6 +31,9 @@
 #include "ui_notepad.h"
 
 Notepad::Notepad(NetworkingData* net_data,
+        QImage profile_pic,
+        QString nickname,
+        QVector<Collaborator> connected_editors,
         QWidget *parent,
         qint32 base,
         qint32 boundary,
@@ -43,7 +49,7 @@ Notepad::Notepad(NetworkingData* net_data,
 
     this->net_data->setParent(this); // To avoid Memory Leakage!
     this->setWindowTitle(tr("Notepad, Site ID -> %1").arg(net_data->getSiteId()));
-    this->setCentralWidget(ui->textEdit);
+    this->setCentralWidget(ui->centralWidget);
 
     in.setDevice(net_data->getTcpSocket());
     in.setVersion(QDataStream::Qt_5_13);
@@ -62,9 +68,39 @@ Notepad::Notepad(NetworkingData* net_data,
     // Listen on text changed signals.
     connect(ui->textEdit->document(), &QTextDocument::contentsChange, this, &Notepad::interceptUserInput);
 
+    // Updating profile pics on UI.
+    this->updateConnectedCollaborators(net_data->getSiteId(), Message::NOTIFY_CONNECTION, nickname, profile_pic);
+
+    foreach (Collaborator col, connected_editors)
+        this->updateConnectedCollaborators(col.getSiteId(),
+                                           Message::NOTIFY_CONNECTION,
+                                           col.getNickname(),
+                                           col.getProfilePic());
+
     // Connecting signals for networking.
     connect(net_data->getTcpSocket(), &QIODevice::readyRead, this, [this, net_data] {
-        while (net_data->getTcpSocket()->bytesAvailable()) this->readMessage();
+        while (net_data->getTcpSocket()->bytesAvailable()) {
+            in.startTransaction();
+
+            qint64 size;
+            in >> size;
+
+            if(size > net_data->getTcpSocket()->bytesAvailable()) {
+                in.rollbackTransaction();
+                in.abortTransaction();
+                return;
+            }
+
+            Message next_msg;
+            in >> next_msg;
+
+            if (!in.commitTransaction()) {
+                qDebug() << "Something went wrong!\n\t-> I couldn't read the incoming message!";
+                return;
+            }
+
+            this->readMessage(next_msg);
+        }
     });
     connect(net_data->getTcpSocket(), QOverload<QAbstractSocket::SocketError>::of(&QAbstractSocket::error), this, &Notepad::displayError);
 
@@ -192,18 +228,62 @@ void Notepad::closeEvent(QCloseEvent* event) {
     qDebug() << "I am going to DISCONNECT!";
 }
 
-void Notepad::readMessage() {
-    in.startTransaction();
-
-    Message next_msg;
-    in >> next_msg;
-
-    if (!in.commitTransaction()) {
-        qDebug() << "Something went wrong!\n\t-> I couldn't read the incoming message!";
-        return;
+void Notepad::readMessage(Message& msg) {
+    if (msg.getType() == Message::INSERT_TYPE || msg.getType() == Message::INSERT_TYPE)
+        this->processSymbol(msg);
+    else if (msg.getType() == Message::NOTIFY_CONNECTION) {
+        this->updateConnectedCollaborators(msg.getSiteId(),
+                                           msg.getType(),
+                                           msg.getIncomingNickname(),
+                                           msg.getIncomingUserPic());
+    } else /* Message::NOTIFY_DISCONNECTION */ {
+        this->updateConnectedCollaborators(msg.getSiteId(),
+                                           msg.getType());
     }
+}
 
-    this->processSymbol(next_msg);
+void Notepad::updateConnectedCollaborators(qint32 site_id, qint32 update_type, QString nickname, std::optional<QImage> opt_profile_pic) {
+    if (update_type == Message::NOTIFY_DISCONNECTION) {
+        QImage default_pic = QImage(QDir::toNativeSeparators(":/images/default_profile_pic.png"));
+        QPixmap pixmap = QPixmap::fromImage(default_pic);
+        if (site_id == 1) {
+            // Freeing spot 1.
+            ui->collaboratorPicLabel1->setPixmap(pixmap);
+            ui->nicknameLabel1->setText(tr("Unconnected"));
+        } else if (site_id == 2) {
+            // Freeing spot 2.
+            ui->collaboratorPicLabel2->setPixmap(pixmap);
+            ui->nicknameLabel2->setText(tr("Unconnected"));
+        } else if (site_id == 3) {
+            // Freeing spot 3.
+            ui->collaboratorPicLabel3->setPixmap(pixmap);
+            ui->nicknameLabel3->setText(tr("Unconnected"));
+        } else if (site_id == 4) {
+            // Freeing spot 4.
+            ui->collaboratorPicLabel4->setPixmap(pixmap);
+            ui->nicknameLabel4->setText(tr("Unconnected"));
+        }
+    } else /* Message::NOTIFY_CONNECTION */ {
+        QImage profile_pic = opt_profile_pic.value();
+        QPixmap pixmap = QPixmap::fromImage(profile_pic);
+        if (site_id == 1) {
+            // Filling spot 1.
+            ui->collaboratorPicLabel1->setPixmap(pixmap);
+            ui->nicknameLabel1->setText(nickname);
+        } else if (site_id == 2) {
+            // Filling spot 2.
+            ui->collaboratorPicLabel2->setPixmap(pixmap);
+            ui->nicknameLabel2->setText(nickname);
+        } else if (site_id == 3) {
+            // Filling spot 3.
+            ui->collaboratorPicLabel3->setPixmap(pixmap);
+            ui->nicknameLabel3->setText(nickname);
+        } else if (site_id == 4) {
+            // Filling spot 4.
+            ui->collaboratorPicLabel4->setPixmap(pixmap);
+            ui->nicknameLabel4->setText(nickname);
+        }
+    }
 }
 
 qint32 Notepad::getSiteId() {

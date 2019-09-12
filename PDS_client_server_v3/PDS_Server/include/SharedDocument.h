@@ -26,6 +26,8 @@ public:
     void readMessage(Message& msg);
     void disconnectClient(qint32 siteId, quint32 counter);
     qint32 getEditorsCounter();
+    void notifyIncomingUser(qint32 site_id, QImage profile_pic, QString nickname_to_send);
+    QVector<QPair<qint32, QString>> getConnectedCollaboratorsNicknames();
 
     static const qint32 SITE_ID_UNASSIGNED = -1;
 
@@ -52,6 +54,7 @@ private:
     QString positions_to_string();
     void updateSymbolsDb(const Symbol& symbol, int update_type);
     void updateDocument(const Symbol& symbol, int msg_type);
+    QString getCollaboratorNickname(qint32 site_id);
 };
 
 

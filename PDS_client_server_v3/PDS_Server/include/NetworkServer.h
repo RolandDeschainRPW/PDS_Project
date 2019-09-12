@@ -21,6 +21,8 @@
 #include "../include/Message.h"
 #include "../include/SharedEditor.h"
 #include "../include/SharedDocument.h"
+#include "../include/Request.h"
+#include "../include/Collaborator.h"
 
 QT_BEGIN_NAMESPACE
 class QLabel;
@@ -53,16 +55,18 @@ private:
     void createNewDocumentDirectory(QString username, QString filename);
     bool isThisUsernameInDatabase(QString username, QString* password = nullptr, QString* nickname = nullptr);
     bool isThisNicknameInDatabase(QString nickname, QString* username = nullptr);
-    bool readFromExistingConnection(QTcpSocket* clientConnection);
-    void processNewConnections(QTcpSocket* clientConnection);
+    bool readFromExistingConnection(Request& req);
+    void processNewConnections(QTcpSocket* clientConnection, Request& req);
     void writeStartDataToClient(QTcpSocket* clientConnection, bool new_document, QString filename, QString owner_username, QString opener_nickname = "");
     SharedDocument* getDocument(QString file_path);
     void removeFromActiveUsers(QString username);
     void removeFromOpenDocuments(SharedDocument* document);
-    void addCollaborator(QString nickname, QString username, QString filename);
+    bool addCollaborator(QString nickname, QString username, QString filename);
     void addPermission(QString collaborator_username, QString owner_nickname, QString file_path);
     void modifyProfile(QTcpSocket* clientConnection, QString username, QString image_format, std::optional<QImage> opt_profile_pic, QString new_password);
     void sendProfilePic(QTcpSocket* clientConnection, QString username);
+    QImage searchProfilePic(QString username, QString* image_format = nullptr);
+    QVector<Collaborator> getConnectedCollaborators(SharedDocument* document);
 };
 
 #endif //PDS_SERVER_NETWORKSERVER_H

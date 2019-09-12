@@ -4080,6 +4080,10 @@ QtCore/qglobal.h
 QtSql/qtsql-config.h
 -
 
+C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QApplication
+qapplication.h
+C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qapplication.h
+
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/QCommonStyle
 qcommonstyle.h
 C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qcommonstyle.h
@@ -5522,7 +5526,53 @@ QtWidgets/qtwidgetsglobal.h
 QtWidgets/qdialog.h
 -
 
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_NetworkServer.cpp
+memory
+-
+../../../include/NetworkServer.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/NetworkServer.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedDocument.cpp
+memory
+-
+../../../include/SharedDocument.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SharedDocument.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedEditor.cpp
+memory
+-
+../../../include/SharedEditor.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SharedEditor.h
+QtCore/qbytearray.h
+-
+QtCore/qmetatype.h
+-
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/mocs_compilation.cpp
+6YEA5652QU/moc_NetworkServer.cpp
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_NetworkServer.cpp
+6YEA5652QU/moc_SharedDocument.cpp
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedDocument.cpp
+6YEA5652QU/moc_SharedEditor.cpp
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedEditor.cpp
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Collaborator.h
+QtCore
+-
+QImage
+-
+
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Message.h
+optional
+-
 iostream
 -
 queue
@@ -5532,6 +5582,8 @@ memory
 vector
 -
 QDataStream
+-
+QImage
 -
 ../include/Symbol.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Symbol.h
@@ -5565,6 +5617,10 @@ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SharedEditor.h
 ../include/SharedDocument.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SharedDocument.h
+../include/Request.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Request.h
+../include/Collaborator.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Collaborator.h
 
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Request.h
 optional
@@ -5577,8 +5633,16 @@ QImage
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Message.h
 
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Response.h
+optional
+-
 QtCore
 -
+QImage
+-
+../include/Symbol.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Symbol.h
+../include/Collaborator.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Collaborator.h
 
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SerialSize.h
 QtCore
@@ -5618,6 +5682,10 @@ QDataStream
 QVector
 -
 
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/Collaborator.cpp
+../include/Collaborator.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Collaborator.h
+
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/NetworkServer.cpp
 ../include/Request.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Request.h
@@ -5643,4 +5711,14 @@ QSqlError
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Response.h
 ../include/SerialSize.h
 D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SerialSize.h
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/Response.cpp
+../include/Response.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Response.h
+
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/main.cpp
+QApplication
+-
+../include/NetworkServer.h
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/NetworkServer.h
 

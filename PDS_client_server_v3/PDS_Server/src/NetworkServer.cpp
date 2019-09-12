@@ -153,9 +153,16 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
     // Verifying if credentials are correct.
     QString real_password;
     QString nickname;
+
     bool found = isThisUsernameInDatabase(username, &real_password, &nickname);
     if (!found || QString::compare(password, real_password, Qt::CaseSensitive) != 0) {
-        out << Response(Response::WRONG_CREDENTIALS, QMap<QString, QString>());
+        Response res = Response(Response::WRONG_CREDENTIALS);
+
+        // Calculating response size.
+        SerialSize size;
+        qint64 res_size = size(res);
+
+        out << res_size << res;
         clientConnection->write(block);
         return;
     }
@@ -163,7 +170,13 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
     // Verifying if the username is already active.
     foreach (QString usr, activeUsers) {
         if (QString::compare(usr, username, Qt::CaseInsensitive) == 0) {
-            out << Response(Response::USERNAME_ACTIVE, QMap<QString, QString>());
+            Response res = Response(Response::USERNAME_ACTIVE);
+
+            // Calculating response size.
+            SerialSize size;
+            qint64 res_size = size(res);
+
+            out << res_size << res;
             clientConnection->write(block);
             return;
         }
@@ -209,30 +222,27 @@ void NetworkServer::connectClient(QTcpSocket* clientConnection, QString username
     });
 
     // Telling the client that Login went well.
-    out << Response(Response::SUCCESSFUL_LOGIN, all_docs, username);
+    Response res = Response(Response::SUCCESSFUL_LOGIN, all_docs, username);
+
+    // Calculating response size.
+    SerialSize size;
+    qint64 res_size = size(res);
+
+    out << res_size << res;
     clientConnection->write(block);
 }
 
 // It returns false when the socket has been disconnected.
-bool NetworkServer::readFromExistingConnection(QTcpSocket* clientConnection) {
-    QDataStream in(clientConnection);
-    in.setVersion(QDataStream::Qt_5_13);
-    in.startTransaction();
+bool NetworkServer::readFromExistingConnection(Request& req) {
+    qint32 site_id = req.getSiteId();
+    quint32 counter = req.getCounter();
+    QString file_path = req.getFilename();
 
-    Request next_req;
-    in >> next_req;
-    qint32 site_id = next_req.getSiteId();
-    quint32 counter = next_req.getCounter();
-    QString file_path = next_req.getFilename();
-    if (!in.commitTransaction()) {
-        qDebug().noquote() << "Something went wrong!\n\t-> I could not read the incoming request!";
-        return true;
-    }
-    if (next_req.getRequestType() == Request::MESSAGE_TYPE) {
-        Message msg = next_req.getMessage();
+    if (req.getRequestType() == Request::MESSAGE_TYPE) {
+        Message msg = req.getMessage();
         this->getDocument(file_path)->readMessage(msg);
         return true;
-    } else if (next_req.getRequestType() == Request::DISCONNECT_TYPE) {
+    } else if (req.getRequestType() == Request::DISCONNECT_TYPE) {
         SharedDocument* document = this->getDocument(file_path);
         document->disconnectClient(site_id, counter);
         if (document->getEditorsCounter() == 0) this->removeFromOpenDocuments(document);
@@ -289,41 +299,38 @@ void NetworkServer::readFromNewConnection() {
             return;
         }
 
-        in.commitTransaction();
-        this->processNewConnections(clientConnection);
+        Request next_req;
+        in >> next_req;
+
+        if (!in.commitTransaction()) {
+            qDebug().noquote() << "Something went wrong!\n\t-> I could not read the incoming request!";
+            clientConnection->abort();
+            return;
+        }
+
+        this->processNewConnections(clientConnection, next_req);
     });
 }
 
-void NetworkServer::processNewConnections(QTcpSocket* clientConnection) {
-    QDataStream in(clientConnection);
-    in.setVersion(QDataStream::Qt_5_13);
-    in.startTransaction();
-
-    Request next_req;
-    in >> next_req;
-    if (!in.commitTransaction()) {
-        qDebug().noquote() << "Something went wrong!\n\t-> I could not read the incoming request!";
-        clientConnection->abort();
-        return;
-    }
-    if (next_req.getRequestType() == Request::CONNECT_TYPE) {
-        this->connectClient(clientConnection, next_req.getUsername(), next_req.getPassword());
-    } else if (next_req.getRequestType() == Request::SIGN_UP_TYPE) {
-        this->signUpNewUser(clientConnection, next_req.getUsername(), next_req.getPassword(), next_req.getNickname(), next_req.getProfilePic(), next_req.getImageFormat());
-    } else if (next_req.getRequestType() == Request::OPEN_DOCUMENT_TYPE) {
+void NetworkServer::processNewConnections(QTcpSocket* clientConnection, Request& req) {
+    if (req.getRequestType() == Request::CONNECT_TYPE) {
+        this->connectClient(clientConnection, req.getUsername(), req.getPassword());
+    } else if (req.getRequestType() == Request::SIGN_UP_TYPE) {
+        this->signUpNewUser(clientConnection, req.getUsername(), req.getPassword(), req.getNickname(), req.getProfilePic(), req.getImageFormat());
+    } else if (req.getRequestType() == Request::OPEN_DOCUMENT_TYPE) {
         // Retrieving the document's owner username by its nickname.
         QString owner_username;
-        this->isThisNicknameInDatabase(next_req.getNickname(), &owner_username);
+        this->isThisNicknameInDatabase(req.getNickname(), &owner_username);
 
         // Retrieving the opener's nickname.
         QString opener_nickname;
-        this->isThisUsernameInDatabase(next_req.getUsername(), nullptr, &opener_nickname);
+        this->isThisUsernameInDatabase(req.getUsername(), nullptr, &opener_nickname);
 
-        this->writeStartDataToClient(clientConnection, false, next_req.getFilename(), owner_username, opener_nickname);
-    } else if (next_req.getRequestType() == Request::NEW_DOCUMENT_TYPE) {
-        this->createNewDocumentDirectory(next_req.getUsername(), next_req.getFilename());
-        this->writeStartDataToClient(clientConnection, true, next_req.getFilename(), next_req.getUsername());
-    } else if (next_req.getRequestType() == Request::ADD_COLLABORATOR_TYPE) {
+        this->writeStartDataToClient(clientConnection, false, req.getFilename(), owner_username, opener_nickname);
+    } else if (req.getRequestType() == Request::NEW_DOCUMENT_TYPE) {
+        this->createNewDocumentDirectory(req.getUsername(), req.getFilename());
+        this->writeStartDataToClient(clientConnection, true, req.getFilename(), req.getUsername());
+    } else if (req.getRequestType() == Request::ADD_COLLABORATOR_TYPE) {
         QByteArray block;
         QDataStream out(&block, QIODevice::WriteOnly);
         out.setVersion(QDataStream::Qt_5_13);
@@ -331,36 +338,44 @@ void NetworkServer::processNewConnections(QTcpSocket* clientConnection) {
         QString collaborator_username;
         QString owner_nickname;
 
-        if (!this->isThisNicknameInDatabase(next_req.getNickname(), &collaborator_username))
+        if (!this->isThisNicknameInDatabase(req.getNickname(), &collaborator_username))
             result = Response::NICKNAME_NON_EXISTENT;
         else {
-            result = Response::NICKNAME_ACTIVE;
-            this->isThisUsernameInDatabase(next_req.getUsername(), nullptr, &owner_nickname);
-            this->addCollaborator(next_req.getNickname(), next_req.getUsername(), next_req.getFilename());
-            this->addPermission(collaborator_username, owner_nickname, next_req.getFilename());
+            this->isThisUsernameInDatabase(req.getUsername(), nullptr, &owner_nickname);
+            bool done = this->addCollaborator(req.getNickname(), req.getUsername(), req.getFilename());
+            if (done) {
+                this->addPermission(collaborator_username, owner_nickname, req.getFilename());
+                result = Response::NICKNAME_ACTIVE;
+            }
+            else result = Response::TOO_MANY_COLLABORATORS;
         }
 
-        Response res = Response(result, QMap<QString, QString>());
-        out << res;
+        Response res = Response(result);
+
+        // Calculating response size.
+        SerialSize size;
+        qint64 res_size = size(res);
+
+        out << res_size << res;
         clientConnection->write(block);
-    } else if (next_req.getRequestType() == Request::GET_PROFILE_PIC_TYPE) {
-        this->sendProfilePic(clientConnection, next_req.getUsername());
-    } else if (next_req.getRequestType() == Request::MODIFY_PASSWORD_TYPE) {
+    } else if (req.getRequestType() == Request::GET_PROFILE_PIC_TYPE) {
+        this->sendProfilePic(clientConnection, req.getUsername());
+    } else if (req.getRequestType() == Request::MODIFY_PASSWORD_TYPE) {
         this->modifyProfile(clientConnection,
-                            next_req.getUsername(),
-                            next_req.getImageFormat(),
+                            req.getUsername(),
+                            req.getImageFormat(),
                             std::nullopt,
-                            next_req.getPassword());
-    } else if (next_req.getRequestType() == Request::MODIFY_PROFILE_PIC_TYPE) {
+                            req.getPassword());
+    } else if (req.getRequestType() == Request::MODIFY_PROFILE_PIC_TYPE) {
         this->modifyProfile(clientConnection,
-                            next_req.getUsername(),
-                            next_req.getImageFormat(),
-                            next_req.getProfilePic(),
-                            next_req.getPassword());
+                            req.getUsername(),
+                            req.getImageFormat(),
+                            req.getProfilePic(),
+                            req.getPassword());
     }
 }
 
-void NetworkServer::sendProfilePic(QTcpSocket* clientConnection, QString username) {
+QImage NetworkServer::searchProfilePic(QString username, QString* image_format) {
     QString profile_pic_path = "";
 
     QDirIterator it("profiles_pics", QDirIterator::Subdirectories);
@@ -369,11 +384,16 @@ void NetworkServer::sendProfilePic(QTcpSocket* clientConnection, QString usernam
         if (QFileInfo(it.filePath()).isFile())
             if (QFileInfo(it.filePath()).fileName().contains(username, Qt::CaseInsensitive)) {
                 profile_pic_path = it.filePath();
+                if (image_format != nullptr) *image_format = QFileInfo(it.filePath()).suffix();
                 break;
             }
     }
 
-    QImage profile_pic(QDir::toNativeSeparators(profile_pic_path));
+    return QImage(QDir::toNativeSeparators(profile_pic_path));
+}
+
+void NetworkServer::sendProfilePic(QTcpSocket* clientConnection, QString username) {
+    QImage profile_pic = this->searchProfilePic(username);
 
     // Calculating the size of the image.
     SerialSize size;
@@ -447,9 +467,13 @@ void NetworkServer::modifyProfile(QTcpSocket* clientConnection, QString username
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
 
-    Response res = Response(result, QMap<QString, QString>());
+    Response res = Response(result);
 
-    out << res;
+    // Calculating response size.
+    SerialSize size;
+    qint64 res_size = size(res);
+
+    out << res_size << res;
     clientConnection->write(block);
 }
 
@@ -464,6 +488,10 @@ void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection, bool ne
     qint32 site_id_assigned;
     quint32 counter;
     QString owner_nickname;
+    QString opener_username;
+    QImage profile_pic;
+    QString nickname_to_send;
+    QVector<Collaborator> connected_editors;
 
     // Retrieving the nickname corresponding to the owner username.
     this->isThisUsernameInDatabase(owner_username, nullptr, &owner_nickname);
@@ -472,6 +500,9 @@ void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection, bool ne
         doc = new SharedDocument(file_path, folder_path, this);
         this->addCollaborator(owner_nickname, owner_username, filename);
         doc->addSharedEditor(clientConnection, owner_nickname, &site_id_assigned, &counter);
+        connected_editors = this->getConnectedCollaborators(doc);
+        profile_pic = this->searchProfilePic(owner_username);
+        nickname_to_send = owner_nickname;
         openDocuments.push_back(doc);
     } else /* Opening an existing document. */ {
         doc = this->getDocument(file_path);
@@ -481,26 +512,88 @@ void NetworkServer::writeStartDataToClient(QTcpSocket* clientConnection, bool ne
             openDocuments.push_back(doc);
         }
 
+        // Retrieving the username corresponding to the opener nickname.
+        this->isThisNicknameInDatabase(opener_nickname, &opener_username);
+
         doc->addSharedEditor(clientConnection, opener_nickname, &site_id_assigned, &counter);
+        connected_editors = this->getConnectedCollaborators(doc);
+        profile_pic = this->searchProfilePic(opener_username);
+        nickname_to_send = opener_nickname;
+        doc->notifyIncomingUser(site_id_assigned, profile_pic, nickname_to_send);
         if (site_id_assigned == SharedDocument::SITE_ID_UNASSIGNED) /* No more Site Ids available. */ {
             qDebug().noquote() << "I cannot host the incoming client!\n\t-> No more Site Ids available!";
             clientConnection->abort();
             return;
         }
     }
-    out << site_id_assigned << counter << file_path << doc->getSymbols();
+
+    Response res = Response(Response::START_DATA,
+                            std::nullopt, "",
+                            site_id_assigned,
+                            counter,
+                            file_path,
+                            doc->getSymbols(),
+                            nickname_to_send,
+                            profile_pic,
+                            connected_editors);
+
+    // Calculating the size of the image.
+    SerialSize size;
+    qint64 res_size = size(res);
+
+    out << res_size << res;
     clientConnection->write(block);
+
     disconnect(clientConnection, &QIODevice::readyRead, this, 0);
     connect(clientConnection, &QIODevice::readyRead, this, [this, clientConnection] {
         while (clientConnection->bytesAvailable()) {
-            // Discard the qint64 before the Request object.
-            clientConnection->read(sizeof(qint64));
+            QDataStream in(clientConnection);
+            in.setVersion(QDataStream::Qt_5_13);
+            in.startTransaction();
+
+            qint64 size;
+            in >> size;
+
+            if (size > clientConnection->bytesAvailable()) {
+                in.rollbackTransaction();
+                in.abortTransaction();
+                return;
+            }
+
+            Request next_req;
+            in >> next_req;
+
+            if (!in.commitTransaction()) {
+                qDebug().noquote() << "Something went wrong!\n\t-> I could not read the incoming request!";
+                return;
+            }
 
             // When the socket has been disconnected, the cycle gets broken.
-            if (!this->readFromExistingConnection(clientConnection)) break;
+            bool still_connected = this->readFromExistingConnection(next_req);
+            if (!still_connected) break;
         }
     });
+}
 
+QVector<Collaborator> NetworkServer::getConnectedCollaborators(SharedDocument* document) {
+    QVector<Collaborator> collaborators;
+
+    // typedef for using foreach macro.
+    typedef QPair<qint32, QString> CollaboratorPair;
+
+    QVector<CollaboratorPair> connected_editors = document->getConnectedCollaboratorsNicknames();
+
+    foreach (CollaboratorPair pair, connected_editors) {
+        QString username;
+
+        // Searching profile pic.
+        this->isThisNicknameInDatabase(pair.second, &username);
+        QImage profile_pic = this->searchProfilePic(username);
+
+        collaborators.push_back(Collaborator(pair.second, profile_pic, pair.first));
+    }
+
+    return collaborators;
 }
 
 void NetworkServer::createNewDocumentDirectory(QString username, QString filename) {
@@ -556,7 +649,13 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
     // Verifying if the chosen username is already in use.
     bool username_found = this->isThisUsernameInDatabase(username);
     if (username_found) {
-        out << Response(Response::USERNAME_ALREADY_IN_USE, QMap<QString, QString>());
+        Response res = Response(Response::USERNAME_ALREADY_IN_USE);
+
+        // Calculating response size.
+        SerialSize size;
+        qint64 res_size = size(res);
+
+        out << res_size << res;
         clientConnection->write(block);
         return;
     }
@@ -564,7 +663,13 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
     // Verifying if the chosen nickname is already in use.
     bool nickname_found = this->isThisNicknameInDatabase(nickname);
     if (nickname_found) {
-        out << Response(Response::NICKNAME_ALREADY_IN_USE, QMap<QString, QString>());
+        Response res = Response(Response::NICKNAME_ALREADY_IN_USE);
+
+        // Calculating response size.
+        SerialSize size;
+        qint64 res_size = size(res);
+
+        out << res_size << res;
         clientConnection->write(block);
         return;
     }
@@ -608,7 +713,13 @@ void NetworkServer::signUpNewUser(QTcpSocket* clientConnection, QString username
     QSqlDatabase::removeDatabase(permissions_db_path);
 
     // Telling the client that SignUp went well.
-    out << Response(Response::USERNAME_ACCEPTED, QMap<QString, QString>());
+    Response res = Response(Response::USERNAME_ACCEPTED);
+
+    // Calculating response size.
+    SerialSize size;
+    qint64 res_size = size(res);
+
+    out << res_size << res;
     clientConnection->write(block);
 }
 
@@ -663,23 +774,39 @@ bool NetworkServer::isThisNicknameInDatabase(QString nickname, QString* username
     return found;
 }
 
-void NetworkServer::addCollaborator(QString nickname, QString username, QString filename) {
+bool NetworkServer::addCollaborator(QString nickname, QString username, QString filename) {
     QString folder_path = QDir::toNativeSeparators("documents/" + username + "/" + filename);
+
+    bool done;
 
     // Adding data to collaborators.db.
     QString collaborators_db_path = QDir::toNativeSeparators(folder_path + "/collaborators.db");
     QSqlDatabase collaborators_db = QSqlDatabase::addDatabase("QSQLITE", collaborators_db_path);
     collaborators_db.setDatabaseName(collaborators_db_path);
     collaborators_db.open();
+
     {
+        QSqlQuery query(collaborators_db);
+        done = query.exec("SELECT COUNT(*) FROM COLLABORATORS");
+        if (!done) qDebug() << query.lastError();
+        else {
+            QVariant val = query.value(0);
+            qint32 count = val.toInt();
+            if (count > 4) done = false; // Max. 4 collaborators per document.
+        }
+    }
+
+    if (done) {
         collaborators_db.transaction();
         QSqlQuery query(collaborators_db);
-        bool done = query.exec("INSERT INTO COLLABORATORS(NICKNAME, COUNTER) VALUES('" + nickname + "', " + QString::number(0) + ")");
+        done = query.exec("INSERT INTO COLLABORATORS(NICKNAME, COUNTER) VALUES('" + nickname + "', " + QString::number(0) + ")");
         if (!done) qDebug() << query.lastError();
         collaborators_db.commit();
     }
+
     collaborators_db.close();
     QSqlDatabase::removeDatabase(collaborators_db_path);
+    return done;
 }
 
 void NetworkServer::addPermission(QString collaborator_username, QString owner_nickname, QString file_path) {

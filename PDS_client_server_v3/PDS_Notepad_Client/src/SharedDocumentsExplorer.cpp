@@ -208,23 +208,38 @@ void SharedDocumentsExplorer::displayError(QAbstractSocket::SocketError socketEr
 
 void SharedDocumentsExplorer::readStartDataFromServer() {
     in.startTransaction();
-    qint32 siteId;
-    quint32 counter;
-    QString remote_file_path;
-    QVector<Symbol> symbols;
-    in >> siteId >> counter >> remote_file_path >> symbols;
-    if (!in.commitTransaction()) {
-        qDebug() << "Something went wrong!\n\t-> I could not have Site Id and Symbols from Server!";
+
+    qint64 size;
+    in >> size;
+
+    if(size > clientConnection->bytesAvailable()) {
+        in.rollbackTransaction();
+        in.abortTransaction();
         return;
     }
+
+    Response res;
+    in >> res;
+
+    if (!in.commitTransaction()) {
+        qDebug() << "Something went wrong!\n\t-> I could not read start data from Server!";
+        return;
+    }
+
     disconnect(clientConnection, &QIODevice::readyRead, this, &SharedDocumentsExplorer::readStartDataFromServer);
-    NetworkingData* startData = new NetworkingData(siteId, counter, remote_file_path, symbols, clientConnection, networkSession, this);
-    showEditor(startData);
+    NetworkingData* startData = new NetworkingData(res.getSiteId(),
+                                                   res.getCounter(),
+                                                   res.getFilePath(),
+                                                   res.getSymbols(),
+                                                   clientConnection,
+                                                   networkSession,
+                                                   this);
+    showEditor(startData, res.getProfilePic(), res.getNickname(), res.getConnectedEditors());
 }
 
 
-void SharedDocumentsExplorer::showEditor(NetworkingData* startData) {
-    notepad = new Notepad(startData, this);
+void SharedDocumentsExplorer::showEditor(NetworkingData* startData, QImage profile_pic, QString nickname, QVector<Collaborator> connected_editors) {
+    notepad = new Notepad(startData, profile_pic, nickname, connected_editors, this);
     notepad->setWindowModality(Qt::ApplicationModal);
     notepad->show();
 }
@@ -248,12 +263,30 @@ void SharedDocumentsExplorer::addCollaborator() {
     disconnect(clientConnection, &QIODevice::readyRead, this, &SharedDocumentsExplorer::readStartDataFromServer);
     connect(clientConnection, &QIODevice::readyRead, this, [this] {
         in.startTransaction();
+
+        qint64 size;
+        in >> size;
+
+        if(size > clientConnection->bytesAvailable()) {
+            in.rollbackTransaction();
+            in.abortTransaction();
+            return;
+        }
+
         Response res;
         in >> res;
+
+        if (!in.commitTransaction()) {
+            qDebug() << "Something went wrong!\n\t-> I could not add the collaborator as requested!";
+            return;
+        }
 
         if (res.getResult() == Response::NICKNAME_NON_EXISTENT) {
             QMessageBox::information(this, tr("Nickname non existent!"),
                                      tr("Please insert the nickname of an existent user."));
+        } else if (res.getResult() == Response::TOO_MANY_COLLABORATORS) {
+            QMessageBox::information(this, tr("Too many collaborators!"),
+                                     tr("Collaborators limit was reached (max. 4 collaborators per document)."));
         } else /* Response::NICKNAME_ACTIVE */ {
             QMessageBox::information(this, tr("Success!"),
                                      tr("Collaborator added successfully."));
@@ -290,6 +323,7 @@ void SharedDocumentsExplorer::addCollaborator() {
             QMessageBox::information(this, tr("Missing nickname!"),
                                      tr("Please insert the nickname of the new collaborator."));
         } else {
+            disconnect(clientConnection, &QIODevice::readyRead, this, 0);
             connect(clientConnection, &QIODevice::readyRead, this, &SharedDocumentsExplorer::readStartDataFromServer);
             return;
         }

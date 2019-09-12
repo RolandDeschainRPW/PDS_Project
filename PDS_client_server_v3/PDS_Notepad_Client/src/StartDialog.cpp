@@ -184,8 +184,19 @@ void StartDialog::openSignUpDialog() {
 void StartDialog::openSharedDocumentsExplorer() {
     ui->connectToServerButton->setEnabled(false);
     in.startTransaction();
+
+    qint64 size;
+    in >> size;
+
+    if(size > tcpSocket->bytesAvailable()) {
+        in.rollbackTransaction();
+        in.abortTransaction();
+        return;
+    }
+
     Response res;
     in >> res;
+
     if (!in.commitTransaction()) {
         qDebug() << "Something went wrong!\n\t-> I could not complete Login process!";
         tcpSocket->abort();

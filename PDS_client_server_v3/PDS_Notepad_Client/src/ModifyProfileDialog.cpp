@@ -88,6 +88,15 @@ void ModifyProfileDialog::closeEvent(QCloseEvent* event) {
 void ModifyProfileDialog::getModificationResult() {
     in.startTransaction();
 
+    qint64 size;
+    in >> size;
+
+    if(size > clientConnection->bytesAvailable()) {
+        in.rollbackTransaction();
+        in.abortTransaction();
+        return;
+    }
+
     Response res;
     in >> res;
 
@@ -160,16 +169,21 @@ void ModifyProfileDialog::modifyProfile() {
 
 void ModifyProfileDialog::changeProfilePic() {
     profile_pic_path = QFileDialog::getOpenFileName(this, tr("Open Image"), "", tr("Image Files (*.png *.jpg)"));
-    QImage profile_pic = QImage(profile_pic_path);
-    QPixmap pixmap = QPixmap::fromImage(profile_pic);
-    if (pixmap.height() > 150 ||
-        pixmap.width() > 150) /* Resolution too high */ {
-        QMessageBox::information(this, tr("Resolution too high!"), tr("Choose a compatible profile picture (max. 150x150)"));
-        return;
-    }
+    bool newProfilePicChosen = QString::compare(profile_pic_path, "") != 0;
 
-    ui->imageLabel->setPixmap(pixmap);
-    emit profilePicChanged();
+    if (newProfilePicChosen) {
+        QImage profile_pic = QImage(profile_pic_path);
+        QPixmap pixmap = QPixmap::fromImage(profile_pic);
+        if (pixmap.height() > 150 ||
+            pixmap.width() > 150) /* Resolution too high */ {
+            QMessageBox::information(this, tr("Resolution too high!"),
+                                     tr("Choose a compatible profile picture (max. 150x150)"));
+            return;
+        }
+
+        ui->imageLabel->setPixmap(pixmap);
+        emit profilePicChanged();
+    }
 }
 
 void ModifyProfileDialog::displayError(QAbstractSocket::SocketError socketError) {

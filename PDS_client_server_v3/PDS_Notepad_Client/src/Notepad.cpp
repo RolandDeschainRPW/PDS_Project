@@ -229,7 +229,7 @@ void Notepad::closeEvent(QCloseEvent* event) {
 }
 
 void Notepad::readMessage(Message& msg) {
-    if (msg.getType() == Message::INSERT_TYPE || msg.getType() == Message::INSERT_TYPE)
+    if (msg.getType() == Message::INSERT_TYPE || msg.getType() == Message::ERASE_TYPE)
         this->processSymbol(msg);
     else if (msg.getType() == Message::NOTIFY_CONNECTION) {
         this->updateConnectedCollaborators(msg.getSiteId(),

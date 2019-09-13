@@ -790,6 +790,7 @@ bool NetworkServer::addCollaborator(QString nickname, QString username, QString 
         done = query.exec("SELECT COUNT(*) FROM COLLABORATORS");
         if (!done) qDebug() << query.lastError();
         else {
+            query.next();
             QVariant val = query.value(0);
             qint32 count = val.toInt();
             if (count > 4) done = false; // Max. 4 collaborators per document.

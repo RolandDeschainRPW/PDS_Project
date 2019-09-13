@@ -62,6 +62,9 @@ Notepad::Notepad(NetworkingData* net_data,
     connect(ui->actionUndo, &QAction::triggered, this, &Notepad::undo);
     connect(ui->actionRedo, &QAction::triggered, this, &Notepad::redo);
 
+    // Giving to MyTextEdit the current Site Id.
+    ui->textEdit->setSiteId(net_data->getSiteId());
+
     // Updating the document with symbols received from Server.
     ui->textEdit->document()->setPlainText(this->symbols_to_string());
 

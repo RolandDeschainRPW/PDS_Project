@@ -17,16 +17,27 @@ MyTextEdit::MyTextEdit(QWidget* parent) : QTextEdit(parent) {
     qint32 delta = start_y - end_y;
     cur_width = qAbs(delta);
 
+    colors.push_back(Qt::black); // Black at index 0 - DO NOT USE!
+    colors.push_back(Qt::red); // Red at index 1
+    colors.push_back(Qt::green); // Green at index 2
+    colors.push_back(Qt::blue); // Blue at index 3
+    colors.push_back(QColor(255, 85, 0)); // Orange at index 4
+
     this->setCursorWidth(0);
 }
 
 MyTextEdit::~MyTextEdit() { /* empty */ }
+
+void MyTextEdit::setSiteId(qint32 site_id) {
+    this->siteId = site_id;
+}
 
 void MyTextEdit::paintEvent(QPaintEvent* event) {
     QTextEdit::paintEvent(event);
 
     QPainter painter(this->viewport());
 
+    // Updating this Site Id cursor.
     QTextCursor cursor = this->textCursor();
     QPoint start_cur = this->cursorRect(cursor).bottomLeft();
     QPoint end_cur = QPoint(start_cur);
@@ -36,7 +47,8 @@ void MyTextEdit::paintEvent(QPaintEvent* event) {
     path.moveTo(QPointF(start_cur));
     path.lineTo(QPointF(end_cur));
 
-    QBrush my_brush(Qt::red);
+    //QBrush my_brush(Qt::red);
+    QBrush my_brush(colors[siteId]);
     QPen myPen(my_brush, 2, Qt::SolidLine);
     painter.setPen(myPen);
     painter.drawPath(path);

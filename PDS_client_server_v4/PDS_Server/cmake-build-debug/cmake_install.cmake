@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/Marcello Panero/Desktop/Universita/Programmazione di Sistema/Progetto/PDS_client_server_v4/PDS_Server
+# Install script for directory: D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/Marcello Panero/Desktop/Universita/Programmazione di Sistema/Progetto/PDS_client_server_v4/PDS_Server/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

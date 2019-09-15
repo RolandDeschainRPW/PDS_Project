@@ -40,35 +40,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/NetworkServer.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-              <folding>
-                <element signature="e#113#132#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NetworkServer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="250" column="1" lean-forward="true" selection-start-line="250" selection-start-column="1" selection-end-line="250" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/include/SharedDocument.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="35" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="35" />
-              <folding>
-                <element signature="e#115#131#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="262" column="5" selection-start-line="262" selection-start-column="5" selection-end-line="262" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -239,7 +215,7 @@
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="width" value="1031" />
     <option name="height" value="770" />
@@ -265,6 +241,12 @@
             <path>
               <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
+              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
+              <item name="profiles_pics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
               <item name="include" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -282,7 +264,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PDS_Notepad_Client" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="CMakeSettings" />
@@ -382,6 +364,7 @@
       <workItem from="1568392755123" duration="1760000" />
       <workItem from="1568457848238" duration="17106000" />
       <workItem from="1568561131416" duration="610000" />
+      <workItem from="1568574056891" duration="571000" />
     </task>
     <task id="LOCAL-00001" summary="Memory Leakage fixed on PDS_client_server_v1 Project + NetworkingData class added on CLion/Notepad Project">
       <created>1566752548845</created>
@@ -499,7 +482,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="470376000" />
+    <option name="totallyTimeSpent" value="470947000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -511,10 +494,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21279761" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.2186512" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32981783" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -522,13 +505,13 @@
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32981783" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.24713585" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.24702059" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.42578548" />
       <window_info anchor="bottom" id="CMake" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32981783" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.3747954" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.37378114" />
       <window_info anchor="right" id="Database" order="0" show_stripe_button="false" weight="0.32995737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -620,7 +603,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qiodevice.h" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_NetworkServer.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-272">
@@ -690,7 +672,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Marcello.png" />
     <entry file="file://C:/msys64/mingw64/include/c++/9.1.0/bits/atomic_base.h" />
     <entry file="file://$PROJECT_DIR$/include/Symbol.h">
       <provider selected="true" editor-type-id="text-editor">
@@ -739,23 +720,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Guest 3.png" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Raffaele.png" />
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Marco.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Marcello.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Elena.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Raffaele.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Marco.png" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Marcello.jpg" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Elena.jpg" />
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Raffaele.jpg" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/documents/Raffaele/example/example.html" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/documents/Raffaele/example/symbols.txt" />
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Guest.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Guest.png" />
     <entry file="file://$PROJECT_DIR$/include/Response.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -854,10 +825,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Marcello.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Matteo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/NetworkServer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="250" column="1" lean-forward="true" selection-start-line="250" selection-start-column="1" selection-end-line="250" selection-end-column="1" />
+        <state relative-caret-position="315">
+          <caret line="262" column="5" selection-start-line="262" selection-start-column="5" selection-end-line="262" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -45,6 +45,11 @@ Notepad::Notepad(NetworkingData* net_data,
                         net_data(net_data) {
     ui->setupUi(this);
 
+    colors.push_back(Qt::black); // Black at index 0 - DO NOT USE!
+    colors.push_back(Qt::red); // Red at index 1
+    colors.push_back(Qt::green); // Green at index 2
+    colors.push_back(Qt::blue); // Blue at index 3
+    colors.push_back(QColor(255, 85, 0)); // Orange at index 4
     this->setAttribute(Qt::WA_DeleteOnClose, true);
 
     this->net_data->setParent(this); // To avoid Memory Leakage!
@@ -174,6 +179,7 @@ void Notepad::redo() {
 }
 
 void Notepad::onCursorPositionChanged() {
+    ui->textEdit->setTextColor("color: rgb(0,0,0)");
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
@@ -196,6 +202,7 @@ void Notepad::onCursorPositionChanged() {
 }
 
 void Notepad::interceptUserInput(int pos, int del, int add) {
+    ui->textEdit->setTextColor("color: rgb(0,0,0)");
     if(del > 0) {
         undo();
         QTextCursor c = QTextCursor(ui->textEdit->textCursor());
@@ -379,25 +386,25 @@ void Notepad::processSymbol(const Message &m) {
         if (net_data->getSymbols().empty()) {
             qint32 index = net_data->getSymbols().size();
             net_data->getSymbols().push_back(m.getSymbol());
-            updateDocument(index, Message::INSERT_TYPE, m.getSymbol().getChar());
+            updateDocument(index, Message::INSERT_TYPE, m.getSymbol().getChar(), m.getSiteId());
         } else {
             foreach (Symbol s, net_data->getSymbols()) {
                 if (this->comparePositions(s.getPos(), m.getSymbol().getPos())) {
                     net_data->getSymbols().insert(net_data->getSymbols().begin() + index, m.getSymbol());
-                    updateDocument(index, Message::INSERT_TYPE, m.getSymbol().getChar());
+                    updateDocument(index, Message::INSERT_TYPE, m.getSymbol().getChar(), m.getSiteId());
                     return;
                 }
                 index++;
             }
             qint32 index = net_data->getSymbols().size();
             net_data->getSymbols().push_back(m.getSymbol());
-            updateDocument(index, Message::INSERT_TYPE, m.getSymbol().getChar());
+            updateDocument(index, Message::INSERT_TYPE, m.getSymbol().getChar(),m.getSiteId());
         }
     } else /* Message::ERASE_TYPE */ {
         foreach (Symbol s, net_data->getSymbols()){
             if (s.getChar() == m.getSymbol().getChar() && s.getSiteId() == m.getSymbol().getSiteId() && s.getCounter() == m.getSymbol().getCounter()) {
                 net_data->getSymbols().erase(net_data->getSymbols().begin() + index);
-                updateDocument(index, Message::ERASE_TYPE, "");
+                updateDocument(index, Message::ERASE_TYPE, "",m.getSiteId());
                 return;
             }
             index++;
@@ -526,14 +533,17 @@ qint32 Notepad::retrieveStrategy(qint32 level) {
     return myStrategy;
 }
 
-void Notepad::updateDocument(qint32 index, qint32 updateType, QString text) {
+void Notepad::updateDocument(qint32 index, qint32 updateType, QString text, int siteId) {
     // Temporarily blocking signals from QTextDocument
     // to avoid cyclic bug between the Server and the Clients!
     const QSignalBlocker blocker(ui->textEdit->document());
     QTextCursor tmp_cur = QTextCursor(ui->textEdit->document());
     tmp_cur.setPosition(index);
     if (updateType == Message::INSERT_TYPE) {
-        tmp_cur.insertText(text);
+        QTextCharFormat format = QTextCharFormat();
+        format.setForeground((colors[siteId]));
+        tmp_cur.insertText(text,format);
+        ui->textEdit->setTextColor("color: rgb(0,0,0)");
     } else /* Message::ERASE_TYPE */ {
         tmp_cur.deleteChar();
     }

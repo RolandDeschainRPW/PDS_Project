@@ -20,6 +20,7 @@ namespace Ui {
 }
 QT_END_NAMESPACE
 
+
 class Notepad : public QMainWindow {
     Q_OBJECT
 
@@ -65,6 +66,7 @@ private slots:
 
 private:
     Ui::Notepad* ui;
+    QVector<QColor> colors;
 
     // Vars for symbols managing.
     qint32 boundary;
@@ -88,7 +90,7 @@ private:
     bool comparePositions(std::optional<QVector<qint32>> pos1_opt, std::optional<QVector<qint32>> pos2_opt);
     void readMessage(Message& msg);
     void closeEvent(QCloseEvent* event) override;
-    void updateDocument(qint32 index, qint32 updateType, QString text);
+    void updateDocument(qint32 index, qint32 updateType, QString text, int siteId);
     void updateConnectedCollaborators(qint32 site_id,
                                       qint32 update_type,
                                       QString nickname = "",

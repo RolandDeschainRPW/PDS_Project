@@ -8,7 +8,7 @@
   </component>
   <component name="CMakeSettings">
     <configurations>
-      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" GENERATION_OPTIONS="-DCMAKE_PREFIX_PATH=C:\Qt\5.13.1\mingw73_64\lib\cmake" />
     </configurations>
   </component>
   <component name="ChangeListManager">
@@ -55,11 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/NetworkServer.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="518" column="20" selection-start-line="518" selection-start-column="20" selection-end-line="518" selection-end-column="20" />
-              <folding>
-                <element signature="e#42#73#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="111">
+              <caret line="250" column="1" lean-forward="true" selection-start-line="250" selection-start-column="1" selection-end-line="250" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -135,9 +132,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="935">
               <caret line="55" selection-start-line="55" selection-end-line="55" />
-              <folding>
-                <element signature="e#101#120#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -245,7 +239,7 @@
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-8" />
     <option name="width" value="1031" />
     <option name="height" value="770" />
@@ -271,19 +265,6 @@
             <path>
               <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
               <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-              <item name="documents" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
-              <item name="cmake-build-debug" type="462c0819:PsiDirectoryNode" />
-              <item name="documents" type="462c0819:PsiDirectoryNode" />
-              <item name="Raffaele" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PDS_Server" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PDS_Server" type="462c0819:PsiDirectoryNode" />
               <item name="include" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -301,10 +282,10 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../CLion/QtNotepad" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="CMakeSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -400,7 +381,7 @@
       <workItem from="1568373171504" duration="2365000" />
       <workItem from="1568392755123" duration="1760000" />
       <workItem from="1568457848238" duration="17106000" />
-      <workItem from="1568550898934" duration="109000" />
+      <workItem from="1568561131416" duration="610000" />
     </task>
     <task id="LOCAL-00001" summary="Memory Leakage fixed on PDS_client_server_v1 Project + NetworkingData class added on CLion/Notepad Project">
       <created>1566752548845</created>
@@ -518,7 +499,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="469875000" />
+    <option name="totallyTimeSpent" value="470376000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -530,11 +511,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21285564" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.21279761" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="0" weight="0.32981783" />
       <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
@@ -542,13 +522,13 @@
       <window_info anchor="bottom" id="Version Control" order="3" weight="0.32981783" />
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Find" order="5" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="6" weight="0.248104" />
+      <window_info anchor="bottom" id="Run" order="6" weight="0.24713585" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.42578548" />
       <window_info anchor="bottom" id="CMake" order="8" weight="0.32936078" />
       <window_info anchor="bottom" id="Cvs" order="9" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="10" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="11" weight="0.32981783" />
-      <window_info anchor="bottom" id="Messages" order="12" weight="0.37594798" />
+      <window_info anchor="bottom" id="Messages" order="12" weight="0.3747954" />
       <window_info anchor="right" id="Database" order="0" show_stripe_button="false" weight="0.32995737" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
@@ -640,13 +620,7 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qiodevice.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="136" selection-start-line="136" selection-end-line="136" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qiodevice.h" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_NetworkServer.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-272">
@@ -688,13 +662,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlquery.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="74" column="14" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlquery.h" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/documents/raf/example3/symbols.txt" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/documents/raf/example3/example3.html" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/documents/raf/example2/symbols.txt" />
@@ -708,28 +676,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/documents/raf/example/symbols.txt" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/documents/raf/example/example.html" />
-    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qvector.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="234" selection-start-line="234" selection-end-line="234" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qvector.h" />
     <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/aldo.png" />
-    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qstring.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="954" selection-start-line="954" selection-end-line="954" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qobjectdefs_impl.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="439" selection-start-line="439" selection-end-line="439" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qstring.h" />
+    <entry file="file://C:/Qt/5.13.0/mingw73_64/include/QtCore/qobjectdefs_impl.h" />
     <entry file="file://$PROJECT_DIR$/include/SerialSize.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -740,14 +690,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/marcello.png" />
-    <entry file="file://C:/msys64/mingw64/include/c++/9.1.0/bits/atomic_base.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="215">
-          <caret line="418" selection-start-line="418" selection-end-line="418" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/cmake-build-debug/profiles_pics/Marcello.png" />
+    <entry file="file://C:/msys64/mingw64/include/c++/9.1.0/bits/atomic_base.h" />
     <entry file="file://$PROJECT_DIR$/include/Symbol.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="567">
@@ -900,9 +844,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="935">
           <caret line="55" selection-start-line="55" selection-end-line="55" />
-          <folding>
-            <element signature="e#101#120#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -915,11 +856,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/NetworkServer.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="518" column="20" selection-start-line="518" selection-start-column="20" selection-end-line="518" selection-end-column="20" />
-          <folding>
-            <element signature="e#42#73#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="111">
+          <caret line="250" column="1" lean-forward="true" selection-start-line="250" selection-start-column="1" selection-end-line="250" selection-end-column="1" />
         </state>
       </provider>
     </entry>

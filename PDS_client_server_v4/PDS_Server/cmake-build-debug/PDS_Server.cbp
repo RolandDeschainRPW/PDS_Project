@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="PDS_Server"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;CMake Files\Qt\;CMake Files\Qt\5.13.0\;CMake Files\Qt\5.13.0\mingw73_64\;CMake Files\Qt\5.13.0\mingw73_64\lib\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Network\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Sql\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PDS_Server">
+				<Option output="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_NETWORK_LIB"/>
+					<Add option="-DQT_SQL_LIB"/>
+					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/include"/>
+					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtCore"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/./mkspecs/win32-g++"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtGui"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtANGLE"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtWidgets"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtNetwork"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtSql"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include/c++/9.1.0"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include/c++/9.1.0/x86_64-w64-mingw32"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include/c++/9.1.0/backward"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 PDS_Server"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PDS_Server/fast">
+				<Option output="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DQT_CORE_LIB"/>
+					<Add option="-DQT_GUI_LIB"/>
+					<Add option="-DQT_WIDGETS_LIB"/>
+					<Add option="-DQT_NETWORK_LIB"/>
+					<Add option="-DQT_SQL_LIB"/>
+					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/include"/>
+					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtCore"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/./mkspecs/win32-g++"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtGui"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtANGLE"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtWidgets"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtNetwork"/>
+					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtSql"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include/c++/9.1.0"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include/c++/9.1.0/x86_64-w64-mingw32"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include/c++/9.1.0/backward"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../include"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/include-fixed"/>
+					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../x86_64-w64-mingw32/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 PDS_Server/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="PDS_Server_autogen">
+				<Option working_dir="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 PDS_Server_autogen"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/cmake-build-debug/PDS_Server_autogen/mocs_compilation.cpp">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Collaborator.h">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Message.h">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/NetworkServer.h">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Request.h">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Response.h">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SerialSize.h">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SharedDocument.h">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/SharedEditor.h">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/include/Symbol.h">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/Collaborator.cpp">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/Message.cpp">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/NetworkServer.cpp">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/Request.cpp">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/Response.cpp">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/SharedDocument.cpp">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/SharedEditor.cpp">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/Symbol.cpp">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/src/main.cpp">
+			<Option target="PDS_Server"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Network/Qt5NetworkConfig.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Network\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Network\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Network\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Sql/Qt5SqlConfig.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Sql/Qt5SqlConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Sql/Qt5Sql_QODBCDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Sql/Qt5Sql_QPSQLDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v3/PDS_Server/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Sql/Qt5Sql_QSQLiteDriverPlugin.cmake">
+			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Sql\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

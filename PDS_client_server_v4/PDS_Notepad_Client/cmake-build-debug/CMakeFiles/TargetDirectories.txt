@@ -1,4 +1,4 @@
-D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir
-D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/edit_cache.dir
-D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad_autogen.dir
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad.dir
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/CMakeFiles/notepad_autogen.dir

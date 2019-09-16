@@ -54,6 +54,8 @@ private slots:
     void paste();
     void undo();
     void redo();
+    void save();
+    void saveAs();
 
     // Slot for text changes.
     void interceptUserInput(int pos, int del, int add);
@@ -66,7 +68,7 @@ private slots:
 
 private:
     Ui::Notepad* ui;
-    QVector<QColor> colors;
+    QString currentFile;
 
     // Vars for symbols managing.
     qint32 boundary;
@@ -90,7 +92,7 @@ private:
     bool comparePositions(std::optional<QVector<qint32>> pos1_opt, std::optional<QVector<qint32>> pos2_opt);
     void readMessage(Message& msg);
     void closeEvent(QCloseEvent* event) override;
-    void updateDocument(qint32 index, qint32 updateType, QString text, int siteId);
+    void updateDocument(qint32 index, qint32 updateType, QString text, qint32 site_id);
     void updateConnectedCollaborators(qint32 site_id,
                                       qint32 update_type,
                                       QString nickname = "",

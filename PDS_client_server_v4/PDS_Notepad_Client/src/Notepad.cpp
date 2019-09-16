@@ -45,11 +45,6 @@ Notepad::Notepad(NetworkingData* net_data,
                         net_data(net_data) {
     ui->setupUi(this);
 
-    colors.push_back(Qt::black); // Black at index 0 - DO NOT USE!
-    colors.push_back(Qt::red); // Red at index 1
-    colors.push_back(Qt::green); // Green at index 2
-    colors.push_back(Qt::blue); // Blue at index 3
-    colors.push_back(QColor(255, 85, 0)); // Orange at index 4
     this->setAttribute(Qt::WA_DeleteOnClose, true);
 
     this->net_data->setParent(this); // To avoid Memory Leakage!
@@ -66,6 +61,8 @@ Notepad::Notepad(NetworkingData* net_data,
     connect(ui->actionPaste, &QAction::triggered, this, &Notepad::paste);
     connect(ui->actionUndo, &QAction::triggered, this, &Notepad::undo);
     connect(ui->actionRedo, &QAction::triggered, this, &Notepad::redo);
+    connect(ui->actionSave, &QAction::triggered, this, &Notepad::save);
+    connect(ui->actionSaveAs, &QAction::triggered, this, &Notepad::saveAs);
 
     // Sending cursor position to other clients.
     connect(ui->textEdit, &QTextEdit::cursorPositionChanged, this, &Notepad::onCursorPositionChanged);
@@ -148,6 +145,43 @@ void Notepad::print() {
     #endif // QT_CONFIG(printer)
 }
 
+void Notepad::save() {
+    QString fileName;
+    // If we don't have a filename from before, get one.
+    if (currentFile.isEmpty()) {
+        fileName = QFileDialog::getSaveFileName(this, "Save");
+        currentFile = fileName;
+    } else {
+        fileName = currentFile;
+    }
+    QFile file(fileName);
+    if (!file.open(QIODevice::WriteOnly | QFile::Text)) {
+        QMessageBox::warning(this, "Warning", "Cannot save file: " + file.errorString());
+        return;
+    }
+    setWindowTitle(fileName);
+    QTextStream out(&file);
+    QString text = ui->textEdit->toPlainText();
+    out << text;
+    file.close();
+}
+
+void Notepad::saveAs() {
+    QString fileName = QFileDialog::getSaveFileName(this, "Save as");
+    QFile file(fileName);
+
+    if (!file.open(QFile::WriteOnly | QFile::Text)) {
+        QMessageBox::warning(this, "Warning", "Cannot save file: " + file.errorString());
+        return;
+    }
+    currentFile = fileName;
+    setWindowTitle(fileName);
+    QTextStream out(&file);
+    QString text = ui->textEdit->toPlainText();
+    out << text;
+    file.close();
+}
+
 void Notepad::exit() {
     QCoreApplication::quit();
 }
@@ -179,7 +213,6 @@ void Notepad::redo() {
 }
 
 void Notepad::onCursorPositionChanged() {
-    ui->textEdit->setTextColor("color: rgb(0,0,0)");
     QByteArray block;
     QDataStream out(&block, QIODevice::WriteOnly);
     out.setVersion(QDataStream::Qt_5_13);
@@ -202,7 +235,7 @@ void Notepad::onCursorPositionChanged() {
 }
 
 void Notepad::interceptUserInput(int pos, int del, int add) {
-    ui->textEdit->setTextColor("color: rgb(0,0,0)");
+    ui->textEdit->setTextColor(Qt::black);
     if(del > 0) {
         undo();
         QTextCursor c = QTextCursor(ui->textEdit->textCursor());
@@ -398,13 +431,13 @@ void Notepad::processSymbol(const Message &m) {
             }
             qint32 index = net_data->getSymbols().size();
             net_data->getSymbols().push_back(m.getSymbol());
-            updateDocument(index, Message::INSERT_TYPE, m.getSymbol().getChar(),m.getSiteId());
+            updateDocument(index, Message::INSERT_TYPE, m.getSymbol().getChar(), m.getSiteId());
         }
     } else /* Message::ERASE_TYPE */ {
         foreach (Symbol s, net_data->getSymbols()){
             if (s.getChar() == m.getSymbol().getChar() && s.getSiteId() == m.getSymbol().getSiteId() && s.getCounter() == m.getSymbol().getCounter()) {
                 net_data->getSymbols().erase(net_data->getSymbols().begin() + index);
-                updateDocument(index, Message::ERASE_TYPE, "",m.getSiteId());
+                updateDocument(index, Message::ERASE_TYPE, "", m.getSiteId());
                 return;
             }
             index++;
@@ -541,9 +574,9 @@ void Notepad::updateDocument(qint32 index, qint32 updateType, QString text, int 
     tmp_cur.setPosition(index);
     if (updateType == Message::INSERT_TYPE) {
         QTextCharFormat format = QTextCharFormat();
-        format.setForeground((colors[siteId]));
-        tmp_cur.insertText(text,format);
-        ui->textEdit->setTextColor("color: rgb(0,0,0)");
+        format.setForeground(ui->textEdit->getColor(siteId));
+        tmp_cur.insertText(text, format);
+        ui->textEdit->setTextColor(Qt::black);
     } else /* Message::ERASE_TYPE */ {
         tmp_cur.deleteChar();
     }

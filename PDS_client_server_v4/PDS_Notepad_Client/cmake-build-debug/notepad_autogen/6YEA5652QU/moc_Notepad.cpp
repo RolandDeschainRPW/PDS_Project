@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Notepad_t {
-    QByteArrayData data[17];
-    char stringdata0[154];
+    QByteArrayData data[19];
+    char stringdata0[166];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -41,20 +41,23 @@ QT_MOC_LITERAL(5, 25, 3), // "cut"
 QT_MOC_LITERAL(6, 29, 5), // "paste"
 QT_MOC_LITERAL(7, 35, 4), // "undo"
 QT_MOC_LITERAL(8, 40, 4), // "redo"
-QT_MOC_LITERAL(9, 45, 18), // "interceptUserInput"
-QT_MOC_LITERAL(10, 64, 3), // "pos"
-QT_MOC_LITERAL(11, 68, 3), // "del"
-QT_MOC_LITERAL(12, 72, 3), // "add"
-QT_MOC_LITERAL(13, 76, 12), // "displayError"
-QT_MOC_LITERAL(14, 89, 28), // "QAbstractSocket::SocketError"
-QT_MOC_LITERAL(15, 118, 11), // "socketError"
-QT_MOC_LITERAL(16, 130, 23) // "onCursorPositionChanged"
+QT_MOC_LITERAL(9, 45, 4), // "save"
+QT_MOC_LITERAL(10, 50, 6), // "saveAs"
+QT_MOC_LITERAL(11, 57, 18), // "interceptUserInput"
+QT_MOC_LITERAL(12, 76, 3), // "pos"
+QT_MOC_LITERAL(13, 80, 3), // "del"
+QT_MOC_LITERAL(14, 84, 3), // "add"
+QT_MOC_LITERAL(15, 88, 12), // "displayError"
+QT_MOC_LITERAL(16, 101, 28), // "QAbstractSocket::SocketError"
+QT_MOC_LITERAL(17, 130, 11), // "socketError"
+QT_MOC_LITERAL(18, 142, 23) // "onCursorPositionChanged"
 
     },
     "Notepad\0print\0\0exit\0copy\0cut\0paste\0"
-    "undo\0redo\0interceptUserInput\0pos\0del\0"
-    "add\0displayError\0QAbstractSocket::SocketError\0"
-    "socketError\0onCursorPositionChanged"
+    "undo\0redo\0save\0saveAs\0interceptUserInput\0"
+    "pos\0del\0add\0displayError\0"
+    "QAbstractSocket::SocketError\0socketError\0"
+    "onCursorPositionChanged"
 };
 #undef QT_MOC_LITERAL
 
@@ -64,7 +67,7 @@ static const uint qt_meta_data_Notepad[] = {
        8,       // revision
        0,       // classname
        0,    0, // classinfo
-      10,   14, // methods
+      12,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
@@ -72,16 +75,18 @@ static const uint qt_meta_data_Notepad[] = {
        0,       // signalCount
 
  // slots: name, argc, parameters, tag, flags
-       1,    0,   64,    2, 0x08 /* Private */,
-       3,    0,   65,    2, 0x08 /* Private */,
-       4,    0,   66,    2, 0x08 /* Private */,
-       5,    0,   67,    2, 0x08 /* Private */,
-       6,    0,   68,    2, 0x08 /* Private */,
-       7,    0,   69,    2, 0x08 /* Private */,
-       8,    0,   70,    2, 0x08 /* Private */,
-       9,    3,   71,    2, 0x08 /* Private */,
-      13,    1,   78,    2, 0x08 /* Private */,
-      16,    0,   81,    2, 0x08 /* Private */,
+       1,    0,   74,    2, 0x08 /* Private */,
+       3,    0,   75,    2, 0x08 /* Private */,
+       4,    0,   76,    2, 0x08 /* Private */,
+       5,    0,   77,    2, 0x08 /* Private */,
+       6,    0,   78,    2, 0x08 /* Private */,
+       7,    0,   79,    2, 0x08 /* Private */,
+       8,    0,   80,    2, 0x08 /* Private */,
+       9,    0,   81,    2, 0x08 /* Private */,
+      10,    0,   82,    2, 0x08 /* Private */,
+      11,    3,   83,    2, 0x08 /* Private */,
+      15,    1,   90,    2, 0x08 /* Private */,
+      18,    0,   93,    2, 0x08 /* Private */,
 
  // slots: parameters
     QMetaType::Void,
@@ -91,8 +96,10 @@ static const uint qt_meta_data_Notepad[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
-    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,   10,   11,   12,
-    QMetaType::Void, 0x80000000 | 14,   15,
+    QMetaType::Void,
+    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,   12,   13,   14,
+    QMetaType::Void, 0x80000000 | 16,   17,
     QMetaType::Void,
 
        0        // eod
@@ -111,15 +118,17 @@ void Notepad::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, voi
         case 4: _t->paste(); break;
         case 5: _t->undo(); break;
         case 6: _t->redo(); break;
-        case 7: _t->interceptUserInput((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
-        case 8: _t->displayError((*reinterpret_cast< QAbstractSocket::SocketError(*)>(_a[1]))); break;
-        case 9: _t->onCursorPositionChanged(); break;
+        case 7: _t->save(); break;
+        case 8: _t->saveAs(); break;
+        case 9: _t->interceptUserInput((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
+        case 10: _t->displayError((*reinterpret_cast< QAbstractSocket::SocketError(*)>(_a[1]))); break;
+        case 11: _t->onCursorPositionChanged(); break;
         default: ;
         }
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
         switch (_id) {
         default: *reinterpret_cast<int*>(_a[0]) = -1; break;
-        case 8:
+        case 10:
             switch (*reinterpret_cast<int*>(_a[1])) {
             default: *reinterpret_cast<int*>(_a[0]) = -1; break;
             case 0:
@@ -159,13 +168,13 @@ int Notepad::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 10)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 12;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 10)
+        if (_id < 12)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 10;
+        _id -= 12;
     }
     return _id;
 }

@@ -7,6 +7,9 @@
 #include "../include/MyTextEdit.h"
 
 MyTextEdit::MyTextEdit(QWidget* parent) : QTextEdit(parent) {
+    // Setting predefined font.
+    this->setFont(QFont("Times New Roman", 12, QFont::Medium));
+
     QTextCursor cursor = this->textCursor();
     QPoint start_cur = this->viewport()->mapToGlobal(this->cursorRect(cursor).bottomLeft());
     QPoint end_cur = this->viewport()->mapToGlobal(this->cursorRect(cursor).topLeft());
@@ -43,7 +46,10 @@ void MyTextEdit::removeCursor(qint32 site_id) {
 void MyTextEdit::setCursorPosition(qint32 site_id, qint32 pos) {
     cursors.find(site_id).value().setPosition(pos);
     this->update();
-    //this->repaint();
+}
+
+QColor MyTextEdit::getColor(qint32 site_id) {
+    return colors[site_id];
 }
 
 void MyTextEdit::paintEvent(QPaintEvent* event) {

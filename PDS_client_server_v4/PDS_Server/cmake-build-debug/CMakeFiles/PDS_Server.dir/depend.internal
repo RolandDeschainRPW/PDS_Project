@@ -299,17 +299,17 @@ CMakeFiles/PDS_Server.dir/PDS_Server_autogen/mocs_compilation.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgets-config.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgetsglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidget.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_NetworkServer.cpp
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedDocument.cpp
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedEditor.cpp
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/cmake-build-debug/PDS_Server_autogen/mocs_compilation.cpp
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Collaborator.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Message.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/NetworkServer.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Request.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/SharedDocument.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/SharedEditor.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_NetworkServer.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedDocument.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/cmake-build-debug/PDS_Server_autogen/6YEA5652QU/moc_SharedEditor.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/cmake-build-debug/PDS_Server_autogen/mocs_compilation.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Collaborator.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Message.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/NetworkServer.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Request.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/SharedDocument.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/SharedEditor.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Symbol.h
 CMakeFiles/PDS_Server.dir/src/Collaborator.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QObject
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QStringList
@@ -522,8 +522,8 @@ CMakeFiles/PDS_Server.dir/src/Collaborator.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtransform.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Collaborator.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/src/Collaborator.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Collaborator.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/src/Collaborator.cpp
 CMakeFiles/PDS_Server.dir/src/Message.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QVector
@@ -600,9 +600,9 @@ CMakeFiles/PDS_Server.dir/src/Message.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtransform.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Message.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Symbol.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/src/Message.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Message.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/src/Message.cpp
 CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtANGLE/GLES2/gl2.h
  C:/Qt/5.13.0/mingw73_64/include/QtANGLE/GLES2/gl2platform.h
@@ -1143,16 +1143,16 @@ CMakeFiles/PDS_Server.dir/src/NetworkServer.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidget.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidgetaction.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwizard.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Collaborator.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Message.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/NetworkServer.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Request.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Response.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/SerialSize.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/SharedDocument.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/SharedEditor.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Symbol.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/src/NetworkServer.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Collaborator.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Message.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/NetworkServer.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Request.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Response.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/SerialSize.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/SharedDocument.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/SharedEditor.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/src/NetworkServer.cpp
 CMakeFiles/PDS_Server.dir/src/Request.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QObject
@@ -1367,10 +1367,10 @@ CMakeFiles/PDS_Server.dir/src/Request.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtransform.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Message.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Request.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Symbol.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/src/Request.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Message.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Request.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/src/Request.cpp
 CMakeFiles/PDS_Server.dir/src/Response.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QObject
@@ -1585,10 +1585,10 @@ CMakeFiles/PDS_Server.dir/src/Response.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qtransform.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs.h
  C:/Qt/5.13.0/mingw73_64/include/QtGui/qwindowdefs_win.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Collaborator.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Response.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Symbol.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/src/Response.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Collaborator.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Response.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/src/Response.cpp
 CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QByteArray
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QCryptographicHash
@@ -1877,12 +1877,12 @@ CMakeFiles/PDS_Server.dir/src/SharedDocument.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtSql/qsqlrecord.h
  C:/Qt/5.13.0/mingw73_64/include/QtSql/qtsql-config.h
  C:/Qt/5.13.0/mingw73_64/include/QtSql/qtsqlglobal.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Message.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/SerialSize.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/SharedDocument.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/SharedEditor.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Symbol.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/src/SharedDocument.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Message.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/SerialSize.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/SharedDocument.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/SharedEditor.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/src/SharedDocument.cpp
 CMakeFiles/PDS_Server.dir/src/SharedEditor.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QByteArray
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QCryptographicHash
@@ -2141,8 +2141,8 @@ CMakeFiles/PDS_Server.dir/src/SharedEditor.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qtnetworkglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qtnetworkversion.h
  C:/Qt/5.13.0/mingw73_64/include/QtNetwork/qudpsocket.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/SharedEditor.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/src/SharedEditor.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/SharedEditor.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/src/SharedEditor.cpp
 CMakeFiles/PDS_Server.dir/src/Symbol.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QDataStream
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QVector
@@ -2199,8 +2199,8 @@ CMakeFiles/PDS_Server.dir/src/Symbol.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qvarlengtharray.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qvector.h
  C:/Qt/5.13.0/mingw73_64/include/QtCore/qversiontagging.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Symbol.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/src/Symbol.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/src/Symbol.cpp
 CMakeFiles/PDS_Server.dir/src/main.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QByteArray
  C:/Qt/5.13.0/mingw73_64/include/QtCore/QCryptographicHash
@@ -2504,11 +2504,11 @@ CMakeFiles/PDS_Server.dir/src/main.cpp.obj
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgets-config.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qtwidgetsglobal.h
  C:/Qt/5.13.0/mingw73_64/include/QtWidgets/qwidget.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Collaborator.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Message.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/NetworkServer.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Request.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/SharedDocument.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/SharedEditor.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/include/Symbol.h
- D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Server/src/main.cpp
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Collaborator.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Message.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/NetworkServer.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Request.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/SharedDocument.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/SharedEditor.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/include/Symbol.h
+ D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Server/src/main.cpp

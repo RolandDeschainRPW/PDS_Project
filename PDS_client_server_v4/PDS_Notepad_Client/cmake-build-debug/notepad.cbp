@@ -8,18 +8,18 @@
 		<Option virtualFolders="CMake Files\;CMake Files\Qt\;CMake Files\Qt\5.13.0\;CMake Files\Qt\5.13.0\mingw73_64\;CMake Files\Qt\5.13.0\mingw73_64\lib\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Network\;CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5PrintSupport\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug"/>
+				<Option working_dir="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="notepad">
-				<Option output="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/notepad.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug"/>
+				<Option output="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/notepad.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -29,8 +29,8 @@
 					<Add option="-DQT_WIDGETS_LIB"/>
 					<Add option="-DQT_NETWORK_LIB"/>
 					<Add option="-DQT_PRINTSUPPORT_LIB"/>
-					<Add directory="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/notepad_autogen/include"/>
-					<Add directory="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include"/>
+					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/notepad_autogen/include"/>
+					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtCore"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/./mkspecs/win32-g++"/>
@@ -48,15 +48,15 @@
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 notepad"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 notepad"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="notepad/fast">
-				<Option output="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/notepad.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug"/>
+				<Option output="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/notepad.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -66,8 +66,8 @@
 					<Add option="-DQT_WIDGETS_LIB"/>
 					<Add option="-DQT_NETWORK_LIB"/>
 					<Add option="-DQT_PRINTSUPPORT_LIB"/>
-					<Add directory="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/notepad_autogen/include"/>
-					<Add directory="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include"/>
+					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/notepad_autogen/include"/>
+					<Add directory="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/include/QtCore"/>
 					<Add directory="C:/Qt/5.13.0/mingw73_64/./mkspecs/win32-g++"/>
@@ -85,254 +85,254 @@
 					<Add directory="C:/msys64/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/9.1.0/../../../../x86_64-w64-mingw32/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 notepad/fast"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 notepad/fast"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug"/>
+				<Option working_dir="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug"/>
+				<Option working_dir="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="notepad_autogen">
-				<Option working_dir="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug"/>
+				<Option working_dir="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 notepad_autogen"/>
-					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 notepad_autogen"/>
+					<CompileFile command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/msys64/mingw64/bin/mingw32-make.exe -f &quot;D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.rule">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/notepad_autogen/EWIEGA46WW/qrc_notepad.cpp.rule">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/cmake-build-debug/notepad_autogen/mocs_compilation.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/cmake-build-debug/notepad_autogen/mocs_compilation.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/Collaborator.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/Collaborator.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/DocumentsModel.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/DocumentsModel.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/Message.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/Message.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/ModifyProfileDialog.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/ModifyProfileDialog.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/MyTextEdit.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/MyTextEdit.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/NetworkingData.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/NetworkingData.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/Notepad.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/Notepad.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/Request.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/Request.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/Response.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/Response.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/SerialSize.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/SerialSize.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/SharedDocumentsExplorer.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/SharedDocumentsExplorer.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/SignUpDialog.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/SignUpDialog.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/StartDialog.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/StartDialog.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/include/Symbol.h">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/include/Symbol.h">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/notepad.qrc">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/notepad.qrc">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/Collaborator.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/Collaborator.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/DocumentsModel.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/DocumentsModel.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/Message.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/Message.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/ModifyProfileDialog.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/ModifyProfileDialog.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/MyTextEdit.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/MyTextEdit.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/NetworkingData.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/NetworkingData.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/Notepad.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/Notepad.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/Request.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/Request.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/Response.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/Response.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/SharedDocumentsExplorer.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/SharedDocumentsExplorer.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/SignUpDialog.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/SignUpDialog.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/StartDialog.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/StartDialog.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/Symbol.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/Symbol.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/src/main.cpp">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/src/main.cpp">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/ui/modifyprofiledialog.ui">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/ui/modifyprofiledialog.ui">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/ui/notepad.ui">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/ui/notepad.ui">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/ui/shareddocumentsexplorer.ui">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/ui/shareddocumentsexplorer.ui">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/ui/startdialog.ui">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/ui/startdialog.ui">
 			<Option target="notepad"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/CMakeLists.txt">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/notepad.qrc">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/notepad.qrc">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfig.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigExtras.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Core/Qt5CoreMacros.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Core\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfig.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QGifPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QICNSPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QICOPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QJpegPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QMinimalIntegrationPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QOffscreenIntegrationPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTgaPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTiffPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QTuioTouchPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWbmpPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWebpPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsDirect2DIntegrationPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QWindowsIntegrationPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Gui/Qt5Gui_QXdgDesktopPortalThemePlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Gui\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Widgets/Qt5Widgets_QWindowsVistaStylePlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Widgets\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Network/Qt5NetworkConfig.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Network/Qt5NetworkConfig.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Network\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Network/Qt5NetworkConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Network\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5Network/Qt5Network_QGenericEnginePlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5Network\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupportConfig.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupportConfig.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5PrintSupport\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupportConfigVersion.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupportConfigVersion.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5PrintSupport\"/>
 		</Unit>
-		<Unit filename="D:/Raffaele/Desktop/PDS_client_server_v4.1/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupport_QWindowsPrinterSupportPlugin.cmake">
+		<Unit filename="D:/Raffaele/Documenti/GitHub/PDS_Project/PDS_client_server_v4/PDS_Notepad_Client/Qt/5.13.0/mingw73_64/lib/cmake/Qt5PrintSupport/Qt5PrintSupport_QWindowsPrinterSupportPlugin.cmake">
 			<Option virtualFolder="CMake Files\Qt\5.13.0\mingw73_64\lib\cmake\Qt5PrintSupport\"/>
 		</Unit>
 	</Project>

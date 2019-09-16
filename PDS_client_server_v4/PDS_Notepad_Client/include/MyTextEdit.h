@@ -20,6 +20,7 @@ public:
     void addCursor(qint32 site_id);
     void removeCursor(qint32 site_id);
     void setCursorPosition(qint32 site_id, qint32 pos);
+    QColor getColor(qint32 site_id);
 
 private:
     qint32 siteId;

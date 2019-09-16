@@ -35,6 +35,8 @@ public:
     QAction *actionPaste;
     QAction *actionUndo;
     QAction *actionRedo;
+    QAction *actionSave;
+    QAction *actionSaveAs;
     QWidget *centralWidget;
     QHBoxLayout *horizontalLayout;
     MyTextEdit *textEdit;
@@ -103,6 +105,16 @@ public:
         QIcon icon6;
         icon6.addFile(QString::fromUtf8(":/images/edit_redo.png"), QSize(), QIcon::Normal, QIcon::Off);
         actionRedo->setIcon(icon6);
+        actionSave = new QAction(Notepad);
+        actionSave->setObjectName(QString::fromUtf8("actionSave"));
+        QIcon icon7;
+        icon7.addFile(QString::fromUtf8(":/images/save.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionSave->setIcon(icon7);
+        actionSaveAs = new QAction(Notepad);
+        actionSaveAs->setObjectName(QString::fromUtf8("actionSaveAs"));
+        QIcon icon8;
+        icon8.addFile(QString::fromUtf8(":/images/save_as.png"), QSize(), QIcon::Normal, QIcon::Off);
+        actionSaveAs->setIcon(icon8);
         centralWidget = new QWidget(Notepad);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         horizontalLayout = new QHBoxLayout(centralWidget);
@@ -290,6 +302,8 @@ public:
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuEdit->menuAction());
         menuFile->addAction(actionPrint);
+        menuFile->addAction(actionSave);
+        menuFile->addAction(actionSaveAs);
         menuFile->addSeparator();
         menuFile->addAction(actionExit);
         menuEdit->addAction(actionCopy);
@@ -298,6 +312,8 @@ public:
         menuEdit->addSeparator();
         menuEdit->addAction(actionUndo);
         menuEdit->addAction(actionRedo);
+        mainToolBar->addAction(actionSave);
+        mainToolBar->addAction(actionSaveAs);
         mainToolBar->addAction(actionPrint);
         mainToolBar->addSeparator();
         mainToolBar->addAction(actionCopy);
@@ -347,6 +363,11 @@ public:
 #if QT_CONFIG(shortcut)
         actionRedo->setShortcut(QCoreApplication::translate("Notepad", "Ctrl+Y", nullptr));
 #endif // QT_CONFIG(shortcut)
+        actionSave->setText(QCoreApplication::translate("Notepad", "Save", nullptr));
+#if QT_CONFIG(shortcut)
+        actionSave->setShortcut(QCoreApplication::translate("Notepad", "Ctrl+S", nullptr));
+#endif // QT_CONFIG(shortcut)
+        actionSaveAs->setText(QCoreApplication::translate("Notepad", "SaveAs", nullptr));
         collaboratorPicLabel1->setText(QString());
         nicknameLabel1->setText(QCoreApplication::translate("Notepad", "Unconnected", nullptr));
         collaboratorPicLabel2->setText(QString());

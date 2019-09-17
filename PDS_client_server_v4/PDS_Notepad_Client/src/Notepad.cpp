@@ -134,13 +134,14 @@ Notepad::~Notepad() {
 }
 
 void Notepad::print() {
+    QString fileName = QFileDialog::getSaveFileName((ui->textEdit), "Export PDF", QString(), "*.pdf");
+    if (QFileInfo(fileName).suffix().isEmpty()) fileName.append(".pdf");
+
     #if QT_CONFIG(printer)
-    QPrinter printDev;
-    #if QT_CONFIG(printdialog)
-    QPrintDialog dialog(&printDev, this);
-    if (dialog.exec() == QDialog::Rejected)
-        return;
-    #endif // QT_CONFIG(printdialog)
+    QPrinter printDev(QPrinter::HighResolution);
+    printDev.setOutputFormat(QPrinter::PdfFormat);
+    printDev.setOutputFileName(fileName);
+    qDebug() << "printer valid? " << printDev.isValid();
     ui->textEdit->print(&printDev);
     #endif // QT_CONFIG(printer)
 }
